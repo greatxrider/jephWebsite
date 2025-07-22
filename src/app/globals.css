@@ -38,54 +38,12 @@
 
 * {
   border-color: var(--border);
-  scroll-behavior: smooth;
 }
 
-/* GSAP Smooth Scrolling - Override native behavior */
+/* Optimized scrolling */
 html {
-  scroll-behavior: auto !important;
   scroll-padding-top: 80px;
-  /* Account for fixed navigation */
-}
-
-/* Disable native smooth scrolling to let GSAP handle it */
-body {
-  scroll-behavior: auto !important;
-}
-
-/* Enhanced scrolling with momentum on mobile */
-* {
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Custom smooth scroll class */
-.smooth-scroll {
   scroll-behavior: smooth;
-}
-
-/* Reduce motion for accessibility */
-@media (prefers-reduced-motion: reduce) {
-
-  html,
-  body,
-  * {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Enhanced scroll performance */
-body {
-  will-change: scroll-position;
-}
-
-/* Smooth scrolling improvements */
-@supports (scroll-behavior: smooth) {
-  html {
-    scroll-behavior: smooth;
-  }
 }
 
 body {
@@ -96,7 +54,20 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+/* Reduced motion preferences - Critical for performance */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar - optimized */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -114,28 +85,16 @@ body {
   background: var(--primary-dark);
 }
 
-/* Animations */
+/* Essential animations only - reduced from original */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-10px);
   }
 }
 
@@ -147,59 +106,7 @@ body {
   }
 
   50% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes neonGlow {
-
-  0%,
-  100% {
-    box-shadow: 0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 15px var(--primary);
-  }
-
-  50% {
-    box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary);
-  }
-}
-
-@keyframes circuitFlow {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(100%);
-    opacity: 0;
+    opacity: 0.7;
   }
 }
 
@@ -208,128 +115,45 @@ body {
   0%,
   100% {
     transform: scale(1);
-    opacity: 0.7;
+    opacity: 0.8;
   }
 
   50% {
-    transform: scale(1.2);
+    transform: scale(1.1);
     opacity: 1;
   }
 }
 
-@keyframes glitchEffect {
+@keyframes neonGlow {
 
   0%,
   100% {
-    transform: translate(0);
-  }
-
-  10% {
-    transform: translate(-2px, 2px);
-  }
-
-  20% {
-    transform: translate(2px, -2px);
-  }
-
-  30% {
-    transform: translate(-2px, -2px);
-  }
-
-  40% {
-    transform: translate(2px, 2px);
+    box-shadow: 0 0 5px var(--primary);
   }
 
   50% {
-    transform: translate(-2px, 2px);
-  }
-
-  60% {
-    transform: translate(2px, -2px);
-  }
-
-  70% {
-    transform: translate(-2px, -2px);
-  }
-
-  80% {
-    transform: translate(2px, 2px);
-  }
-
-  90% {
-    transform: translate(-2px, 2px);
+    box-shadow: 0 0 10px var(--primary), 0 0 15px var(--primary);
   }
 }
 
-@keyframes gradientShift {
-
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes blink {
-
-  0%,
-  50% {
-    opacity: 1;
-  }
-
-  51%,
-  100% {
-    opacity: 0;
-  }
-}
-
-
-
-/* Utility classes */
+/* Simplified utility classes */
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
 }
 
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
 .animate-pulse-custom {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 2s ease-in-out infinite;
 }
 
-.animate-slide-in-left {
-  animation: slideInLeft 0.8s ease-out;
-}
-
-.animate-slide-in-right {
-  animation: slideInRight 0.8s ease-out;
+.animate-neural-pulse {
+  animation: neuralPulse 3s ease-in-out infinite;
 }
 
 .animate-neon-glow {
   animation: neonGlow 2s ease-in-out infinite;
 }
 
-.animate-circuit-flow {
-  animation: circuitFlow 3s ease-in-out infinite;
-}
-
-.animate-neural-pulse {
-  animation: neuralPulse 2s ease-in-out infinite;
-}
-
-.animate-glitch {
-  animation: glitchEffect 0.3s ease-in-out infinite;
-}
-
-.animate-blink {
-  animation: blink 1s step-end infinite;
-}
-
-/* Enhanced gradient text */
+/* Simplified gradient text - no animation by default */
 .gradient-text {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
@@ -342,7 +166,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 20px rgba(255, 139, 66, 0.5);
 }
 
 .gradient-text-ai {
@@ -350,11 +173,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  background-size: 200% auto;
-  animation: gradientShift 3s ease-in-out infinite;
 }
 
-/* Enhanced gradient backgrounds */
+/* Simplified gradient backgrounds */
 .gradient-bg {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
@@ -363,32 +184,24 @@ body {
   background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1));
 }
 
-.gradient-bg-ai {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1), rgba(255, 140, 66, 0.1));
-}
-
-.gradient-bg-neon {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 140, 66, 0.1));
-}
-
-/* Button styles */
+/* Optimized button styles */
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   border: none;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 8px 16px rgba(255, 107, 53, 0.3);
 }
 
 .btn-outline {
   border: 2px solid var(--primary);
   color: var(--primary);
   background: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .btn-outline:hover {
@@ -397,175 +210,44 @@ body {
   transform: translateY(-2px);
 }
 
-.btn-ai {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  border: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-ai:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(255, 107, 53, 0.4), 0 0 50px rgba(247, 147, 30, 0.2);
-}
-
-/* Enhanced card styles */
+/* Optimized card styles - reduced complexity */
 .card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, transparent, rgba(255, 107, 53, 0.05), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.card:hover::before {
-  opacity: 1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 107, 53, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   border-color: var(--primary);
 }
 
 .card-ai {
-  background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(30, 30, 30, 0.9));
+  background: rgba(20, 20, 20, 0.9);
   border: 1px solid rgba(255, 107, 53, 0.3);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-}
-
-.card-ai::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.card-ai:hover::before {
-  opacity: 1;
+  backdrop-filter: blur(5px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card-ai:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 107, 53, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   border-color: var(--primary);
 }
 
-/* Glowing border effect */
-.glow-border {
-  position: relative;
-  overflow: hidden;
-}
-
-.glow-border::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.glow-border:hover::before {
-  opacity: 1;
-}
-
+/* Simplified glow border - no animation by default */
 .glow-border-ai {
-  position: relative;
-  overflow: hidden;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+    linear-gradient(135deg, var(--primary), var(--secondary)) border-box;
+  transition: all 0.3s ease;
 }
 
-.glow-border-ai::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--orange-light));
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  animation: gradientShift 3s ease-in-out infinite;
-}
-
-.glow-border-ai:hover::before {
-  opacity: 1;
-}
-
-/* Section padding */
-.section-padding {
-  padding: 5rem 0;
-  min-height: 100vh;
-}
-
-@media (max-width: 768px) {
-  .section-padding {
-    padding: 3rem 0;
-    min-height: 80vh;
-  }
-}
-
-/* Background image optimizations */
-.section-bg {
-  background-attachment: scroll;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Ensure long sections have proper background coverage */
-section {
-  position: relative;
-  background: #000000;
-}
-
-/* Background overlay for better text readability */
-.bg-overlay {
-  background: rgba(0, 0, 0, 0.7);
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
-}
-
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.2;
-  font-weight: 700;
+.glow-border-ai:hover {
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
 }
 
 /* Container */
@@ -581,69 +263,19 @@ h6 {
   }
 }
 
-/* Simple background patterns - Plain black */
-.bg-pattern {
-  background: #000000;
-}
-
-.bg-pattern-ai {
-  background: #000000;
-}
-
-.bg-circuit {
-  background: #000000;
-}
-
-.bg-neural-network {
-  background: #000000;
-}
-
-/* AI Background Enhancement */
-.ai-section-bg {
-  position: relative;
-  overflow: hidden;
-}
-
-.ai-section-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.ai-section-content {
-  position: relative;
-  z-index: 10;
-}
-
-/* Smooth background transitions */
-.bg-neural-network,
-.bg-circuit,
-.bg-pattern-ai {
-  background-attachment: scroll;
-}
-
-/* Remove fixed background to prevent footer interference */
-@media (min-width: 769px) {
-
-  .bg-neural-network,
-  .bg-circuit,
-  .bg-pattern-ai {
-    background-attachment: scroll;
-  }
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-weight: 700;
 }
 
 /* Selection styling */
 ::selection {
-  background: rgba(255, 107, 53, 0.3);
-  color: white;
-}
-
-::-moz-selection {
   background: rgba(255, 107, 53, 0.3);
   color: white;
 }
@@ -657,272 +289,45 @@ textarea:focus {
 }
 
 /* Cursor styles */
-button {
-  cursor: pointer;
-}
-
+button,
 a {
   cursor: pointer;
 }
 
-/* Footer styling */
-footer {
-  background: rgba(0, 0, 0, 0.95) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  margin-top: auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Accessibility enhancements */
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-
-  .animate-neural-pulse,
-  .animate-float,
-  .animate-neon-glow,
-  .animate-glitch {
-    animation: none !important;
-  }
-}
-
-/* Mobile optimization for background images */
-@media (max-width: 768px) {
-  .section-background {
-    background-attachment: scroll !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    min-height: 100vh !important;
-  }
-
-  /* Fix for mobile background rendering */
-  .section-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: inherit;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    z-index: -1;
-  }
-}
-
-/* High-resolution display optimization */
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
-  .section-background {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: optimizeQuality;
-  }
-}
-
-/* Fixed background for entire website */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/backgrounds/ai-generated-3d-rendering-of-abstract-digital-background-with-particles-and-lines-network-concept-abstract-futuristic-background-data-transfer-ai-generated-free.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  z-index: -1;
-}
-
-/* Dark overlay for better readability */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: -1;
-}
-
-/* Ensure sections have transparent backgrounds */
-section {
-  background: transparent !important;
-}
-
-/* Button hover effects and clickability */
+/* Interactive elements */
 button,
 .btn,
 [role="button"] {
   cursor: pointer !important;
-  position: relative;
-  z-index: 10;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 button:hover,
 .btn:hover,
 [role="button"]:hover {
   cursor: pointer !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
 }
 
-button:active,
-.btn:active,
-[role="button"]:active {
-  transform: translateY(0);
+/* Remove heavy background effects */
+section {
+  background: transparent;
 }
 
-/* Ensure all interactive elements have proper cursor */
-a,
-button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-[role="button"],
-[tabindex="0"],
-.cursor-pointer {
-  cursor: pointer !important;
-}
-
-/* Fix z-index for interactive elements */
-.card-ai,
-.btn-ai,
-.btn-primary,
-.btn-outline {
-  position: relative;
-  z-index: 10;
-}
-
-/* Enhanced button hover effects */
-.btn-primary:hover {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-}
-
-.btn-outline:hover {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-  border-color: #ff6b35;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-}
-
-/* FAQ and interactive card elements */
-.card-ai button,
-.card-ai [role="button"],
-.testimonial-nav button,
-.category-filter button {
-  cursor: pointer !important;
-  position: relative;
-  z-index: 15;
-}
-
-/* Card hover effects */
-.card-ai:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-
-/* Navigation elements */
-nav a,
-nav button,
-.nav-link,
-.mobile-menu-item {
-  cursor: pointer !important;
-  position: relative;
-  z-index: 20;
-}
-
-/* Ensure content areas have proper stacking */
-.container {
-  position: relative;
-  z-index: 5;
-}
-
-/* Fix for mobile touch */
+/* Mobile optimizations */
 @media (max-width: 768px) {
-
-  button,
-  .btn,
-  [role="button"] {
-    -webkit-tap-highlight-color: rgba(255, 107, 53, 0.3);
-    touch-action: manipulation;
+  .container {
+    padding: 0 1rem;
   }
-}
 
-/* Specific FAQ button styling */
-.faq-category-button {
-  cursor: pointer !important;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 15;
-}
+  /* Disable complex effects on mobile */
+  .card-ai {
+    backdrop-filter: none;
+  }
 
-.faq-category-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.faq-toggle-button {
-  cursor: pointer !important;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 15;
-}
-
-.faq-toggle-button:hover {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-}
-
-/* Project category buttons */
-.project-category-button {
-  cursor: pointer !important;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 15;
-}
-
-.project-category-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Testimonial navigation */
-.testimonial-nav-button {
-  cursor: pointer !important;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 15;
-}
-
-.testimonial-nav-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Pricing toggle buttons */
-.pricing-toggle {
-  cursor: pointer !important;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: 15;
-}
-
-.pricing-toggle:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  /* Reduce animation complexity on mobile */
+  .animate-neural-pulse,
+  .animate-neon-glow {
+    animation: none;
+  }
 }

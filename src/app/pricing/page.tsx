@@ -211,22 +211,10 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen relative pt-20">
-      {/* Pricing Background */}
+      {/* Optimized Background - Simple gradient instead of large image */}
       <div className="fixed inset-0 w-full h-full z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed"
-          style={{
-            backgroundImage:
-              "url('/backgrounds/pngtree-ai-brain-inspired-digital-landscape-with-glowing-patterns-image_16684872.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-            backgroundAttachment: "fixed",
-            minHeight: "100vh",
-            imageRendering: "auto",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
       <div className="container mx-auto px-4 py-12 relative z-10">
         {/* Header */}

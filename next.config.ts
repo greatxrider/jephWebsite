@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Optimize images
   images: {
+    formats: ["image/webp", "image/avif"],
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,7 +12,14 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    minimumCacheTTL: 60,
   },
+
+  // Compress static assets
+  compress: true,
+
+  // Enable SWC minification
+  swcMinify: true,
 };
 
 export default nextConfig;
