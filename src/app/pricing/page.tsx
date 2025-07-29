@@ -231,7 +231,7 @@ export default function PricingPage() {
             <Sparkles size={16} className="animate-neural-pulse" />
             <span className="gradient-text-neon">AI Automation Pricing</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Transparent Pricing for
             <span className="gradient-text-ai"> AI Automation Excellence</span>
           </h1>
@@ -297,7 +297,7 @@ export default function PricingPage() {
                 </h3>
                 <p className="text-gray-300 mb-4">{pkg.description}</p>
                 <div className="mb-4">
-                  <span className="text-4xl font-bold text-white">
+                  <span className="text-3xl font-bold text-white">
                     {pkg.price}
                   </span>
                   <span className="text-gray-400 ml-2">/{pkg.period}</span>
@@ -361,7 +361,7 @@ export default function PricingPage() {
 
         {/* Add-ons */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">
             Optional <span className="gradient-text-ai">Add-ons</span>
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -383,7 +383,7 @@ export default function PricingPage() {
 
         {/* FAQ Section */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">
+          <h3 className="text-2xl font-bold text-white mb-8 text-center">
             Pricing <span className="gradient-text-ai">FAQ</span>
           </h3>
           <div className="grid md:grid-cols-2 gap-8">

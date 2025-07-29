@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
-import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -68,12 +67,13 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#FF6B35" />
       </head>
-      <body className={`${inter.variable} antialiased`} suppressHydrationWarning={true}>
-        <SmoothScrollProvider>
-          <Navigation />
-          <main>{children}</main>
-          <Footer />
-        </SmoothScrollProvider>
+      <body
+        className={`${inter.variable} antialiased`}
+        suppressHydrationWarning={true}
+      >
+        <Navigation />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

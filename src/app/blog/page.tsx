@@ -190,7 +190,7 @@ export default function BlogPage() {
             <Sparkles size={16} />
             AI Automation Insights
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Master AI Automation with
             <span className="gradient-text"> Expert Insights</span>
           </h1>
@@ -269,7 +269,7 @@ export default function BlogPage() {
 
             {/* All Posts Grid */}
             <div className="mb-16">
-              <h2 className="text-3xl font-bold text-white mb-8 text-center">
+              <h2 className="text-2xl font-bold text-white mb-8 text-center">
                 All <span className="gradient-text-ai">Articles</span>
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

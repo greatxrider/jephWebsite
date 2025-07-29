@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import {
@@ -21,117 +22,250 @@ import {
 } from "lucide-react";
 
 export const Services = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const particlesRef = useRef<HTMLCanvasElement>(null);
+
+  // Enhanced AI Background Animation
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const resizeCanvas = () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    };
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    // Neural network nodes
+    const nodes: Array<{ x: number; y: number; connections: number[] }> = [];
+    const numNodes = 12;
+
+    // Initialize nodes
+    for (let i = 0; i < numNodes; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        connections: [],
+      });
+    }
+
+    // Create connections
+    nodes.forEach((node, i) => {
+      for (let j = i + 1; j < nodes.length; j++) {
+        if (Math.random() > 0.7) {
+          node.connections.push(j);
+        }
+      }
+    });
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const time = Date.now() * 0.001;
+
+      // Draw neural network connections
+      ctx.strokeStyle = "rgba(255, 107, 53, 0.1)";
+      ctx.lineWidth = 1;
+
+      nodes.forEach((node, i) => {
+        node.connections.forEach((connectionIndex) => {
+          const targetNode = nodes[connectionIndex];
+          const distance = Math.sqrt(
+            Math.pow(node.x - targetNode.x, 2) +
+              Math.pow(node.y - targetNode.y, 2)
+          );
+
+          if (distance < 200) {
+            const opacity = Math.max(0, 0.1 - distance / 2000);
+            ctx.strokeStyle = `rgba(255, 107, 53, ${opacity})`;
+
+            ctx.beginPath();
+            ctx.moveTo(node.x, node.y);
+            ctx.lineTo(targetNode.x, targetNode.y);
+            ctx.stroke();
+          }
+        });
+      });
+
+      // Draw nodes
+      nodes.forEach((node, i) => {
+        const pulse = Math.sin(time + i) * 0.3 + 0.7;
+        const size = 3 + pulse * 2;
+
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 107, 53, ${0.3 + pulse * 0.2})`;
+        ctx.fill();
+
+        // Add glow effect
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, size + 5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 107, 53, ${0.1 + pulse * 0.1})`;
+        ctx.fill();
+      });
+
+      // Subtle grid pattern
+      const gridSize = 80;
+      ctx.strokeStyle = "rgba(255, 107, 53, 0.02)";
+      ctx.lineWidth = 1;
+
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+
+      // Data flow particles
+      for (let i = 0; i < 8; i++) {
+        const x = (Math.sin(time * 0.5 + i) * 0.5 + 0.5) * canvas.width;
+        const y = (Math.cos(time * 0.3 + i) * 0.5 + 0.5) * canvas.height;
+        const size = Math.sin(time + i) * 0.5 + 0.5;
+
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 107, 53, ${0.3 + Math.sin(time + i) * 0.2})`;
+        ctx.fill();
+      }
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+    };
+  }, []);
+
+  // Particle system for additional AI effect
+  useEffect(() => {
+    const canvas = particlesRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const resizeCanvas = () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+    };
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      life: number;
+    }> = [];
+
+    // Create particles
+    for (let i = 0; i < 20; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        life: Math.random(),
+      });
+    }
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((particle, i) => {
+        // Update particle
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        particle.life += 0.01;
+
+        // Wrap around edges
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
+
+        // Reset particle when life reaches 1
+        if (particle.life >= 1) {
+          particle.x = Math.random() * canvas.width;
+          particle.y = Math.random() * canvas.height;
+          particle.life = 0;
+        }
+
+        // Draw particle
+        const opacity = Math.sin(particle.life * Math.PI) * 0.3;
+        const size = Math.sin(particle.life * Math.PI) * 2 + 1;
+
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 107, 53, ${opacity})`;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+    };
+  }, []);
+
   const services = [
     {
-      icon: <Workflow className="w-8 h-8" />,
+      icon: Workflow,
       title: "No-Code AI Automation",
       description:
-        "Build powerful automation workflows using Make, Zapier, and n8n integrated with AI models like Claude, ChatGPT, and OpenAI for intelligent decision-making.",
+        "Build powerful automation workflows using Make, Zapier, and n8n integrated with AI models.",
       features: [
         "Make (Integromat) workflow development",
         "Zapier automation setup & optimization",
         "n8n custom workflow creation",
         "AI-powered decision trees",
-        "Multi-platform integrations",
       ],
-      benefits: [
-        {
-          icon: <Clock className="w-5 h-5" />,
-          text: "Save 80+ hours per week on manual tasks",
-        },
-        {
-          icon: <TrendingUp className="w-5 h-5" />,
-          text: "Increase workflow efficiency by 400%",
-        },
-        {
-          icon: <Shield className="w-5 h-5" />,
-          text: "99.9% uptime with error handling",
-        },
-      ],
-      gradient: "from-orange-500 to-red-500",
-      bgGradient: "from-orange-500/10 to-red-500/10",
+      gradient: "from-orange-500 to-orange-400",
     },
     {
-      icon: <Brain className="w-8 h-8" />,
+      icon: Brain,
       title: "AI Model Integration",
       description:
-        "Seamlessly integrate Claude, ChatGPT, OpenAI, and Perplexity into your workflows for content generation, analysis, and intelligent automation.",
+        "Seamlessly integrate Claude, ChatGPT, OpenAI, and Perplexity into your workflows.",
       features: [
         "OpenAI API integration & optimization",
         "Claude (Anthropic) workflow integration",
         "ChatGPT custom implementations",
-        "Perplexity AI research automation",
         "AI prompt engineering & optimization",
       ],
-      benefits: [
-        {
-          icon: <Clock className="w-5 h-5" />,
-          text: "Instant AI-powered responses",
-        },
-        {
-          icon: <TrendingUp className="w-5 h-5" />,
-          text: "Improve content quality by 300%",
-        },
-        { icon: <Shield className="w-5 h-5" />, text: "Smart error recovery" },
-      ],
-      gradient: "from-blue-500 to-purple-500",
-      bgGradient: "from-blue-500/10 to-purple-500/10",
+      gradient: "from-orange-600 to-orange-500",
     },
     {
-      icon: <Link className="w-8 h-8" />,
+      icon: Link,
       title: "API & System Integration",
       description:
-        "Connect all your business tools through REST APIs, webhooks, and custom integrations for seamless data flow and automated processes.",
+        "Connect all your business tools through REST APIs, webhooks, and custom integrations.",
       features: [
         "REST API development & integration",
         "Webhook setup & management",
         "Database connections (SQL, NoSQL)",
         "Third-party app integrations",
-        "Custom connector development",
       ],
-      benefits: [
-        {
-          icon: <Clock className="w-5 h-5" />,
-          text: "Real-time data synchronization",
-        },
-        {
-          icon: <TrendingUp className="w-5 h-5" />,
-          text: "Eliminate data silos completely",
-        },
-        {
-          icon: <Shield className="w-5 h-5" />,
-          text: "Enterprise-grade security",
-        },
-      ],
-      gradient: "from-green-500 to-teal-500",
-      bgGradient: "from-green-500/10 to-teal-500/10",
-    },
-  ];
-
-  const process = [
-    {
-      step: "01",
-      title: "Workflow Analysis",
-      description:
-        "Analyze your current processes and identify automation opportunities using Make, Zapier, or n8n for maximum efficiency.",
-    },
-    {
-      step: "02",
-      title: "AI Integration Strategy",
-      description:
-        "Design AI-powered automation using Claude, OpenAI, and other modern AI tools to enhance your workflow intelligence.",
-    },
-    {
-      step: "03",
-      title: "Build & Deploy",
-      description:
-        "Develop and deploy your automation workflows with comprehensive testing, error handling, and performance optimization.",
-    },
-    {
-      step: "04",
-      title: "Monitor & Optimize",
-      description:
-        "Continuous monitoring, performance tuning, and feature enhancement to ensure your automations deliver maximum ROI.",
+      gradient: "from-orange-700 to-orange-600",
     },
   ];
 
@@ -140,101 +274,104 @@ export const Services = () => {
       name: "Make (Integromat)",
       icon: "🔧",
       description: "Visual workflow builder with 1000+ integrations",
-      specialties: ["Complex logic", "Data transformation", "API connections"],
     },
     {
       name: "Zapier",
       icon: "⚡",
       description: "Easy automation platform with 5000+ app integrations",
-      specialties: ["Quick setup", "Business apps", "Simple workflows"],
     },
     {
       name: "n8n",
       icon: "🔄",
       description: "Open-source automation with unlimited customization",
-      specialties: ["Custom code", "Self-hosted", "Advanced workflows"],
     },
     {
       name: "AI Models",
       icon: "🤖",
       description: "Claude, ChatGPT, OpenAI, Perplexity integration",
-      specialties: ["Content generation", "Analysis", "Decision making"],
     },
   ];
 
   return (
-    <section id="services" className="section-padding relative">
+    <section
+      id="services"
+      className="section-padding relative mt-20 mb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-black overflow-hidden"
+    >
+      {/* Enhanced AI Background Effects */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full opacity-40"
+      />
+      <canvas
+        ref={particlesRef}
+        className="absolute inset-0 w-full h-full opacity-30"
+      />
+
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/50 to-black/80" />
+
+      {/* Floating AI Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div
+          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/10 to-orange-600/10 rounded-full blur-2xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+      </div>
+
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-bright/10 to-orange-gold/10 border border-orange-bright/30 rounded-full text-orange-bright text-sm font-medium mb-4 animate-neon-glow">
-            <Sparkles size={16} className="animate-neural-pulse" />
-            <span className="gradient-text-neon">AI Automation Services</span>
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-orange-500 text-sm font-medium mb-4">
+            <Sparkles size={16} className="animate-pulse" />
+            <span>AI Automation Services</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             AI-Powered Automation
-            <span className="gradient-text-ai"> That Actually Works</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
+              {" "}
+              That Actually Works
+            </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Specialized automation solutions using Make, Zapier, n8n, and
-            cutting-edge AI models to transform your business operations with
-            intelligent workflows.
+            cutting-edge AI models to transform your business operations.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className="h-full card-ai">
-              <CardHeader className="relative">
-                <div
-                  className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center text-white mb-4`}
-                >
-                  {service.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-gray-300">{service.description}</p>
-              </CardHeader>
-              <CardContent className="relative">
-                <div className="space-y-4 mb-6">
-                  <h4 className="text-lg font-semibold text-white">
-                    What I Deliver:
-                  </h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="flex items-center gap-2"
-                      >
-                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="space-y-4 mb-6">
-                  <h4 className="text-lg font-semibold text-white">
-                    Results You'll See:
-                  </h4>
-                  <div className="space-y-3">
-                    {service.benefits.map((benefit, benefitIndex) => (
-                      <div
-                        key={benefitIndex}
-                        className="flex items-center gap-3"
-                      >
-                        <div className="text-orange-500">{benefit.icon}</div>
-                        <span className="text-gray-300 text-sm">
-                          {benefit.text}
-                        </span>
-                      </div>
-                    ))}
+            <Card key={index} className="card-ai h-full flex flex-col">
+              <CardContent className="p-6 flex flex-col h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div
+                    className={`w-12 h-12 bg-gradient-to-br ${service.gradient} rounded-lg flex items-center justify-center`}
+                  >
+                    <service.icon className="w-6 h-6 text-white" />
                   </div>
+                  <h3 className="text-lg font-bold text-white">
+                    {service.title}
+                  </h3>
+                </div>
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                  {service.description}
+                </p>
+                <div className="space-y-2 flex-grow">
+                  {service.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                      <span className="text-gray-300 text-sm">{feature}</span>
+                    </div>
+                  ))}
                 </div>
                 <Button
                   variant="outline"
-                  className="w-full"
+                  className="w-full mt-6 flex items-center justify-center gap-2"
                   onClick={() =>
                     document.getElementById("contact")?.scrollIntoView({
                       behavior: "smooth",
@@ -243,8 +380,8 @@ export const Services = () => {
                     })
                   }
                 >
-                  Get Started
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <span>Get Started</span>
+                  <ArrowRight className="w-4 h-4" />
                 </Button>
               </CardContent>
             </Card>
@@ -252,113 +389,34 @@ export const Services = () => {
         </div>
 
         {/* Platforms Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-white mb-4">
               Automation{" "}
-              <span className="gradient-text">Platforms I Master</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
+                Platforms I Master
+              </span>
             </h3>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-300 max-w-2xl mx-auto">
               Expert-level proficiency in the leading automation platforms and
               AI tools
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {platforms.map((platform, index) => (
               <Card key={index} className="text-center card-ai">
-                <CardContent className="p-6">
-                  <div className="text-4xl mb-4">{platform.icon}</div>
-                  <h4 className="text-xl font-semibold text-white mb-2">
+                <CardContent className="p-4">
+                  <div className="text-2xl mb-2">{platform.icon}</div>
+                  <h4 className="text-sm font-semibold text-white mb-1">
                     {platform.name}
                   </h4>
-                  <p className="text-gray-300 mb-4 text-sm">
+                  <p className="text-gray-400 text-xs">
                     {platform.description}
                   </p>
-                  <div className="space-y-1">
-                    {platform.specialties.map((specialty, idx) => (
-                      <div key={idx} className="text-orange-500 text-xs">
-                        • {specialty}
-                      </div>
-                    ))}
-                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
-
-        {/* Process Section */}
-        <div className="mb-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              My <span className="gradient-text">Automation Process</span>
-            </h3>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              A proven methodology for delivering AI-powered automation
-              solutions
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {process.map((step, index) => (
-              <Card key={index} className="text-center card-ai">
-                <CardContent className="p-6">
-                  <div className="text-4xl font-bold gradient-text mb-4">
-                    {step.step}
-                  </div>
-                  <h4 className="text-xl font-semibold text-white mb-3">
-                    {step.title}
-                  </h4>
-                  <p className="text-gray-300">{step.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center">
-          <Card className="max-w-4xl mx-auto card-ai">
-            <CardContent className="p-8 md:p-12">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 gradient-text-ai">
-                Ready to Automate with AI Intelligence?
-              </h3>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Let&apos;s build intelligent automation workflows using Make,
-                Zapier, n8n, and modern AI tools that transform your business
-                operations.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  onClick={() =>
-                    document.getElementById("contact")?.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                      inline: "nearest",
-                    })
-                  }
-                  className="group btn-ai animate-neon-glow"
-                >
-                  Start Automation Project
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() =>
-                    document.getElementById("projects")?.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                      inline: "nearest",
-                    })
-                  }
-                  className=""
-                >
-                  View Automation Examples
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

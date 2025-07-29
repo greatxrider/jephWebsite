@@ -208,7 +208,7 @@ export const Experience = () => {
               <Clock size={16} className="animate-neural-pulse" />
               <span className="gradient-text-neon">Professional Journey</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               <span className="gradient-text-ai">5+ Years</span> of AI
               Automation
               <span className="gradient-text"> Excellence</span>
@@ -232,7 +232,7 @@ export const Experience = () => {
                   >
                     {metric.icon}
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2">
+                  <div className="text-2xl font-bold text-white mb-2">
                     {metric.value}
                     {metric.suffix}
                   </div>
@@ -246,7 +246,7 @@ export const Experience = () => {
         {/* Experience Timeline */}
         <div className="mb-16">
           <div className="animate-on-scroll">
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">
+            <h3 className="text-2xl font-bold text-white mb-8 text-center">
               Professional <span className="gradient-text-ai">Timeline</span>
             </h3>
           </div>
@@ -308,7 +308,7 @@ export const Experience = () => {
         {/* Skills Progression */}
         <div className="mb-16">
           <div className="animate-on-scroll">
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">
+            <h3 className="text-2xl font-bold text-white mb-8 text-center">
               Skills <span className="gradient-text-ai">Evolution</span>
             </h3>
           </div>

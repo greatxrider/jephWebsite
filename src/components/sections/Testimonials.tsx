@@ -192,7 +192,7 @@ export const Testimonials = () => {
             <Sparkles size={16} className="animate-neural-pulse" />
             <span className="gradient-text-neon">Client Success Stories</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Real Results from
             <span className="gradient-text-ai"> Real Clients</span>
           </h2>
@@ -213,7 +213,7 @@ export const Testimonials = () => {
                 >
                   {stat.icon}
                 </div>
-                <div className="text-3xl font-bold text-white mb-2">
+                <div className="text-2xl font-bold text-white mb-2">
                   {stat.number}
                 </div>
                 <p className="text-gray-300">{stat.label}</p>
@@ -321,7 +321,7 @@ export const Testimonials = () => {
 
         {/* All Testimonials Grid */}
         <div className="mb-16">
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">
+                      <h3 className="text-2xl font-bold text-white mb-8 text-center">
             More <span className="gradient-text-ai">Success Stories</span>
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

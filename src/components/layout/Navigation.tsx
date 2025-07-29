@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
-import { smoothScrollTo } from "@/lib/smoothScroll";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,7 +21,20 @@ export const Navigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    smoothScrollTo(sectionId);
+    console.log(`Attempting to scroll to section: ${sectionId}`);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      console.log(`Found element:`, element);
+      const offset = 80; // Account for fixed navigation height
+      const elementPosition = element.offsetTop - offset;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+    } else {
+      console.warn(`Element with id "${sectionId}" not found`);
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -41,17 +53,11 @@ export const Navigation = () => {
   };
 
   const handleNavigation = (href: string) => {
-    if (href === "blog") {
-      window.open("/blog", "_self");
-    } else if (href === "pricing") {
-      window.open("/pricing", "_self");
+    // For section navigation
+    if (pathname === "/") {
+      scrollToSection(href);
     } else {
-      // For section navigation
-      if (pathname === "/") {
-        scrollToSection(href);
-      } else {
-        window.location.href = `/#${href}`;
-      }
+      window.location.href = `/#${href}`;
     }
     setIsMobileMenuOpen(false);
   };
@@ -59,13 +65,8 @@ export const Navigation = () => {
   const navItems = [
     { label: "Home", href: "hero" },
     { label: "About", href: "about" },
-    { label: "Experience", href: "experience" },
     { label: "Services", href: "services" },
     { label: "Projects", href: "projects" },
-    { label: "Testimonials", href: "testimonials" },
-    { label: "FAQ", href: "faq" },
-    { label: "Pricing", href: "pricing" },
-    { label: "Blog", href: "blog" },
     { label: "Contact", href: "contact" },
   ];
 
