@@ -26,6 +26,9 @@ import {
   Users,
   Clock,
   Award,
+  Briefcase,
+  Calendar,
+  MapPin,
 } from "lucide-react";
 
 export const About = () => {
@@ -175,6 +178,49 @@ export const About = () => {
     },
   ];
 
+  const programmingLanguages = [
+    {
+      name: "JavaScript",
+      logo: "/logo/javascript-logo.png", // You can add actual JS logo
+      description: "Full-stack development & automation",
+      expertise: "Expert",
+      type: "Primary",
+      color: "from-yellow-500 to-yellow-400",
+    },
+    {
+      name: "Python",
+      logo: "/logo/python-logo.png", // You can add actual Python logo
+      description: "AI/ML, automation & backend development",
+      expertise: "Expert",
+      type: "Primary",
+      color: "from-blue-500 to-blue-400",
+    },
+    {
+      name: "C#",
+      logo: "/logo/csharp-logo.png", // You can add actual C# logo
+      description: "Enterprise applications & .NET development",
+      expertise: "Advanced",
+      type: "Secondary",
+      color: "from-purple-500 to-purple-400",
+    },
+    {
+      name: "C++",
+      logo: "/logo/cpp-logo.png", // You can add actual C++ logo
+      description: "System programming & performance optimization",
+      expertise: "Advanced",
+      type: "Secondary",
+      color: "from-pink-500 to-pink-400",
+    },
+    {
+      name: "C",
+      logo: "/logo/c-logo.png", // You can add actual C logo
+      description: "Low-level programming & embedded systems",
+      expertise: "Intermediate",
+      type: "Secondary",
+      color: "from-gray-500 to-gray-400",
+    },
+  ];
+
   const valuePropositions = [
     {
       icon: Clock,
@@ -202,16 +248,82 @@ export const About = () => {
     },
   ];
 
+  const workExperience = [
+    {
+      company: "Easy Outsource",
+      position: "AI Automation Specialist",
+      period: "Jun 2025 - July 2025",
+      description:
+        "Streamlined outsourcing processes through intelligent automation",
+      logo: "/companyLogos/easyoutsource-logo.png",
+      color: "from-indigo-500 to-indigo-400",
+    },
+    {
+      company: "MetaWatt",
+      position: "AI Automation Specialist",
+      period: "Feb 2025 - Present",
+      description:
+        "Specialized in energy sector automation and AI-powered optimization",
+      logo: "/companyLogos/metawatt-logo.png",
+      color: "from-yellow-500 to-yellow-400",
+    },
+    {
+      company: "Haivyne",
+      position: "AI Automation Specialist",
+      period: "Apr 2025 - Present",
+      description:
+        "Creating intelligent automation workflows and AI integration solutions",
+      logo: "/companyLogos/haivyne-logo.png",
+      color: "from-pink-500 to-pink-400",
+    },
+    {
+      company: "Bamboo Works",
+      position: "AI Automation Specialist",
+      period: "Dec 2024 - May 2025",
+      description:
+        "Developed and implemented AI automation solutions for business processes",
+      logo: "/companyLogos/bambooworks-logo.png",
+      color: "from-orange-500 to-orange-400",
+    },
+    {
+      company: "RevWised",
+      position: "AI Automation Specialist",
+      period: "Jun 2024 - Sep 2024",
+      description:
+        "Specialized in AI-powered workflow automation and process optimization",
+      logo: "/companyLogos/revwise-logo.png",
+      color: "from-purple-500 to-purple-400",
+    },
+    {
+      company: "Nyxpro",
+      position: "CTO",
+      period: "Oct 2023 - Present",
+      description:
+        "Chief Technology Officer overseeing technical strategy and development",
+      logo: "/companyLogos/nyxpro-logo.jpg",
+      color: "from-green-500 to-green-400",
+    },
+    {
+      company: "Nyxpro",
+      position: "CoFounder",
+      period: "Nov 2021 - Present",
+      description:
+        "Co-founded and led strategic initiatives for technology innovation",
+      logo: "/companyLogos/nyxpro-logo.jpg",
+      color: "from-blue-500 to-blue-400",
+    },
+  ];
+
   return (
     <section
       id="about"
-      className="section-padding relative bg-gradient-to-br from-slate-900 via-slate-800 to-black mt-20 mb-20"
+      className="section-padding relative bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 mt-20 mb-20"
     >
       <div className="container mx-auto px-4 relative z-10">
         {/* Header Section */}
         <div className="mb-12">
           <div className="animate-on-scroll">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-orange-500 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-full text-orange-500 text-sm font-medium mb-6">
               <Sparkles size={16} className="animate-pulse" />
               <span>AI Automation Expert</span>
             </div>
@@ -220,7 +332,7 @@ export const About = () => {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               {/* Left Column - Main Headline */}
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">
                   Connecting Intelligence with
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
                     {" "}
@@ -231,13 +343,128 @@ export const About = () => {
 
               {/* Right Column - Description */}
               <div>
-                <p className="text-xl text-gray-300 leading-relaxed">
+                <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-800 leading-relaxed">
                   I&apos;m a specialized AI Automation Engineer who transforms
                   business operations using no-code platforms integrated with
                   cutting-edge AI models.
                 </p>
+                <p className="text-xl text-orange-500 font-semibold mt-4 leading-relaxed">
+                  I&apos;ll automate your manual workflows — or you don&apos;t
+                  pay.
+                </p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Work Experience Section */}
+        <div className="mb-12 animate-on-scroll">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
+              <Briefcase className="w-6 h-6 text-white" />
+            </div>
+            <h3 className="text-3xl font-bold text-white dark:text-white light:text-gray-900">
+              Work Experience
+            </h3>
+          </div>
+
+          <div className="space-y-4">
+            {workExperience.map((job, index) => (
+              <div key={index} className="relative group">
+                {/* Professional LinkedIn-style card */}
+                <Card className="card-ai bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 overflow-hidden">
+                  {/* Subtle gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                  <CardContent className="p-4 relative z-10">
+                    <div className="flex items-start gap-3">
+                      {/* Company Logo */}
+                      <div className="w-12 h-12 relative flex-shrink-0">
+                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-lg blur-sm"></div>
+                        <Image
+                          src={job.logo}
+                          alt={job.company}
+                          width={48}
+                          height={48}
+                          className="object-contain w-full h-full rounded-lg relative z-10"
+                        />
+                      </div>
+
+                      {/* Job Details */}
+                      <div className="flex-1 min-w-0">
+                        {/* Position and Company */}
+                        <div className="flex items-start justify-between mb-1">
+                          <div className="flex-1">
+                            <h4 className="text-white dark:text-white light:text-gray-900 font-bold text-lg mb-1 group-hover:text-orange-400 transition-colors duration-300">
+                              {job.position}
+                            </h4>
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="text-orange-400 font-semibold text-base">
+                                {job.company}
+                              </span>
+                              <div className="w-1 h-1 bg-orange-500 rounded-full animate-pulse"></div>
+                            </div>
+                          </div>
+
+                          {/* Status Badge */}
+                          <div className="flex items-center gap-2">
+                            <span
+                              className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                                job.period.includes("Present")
+                                  ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                                  : "bg-gray-500/20 text-gray-400 border border-gray-500/30"
+                              }`}
+                            >
+                              {job.period.includes("Present")
+                                ? "Current"
+                                : "Previous"}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Period */}
+                        <div className="flex items-center gap-2 mb-2">
+                          <Calendar className="w-3 h-3 text-gray-400" />
+                          <span className="text-gray-300 dark:text-gray-300 light:text-gray-800 text-xs font-medium">
+                            {job.period}
+                          </span>
+                        </div>
+
+                        {/* Description */}
+                        <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 text-sm leading-relaxed mb-3">
+                          {job.description}
+                        </p>
+
+                        {/* Skills/Tags */}
+                        <div className="flex flex-wrap gap-1">
+                          <span className="px-2 py-0.5 bg-orange-500/10 text-orange-400 text-xs font-medium rounded-full border border-orange-500/20">
+                            AI Automation
+                          </span>
+                          <span className="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-medium rounded-full border border-blue-500/20">
+                            Workflow Design
+                          </span>
+                          <span className="px-2 py-0.5 bg-purple-500/10 text-purple-400 text-xs font-medium rounded-full border border-purple-500/20">
+                            System Integration
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Subtle progress indicator */}
+                    <div className="mt-3 h-0.5 bg-gray-700/50 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full bg-gradient-to-r ${job.color} rounded-full transition-all duration-1000 ease-out`}
+                        style={{
+                          width: "0%",
+                          animation: "progressFill 2s ease-out forwards",
+                          animationDelay: `${index * 0.2}s`,
+                        }}
+                      ></div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -279,7 +506,7 @@ export const About = () => {
               {automationPlatforms.map((platform, index) => (
                 <Card
                   key={index}
-                  className="card-ai hover:border-orange-500/50 transition-all duration-300"
+                  className="card-ai hover:border-orange-500/50 transition-all duration-300 bg-white/10 backdrop-blur-sm"
                 >
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
@@ -325,7 +552,7 @@ export const About = () => {
               {aiTechnologies.map((tech, index) => (
                 <Card
                   key={index}
-                  className="card-ai hover:border-purple-500/50 transition-all duration-300"
+                  className="card-ai hover:border-purple-500/50 transition-all duration-300 bg-white/10 backdrop-blur-sm"
                 >
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
@@ -373,7 +600,7 @@ export const About = () => {
               {technicalSkills.map((skill, index) => (
                 <Card
                   key={index}
-                  className="card-ai hover:border-blue-500/50 transition-all duration-300"
+                  className="card-ai hover:border-blue-500/50 transition-all duration-300 bg-white/10 backdrop-blur-sm"
                 >
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
@@ -400,6 +627,72 @@ export const About = () => {
                         {skill.expertise}
                       </span>
                       <CheckCircle className="w-4 h-4 text-green-500" />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Programming Languages */}
+          <div className="animate-on-scroll">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-400 rounded-full flex items-center justify-center">
+                <Code className="w-5 h-5 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-white">
+                Programming Languages
+              </h3>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {programmingLanguages.map((lang, index) => (
+                <Card
+                  key={index}
+                  className={`card-ai hover:border-${
+                    lang.color.split("-")[1]
+                  }-500/50 transition-all duration-300 bg-white/10 backdrop-blur-sm`}
+                >
+                  <CardContent className="p-4">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div
+                        className={`w-10 h-10 bg-gradient-to-br ${lang.color} rounded-lg flex items-center justify-center flex-shrink-0`}
+                      >
+                        <Code className="w-5 h-5 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-white font-semibold text-sm">
+                          {lang.name}
+                        </h4>
+                        <p className="text-gray-400 text-xs">
+                          {lang.description}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span
+                        className={`text-xs font-medium ${
+                          lang.type === "Primary"
+                            ? "text-green-500"
+                            : lang.type === "Secondary"
+                            ? "text-blue-500"
+                            : "text-gray-500"
+                        }`}
+                      >
+                        {lang.expertise}
+                      </span>
+                      <div className="flex items-center gap-1">
+                        <span
+                          className={`text-xs px-2 py-1 rounded-full ${
+                            lang.type === "Primary"
+                              ? "bg-green-500/20 text-green-400"
+                              : "bg-blue-500/20 text-blue-400"
+                          }`}
+                        >
+                          {lang.type}
+                        </span>
+                        <CheckCircle className="w-4 h-4 text-green-500" />
+                      </div>
                     </div>
                   </CardContent>
                 </Card>

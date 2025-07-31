@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  /* Dark mode variables (default) */
   --background: #000000;
   --foreground: #ededed;
   --primary: #FF6B35;
@@ -15,6 +16,63 @@
   --orange-bright: #FF6B35;
   --orange-deep: #E55A2B;
   --orange-gold: #F7931E;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-card: #141414;
+  --bg-muted: #1a1a1a;
+}
+
+/* Light mode variables */
+.light {
+  --background: #f5f5f5;
+  --foreground: #0a0a0a;
+  --primary: #FF6B35;
+  --primary-dark: #E55A2B;
+  --secondary: #F7931E;
+  --accent: #FF4500;
+  --muted: #e5e7eb;
+  --border: #d1d5db;
+  --card: #ffffff;
+  --input: #f9fafb;
+  --orange-light: #FF8C42;
+  --orange-bright: #FF6B35;
+  --orange-deep: #E55A2B;
+  --orange-gold: #F7931E;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-muted: #e5e7eb;
+}
+
+/* Dark mode variables */
+.dark {
+  --background: #000000;
+  --foreground: #ededed;
+  --primary: #FF6B35;
+  --primary-dark: #E55A2B;
+  --secondary: #F7931E;
+  --accent: #FF4500;
+  --muted: #1a1a1a;
+  --border: #333333;
+  --card: #141414;
+  --input: #1e1e1e;
+  --orange-light: #FF8C42;
+  --orange-bright: #FF6B35;
+  --orange-deep: #E55A2B;
+  --orange-gold: #F7931E;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-card: #141414;
+  --bg-muted: #1a1a1a;
 }
 
 @theme inline {
@@ -47,11 +105,12 @@ html {
 }
 
 body {
-  background: #000000;
-  color: var(--foreground);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Reduced motion preferences - Critical for performance */
@@ -121,6 +180,16 @@ body {
   50% {
     transform: scale(1.1);
     opacity: 1;
+  }
+}
+
+@keyframes progressFill {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
   }
 }
 
@@ -226,8 +295,8 @@ body {
 }
 
 .card-ai {
-  background: rgba(20, 20, 20, 0.9);
-  border: 1px solid rgba(255, 107, 53, 0.3);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   backdrop-filter: blur(5px);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
@@ -272,6 +341,7 @@ h5,
 h6 {
   line-height: 1.2;
   font-weight: 700;
+  color: var(--text-primary);
 }
 
 /* Selection styling */

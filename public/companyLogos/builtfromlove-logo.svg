@@ -1,0 +1,26 @@
+<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="loveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BE185D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Heart shape -->
+  <path d="M30 25 Q30 20 35 20 Q40 20 40 25 Q40 30 30 35 Q20 30 20 25 Q20 20 25 20 Q30 20 30 25" fill="url(#loveGradient)" opacity="0.8"/>
+  
+  <!-- Tech circuit lines -->
+  <path d="M50 15 L60 15 L60 25" stroke="#EC4899" stroke-width="2" fill="none"/>
+  <path d="M50 25 L60 25 L60 35" stroke="#EC4899" stroke-width="2" fill="none"/>
+  <path d="M50 35 L60 35 L60 45" stroke="#EC4899" stroke-width="2" fill="none"/>
+  
+  <!-- Circuit nodes -->
+  <circle cx="55" cy="15" r="2" fill="#EC4899"/>
+  <circle cx="55" cy="25" r="2" fill="#EC4899"/>
+  <circle cx="55" cy="35" r="2" fill="#EC4899"/>
+  <circle cx="55" cy="45" r="2" fill="#EC4899"/>
+  
+  <!-- Text -->
+  <text x="70" y="35" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#EC4899">BUILT FROM</text>
+  <text x="70" y="48" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#EC4899">LOVE</text>
+</svg> 

@@ -1,0 +1,24 @@
+<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="anonovaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="30" cy="30" r="25" fill="url(#anonovaGradient)" opacity="0.1"/>
+  
+  <!-- A letter -->
+  <path d="M20 45 L30 15 L40 45 M25 35 L35 35" stroke="url(#anonovaGradient)" stroke-width="3" fill="none"/>
+  
+  <!-- Tech dots -->
+  <circle cx="70" cy="20" r="2" fill="#3B82F6"/>
+  <circle cx="75" cy="25" r="2" fill="#3B82F6"/>
+  <circle cx="80" cy="30" r="2" fill="#3B82F6"/>
+  <circle cx="85" cy="35" r="2" fill="#3B82F6"/>
+  <circle cx="90" cy="40" r="2" fill="#3B82F6"/>
+  
+  <!-- Text -->
+  <text x="60" y="50" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3B82F6">ANONOVA</text>
+</svg> 

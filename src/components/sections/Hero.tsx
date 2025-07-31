@@ -10,6 +10,10 @@ import {
   Cpu,
   TrendingUp,
   CheckCircle,
+  User,
+  Workflow,
+  Link2,
+  Code,
 } from "lucide-react";
 
 export const Hero = () => {
@@ -313,7 +317,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-black overflow-hidden mb-20"
+      className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 overflow-hidden mb-20"
     >
       {/* Enhanced AI Background Effects */}
       <canvas
@@ -346,7 +350,7 @@ export const Hero = () => {
           {/* Left Column - Main Content */}
           <div className="space-y-8">
             {/* Professional Badge */}
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-full">
               <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
               <span className="text-orange-500 text-sm font-medium tracking-wider">
                 AI AUTOMATION SPECIALIST
@@ -356,14 +360,14 @@ export const Hero = () => {
 
             {/* Main Headline */}
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+              <h1 className="text-5xl md:text-6xl font-bold text-white dark:text-white light:text-gray-900 leading-tight">
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
                   AI-Powered
                 </span>
                 <span className="block">Business Automation</span>
               </h1>
 
-              <p className="text-xl text-gray-300 font-light leading-relaxed max-w-lg">
+              <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-800 font-light leading-relaxed max-w-lg">
                 Transform your business operations with intelligent workflows,
                 <span className="text-orange-500 font-medium">
                   {" "}
@@ -373,24 +377,13 @@ export const Hero = () => {
               </p>
             </div>
 
-            {/* Key Benefits */}
+            {/* Tailored Sales Message */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                <span className="text-gray-300">
-                  500+ Successful Automations Built
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                <span className="text-gray-300">
-                  98% Client Satisfaction Rate
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                <span className="text-gray-300">
-                  24/7 System Monitoring & Support
+                <span className="text-gray-300 dark:text-gray-300 light:text-gray-800 text-lg">
+                  I automate your manual workflows so you can scale faster and
+                  focus on what matters.
                 </span>
               </div>
             </div>
@@ -400,96 +393,60 @@ export const Hero = () => {
               <Button
                 size="lg"
                 onClick={() => scrollToSection("contact")}
-                className="group bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-400 hover:to-orange-300 text-white border-0 px-8 py-4 text-lg font-semibold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300"
+                className="group bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-400 hover:to-orange-300 text-white border-0 px-8 py-4 text-lg font-semibold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3"
               >
-                <Brain className="mr-3 h-5 w-5" />
-                Start Your Project
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <Brain className="w-5 h-5 flex-shrink-0" />
+                <span>Start Your Project</span>
+                <ArrowRight className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
                 variant="outline"
                 size="lg"
                 onClick={() => scrollToSection("services")}
-                className="border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-8 py-4 text-lg font-semibold backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 dark:border-white/20 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/40 light:border-gray-300 light:text-gray-700 light:hover:bg-gray-100 light:hover:border-gray-400 px-8 py-4 text-lg font-semibold backdrop-blur-sm transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3"
               >
-                <Network className="mr-3 h-5 w-5" />
-                View Services
+                <Network className="w-5 h-5 flex-shrink-0" />
+                <span>View Services</span>
               </Button>
             </div>
           </div>
 
           {/* Right Column - Visual Elements */}
           <div className="space-y-8">
-            {/* AI Control Panel */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-3">
-                  <Cpu className="w-6 h-6 text-orange-500" />
-                  <span className="text-orange-500 font-mono text-sm tracking-wider">
-                    AI CORE v2.1
-                  </span>
+            {/* Profile Card */}
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-2xl p-8">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
+                  <User className="w-8 h-8 text-white" />
                 </div>
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <div
-                    className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"
-                    style={{ animationDelay: "0.5s" }}
-                  ></div>
-                  <div
-                    className="w-3 h-3 bg-red-400 rounded-full animate-pulse"
-                    style={{ animationDelay: "1s" }}
-                  ></div>
+                <div>
+                  <h3 className="text-xl font-bold text-white dark:text-white light:text-gray-900">
+                    Jeph Daligdig
+                  </h3>
+                  <p className="text-orange-500 font-medium">
+                    Software Engineer & Automation Specialist
+                  </p>
                 </div>
               </div>
 
-              {/* Performance Metrics */}
-              <div className="space-y-6">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300 font-mono text-sm">
-                    EFFICIENCY
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-800">
+                    AI Workflow Automation Expert
                   </span>
-                  <div className="flex items-center gap-3">
-                    <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
-                      <div className="w-[95%] h-full bg-gradient-to-r from-orange-500 to-orange-400 rounded-full animate-pulse"></div>
-                    </div>
-                    <span className="text-orange-500 font-mono text-sm">
-                      95%
-                    </span>
-                  </div>
                 </div>
-
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300 font-mono text-sm">
-                    AUTOMATION
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-800">
+                    System & API Integration Specialist
                   </span>
-                  <div className="flex items-center gap-3">
-                    <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
-                      <div
-                        className="w-full h-full bg-gradient-to-r from-orange-600 to-orange-500 rounded-full animate-pulse"
-                        style={{ animationDelay: "0.5s" }}
-                      ></div>
-                    </div>
-                    <span className="text-orange-600 font-mono text-sm">
-                      100%
-                    </span>
-                  </div>
                 </div>
-
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-300 font-mono text-sm">
-                    UPTIME
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-800">
+                    Business Process Automation
                   </span>
-                  <div className="flex items-center gap-3">
-                    <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
-                      <div
-                        className="w-[99%] h-full bg-gradient-to-r from-orange-500 to-red-400 rounded-full animate-pulse"
-                        style={{ animationDelay: "1s" }}
-                      ></div>
-                    </div>
-                    <span className="text-orange-400 font-mono text-sm">
-                      99.9%
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -498,10 +455,10 @@ export const Hero = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-lg flex items-center justify-center mb-3">
-                  <Zap className="w-5 h-5 text-white" />
+                  <Workflow className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-sm font-semibold text-white mb-1">
-                  Smart Workflows
+                  AI Workflow Automation
                 </h3>
                 <p className="text-gray-400 text-xs">
                   Intelligent automation that adapts to your business needs.
@@ -510,13 +467,13 @@ export const Hero = () => {
 
               <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all duration-300">
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-600 to-orange-500 rounded-lg flex items-center justify-center mb-3">
-                  <Cpu className="w-5 h-5 text-white" />
+                  <Link2 className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-sm font-semibold text-white mb-1">
-                  AI Integration
+                  System & API Integration
                 </h3>
                 <p className="text-gray-400 text-xs">
-                  Seamless integration with leading AI platforms.
+                  Seamless integration with leading platforms.
                 </p>
               </div>
 
@@ -525,10 +482,10 @@ export const Hero = () => {
                   <TrendingUp className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-sm font-semibold text-white mb-1">
-                  Analytics
+                  Business Process Automation
                 </h3>
                 <p className="text-gray-400 text-xs">
-                  Real-time monitoring and performance analytics.
+                  Streamline operations and boost efficiency.
                 </p>
               </div>
 
@@ -537,33 +494,11 @@ export const Hero = () => {
                   <Brain className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-sm font-semibold text-white mb-1">
-                  Machine Learning
+                  AI-Powered Solutions
                 </h3>
                 <p className="text-gray-400 text-xs">
-                  Advanced ML models for predictive automation.
+                  Advanced AI models for predictive automation.
                 </p>
-              </div>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-4">
-              <div className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold text-orange-500 mb-1">
-                  500+
-                </div>
-                <div className="text-gray-400 text-xs">Automations</div>
-              </div>
-              <div className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold text-orange-600 mb-1">
-                  98%
-                </div>
-                <div className="text-gray-400 text-xs">Success Rate</div>
-              </div>
-              <div className="text-center bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4">
-                <div className="text-2xl font-bold text-orange-700 mb-1">
-                  24/7
-                </div>
-                <div className="text-gray-400 text-xs">Support</div>
               </div>
             </div>
           </div>

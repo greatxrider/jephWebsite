@@ -2,14 +2,16 @@
 
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
+import { useTheme } from "@/components/providers/ThemeProvider";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +29,7 @@ export const Navigation = () => {
       console.log(`Found element:`, element);
       const offset = 80; // Account for fixed navigation height
       const elementPosition = element.offsetTop - offset;
-      
+
       window.scrollTo({
         top: elementPosition,
         behavior: "smooth",
@@ -74,7 +76,7 @@ export const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-black/80 backdrop-blur-md border-b border-gray-800 shadow-lg shadow-primary/20"
+          ? "bg-black/80 backdrop-blur-md border-b border-gray-800 shadow-lg shadow-primary/20 dark:bg-black/80 dark:border-gray-800 light:bg-white/80 light:border-gray-200"
           : "bg-transparent"
       }`}
     >
@@ -97,12 +99,33 @@ export const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href)}
-                className="text-gray-300 hover:text-white transition-all duration-300 relative group cursor-pointer"
+                className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 relative group cursor-pointer"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
+              aria-label={`Switch to ${
+                theme === "light" ? "dark" : "light"
+              } mode`}
+            >
+              {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
+
+            <a
+              href="https://github.com/jeph"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
+              aria-label="GitHub"
+            >
+              <Github size={20} />
+            </a>
             <Button
               variant="outline"
               size="sm"
@@ -120,10 +143,21 @@ export const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Theme Toggle for Mobile */}
+            <button
+              onClick={toggleTheme}
+              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
+              aria-label={`Switch to ${
+                theme === "light" ? "dark" : "light"
+              } mode`}
+            >
+              {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
+
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-300 hover:text-white transition-colors duration-200 cursor-pointer"
+              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-colors duration-200 cursor-pointer"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -132,18 +166,27 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800 shadow-lg shadow-primary/10">
+          <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800 shadow-lg shadow-primary/10 dark:bg-black/95 dark:border-gray-800 light:bg-white/95 light:border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => handleNavigation(item.href)}
-                  className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 relative group cursor-pointer"
+                  className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 relative group cursor-pointer dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900"
                 >
                   {item.label}
                   <span className="absolute left-0 top-0 w-0 h-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-1 rounded-l-md"></span>
                 </button>
               ))}
+              <a
+                href="https://github.com/jeph"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 flex items-center gap-2 dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900"
+              >
+                <Github size={20} />
+                <span>GitHub</span>
+              </a>
               <div className="px-3 py-2">
                 <Button
                   variant="outline"

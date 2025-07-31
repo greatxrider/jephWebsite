@@ -240,16 +240,13 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="section-padding relative mt-20 mb-20 bg-black overflow-hidden"
+      className="section-padding relative bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 mt-20 mb-20"
     >
       {/* AI Background */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full opacity-30"
       />
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/80" />
 
       {/* Floating AI Elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -267,18 +264,18 @@ export default function Projects() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-orange-500 text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-full text-orange-500 text-sm font-medium mb-4">
             <Sparkles size={16} className="animate-pulse" />
             <span>AI-Powered Portfolio</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">
             Intelligent
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
               {" "}
               Automation Projects
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
             Showcasing cutting-edge AI solutions that transform business
             operations
           </p>
@@ -287,7 +284,7 @@ export default function Projects() {
         {/* Filters */}
         <div className="flex flex-col sm:flex-row gap-4 mb-8 max-w-4xl mx-auto">
           <div className="flex items-center gap-3 flex-wrap justify-center">
-            <Filter className="w-4 h-4 text-gray-400" />
+            <Filter className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-700" />
             {categories.map((category) => (
               <button
                 key={category}
@@ -295,7 +292,7 @@ export default function Projects() {
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                   selectedCategory === category
                     ? "bg-orange-500 text-white shadow-lg shadow-orange-500/25"
-                    : "bg-white/5 text-gray-300 hover:bg-white/10 border border-white/10"
+                    : "bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-300 dark:text-gray-300 light:text-gray-800 hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-gray-200/50 border border-white/10 dark:border-white/10 light:border-gray-200/50"
                 }`}
               >
                 {category}
@@ -303,13 +300,13 @@ export default function Projects() {
             ))}
           </div>
           <div className="flex items-center gap-3 flex-1 max-w-md mx-auto sm:mx-0">
-            <Search className="w-4 h-4 text-gray-400" />
+            <Search className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-700" />
             <input
               type="text"
               placeholder="Search projects..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+              className="w-full px-4 py-2 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 border border-white/10 dark:border-white/10 light:border-gray-200/50 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 dark:placeholder-gray-400 light:placeholder-gray-600 text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
             />
           </div>
         </div>
@@ -324,10 +321,10 @@ export default function Projects() {
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-white dark:text-white light:text-gray-900">
                     All Projects
                   </h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-sm">
                     Complete portfolio of AI automation solutions
                   </p>
                 </div>
@@ -355,23 +352,23 @@ export default function Projects() {
                           {project.category}
                         </span>
                       </div>
-                      <h3 className="text-lg font-bold text-white mb-2 line-clamp-2">
+                      <h3 className="text-lg font-bold text-white dark:text-white light:text-gray-900 mb-2 line-clamp-2">
                         {project.title}
                       </h3>
-                      <p className="text-gray-300 text-sm mb-3 line-clamp-2">
+                      <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 text-sm mb-3 line-clamp-2">
                         {project.description}
                       </p>
                       <div className="flex flex-wrap gap-1 mb-4">
                         {project.tools_used.slice(0, 3).map((tool, index) => (
                           <span
                             key={index}
-                            className="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs border border-white/10"
+                            className="px-2 py-1 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-300 dark:text-gray-300 light:text-gray-800 rounded text-xs border border-white/10 dark:border-white/10 light:border-gray-200/50"
                           >
                             {tool}
                           </span>
                         ))}
                         {project.tools_used.length > 3 && (
-                          <span className="px-2 py-1 bg-white/5 text-gray-300 rounded text-xs border border-white/10">
+                          <span className="px-2 py-1 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-300 dark:text-gray-300 light:text-gray-800 rounded text-xs border border-white/10 dark:border-white/10 light:border-gray-200/50">
                             +{project.tools_used.length - 3}
                           </span>
                         )}
@@ -414,13 +411,13 @@ export default function Projects() {
           {/* Empty State */}
           {filteredProjects.length === 0 && (
             <div className="text-center py-16">
-              <div className="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Brain className="w-12 h-12 text-gray-400" />
+              <div className="w-24 h-24 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Brain className="w-12 h-12 text-gray-400 dark:text-gray-400 light:text-gray-700" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3 className="text-2xl font-bold text-white dark:text-white light:text-gray-900 mb-3">
                 No Projects Found
               </h3>
-              <p className="text-gray-400 text-lg mb-8 max-w-md mx-auto">
+              <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-lg mb-8 max-w-md mx-auto">
                 Try adjusting your search or filter criteria to find the perfect
                 AI automation solution
               </p>
@@ -440,14 +437,14 @@ export default function Projects() {
 
         {/* Professional CTA */}
         <div className="text-center mt-16">
-          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto">
+          <div className="bg-white/5 dark:bg-white/5 light:bg-gray-100/50 backdrop-blur-sm border border-white/10 dark:border-white/10 light:border-gray-200/50 rounded-2xl p-8 max-w-2xl mx-auto">
             <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mx-auto mb-6">
               <Brain className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-2xl font-bold text-white dark:text-white light:text-gray-900 mb-4">
               Ready to Automate Your Business?
             </h3>
-            <p className="text-gray-300 text-lg mb-8">
+            <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 text-lg mb-8">
               Let's build intelligent solutions that transform your operations
               and drive growth
             </p>

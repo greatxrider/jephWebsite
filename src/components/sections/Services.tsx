@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 import {
   Workflow,
   Brain,
@@ -272,30 +273,53 @@ export const Services = () => {
   const platforms = [
     {
       name: "Make (Integromat)",
-      icon: "🔧",
+      logo: "/logo/make-logo.png",
       description: "Visual workflow builder with 1000+ integrations",
     },
     {
       name: "Zapier",
-      icon: "⚡",
+      logo: "/logo/Zapier_logo.svg.png",
       description: "Easy automation platform with 5000+ app integrations",
     },
     {
       name: "n8n",
-      icon: "🔄",
+      logo: "/logo/N8n-logo-new.svg.png",
       description: "Open-source automation with unlimited customization",
     },
     {
       name: "AI Models",
-      icon: "🤖",
+      logo: "/logo/ai-models-logo.png",
       description: "Claude, ChatGPT, OpenAI, Perplexity integration",
+    },
+  ];
+
+  const aiModels = [
+    {
+      name: "OpenAI",
+      logo: "/logo/OpenAI_Logo.svg.png",
+      description: "GPT-4, DALL-E, Whisper integration",
+    },
+    {
+      name: "Claude",
+      logo: "/logo/Claude_AI_logo.svg.png",
+      description: "Advanced reasoning & analysis",
+    },
+    {
+      name: "ChatGPT",
+      logo: "/logo/ChatGPT-Logo.svg.png",
+      description: "Conversational AI integration",
+    },
+    {
+      name: "Perplexity",
+      logo: "/logo/Perplexity-Logo.png",
+      description: "Research & information retrieval",
     },
   ];
 
   return (
     <section
       id="services"
-      className="section-padding relative mt-20 mb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-black overflow-hidden"
+      className="section-padding relative mt-20 bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 overflow-hidden py-20"
     >
       {/* Enhanced AI Background Effects */}
       <canvas
@@ -308,7 +332,7 @@ export const Services = () => {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/50 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/50 to-black/80 dark:from-slate-900/70 dark:via-slate-800/50 dark:to-black/80 light:from-gray-200/70 light:via-gray-100/50 light:to-gray-50/80" />
 
       {/* Floating AI Elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -326,18 +350,18 @@ export const Services = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-orange-500 text-sm font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-full text-orange-500 text-sm font-medium mb-6 mx-auto">
             <Sparkles size={16} className="animate-pulse" />
             <span>AI Automation Services</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">
             AI-Powered Automation
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
               {" "}
               That Actually Works
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
             Specialized automation solutions using Make, Zapier, n8n, and
             cutting-edge AI models to transform your business operations.
           </p>
@@ -388,7 +412,7 @@ export const Services = () => {
           ))}
         </div>
 
-        {/* Platforms Section */}
+        {/* Automation Platforms Section */}
         <div className="mb-16">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-white mb-4">
@@ -398,21 +422,70 @@ export const Services = () => {
               </span>
             </h3>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Expert-level proficiency in the leading automation platforms and
-              AI tools
+              Expert-level proficiency in the leading automation platforms
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {platforms.map((platform, index) => (
-              <Card key={index} className="text-center card-ai">
+              <Card
+                key={index}
+                className="text-center card-ai bg-white/10 backdrop-blur-sm"
+              >
                 <CardContent className="p-4">
-                  <div className="text-2xl mb-2">{platform.icon}</div>
+                  <div className="w-12 h-12 mx-auto mb-3 relative">
+                    <Image
+                      src={platform.logo}
+                      alt={platform.name}
+                      width={48}
+                      height={48}
+                      className="object-contain"
+                    />
+                  </div>
                   <h4 className="text-sm font-semibold text-white mb-1">
                     {platform.name}
                   </h4>
                   <p className="text-gray-400 text-xs">
                     {platform.description}
                   </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* AI Models Section */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              AI{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
+                Models & Technologies
+              </span>
+            </h3>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Cutting-edge AI models integrated into your workflows
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {aiModels.map((model, index) => (
+              <Card
+                key={index}
+                className="text-center card-ai bg-white/10 backdrop-blur-sm"
+              >
+                <CardContent className="p-4">
+                  <div className="w-12 h-12 mx-auto mb-3 relative">
+                    <Image
+                      src={model.logo}
+                      alt={model.name}
+                      width={48}
+                      height={48}
+                      className="object-contain"
+                    />
+                  </div>
+                  <h4 className="text-sm font-semibold text-white mb-1">
+                    {model.name}
+                  </h4>
+                  <p className="text-gray-400 text-xs">{model.description}</p>
                 </CardContent>
               </Card>
             ))}

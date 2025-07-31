@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,25 +15,20 @@ export const Footer = () => {
       label: "LinkedIn",
     },
     {
-      icon: <Twitter size={20} />,
-      href: "https://twitter.com/jeph",
-      label: "Twitter",
-    },
-    {
       icon: <Mail size={20} />,
-      href: "mailto:hello@jeph.dev",
+      href: "mailto:jephdaligdig98@gmail.com",
       label: "Email",
     },
   ];
 
   return (
-    <footer className="bg-black border-t border-gray-800 relative z-50 w-full">
+    <footer className="bg-black dark:bg-black light:bg-gray-900 border-t border-gray-800 dark:border-gray-800 light:border-gray-200 relative z-50 w-full">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="text-2xl font-bold gradient-text mb-4">JEPH</div>
-            <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
+            <p className="text-gray-400 dark:text-gray-400 light:text-gray-300 mb-6 max-w-md leading-relaxed">
               AI Automation Specialist helping businesses streamline operations
               and boost productivity through intelligent automation solutions.
             </p>
@@ -55,12 +50,14 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-white dark:text-white light:text-gray-100 font-semibold mb-4">
+              Quick Links
+            </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="#about"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 block py-1"
+                  className="text-gray-400 dark:text-gray-400 light:text-gray-300 hover:text-white dark:hover:text-white light:hover:text-gray-100 transition-colors duration-200 block py-1"
                 >
                   About
                 </a>
@@ -68,7 +65,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#services"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 block py-1"
+                  className="text-gray-400 dark:text-gray-400 light:text-gray-300 hover:text-white dark:hover:text-white light:hover:text-gray-100 transition-colors duration-200 block py-1"
                 >
                   Services
                 </a>
@@ -76,7 +73,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#projects"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 block py-1"
+                  className="text-gray-400 dark:text-gray-400 light:text-gray-300 hover:text-white dark:hover:text-white light:hover:text-gray-100 transition-colors duration-200 block py-1"
                 >
                   Projects
                 </a>
@@ -84,7 +81,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#blog"
-                  className="text-gray-400 hover:text-white transition-colors duration-200 block py-1"
+                  className="text-gray-400 dark:text-gray-400 light:text-gray-300 hover:text-white dark:hover:text-white light:hover:text-gray-100 transition-colors duration-200 block py-1"
                 >
                   Blog
                 </a>
@@ -94,15 +91,19 @@ export const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
+            <h4 className="text-white dark:text-white light:text-gray-100 font-semibold mb-4">
+              Services
+            </h4>
             <ul className="space-y-3">
               <li>
-                <span className="text-gray-400 block py-1">
+                <span className="text-gray-400 dark:text-gray-400 light:text-gray-300 block py-1">
                   Workflow Automation
                 </span>
               </li>
               <li>
-                <span className="text-gray-400 block py-1">AI Integration</span>
+                <span className="text-gray-400 dark:text-gray-400 light:text-gray-300 block py-1">
+                  AI Integration
+                </span>
               </li>
               <li>
                 <span className="text-gray-400 block py-1">
