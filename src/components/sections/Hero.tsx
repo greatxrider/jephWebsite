@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 import {
   Brain,
   ArrowRight,
@@ -416,8 +417,14 @@ export const Hero = () => {
             {/* Profile Card */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-2xl p-8">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
-                  <User className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 relative overflow-hidden rounded-full">
+                  <Image
+                    src="/devTeam/jeph-logo.jpg"
+                    alt="Jeph Daligdig"
+                    width={64}
+                    height={64}
+                    className="object-cover w-full h-full"
+                  />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white dark:text-white light:text-gray-900">
