@@ -382,14 +382,14 @@ export const Services = () => {
                     {service.title}
                   </h3>
                 </div>
-                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
                   {service.description}
                 </p>
                 <div className="space-y-2 flex-grow">
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                      <span className="text-gray-300 text-sm">{feature}</span>
+                      <span className="text-gray-400 text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>

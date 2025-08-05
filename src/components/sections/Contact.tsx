@@ -371,7 +371,7 @@ export const Contact = () => {
             </span>{" "}
             Your Business
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Ready to automate your processes and accelerate growth? Get in touch
             with our AI automation experts today.
           </p>
@@ -391,7 +391,7 @@ export const Contact = () => {
                 </h3>
               </div>
 
-              <p className="text-gray-300 mb-8">
+              <p className="text-gray-400 mb-8">
                 Our AI specialists analyze your business needs and design custom
                 automation solutions that deliver measurable results.
               </p>
@@ -452,7 +452,7 @@ export const Contact = () => {
                 </h3>
               </div>
 
-              <p className="text-gray-300 mb-8">
+              <p className="text-gray-400 mb-8">
                 Tell us about your automation needs
               </p>
 

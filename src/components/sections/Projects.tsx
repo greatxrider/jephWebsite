@@ -389,7 +389,7 @@ export default function Projects() {
                 Automation Projects
               </span>
             </h2>
-            <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto">
               Showcasing cutting-edge AI solutions that transform business
               operations
             </p>
@@ -406,7 +406,7 @@ export default function Projects() {
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                     selectedCategory === category
                       ? "bg-orange-500 text-white shadow-lg shadow-orange-500/25"
-                      : "bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-300 dark:text-gray-300 light:text-gray-800 hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-gray-200/50 border border-white/10 dark:border-white/10 light:border-gray-200/50"
+                      : "bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-gray-200/50 border border-white/10 dark:border-white/10 light:border-gray-200/50"
                   }`}
                 >
                   {category}
@@ -470,20 +470,20 @@ export default function Projects() {
                         <h3 className="text-lg font-bold text-white dark:text-white light:text-gray-900 mb-2 line-clamp-2">
                           {project.title}
                         </h3>
-                        <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 text-sm mb-3 line-clamp-2">
+                        <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-sm mb-3 line-clamp-2">
                           {project.description}
                         </p>
                         <div className="flex flex-wrap gap-1 mb-4">
                           {project.tools_used.slice(0, 3).map((tool, index) => (
                             <span
                               key={index}
-                              className="px-2 py-1 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-300 dark:text-gray-300 light:text-gray-800 rounded text-xs border border-white/10 dark:border-white/10 light:border-gray-200/50"
+                              className="px-2 py-1 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-xs border border-white/10 dark:border-white/10 light:border-gray-200/50"
                             >
                               {tool}
                             </span>
                           ))}
                           {project.tools_used.length > 3 && (
-                            <span className="px-2 py-1 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-300 dark:text-gray-300 light:text-gray-800 rounded text-xs border border-white/10 dark:border-white/10 light:border-gray-200/50">
+                            <span className="px-2 py-1 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-xs border border-white/10 dark:border-white/10 light:border-gray-200/50">
                               +{project.tools_used.length - 3}
                             </span>
                           )}
@@ -547,7 +547,7 @@ export default function Projects() {
               <h3 className="text-2xl font-bold text-white dark:text-white light:text-gray-900 mb-4">
                 Ready to Automate Your Business?
               </h3>
-              <p className="text-gray-300 dark:text-gray-300 light:text-gray-700 text-lg mb-8">
+              <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-lg mb-8">
                 Let's build intelligent solutions that transform your operations
                 and drive growth
               </p>
@@ -622,7 +622,7 @@ export default function Projects() {
                   <h4 className="text-xl font-bold text-white mb-4">
                     Project Overview
                   </h4>
-                  <p className="text-gray-300 leading-relaxed mb-6">
+                  <p className="text-gray-400 leading-relaxed mb-6">
                     {selectedProject.detailed_description ||
                       selectedProject.description}
                   </p>

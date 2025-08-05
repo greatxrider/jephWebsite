@@ -50,7 +50,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white dark:text-white light:text-gray-100 font-semibold mb-4">
+            <h4 className="text-gray-300 dark:text-gray-300 text-white font-semibold mb-4">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -91,7 +91,7 @@ export const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-white dark:text-white light:text-gray-100 font-semibold mb-4">
+            <h4 className="text-gray-300 dark:text-gray-300 text-white font-semibold mb-4">
               Services
             </h4>
             <ul className="space-y-3">

@@ -318,7 +318,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 overflow-hidden mb-20"
+      className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-50 light:via-white light:to-gray-100 overflow-hidden mb-20"
     >
       {/* Enhanced AI Background Effects */}
       <canvas
@@ -467,7 +467,7 @@ export const Hero = () => {
                 <h3 className="text-sm font-semibold text-white mb-1">
                   AI Workflow Automation
                 </h3>
-                <p className="text-gray-400 text-xs">
+                <p className="text-gray-300 text-xs">
                   Intelligent automation that adapts to your business needs.
                 </p>
               </div>
@@ -479,7 +479,7 @@ export const Hero = () => {
                 <h3 className="text-sm font-semibold text-white mb-1">
                   System & API Integration
                 </h3>
-                <p className="text-gray-400 text-xs">
+                <p className="text-gray-300 text-xs">
                   Seamless integration with leading platforms.
                 </p>
               </div>
@@ -491,7 +491,7 @@ export const Hero = () => {
                 <h3 className="text-sm font-semibold text-white mb-1">
                   Business Process Automation
                 </h3>
-                <p className="text-gray-400 text-xs">
+                <p className="text-gray-300 text-xs">
                   Streamline operations and boost efficiency.
                 </p>
               </div>
@@ -503,7 +503,7 @@ export const Hero = () => {
                 <h3 className="text-sm font-semibold text-white mb-1">
                   AI-Powered Solutions
                 </h3>
-                <p className="text-gray-400 text-xs">
+                <p className="text-gray-300 text-xs">
                   Advanced AI models for predictive automation.
                 </p>
               </div>

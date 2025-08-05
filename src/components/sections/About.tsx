@@ -343,7 +343,7 @@ export const About = () => {
 
               {/* Right Column - Description */}
               <div>
-                <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-800 leading-relaxed">
+                <p className="text-xl text-gray-400 dark:text-gray-400 light:text-gray-800 leading-relaxed">
                   I&apos;m a specialized AI Automation Engineer who transforms
                   business operations using no-code platforms integrated with
                   cutting-edge AI models.
@@ -372,7 +372,7 @@ export const About = () => {
             {workExperience.map((job, index) => (
               <div key={index} className="relative group">
                 {/* Professional LinkedIn-style card */}
-                <Card className="card-ai bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 hover:border-orange-500/30 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300 overflow-hidden">
+                <Card className="card-ai bg-white/60 backdrop-blur-sm border border-white/40 dark:bg-white/40 dark:border-white/30 light:bg-gray-100/90 light:border-gray-300/80 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 overflow-hidden">
                   {/* Subtle gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -425,7 +425,7 @@ export const About = () => {
                         {/* Period */}
                         <div className="flex items-center gap-2 mb-2">
                           <Calendar className="w-3 h-3 text-gray-400" />
-                          <span className="text-gray-300 dark:text-gray-300 light:text-gray-800 text-xs font-medium">
+                          <span className="text-gray-400 dark:text-gray-400 light:text-gray-800 text-xs font-medium">
                             {job.period}
                           </span>
                         </div>
@@ -506,7 +506,7 @@ export const About = () => {
               {automationPlatforms.map((platform, index) => (
                 <Card
                   key={index}
-                  className="card-ai hover:border-orange-500/50 transition-all duration-300 bg-white/10 backdrop-blur-sm"
+                  className="card-ai hover:border-orange-500/50 transition-all duration-300 bg-white/70 backdrop-blur-sm"
                 >
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
@@ -552,7 +552,7 @@ export const About = () => {
               {aiTechnologies.map((tech, index) => (
                 <Card
                   key={index}
-                  className="card-ai hover:border-purple-500/50 transition-all duration-300 bg-white/10 backdrop-blur-sm"
+                  className="card-ai hover:border-purple-500/50 transition-all duration-300 bg-white/70 backdrop-blur-sm"
                 >
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
@@ -600,7 +600,7 @@ export const About = () => {
               {technicalSkills.map((skill, index) => (
                 <Card
                   key={index}
-                  className="card-ai hover:border-blue-500/50 transition-all duration-300 bg-white/10 backdrop-blur-sm"
+                  className="card-ai hover:border-blue-500/50 transition-all duration-300 bg-white/70 backdrop-blur-sm"
                 >
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
@@ -651,7 +651,7 @@ export const About = () => {
                   key={index}
                   className={`card-ai hover:border-${
                     lang.color.split("-")[1]
-                  }-500/50 transition-all duration-300 bg-white/10 backdrop-blur-sm`}
+                  }-500/50 transition-all duration-300 bg-white/70 backdrop-blur-sm`}
                 >
                   <CardContent className="p-4">
                     <div className="flex items-center gap-3 mb-3">
@@ -711,7 +711,7 @@ export const About = () => {
                   Ready to Transform Your Business?
                 </h3>
               </div>
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
                 Let's discuss how I can help you automate your processes,
                 integrate AI into your workflows, and create solutions that
                 drive real business value.
