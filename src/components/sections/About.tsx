@@ -29,6 +29,7 @@ import {
   Briefcase,
   Calendar,
   MapPin,
+  GraduationCap,
 } from "lucide-react";
 
 export const About = () => {
@@ -225,7 +226,7 @@ export const About = () => {
     {
       icon: Clock,
       title: "Rapid Deployment",
-      description: "Get your automation live in days, not months",
+      description: "Milestone-based delivery with realistic timelines",
       color: "from-green-500 to-green-400",
     },
     {
@@ -314,6 +315,44 @@ export const About = () => {
     },
   ];
 
+  const education = [
+    {
+      name: "Mindanao State University - Iligan Institute of Technology — Bachelor of Science in Electronics Engineering",
+      logo: "/educationWorkLogos/msuiit-logo.png",
+    },
+    {
+      name: "Mindanao State University - Iligan Institute of Technology — Bachelor of Technology — Mechanical Engineering Technology",
+      logo: "/educationWorkLogos/msuiit-logo.png",
+    },
+  ];
+
+  const certifications = [
+    {
+      name: "IBM DevOps and Software Engineering",
+      logo: "/educationWorkLogos/ibm-logo.png",
+    },
+    {
+      name: "IBM Full Stack Software Developer",
+      logo: "/educationWorkLogos/ibm-logo.png",
+    },
+    {
+      name: "Treehouse Full Stack JavaScript",
+      logo: "/educationWorkLogos/treehouse-logo.png",
+    },
+    {
+      name: "Treehouse Python Developer",
+      logo: "/educationWorkLogos/treehouse-logo.png",
+    },
+    {
+      name: "Nucamp Full Stack Web and Mobile Development Bootcamp",
+      logo: "/educationWorkLogos/nucamp-logo.svg",
+    },
+    {
+      name: "Youngstown State University — IBM IT Pre-Apprenticeship Software Engineer",
+      logo: "/educationWorkLogos/ysu-logo.png",
+    },
+  ];
+
   return (
     <section
       id="about"
@@ -344,127 +383,215 @@ export const About = () => {
               {/* Right Column - Description */}
               <div>
                 <p className="text-xl text-gray-400 dark:text-gray-400 light:text-gray-800 leading-relaxed">
-                  I&apos;m a specialized AI Automation Engineer who transforms
-                  business operations using no-code platforms integrated with
+                  Specialized AI Automation Specialist transforming business
+                  operations using coding and no-code platforms integrated with
                   cutting-edge AI models.
                 </p>
                 <p className="text-xl text-orange-500 font-semibold mt-4 leading-relaxed">
-                  I&apos;ll automate your manual workflows — or you don&apos;t
-                  pay.
+                  Manual workflows automated — or you don&apos;t pay.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Work Experience Section */}
+        {/* Work Experience + Education & Certifications */}
         <div className="mb-12 animate-on-scroll">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
-              <Briefcase className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-3xl font-bold text-white dark:text-white light:text-gray-900">
-              Work Experience
-            </h3>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Left: Work Experience */}
+            <div>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
+                  <Briefcase className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold text-white dark:text-white light:text-gray-900">
+                  Work Experience
+                </h3>
+              </div>
 
-          <div className="space-y-4">
-            {workExperience.map((job, index) => (
-              <div key={index} className="relative group">
-                {/* Professional LinkedIn-style card */}
-                <Card className="card-ai bg-white/60 backdrop-blur-sm border border-white/40 dark:bg-white/40 dark:border-white/30 light:bg-gray-100/90 light:border-gray-300/80 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 overflow-hidden">
-                  {/* Subtle gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="space-y-4">
+                {workExperience.map((job, index) => (
+                  <div key={index} className="relative group">
+                    <Card className="card-ai bg-white/60 backdrop-blur-sm border border-white/40 dark:bg-white/40 dark:border-white/30 light:bg-gray-100/90 light:border-gray-300/80 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                  <CardContent className="p-4 relative z-10">
-                    <div className="flex items-start gap-3">
-                      {/* Company Logo */}
-                      <div className="w-12 h-12 relative flex-shrink-0">
-                        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-lg blur-sm"></div>
-                        <Image
-                          src={job.logo}
-                          alt={job.company}
-                          width={48}
-                          height={48}
-                          className="object-contain w-full h-full rounded-lg relative z-10"
-                        />
-                      </div>
+                      <CardContent className="p-4 relative z-10">
+                        <div className="flex items-start gap-3">
+                          <div className="w-12 h-12 relative flex-shrink-0">
+                            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-lg blur-sm"></div>
+                            <Image
+                              src={job.logo}
+                              alt={job.company}
+                              width={48}
+                              height={48}
+                              className="object-contain w-full h-full rounded-lg relative z-10"
+                            />
+                          </div>
 
-                      {/* Job Details */}
-                      <div className="flex-1 min-w-0">
-                        {/* Position and Company */}
-                        <div className="flex items-start justify-between mb-1">
-                          <div className="flex-1">
-                            <h4 className="text-white dark:text-white light:text-gray-900 font-bold text-lg mb-1 group-hover:text-orange-400 transition-colors duration-300">
-                              {job.position}
-                            </h4>
-                            <div className="flex items-center gap-2 mb-1">
-                              <span className="text-orange-400 font-semibold text-base">
-                                {job.company}
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-start justify-between mb-1">
+                              <div className="flex-1">
+                                <h4 className="text-white dark:text-white light:text-gray-900 font-bold text-lg mb-1 group-hover:text-orange-400 transition-colors duration-300">
+                                  {job.position}
+                                </h4>
+                                <div className="flex items-center gap-2 mb-1">
+                                  <span className="text-orange-400 font-semibold text-base">
+                                    {job.company}
+                                  </span>
+                                  <div className="w-1 h-1 bg-orange-500 rounded-full animate-pulse"></div>
+                                </div>
+                              </div>
+
+                              <div className="flex items-center gap-2">
+                                <span
+                                  className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                                    job.period.includes("Present")
+                                      ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                                      : "bg-gray-500/20 text-gray-400 border border-gray-500/30"
+                                  }`}
+                                >
+                                  {job.period.includes("Present")
+                                    ? "Current"
+                                    : "Previous"}
+                                </span>
+                              </div>
+                            </div>
+
+                            <div className="flex items-center gap-2 mb-2">
+                              <Calendar className="w-3 h-3 text-gray-400" />
+                              <span className="text-gray-400 dark:text-gray-400 light:text-gray-800 text-xs font-medium">
+                                {job.period}
                               </span>
-                              <div className="w-1 h-1 bg-orange-500 rounded-full animate-pulse"></div>
+                            </div>
+
+                            <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 text-sm leading-relaxed mb-3">
+                              {job.description}
+                            </p>
+
+                            <div className="flex flex-wrap gap-1">
+                              <span className="px-2 py-0.5 bg-orange-500/10 text-orange-400 text-xs font-medium rounded-full border border-orange-500/20">
+                                AI Automation
+                              </span>
+                              <span className="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-medium rounded-full border border-blue-500/20">
+                                Workflow Design
+                              </span>
+                              <span className="px-2 py-0.5 bg-purple-500/10 text-purple-400 text-xs font-medium rounded-full border border-purple-500/20">
+                                System Integration
+                              </span>
                             </div>
                           </div>
+                        </div>
 
-                          {/* Status Badge */}
-                          <div className="flex items-center gap-2">
-                            <span
-                              className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                                job.period.includes("Present")
-                                  ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                                  : "bg-gray-500/20 text-gray-400 border border-gray-500/30"
-                              }`}
-                            >
-                              {job.period.includes("Present")
-                                ? "Current"
-                                : "Previous"}
-                            </span>
+                        <div className="mt-3 h-0.5 bg-gray-700/50 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full bg-gradient-to-r ${job.color} rounded-full transition-all duration-1000 ease-out`}
+                            style={{
+                              width: "0%",
+                              animation: "progressFill 2s ease-out forwards",
+                              animationDelay: `${index * 0.2}s`,
+                            }}
+                          ></div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Education & Certifications */}
+            <div className="space-y-8">
+              {/* Education */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-400 rounded-full flex items-center justify-center">
+                    <GraduationCap className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">Education</h3>
+                </div>
+                <div className="space-y-4">
+                  {education.map((edu, idx) => (
+                    <Card
+                      key={idx}
+                      className="card-ai bg-white/60 backdrop-blur-sm border border-white/40 dark:bg-white/40 dark:border-white/30 light:bg-gray-100/90 light:border-gray-300/80"
+                    >
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-12 h-12 relative flex-shrink-0">
+                            <Image
+                              src={edu.logo}
+                              alt={edu.name}
+                              width={48}
+                              height={48}
+                              className="object-contain w-full h-full rounded-lg"
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-white font-semibold text-base leading-snug">
+                              {edu.name}
+                            </h4>
                           </div>
                         </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
 
-                        {/* Period */}
-                        <div className="flex items-center gap-2 mb-2">
-                          <Calendar className="w-3 h-3 text-gray-400" />
-                          <span className="text-gray-400 dark:text-gray-400 light:text-gray-800 text-xs font-medium">
-                            {job.period}
-                          </span>
+              {/* Certifications */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-400 rounded-full flex items-center justify-center">
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-white">
+                    Certifications
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 gap-4">
+                  {certifications.map((cert, idx) => (
+                    <Card
+                      key={idx}
+                      className="card-ai bg-white/60 backdrop-blur-sm border border-white/40 dark:bg-white/40 dark:border-white/30 light:bg-gray-100/90 light:border-gray-300/80"
+                    >
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 relative flex-shrink-0">
+                            <Image
+                              src={cert.logo}
+                              alt={cert.name}
+                              width={40}
+                              height={40}
+                              className="object-contain w-full h-full rounded"
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-white font-medium text-sm leading-snug">
+                              {cert.name}
+                            </h4>
+                          </div>
                         </div>
-
-                        {/* Description */}
-                        <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 text-sm leading-relaxed mb-3">
-                          {job.description}
-                        </p>
-
-                        {/* Skills/Tags */}
-                        <div className="flex flex-wrap gap-1">
-                          <span className="px-2 py-0.5 bg-orange-500/10 text-orange-400 text-xs font-medium rounded-full border border-orange-500/20">
-                            AI Automation
-                          </span>
-                          <span className="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-medium rounded-full border border-blue-500/20">
-                            Workflow Design
-                          </span>
-                          <span className="px-2 py-0.5 bg-purple-500/10 text-purple-400 text-xs font-medium rounded-full border border-purple-500/20">
-                            System Integration
-                          </span>
+                      </CardContent>
+                    </Card>
+                  ))}
+                  {/* And More */}
+                  <Card className="card-ai bg-white/60 backdrop-blur-sm border border-white/40 dark:bg-white/40 dark:border-white/30 light:bg-gray-100/90 light:border-gray-300/80">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded bg-white/20 flex items-center justify-center text-white text-xs font-semibold">
+                          +
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-white font-medium text-sm leading-snug">
+                            And More...
+                          </h4>
                         </div>
                       </div>
-                    </div>
-
-                    {/* Subtle progress indicator */}
-                    <div className="mt-3 h-0.5 bg-gray-700/50 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full bg-gradient-to-r ${job.color} rounded-full transition-all duration-1000 ease-out`}
-                        style={{
-                          width: "0%",
-                          animation: "progressFill 2s ease-out forwards",
-                          animationDelay: `${index * 0.2}s`,
-                        }}
-                      ></div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
 

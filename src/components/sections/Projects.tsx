@@ -62,6 +62,7 @@ export default function Projects() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // Removed overflow modal state in favor of hover popover
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   // Mock data for demonstration
@@ -444,11 +445,11 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
+                <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center overflow-visible">
                   {filteredProjects.map((project) => (
                     <Card
                       key={project.id}
-                      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden group hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 w-full max-w-sm cursor-pointer"
+                      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-visible group hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 w-full max-w-2xl cursor-pointer"
                       onClick={() => openModal(project)}
                     >
                       <div className="aspect-video relative overflow-hidden">
@@ -460,17 +461,17 @@ export default function Projects() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       </div>
-                      <CardContent className="p-5">
+                      <CardContent className="p-5 relative">
                         <div className="flex items-center gap-2 mb-3">
                           <Tag className="w-3 h-3 text-orange-500" />
                           <span className="text-orange-500 text-xs font-medium">
                             {project.category}
                           </span>
                         </div>
-                        <h3 className="text-lg font-bold text-white dark:text-white light:text-gray-900 mb-2 line-clamp-2">
+                        <h3 className="text-lg font-bold text-white dark:text-white light:text-gray-900 mb-2">
                           {project.title}
                         </h3>
-                        <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-sm mb-3 line-clamp-2">
+                        <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-sm mb-3">
                           {project.description}
                         </p>
                         <div className="flex flex-wrap gap-1 mb-4">
@@ -483,9 +484,36 @@ export default function Projects() {
                             </span>
                           ))}
                           {project.tools_used.length > 3 && (
-                            <span className="px-2 py-1 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-xs border border-white/10 dark:border-white/10 light:border-gray-200/50">
-                              +{project.tools_used.length - 3}
-                            </span>
+                            <div className="relative">
+                              <div className="group/tooltip relative inline-block">
+                                <span
+                                  className="px-2 py-1 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-xs border border-white/10 dark:border-white/10 light:border-gray-200/50 cursor-default hover:bg-white/10 transition-colors"
+                                  aria-label={`${
+                                    project.tools_used.length - 3
+                                  } more tools`}
+                                >
+                                  +{project.tools_used.length - 3}
+                                </span>
+                                <div className="absolute left-1/2 transform -translate-x-1/2 bottom-full mb-2 hidden group-hover/tooltip:block z-[9999] pointer-events-none">
+                                  <div className="bg-black/95 backdrop-blur-md border border-white/20 rounded-lg p-3 shadow-2xl min-w-[16rem] max-w-[20rem]">
+                                    <div className="flex flex-wrap gap-2 justify-center">
+                                      {project.tools_used
+                                        .slice(3)
+                                        .map((tool, idx2) => (
+                                          <span
+                                            key={idx2}
+                                            className="px-2 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs border border-orange-500/30 whitespace-nowrap"
+                                          >
+                                            {tool}
+                                          </span>
+                                        ))}
+                                    </div>
+                                    {/* Arrow pointing down */}
+                                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white/20"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           )}
                         </div>
                         <div className="flex gap-2">
@@ -536,33 +564,6 @@ export default function Projects() {
                 </Button>
               </div>
             )}
-          </div>
-
-          {/* Professional CTA */}
-          <div className="text-center mt-16">
-            <div className="bg-white/5 dark:bg-white/5 light:bg-gray-100/50 backdrop-blur-sm border border-white/10 dark:border-white/10 light:border-gray-200/50 rounded-2xl p-8 max-w-2xl mx-auto">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mx-auto mb-6">
-                <Brain className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-white dark:text-white light:text-gray-900 mb-4">
-                Ready to Automate Your Business?
-              </h3>
-              <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-lg mb-8">
-                Let's build intelligent solutions that transform your operations
-                and drive growth
-              </p>
-              <div className="flex gap-4 justify-center">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-base flex items-center justify-center gap-2">
-                  <span>Start Project</span>
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-white/10 text-white hover:bg-white/10 px-8 py-3 text-base flex items-center justify-center gap-2"
-                >
-                  <span>View Portfolio</span>
-                </Button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -687,6 +688,7 @@ export default function Projects() {
           </div>
         </div>
       )}
+      {/* Overflow Tools Popover handled via hover; modal removed */}
     </>
   );
 }

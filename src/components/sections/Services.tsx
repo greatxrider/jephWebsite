@@ -20,6 +20,14 @@ import {
   GitBranch,
   Database,
   MessageSquare,
+  Target,
+  Users,
+  FileText,
+  Share2,
+  CheckSquare,
+  Mail,
+  FormInput,
+  Star,
 } from "lucide-react";
 
 export const Services = () => {
@@ -230,43 +238,121 @@ export const Services = () => {
 
   const services = [
     {
-      icon: Workflow,
-      title: "No-Code AI Automation",
+      icon: Target,
+      title: "Lead Generation & Qualification Automation",
       description:
-        "Build powerful automation workflows using Make, Zapier, and n8n integrated with AI models.",
+        "Automatically scrape, collect, and enrich leads using tools like Apify, Clay, or Apollo.",
       features: [
-        "Make (Integromat) workflow development",
-        "Zapier automation setup & optimization",
-        "n8n custom workflow creation",
-        "AI-powered decision trees",
+        "Auto-scrape leads from various sources",
+        "Connect lead forms (Facebook Ads, website, etc.) to CRMs like GoHighLevel or HubSpot",
+        "Auto-qualify leads using AI or scoring logic and notify sales teams instantly",
       ],
+      idealFor:
+        "Real Estate Agents, SaaS Sales Teams, Digital Agencies, Mortgage Brokers, Coaches",
       gradient: "from-orange-500 to-orange-400",
     },
     {
-      icon: Brain,
-      title: "AI Model Integration",
+      icon: Database,
+      title: "CRM & Pipeline Automation",
       description:
-        "Seamlessly integrate Claude, ChatGPT, OpenAI, and Perplexity into your workflows.",
+        "Auto-create contacts, deals, and tasks in CRMs like HubSpot, GoHighLevel, ClickUp.",
       features: [
-        "OpenAI API integration & optimization",
-        "Claude (Anthropic) workflow integration",
-        "ChatGPT custom implementations",
-        "AI prompt engineering & optimization",
+        "Auto-create contacts, deals, and tasks in CRMs",
+        "Trigger reminders, follow-ups, and status updates based on lead behavior or deal stage",
+        "Sync tools like Calendly, Zoom, email, and CRMs into one flow",
       ],
+      idealFor:
+        "Real Estate, Sales Teams, Insurance Agencies, Coaches, Franchise Operations",
       gradient: "from-orange-600 to-orange-500",
     },
     {
-      icon: Link,
-      title: "API & System Integration",
+      icon: Users,
+      title: "Client Onboarding Workflows",
       description:
-        "Connect all your business tools through REST APIs, webhooks, and custom integrations.",
+        "Automate onboarding from intake form to welcome email, calendar setup, and document signing.",
       features: [
-        "REST API development & integration",
-        "Webhook setup & management",
-        "Database connections (SQL, NoSQL)",
-        "Third-party app integrations",
+        "Automate onboarding from intake form to welcome email, calendar setup, and document signing",
+        "Automatically populate Airtable/ClickUp with client info and assign internal tasks",
       ],
+      idealFor:
+        "Agencies, Service Businesses, Real Estate Firms, E-commerce Brands",
       gradient: "from-orange-700 to-orange-600",
+    },
+    {
+      icon: FileText,
+      title: "Proposal, Quote, or Report Generation",
+      description:
+        "Automatically generate customized proposals or reports (e.g., property investment reports, marketing audits) using Documint or Google Docs from CRM/Airtable data.",
+      features: [
+        "Automatically generate customized proposals or reports using Documint or Google Docs from CRM/Airtable data",
+        "Trigger PDF generation and email/send to clients automatically",
+      ],
+      idealFor:
+        "Real Estate, Marketing Agencies, Mortgage Brokers, B2B Sales, SEO Agencies",
+      gradient: "from-blue-500 to-blue-400",
+    },
+    {
+      icon: Share2,
+      title: "Content Repurposing & Social Posting Automation",
+      description:
+        "Pull content from forms, Notion, or Slack, and convert to formatted social posts.",
+      features: [
+        "Pull content from forms, Notion, or Slack, and convert to formatted social posts",
+        "Auto-post or schedule to LinkedIn, Facebook, Instagram, etc.",
+        "Use AI to summarize, rewrite, or repurpose long-form content",
+      ],
+      idealFor:
+        "Social Media Agencies, Content Creators, Coaches, Real Estate Agents",
+      gradient: "from-purple-500 to-purple-400",
+    },
+    {
+      icon: CheckSquare,
+      title: "Task & Team Workflow Automation",
+      description:
+        "Set up automated workflows for recurring task creation, project updates, reminders, and status checks in ClickUp, Notion, or Trello.",
+      features: [
+        "Set up automated workflows for recurring task creation, project updates, reminders, and status checks",
+        "Integrate Slack, email, or text updates based on changes",
+      ],
+      idealFor: "Agencies, Franchise Ops, Recruitment Teams, SEO Firms",
+      gradient: "from-green-500 to-green-400",
+    },
+    {
+      icon: Mail,
+      title: "Email & Outreach Sequences",
+      description:
+        "Auto-enroll leads into tailored cold email, nurture, or reactivation sequences.",
+      features: [
+        "Auto-enroll leads into tailored cold email, nurture, or reactivation sequences",
+        "Personalize outreach with data enrichment and AI-powered copywriting tools",
+      ],
+      idealFor: "B2B Sales Teams, Marketing Agencies, Coaches, Recruiters",
+      gradient: "from-red-500 to-red-400",
+    },
+    {
+      icon: FormInput,
+      title: "Form-to-Workflow Automation",
+      description:
+        "Turn any intake form (Typeform, GHL, Jotform) into a fully automated backend process:",
+      features: [
+        "Save to Airtable or CRM",
+        "Notify team on Slack/Email",
+        "Trigger onboarding, scheduling, or enrichment",
+      ],
+      idealFor: "Real Estate, Coaches, Course Creators, Local Services",
+      gradient: "from-teal-500 to-teal-400",
+    },
+    {
+      icon: Star,
+      title: "Review & Testimonial Automation",
+      description:
+        "Automatically request Google/Facebook/Trustpilot reviews after project milestones.",
+      features: [
+        "Automatically request Google/Facebook/Trustpilot reviews after project milestones",
+        "Route good feedback to marketing, and negative to support/escalation",
+      ],
+      idealFor: "Local Services, Real Estate, E-commerce, Coaches",
+      gradient: "from-yellow-500 to-yellow-400",
     },
   ];
 
@@ -368,7 +454,7 @@ export const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid lg:grid-cols-3 gap-6 mb-16">
           {services.map((service, index) => (
             <Card key={index} className="card-ai h-full flex flex-col">
               <CardContent className="p-6 flex flex-col h-full">
@@ -385,7 +471,7 @@ export const Services = () => {
                 <p className="text-gray-400 text-sm mb-4 leading-relaxed">
                   {service.description}
                 </p>
-                <div className="space-y-2 flex-grow">
+                <div className="space-y-2 mb-4">
                   {service.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
@@ -393,9 +479,15 @@ export const Services = () => {
                     </div>
                   ))}
                 </div>
+                <div className="mb-4 p-3 bg-white/5 rounded-lg border border-white/10">
+                  <p className="text-xs text-orange-400 font-medium mb-1">
+                    Ideal for:
+                  </p>
+                  <p className="text-gray-300 text-xs">{service.idealFor}</p>
+                </div>
                 <Button
                   variant="outline"
-                  className="w-full mt-6 flex items-center justify-center gap-2"
+                  className="w-full mt-auto flex items-center justify-center gap-2"
                   onClick={() =>
                     document.getElementById("contact")?.scrollIntoView({
                       behavior: "smooth",

@@ -1,4 +1,11 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Twitter,
+  Instagram,
+  Youtube,
+} from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -6,18 +13,28 @@ export const Footer = () => {
   const socialLinks = [
     {
       icon: <Github size={20} />,
-      href: "https://github.com/jeph",
+      href: "https://github.com/greatxrider",
       label: "GitHub",
     },
     {
       icon: <Linkedin size={20} />,
-      href: "https://linkedin.com/in/jeph",
+      href: "https://www.linkedin.com/in/jephmari/",
       label: "LinkedIn",
     },
     {
-      icon: <Mail size={20} />,
-      href: "mailto:jephdaligdig98@gmail.com",
-      label: "Email",
+      icon: <Twitter size={20} />,
+      href: "https://x.com/mrjephdev",
+      label: "Twitter",
+    },
+    {
+      icon: <Instagram size={20} />,
+      href: "https://www.instagram.com/imyouritguy/",
+      label: "Instagram",
+    },
+    {
+      icon: <Youtube size={20} />,
+      href: "https://www.youtube.com/@jephdaligdig",
+      label: "YouTube",
     },
   ];
 
@@ -124,9 +141,7 @@ export const Footer = () => {
           <p className="text-gray-400 text-sm">
             © {currentYear} Jeph. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm">
-            Built with Next.js, Tailwind CSS, and Supabase
-          </p>
+          {/* Removed tech stack text per request */}
         </div>
       </div>
     </footer>
