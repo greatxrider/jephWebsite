@@ -454,178 +454,62 @@ export const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto mb-20">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20 h-full flex flex-col"
+                className="group bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 h-full flex flex-col hover:border-orange-500/30"
               >
-                {/* Header Section */}
-                <div
-                  className={`bg-gradient-to-br ${service.gradient} p-8 relative`}
-                >
-                  <div className="flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                      <service.icon className="w-8 h-8 text-white" />
-                    </div>
+                {/* Icon Section */}
+                <div className="p-6 text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <service.icon className="w-8 h-8 text-orange-500" />
                   </div>
                 </div>
 
                 {/* Content Section */}
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-bold text-white mb-3 text-center">
+                <div className="px-6 pb-6 flex flex-col flex-1">
+                  <h3 className="text-lg font-bold text-white dark:text-white light:text-gray-900 mb-3 text-center leading-tight">
                     {service.title}
                   </h3>
-                  <p className="text-gray-300 text-sm mb-6 leading-relaxed text-center">
+                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm mb-4 leading-relaxed">
                     {service.description}
                   </p>
 
-                  {/* Technologies / Apps */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-white mb-3">
-                      Technologies / Apps
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {(() => {
-                        const techs =
-                          index === 0
-                            ? ["Python", "OpenAI API", "Zapier", "HubSpot"]
-                            : index === 1
-                            ? ["Node.js", "Salesforce API", "Pipedrive", "AWS"]
-                            : index === 2
-                            ? ["React", "AWS Lambda", "Document AI", "Stripe"]
-                            : index === 3
-                            ? ["Make.com", "Google Sheets", "Slack", "Email"]
-                            : index === 4
-                            ? ["Buffer API", "ChatGPT", "Instagram", "LinkedIn"]
-                            : index === 5
-                            ? ["ClickUp", "Notion", "Trello", "Slack"]
-                            : index === 6
-                            ? ["Mailchimp", "Constant Contact", "Zapier", "CRM"]
-                            : index === 7
-                            ? ["Typeform", "Airtable", "Calendly", "SMS"]
-                            : [
-                                "Google Reviews",
-                                "Trustpilot",
-                                "Facebook",
-                                "Email",
-                              ];
-
-                        return techs.slice(0, 3).map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-lg text-xs font-medium border border-orange-500/30"
-                          >
-                            {tech}
-                          </span>
-                        ));
-                      })()}
-                      <span className="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-lg text-xs font-medium border border-orange-500/30">
-                        +1
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Key Results */}
+                  {/* Features List */}
                   <div className="mb-6 flex-1">
-                    <h4 className="text-sm font-semibold text-white mb-3">
-                      Key Results
-                    </h4>
                     <div className="space-y-2">
-                      {(() => {
-                        const results =
-                          index === 0
-                            ? [
-                                "300% increase in lead capture",
-                                "95% qualification accuracy",
-                                "24/7 automation",
-                              ]
-                            : index === 1
-                            ? [
-                                "100% data accuracy",
-                                "Real-time sync",
-                                "Reduced manual work by 80%",
-                              ]
-                            : index === 2
-                            ? [
-                                "50% faster onboarding",
-                                "Zero manual errors",
-                                "100% compliance",
-                              ]
-                            : index === 3
-                            ? [
-                                "85% time savings",
-                                "Automated reporting",
-                                "Real-time updates",
-                              ]
-                            : index === 4
-                            ? [
-                                "10x content output",
-                                "90% engagement boost",
-                                "Cross-platform sync",
-                              ]
-                            : index === 5
-                            ? [
-                                "70% efficiency gain",
-                                "Automated workflows",
-                                "Team collaboration",
-                              ]
-                            : index === 6
-                            ? [
-                                "3x open rates",
-                                "Personalized campaigns",
-                                "Automated sequences",
-                              ]
-                            : index === 7
-                            ? [
-                                "Instant notifications",
-                                "Zero data loss",
-                                "Seamless integration",
-                              ]
-                            : [
-                                "5x more reviews",
-                                "Automated requests",
-                                "Reputation management",
-                              ];
-
-                        return results.map((result, resultIndex) => (
-                          <div
-                            key={resultIndex}
-                            className="flex items-start gap-2"
-                          >
-                            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-300 text-sm leading-relaxed">
-                              {result}
-                            </span>
-                          </div>
-                        ));
-                      })()}
+                      {service.features.map((feature, featureIndex) => (
+                        <div
+                          key={featureIndex}
+                          className="flex items-start gap-3"
+                        >
+                          <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm leading-relaxed">
+                            {feature}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
                   {/* Ideal For Section */}
-                  <div className="p-4 bg-slate-700/50 rounded-xl border border-slate-600/50 mb-4">
-                    <p className="text-xs text-orange-400 font-medium mb-1">
+                  <div className="p-4 bg-gradient-to-r from-orange-500/10 to-orange-600/10 rounded-xl border border-orange-500/20 mb-4">
+                    <p className="text-xs text-orange-400 font-medium mb-1 uppercase tracking-wide">
                       Ideal for:
                     </p>
-                    <p className="text-gray-300 text-xs">{service.idealFor}</p>
+                    <div className="flex flex-wrap gap-1">
+                      {service.idealFor.split(", ").map((item, itemIndex) => (
+                        <span
+                          key={itemIndex}
+                          className="px-2 py-1 bg-orange-500/20 text-orange-300 rounded-md text-xs font-medium"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-
-                  {/* CTA Button */}
-                  <Button
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 mt-auto"
-                    onClick={() =>
-                      document.getElementById("contact")?.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                        inline: "nearest",
-                      })
-                    }
-                  >
-                    <span>Get Started</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
                 </div>
               </Card>
             ))}
@@ -633,38 +517,38 @@ export const Services = () => {
         </div>
 
         {/* Automation Platforms Section */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">
+        <div className="mb-20 mt-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Automation{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
                 Platforms I Master
               </span>
             </h3>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-2xl mx-auto">
               Expert-level proficiency in the leading automation platforms
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {platforms.map((platform, index) => (
               <Card
                 key={index}
-                className="text-center card-ai bg-white/10 backdrop-blur-sm"
+                className="group text-center bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30"
               >
-                <CardContent className="p-4">
-                  <div className="w-12 h-12 mx-auto mb-3 relative">
+                <CardContent className="p-6">
+                  <div className="w-16 h-16 mx-auto mb-4 relative group-hover:scale-110 transition-transform duration-300">
                     <Image
                       src={platform.logo}
                       alt={platform.name}
-                      width={48}
-                      height={48}
+                      width={64}
+                      height={64}
                       className="object-contain"
                     />
                   </div>
-                  <h4 className="text-sm font-semibold text-white mb-1">
+                  <h4 className="text-lg font-semibold text-white dark:text-white light:text-gray-900 mb-2">
                     {platform.name}
                   </h4>
-                  <p className="text-gray-400 text-xs">
+                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm">
                     {platform.description}
                   </p>
                 </CardContent>
@@ -674,38 +558,40 @@ export const Services = () => {
         </div>
 
         {/* AI Models Section */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">
+        <div className="mb-20 mt-16">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
               AI{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
                 Models & Technologies
               </span>
             </h3>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-2xl mx-auto">
               Cutting-edge AI models integrated into your workflows
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {aiModels.map((model, index) => (
               <Card
                 key={index}
-                className="text-center card-ai bg-white/10 backdrop-blur-sm"
+                className="group text-center bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30"
               >
-                <CardContent className="p-4">
-                  <div className="w-12 h-12 mx-auto mb-3 relative">
+                <CardContent className="p-6">
+                  <div className="w-16 h-16 mx-auto mb-4 relative group-hover:scale-110 transition-transform duration-300">
                     <Image
                       src={model.logo}
                       alt={model.name}
-                      width={48}
-                      height={48}
+                      width={64}
+                      height={64}
                       className="object-contain"
                     />
                   </div>
-                  <h4 className="text-sm font-semibold text-white mb-1">
+                  <h4 className="text-lg font-semibold text-white dark:text-white light:text-gray-900 mb-2">
                     {model.name}
                   </h4>
-                  <p className="text-gray-400 text-xs">{model.description}</p>
+                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm">
+                    {model.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
