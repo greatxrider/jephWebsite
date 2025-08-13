@@ -454,54 +454,182 @@ export const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid lg:grid-cols-3 gap-6 mb-16">
-          {services.map((service, index) => (
-            <Card key={index} className="card-ai h-full flex flex-col">
-              <CardContent className="p-6 flex flex-col h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className={`w-12 h-12 bg-gradient-to-br ${service.gradient} rounded-lg flex items-center justify-center`}
-                  >
-                    <service.icon className="w-6 h-6 text-white" />
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-3xl overflow-hidden hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20 h-full flex flex-col"
+              >
+                {/* Header Section */}
+                <div
+                  className={`bg-gradient-to-br ${service.gradient} p-8 relative`}
+                >
+                  <div className="flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                      <service.icon className="w-8 h-8 text-white" />
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold text-white">
+                </div>
+
+                {/* Content Section */}
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-white mb-3 text-center">
                     {service.title}
                   </h3>
-                </div>
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                  {service.description}
-                </p>
-                <div className="space-y-2 mb-4">
-                  {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-2">
-                      <CheckCircle className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                      <span className="text-gray-400 text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="mb-4 p-3 bg-white/5 rounded-lg border border-white/10">
-                  <p className="text-xs text-orange-400 font-medium mb-1">
-                    Ideal for:
+                  <p className="text-gray-300 text-sm mb-6 leading-relaxed text-center">
+                    {service.description}
                   </p>
-                  <p className="text-gray-300 text-xs">{service.idealFor}</p>
+
+                  {/* Technologies / Apps */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-white mb-3">
+                      Technologies / Apps
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {(() => {
+                        const techs =
+                          index === 0
+                            ? ["Python", "OpenAI API", "Zapier", "HubSpot"]
+                            : index === 1
+                            ? ["Node.js", "Salesforce API", "Pipedrive", "AWS"]
+                            : index === 2
+                            ? ["React", "AWS Lambda", "Document AI", "Stripe"]
+                            : index === 3
+                            ? ["Make.com", "Google Sheets", "Slack", "Email"]
+                            : index === 4
+                            ? ["Buffer API", "ChatGPT", "Instagram", "LinkedIn"]
+                            : index === 5
+                            ? ["ClickUp", "Notion", "Trello", "Slack"]
+                            : index === 6
+                            ? ["Mailchimp", "Constant Contact", "Zapier", "CRM"]
+                            : index === 7
+                            ? ["Typeform", "Airtable", "Calendly", "SMS"]
+                            : [
+                                "Google Reviews",
+                                "Trustpilot",
+                                "Facebook",
+                                "Email",
+                              ];
+
+                        return techs.slice(0, 3).map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-lg text-xs font-medium border border-orange-500/30"
+                          >
+                            {tech}
+                          </span>
+                        ));
+                      })()}
+                      <span className="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-lg text-xs font-medium border border-orange-500/30">
+                        +1
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Key Results */}
+                  <div className="mb-6 flex-1">
+                    <h4 className="text-sm font-semibold text-white mb-3">
+                      Key Results
+                    </h4>
+                    <div className="space-y-2">
+                      {(() => {
+                        const results =
+                          index === 0
+                            ? [
+                                "300% increase in lead capture",
+                                "95% qualification accuracy",
+                                "24/7 automation",
+                              ]
+                            : index === 1
+                            ? [
+                                "100% data accuracy",
+                                "Real-time sync",
+                                "Reduced manual work by 80%",
+                              ]
+                            : index === 2
+                            ? [
+                                "50% faster onboarding",
+                                "Zero manual errors",
+                                "100% compliance",
+                              ]
+                            : index === 3
+                            ? [
+                                "85% time savings",
+                                "Automated reporting",
+                                "Real-time updates",
+                              ]
+                            : index === 4
+                            ? [
+                                "10x content output",
+                                "90% engagement boost",
+                                "Cross-platform sync",
+                              ]
+                            : index === 5
+                            ? [
+                                "70% efficiency gain",
+                                "Automated workflows",
+                                "Team collaboration",
+                              ]
+                            : index === 6
+                            ? [
+                                "3x open rates",
+                                "Personalized campaigns",
+                                "Automated sequences",
+                              ]
+                            : index === 7
+                            ? [
+                                "Instant notifications",
+                                "Zero data loss",
+                                "Seamless integration",
+                              ]
+                            : [
+                                "5x more reviews",
+                                "Automated requests",
+                                "Reputation management",
+                              ];
+
+                        return results.map((result, resultIndex) => (
+                          <div
+                            key={resultIndex}
+                            className="flex items-start gap-2"
+                          >
+                            <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-300 text-sm leading-relaxed">
+                              {result}
+                            </span>
+                          </div>
+                        ));
+                      })()}
+                    </div>
+                  </div>
+
+                  {/* Ideal For Section */}
+                  <div className="p-4 bg-slate-700/50 rounded-xl border border-slate-600/50 mb-4">
+                    <p className="text-xs text-orange-400 font-medium mb-1">
+                      Ideal for:
+                    </p>
+                    <p className="text-gray-300 text-xs">{service.idealFor}</p>
+                  </div>
+
+                  {/* CTA Button */}
+                  <Button
+                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium py-3 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 mt-auto"
+                    onClick={() =>
+                      document.getElementById("contact")?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                        inline: "nearest",
+                      })
+                    }
+                  >
+                    <span>Get Started</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
                 </div>
-                <Button
-                  variant="outline"
-                  className="w-full mt-auto flex items-center justify-center gap-2"
-                  onClick={() =>
-                    document.getElementById("contact")?.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                      inline: "nearest",
-                    })
-                  }
-                >
-                  <span>Get Started</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Automation Platforms Section */}
