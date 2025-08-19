@@ -7,7 +7,7 @@ if (typeof window !== "undefined") {
 }
 
 // GSAP smooth scrolling utility
-export const smoothScrollTo = (elementId: string, offset: number = 80) => {
+export const smoothScrollTo = (elementId: string, offset: number = 100) => {
     const element = document.getElementById(elementId);
     if (!element) {
         console.warn(`Element with id "${elementId}" not found`);

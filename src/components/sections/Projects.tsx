@@ -22,6 +22,7 @@ import {
   Code,
   Globe,
   Cpu,
+  ArrowRight,
 } from "lucide-react";
 
 interface Project {
@@ -391,14 +392,14 @@ export default function Projects() {
                 Automation Projects
               </span>
             </h2>
-            <p className="text-xl text-gray-400 dark:text-gray-400 light:text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 dark:text-gray-400 light:text-gray-600 max-w-4xl mx-auto">
               Showcasing cutting-edge AI solutions that transform business
               operations
             </p>
           </div>
 
           {/* Filters */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8 max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 mb-8 w-full">
             <div className="flex items-center gap-3 flex-wrap justify-center">
               <Filter className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-700" />
               {categories.map((category) => (
@@ -415,7 +416,7 @@ export default function Projects() {
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-3 flex-1 max-w-md mx-auto sm:mx-0">
+            <div className="flex items-center gap-3 flex-1 max-w-lg mx-auto sm:mx-0">
               <Search className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-700" />
               <input
                 type="text"
@@ -428,7 +429,7 @@ export default function Projects() {
           </div>
 
           {/* Projects Grid */}
-          <div className="max-w-7xl mx-auto">
+          <div className="w-full">
             {/* All Projects */}
             {filteredProjects.length > 0 && (
               <div>
@@ -446,11 +447,12 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 justify-items-center overflow-visible">
+                <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 justify-items-center overflow-visible">
                   {filteredProjects.map((project) => (
                     <Card
                       key={project.id}
-                      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-visible group hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 w-full max-w-2xl cursor-pointer h-full flex flex-col"
+                      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-visible group hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 cursor-pointer flex flex-col"
+                      style={{ width: "498px", height: "516px" }}
                       onClick={() => openModal(project)}
                     >
                       <div className="aspect-video relative overflow-hidden">
@@ -462,27 +464,27 @@ export default function Projects() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       </div>
-                      <CardContent className="p-5 relative flex flex-col h-full">
+                      <CardContent className="p-6 relative flex flex-col h-full">
                         <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-3">
-                            <Tag className="w-3 h-3 text-orange-500" />
-                            <span className="text-orange-500 text-xs font-medium">
+                          <div className="flex items-center gap-2 mb-4">
+                            <Tag className="w-4 h-4 text-orange-500" />
+                            <span className="text-orange-500 text-sm font-medium">
                               {project.category}
                             </span>
                           </div>
-                          <h3 className="text-lg font-bold text-white dark:text-white light:text-gray-900 mb-2">
+                          <h3 className="text-xl font-bold text-white dark:text-white light:text-gray-900 mb-3">
                             {project.title}
                           </h3>
-                          <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-sm mb-3">
+                          <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-base mb-4">
                             {project.description}
                           </p>
-                          <div className="flex flex-wrap gap-1 mb-4">
+                          <div className="flex flex-wrap gap-2 mb-6">
                             {project.tools_used
                               .slice(0, 3)
                               .map((tool, index) => (
                                 <span
                                   key={index}
-                                  className="px-2 py-1 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-xs border border-white/10 dark:border-white/10 light:border-gray-200/50"
+                                  className="px-3 py-1.5 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-sm border border-white/10 dark:border-white/10 light:border-gray-200/50"
                                 >
                                   {tool}
                                 </span>
@@ -491,7 +493,7 @@ export default function Projects() {
                               <div className="relative">
                                 <div className="group/tooltip relative inline-block">
                                   <span
-                                    className="px-2 py-1 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-xs border border-white/10 dark:border-white/10 light:border-gray-200/50 cursor-default hover:bg-white/10 transition-colors"
+                                    className="px-3 py-1.5 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-sm border border-white/10 dark:border-white/10 light:border-gray-200/50 cursor-default hover:bg-white/10 transition-colors"
                                     aria-label={`${
                                       project.tools_used.length - 3
                                     } more tools`}
@@ -522,20 +524,33 @@ export default function Projects() {
                           </div>
                         </div>
 
-                        {/* Fixed position GitHub button */}
-                        <div className="flex gap-2 mt-auto pt-3">
+                        {/* Call to Action Buttons */}
+                        <div className="mt-auto pt-4 space-y-3">
                           <Button
-                            variant="ghost"
-                            size="sm"
                             onClick={(e) => {
                               e.stopPropagation();
-                              window.open(project.github_url!, "_blank");
+                              openModal(project);
                             }}
-                            className="flex-1 bg-white/5 text-white hover:bg-orange-500 transition-all duration-300 text-xs flex items-center justify-center gap-1"
+                            className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 group"
                           >
-                            <Github className="w-3 h-3" />
-                            <span>Code</span>
+                            <span>View Details</span>
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                           </Button>
+
+                          {project.github_url && (
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                window.open(project.github_url!, "_blank");
+                              }}
+                              className="w-full bg-white/5 text-white hover:bg-orange-500/20 transition-all duration-300 text-sm flex items-center justify-center gap-2 border border-white/10 hover:border-orange-500/30"
+                            >
+                              <Github className="w-4 h-4" />
+                              <span>View Code</span>
+                            </Button>
+                          )}
                         </div>
                       </CardContent>
                     </Card>

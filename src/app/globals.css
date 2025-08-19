@@ -100,7 +100,7 @@
 
 /* Optimized scrolling */
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 100px;
   scroll-behavior: smooth;
 }
 
@@ -319,9 +319,19 @@ body {
   box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
 }
 
+/* Navigation */
+.navbar-height {
+  height: 100px !important;
+  min-height: 100px !important;
+}
+
+.navbar-font {
+  font-size: 19px !important;
+}
+
 /* Container */
 .container {
-  max-width: 1200px;
+  max-width: 1628px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -329,6 +339,12 @@ body {
 @media (min-width: 768px) {
   .container {
     padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 3rem;
   }
 }
 

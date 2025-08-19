@@ -27,7 +27,7 @@ export const Navigation = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       console.log(`Found element:`, element);
-      const offset = 80; // Account for fixed navigation height
+      const offset = 100; // Account for fixed navigation height
       const elementPosition = element.offsetTop - offset;
 
       window.scrollTo({
@@ -74,19 +74,19 @@ export const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-height ${
         isScrolled
           ? "bg-black/80 backdrop-blur-md border-b border-gray-800 shadow-lg shadow-primary/20 dark:bg-black/80 dark:border-gray-800 light:bg-white/80 light:border-gray-200"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-4 h-full">
+        <div className="flex items-center justify-between h-full">
           {/* Logo */}
           <div className="flex items-center">
             <button
               onClick={handleLogoClick}
-              className="text-2xl font-bold gradient-text-ai animate-glitch hover:animate-none transition-all duration-300 cursor-pointer hover:scale-105"
+              className="text-4xl font-bold gradient-text-ai animate-glitch hover:animate-none transition-all duration-300 cursor-pointer hover:scale-105"
             >
               JEPH
             </button>
@@ -99,7 +99,7 @@ export const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href)}
-                className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 relative group cursor-pointer"
+                className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 relative group cursor-pointer navbar-font"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
@@ -172,7 +172,7 @@ export const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => handleNavigation(item.href)}
-                  className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 relative group cursor-pointer dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900"
+                  className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 relative group cursor-pointer dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 navbar-font"
                 >
                   {item.label}
                   <span className="absolute left-0 top-0 w-0 h-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-1 rounded-l-md"></span>

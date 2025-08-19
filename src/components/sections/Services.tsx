@@ -447,45 +447,46 @@ export const Services = () => {
               That Actually Works
             </span>
           </h2>
-          <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-4xl mx-auto">
             Specialized automation solutions using Make, Zapier, n8n, and
             cutting-edge AI models to transform your business operations.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="max-w-7xl mx-auto mb-20">
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="w-full mb-20">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 justify-items-center">
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="group bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 h-full flex flex-col hover:border-orange-500/30"
+                className="group bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 flex flex-col hover:border-orange-500/30"
+                style={{ width: "498px", height: "516px" }}
               >
                 {/* Icon Section */}
                 <div className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <service.icon className="w-8 h-8 text-orange-500" />
+                  <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-400 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/20">
+                    <service.icon className="w-10 h-10 text-white" />
                   </div>
                 </div>
 
                 {/* Content Section */}
                 <div className="px-6 pb-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-white dark:text-white light:text-gray-900 mb-3 text-center leading-tight">
+                  <h3 className="text-lg font-bold text-white dark:text-white light:text-gray-900 mb-3 text-left leading-tight">
                     {service.title}
                   </h3>
-                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm mb-4 leading-relaxed text-left">
                     {service.description}
                   </p>
 
                   {/* Features List */}
                   <div className="mb-6 flex-1">
-                    <div className="space-y-2">
+                    <div className="space-y-3">
                       {service.features.map((feature, featureIndex) => (
                         <div
                           key={featureIndex}
                           className="flex items-start gap-3"
                         >
-                          <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
                           <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm leading-relaxed">
                             {feature}
                           </span>
@@ -494,21 +495,12 @@ export const Services = () => {
                     </div>
                   </div>
 
-                  {/* Ideal For Section */}
-                  <div className="p-4 bg-gradient-to-r from-orange-500/10 to-orange-600/10 rounded-xl border border-orange-500/20 mb-4">
-                    <p className="text-xs text-orange-400 font-medium mb-1 uppercase tracking-wide">
-                      Ideal for:
-                    </p>
-                    <div className="flex flex-wrap gap-1">
-                      {service.idealFor.split(", ").map((item, itemIndex) => (
-                        <span
-                          key={itemIndex}
-                          className="px-2 py-1 bg-orange-500/20 text-orange-300 rounded-md text-xs font-medium"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
+                  {/* Call to Action Button */}
+                  <div className="mt-auto">
+                    <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-medium py-2.5 px-5 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 group text-sm">
+                      <span>Learn More</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    </Button>
                   </div>
                 </div>
               </Card>
@@ -525,30 +517,30 @@ export const Services = () => {
                 Platforms I Master
               </span>
             </h3>
-            <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
               Expert-level proficiency in the leading automation platforms
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8 w-full justify-items-center">
             {platforms.map((platform, index) => (
               <Card
                 key={index}
                 className="group text-center bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30"
               >
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 relative group-hover:scale-110 transition-transform duration-300">
+                <CardContent className="p-8">
+                  <div className="w-20 h-20 mx-auto mb-6 relative group-hover:scale-110 transition-transform duration-300">
                     <Image
                       src={platform.logo}
                       alt={platform.name}
-                      width={64}
-                      height={64}
+                      width={80}
+                      height={80}
                       className="object-contain"
                     />
                   </div>
-                  <h4 className="text-lg font-semibold text-white dark:text-white light:text-gray-900 mb-2">
+                  <h4 className="text-xl font-semibold text-white dark:text-white light:text-gray-900 mb-3">
                     {platform.name}
                   </h4>
-                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm">
+                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-base">
                     {platform.description}
                   </p>
                 </CardContent>
@@ -566,30 +558,30 @@ export const Services = () => {
                 Models & Technologies
               </span>
             </h3>
-            <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
               Cutting-edge AI models integrated into your workflows
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8 w-full justify-items-center">
             {aiModels.map((model, index) => (
               <Card
                 key={index}
                 className="group text-center bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30"
               >
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 mx-auto mb-4 relative group-hover:scale-110 transition-transform duration-300">
+                <CardContent className="p-8">
+                  <div className="w-20 h-20 mx-auto mb-6 relative group-hover:scale-110 transition-transform duration-300">
                     <Image
                       src={model.logo}
                       alt={model.name}
-                      width={64}
-                      height={64}
+                      width={80}
+                      height={80}
                       className="object-contain"
                     />
                   </div>
-                  <h4 className="text-lg font-semibold text-white dark:text-white light:text-gray-900 mb-2">
+                  <h4 className="text-xl font-semibold text-white dark:text-white light:text-gray-900 mb-3">
                     {model.name}
                   </h4>
-                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm">
+                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-base">
                     {model.description}
                   </p>
                 </CardContent>
