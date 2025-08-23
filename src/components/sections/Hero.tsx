@@ -369,24 +369,14 @@ export const Hero = () => {
               </h1>
 
               <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-800 font-light leading-relaxed max-w-lg">
-                Transform your business operations with intelligent workflows,
+                Helping Businesses Scale With AI & Automation. Transform your
+                business operations with intelligent workflows,
                 <span className="text-orange-500 font-medium">
                   {" "}
                   seamless integration
                 </span>
                 , and cutting-edge AI solutions.
               </p>
-            </div>
-
-            {/* Tailored Sales Message */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-orange-500 flex-shrink-0" />
-                <span className="text-gray-300 dark:text-gray-300 light:text-gray-800 text-lg">
-                  I automate your manual workflows so you can scale faster and
-                  focus on what matters.
-                </span>
-              </div>
             </div>
 
             {/* CTA Buttons */}

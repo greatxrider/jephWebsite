@@ -629,134 +629,68 @@ export const About = () => {
                 Automation Platforms
               </h3>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {automationPlatforms.map((platform, index) => (
-                <Card
+                <div
                   key={index}
-                  className="card-ai hover:border-orange-500/50 transition-all duration-300 bg-white/70 backdrop-blur-sm"
+                  className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 hover:border-orange-500/50 transition-all duration-300 text-center"
                 >
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 relative flex-shrink-0">
-                        <Image
-                          src={platform.logo}
-                          alt={platform.name}
-                          width={32}
-                          height={32}
-                          className="object-contain"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-white font-semibold text-sm">
-                          {platform.name}
-                        </h4>
-                        <p className="text-gray-400 text-xs">
-                          {platform.description}
-                        </p>
-                      </div>
+                  <div className="relative mb-3">
+                    <div className="w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Image
+                        src={platform.logo}
+                        alt={platform.name}
+                        width={32}
+                        height={32}
+                        className="object-contain"
+                      />
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-orange-500 font-medium">
-                        {platform.expertise}
-                      </span>
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                  <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-orange-400 transition-colors duration-300">
+                    {platform.name}
+                  </h4>
+
+                </div>
               ))}
             </div>
           </div>
 
-          {/* AI Technologies */}
+          {/* AI Technologies & Technical Expertise - Combined */}
           <div className="animate-on-scroll">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-400 rounded-full flex items-center justify-center">
                 <Brain className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white">AI Technologies</h3>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {aiTechnologies.map((tech, index) => (
-                <Card
-                  key={index}
-                  className="card-ai hover:border-purple-500/50 transition-all duration-300 bg-white/70 backdrop-blur-sm"
-                >
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 relative flex-shrink-0">
-                        <Image
-                          src={tech.logo}
-                          alt={tech.name}
-                          width={32}
-                          height={32}
-                          className="object-contain"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-white font-semibold text-sm">
-                          {tech.name}
-                        </h4>
-                        <p className="text-gray-400 text-xs">
-                          {tech.description}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-purple-500 font-medium">
-                        {tech.expertise}
-                      </span>
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Technical Skills */}
-          <div className="animate-on-scroll">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-400 rounded-full flex items-center justify-center">
-                <Code className="w-5 h-5 text-white" />
-              </div>
               <h3 className="text-2xl font-bold text-white">
-                Technical Expertise
+                AI Technologies & Technical Expertise
               </h3>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {technicalSkills.map((skill, index) => (
-                <Card
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {[...aiTechnologies, ...technicalSkills].map((item, index) => (
+                <div
                   key={index}
-                  className="card-ai hover:border-blue-500/50 transition-all duration-300 bg-white/70 backdrop-blur-sm"
+                  className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 hover:border-purple-500/50 transition-all duration-300 text-center"
                 >
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 relative flex-shrink-0">
+                  <div className="relative mb-3">
+                    <div className="w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      {item.logo ? (
                         <Image
-                          src={skill.logo}
-                          alt={skill.name}
+                          src={item.logo}
+                          alt={item.name}
                           width={32}
                           height={32}
                           className="object-contain"
                         />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-white font-semibold text-sm">
-                          {skill.name}
-                        </h4>
-                        <p className="text-gray-400 text-xs">
-                          {skill.description}
-                        </p>
-                      </div>
+                      ) : (
+                        <Code className="w-8 h-8 text-purple-600" />
+                      )}
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-blue-500 font-medium">
-                        {skill.expertise}
-                      </span>
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                    </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                  <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-purple-400 transition-colors duration-300">
+                    {item.name}
+                  </h4>
+
+                </div>
               ))}
             </div>
           </div>
@@ -772,57 +706,24 @@ export const About = () => {
               </h3>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {programmingLanguages.map((lang, index) => (
-                <Card
+                <div
                   key={index}
-                  className={`card-ai hover:border-${
-                    lang.color.split("-")[1]
-                  }-500/50 transition-all duration-300 bg-white/70 backdrop-blur-sm`}
+                  className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 hover:border-green-500/50 transition-all duration-300 text-center"
                 >
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div
-                        className={`w-10 h-10 bg-gradient-to-br ${lang.color} rounded-lg flex items-center justify-center flex-shrink-0`}
-                      >
-                        <Code className="w-5 h-5 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-white font-semibold text-sm">
-                          {lang.name}
-                        </h4>
-                        <p className="text-gray-400 text-xs">
-                          {lang.description}
-                        </p>
-                      </div>
+                  <div className="relative mb-3">
+                    <div
+                      className={`w-16 h-16 bg-gradient-to-br ${lang.color} rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                    >
+                      <Code className="w-8 h-8 text-white" />
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span
-                        className={`text-xs font-medium ${
-                          lang.type === "Primary"
-                            ? "text-green-500"
-                            : lang.type === "Secondary"
-                            ? "text-blue-500"
-                            : "text-gray-500"
-                        }`}
-                      >
-                        {lang.expertise}
-                      </span>
-                      <div className="flex items-center gap-1">
-                        <span
-                          className={`text-xs px-2 py-1 rounded-full ${
-                            lang.type === "Primary"
-                              ? "bg-green-500/20 text-green-400"
-                              : "bg-blue-500/20 text-blue-400"
-                          }`}
-                        >
-                          {lang.type}
-                        </span>
-                        <CheckCircle className="w-4 h-4 text-green-500" />
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                  <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-green-400 transition-colors duration-300">
+                    {lang.name}
+                  </h4>
+
+                </div>
               ))}
             </div>
           </div>

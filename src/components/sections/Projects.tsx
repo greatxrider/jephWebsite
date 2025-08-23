@@ -399,8 +399,8 @@ export default function Projects() {
           </div>
 
           {/* Filters */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8 w-full">
-            <div className="flex items-center gap-3 flex-wrap justify-center">
+          <div className="flex items-center justify-center gap-6 mb-8 w-full">
+            <div className="flex items-center gap-3">
               <Filter className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-700" />
               {categories.map((category) => (
                 <button
@@ -416,14 +416,14 @@ export default function Projects() {
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-3 flex-1 max-w-lg mx-auto sm:mx-0">
+            <div className="flex items-center gap-3">
               <Search className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-700" />
               <input
                 type="text"
                 placeholder="Search projects..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-4 py-2 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 border border-white/10 dark:border-white/10 light:border-gray-200/50 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 dark:placeholder-gray-400 light:placeholder-gray-600 text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                className="w-64 px-4 py-2 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 border border-white/10 dark:border-white/10 light:border-gray-200/50 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 dark:placeholder-gray-400 light:placeholder-gray-600 text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
               />
             </div>
           </div>
@@ -433,20 +433,6 @@ export default function Projects() {
             {/* All Projects */}
             {filteredProjects.length > 0 && (
               <div>
-                <div className="flex items-center gap-3 mb-8 justify-center">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-orange-500 rounded-xl flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold text-white dark:text-white light:text-gray-900">
-                      All Projects
-                    </h3>
-                    <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-sm">
-                      Complete portfolio of AI automation solutions
-                    </p>
-                  </div>
-                </div>
-
                 <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 justify-items-center overflow-visible">
                   {filteredProjects.map((project) => (
                     <Card

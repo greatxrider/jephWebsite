@@ -441,15 +441,16 @@ export const Services = () => {
             <span>AI Automation Services</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">
-            AI-Powered Automation
+            Practical AI & Automation
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
               {" "}
-              That Actually Works
+              for Everyday Business
             </span>
           </h2>
           <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-4xl mx-auto">
-            Specialized automation solutions using Make, Zapier, n8n, and
-            cutting-edge AI models to transform your business operations.
+            I help businesses simplify their operations with automation and AI.
+            My focus is on creating reliable workflows that reduce manual work,
+            connect your tools, and make day-to-day tasks easier to manage.
           </p>
         </div>
 
@@ -503,88 +504,6 @@ export const Services = () => {
                     </Button>
                   </div>
                 </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Automation Platforms Section */}
-        <div className="mb-20 mt-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Automation{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
-                Platforms I Master
-              </span>
-            </h3>
-            <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
-              Expert-level proficiency in the leading automation platforms
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8 w-full justify-items-center">
-            {platforms.map((platform, index) => (
-              <Card
-                key={index}
-                className="group text-center bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30"
-              >
-                <CardContent className="p-8">
-                  <div className="w-20 h-20 mx-auto mb-6 relative group-hover:scale-110 transition-transform duration-300">
-                    <Image
-                      src={platform.logo}
-                      alt={platform.name}
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
-                  </div>
-                  <h4 className="text-xl font-semibold text-white dark:text-white light:text-gray-900 mb-3">
-                    {platform.name}
-                  </h4>
-                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-base">
-                    {platform.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* AI Models Section */}
-        <div className="mb-20 mt-16">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              AI{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
-                Models & Technologies
-              </span>
-            </h3>
-            <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-3xl mx-auto">
-              Cutting-edge AI models integrated into your workflows
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8 w-full justify-items-center">
-            {aiModels.map((model, index) => (
-              <Card
-                key={index}
-                className="group text-center bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/10 hover:border-orange-500/30"
-              >
-                <CardContent className="p-8">
-                  <div className="w-20 h-20 mx-auto mb-6 relative group-hover:scale-110 transition-transform duration-300">
-                    <Image
-                      src={model.logo}
-                      alt={model.name}
-                      width={80}
-                      height={80}
-                      className="object-contain"
-                    />
-                  </div>
-                  <h4 className="text-xl font-semibold text-white dark:text-white light:text-gray-900 mb-3">
-                    {model.name}
-                  </h4>
-                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-base">
-                    {model.description}
-                  </p>
-                </CardContent>
               </Card>
             ))}
           </div>
