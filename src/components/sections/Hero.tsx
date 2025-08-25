@@ -15,6 +15,7 @@ import {
   Workflow,
   Link2,
   Code,
+  Calendar,
 } from "lucide-react";
 
 export const Hero = () => {
@@ -383,11 +384,13 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
                 size="lg"
-                onClick={() => scrollToSection("contact")}
+                onClick={() =>
+                  window.open("https://calendly.com/jeph", "_blank")
+                }
                 className="group bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-400 hover:to-orange-300 text-white border-0 px-8 py-4 text-lg font-semibold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3"
               >
-                <Brain className="w-5 h-5 flex-shrink-0" />
-                <span>Start Your Project</span>
+                <Calendar className="w-5 h-5 flex-shrink-0" />
+                <span>Book a Call</span>
                 <ArrowRight className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button

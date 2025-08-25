@@ -241,7 +241,7 @@ export const Services = () => {
       icon: Target,
       title: "Lead Generation & Qualification Automation",
       description:
-        "Automatically scrape, collect, and enrich leads using tools like Apify, Clay, or Apollo.",
+        "Automates lead capture from ads, web forms, and scrapers, enriches data, scores with AI, and routes qualified leads to your CRM instantly.",
       features: [
         "Auto-scrape leads from various sources",
         "Connect lead forms (Facebook Ads, website, etc.) to CRMs like GoHighLevel or HubSpot",
@@ -255,7 +255,7 @@ export const Services = () => {
       icon: Database,
       title: "CRM & Pipeline Automation",
       description:
-        "Auto-create contacts, deals, and tasks in CRMs like HubSpot, GoHighLevel, ClickUp.",
+        "Creates contacts, deals, and tasks automatically, triggers reminders and status updates, and keeps tools like Calendly, Zoom, email, and your CRM in sync.",
       features: [
         "Auto-create contacts, deals, and tasks in CRMs",
         "Trigger reminders, follow-ups, and status updates based on lead behavior or deal stage",
@@ -269,7 +269,7 @@ export const Services = () => {
       icon: Users,
       title: "Client Onboarding Workflows",
       description:
-        "Automate onboarding from intake form to welcome email, calendar setup, and document signing.",
+        "Orchestrates client onboarding from intake to welcome emails, calendar setup, e‑signatures, and auto-creates tasks and records in tools like Airtable or ClickUp.",
       features: [
         "Automate onboarding from intake form to welcome email, calendar setup, and document signing",
         "Automatically populate Airtable/ClickUp with client info and assign internal tasks",
@@ -282,7 +282,7 @@ export const Services = () => {
       icon: FileText,
       title: "Proposal, Quote, or Report Generation",
       description:
-        "Automatically generate customized proposals or reports (e.g., property investment reports, marketing audits) using Documint or Google Docs from CRM/Airtable data.",
+        "Generates tailored proposals, quotes, or reports from CRM/Airtable data using Documint or Google Docs and delivers PDFs automatically to clients.",
       features: [
         "Automatically generate customized proposals or reports using Documint or Google Docs from CRM/Airtable data",
         "Trigger PDF generation and email/send to clients automatically",
@@ -295,7 +295,7 @@ export const Services = () => {
       icon: Share2,
       title: "Content Repurposing & Social Posting Automation",
       description:
-        "Pull content from forms, Notion, or Slack, and convert to formatted social posts.",
+        "Transforms notes or long‑form content from forms, Notion, or Slack into polished social posts and schedules them across LinkedIn, Facebook, Instagram, and more.",
       features: [
         "Pull content from forms, Notion, or Slack, and convert to formatted social posts",
         "Auto-post or schedule to LinkedIn, Facebook, Instagram, etc.",
@@ -309,7 +309,7 @@ export const Services = () => {
       icon: CheckSquare,
       title: "Task & Team Workflow Automation",
       description:
-        "Set up automated workflows for recurring task creation, project updates, reminders, and status checks in ClickUp, Notion, or Trello.",
+        "Builds recurring workflows for task creation, project updates, reminders, and status checks, with Slack, email, or SMS notifications.",
       features: [
         "Set up automated workflows for recurring task creation, project updates, reminders, and status checks",
         "Integrate Slack, email, or text updates based on changes",
@@ -321,7 +321,7 @@ export const Services = () => {
       icon: Mail,
       title: "Email & Outreach Sequences",
       description:
-        "Auto-enroll leads into tailored cold email, nurture, or reactivation sequences.",
+        "Enrolls contacts into personalized cold, nurture, or reactivation sequences with data‑driven targeting and AI‑assisted copywriting.",
       features: [
         "Auto-enroll leads into tailored cold email, nurture, or reactivation sequences",
         "Personalize outreach with data enrichment and AI-powered copywriting tools",
@@ -333,7 +333,7 @@ export const Services = () => {
       icon: FormInput,
       title: "Form-to-Workflow Automation",
       description:
-        "Turn any intake form (Typeform, GHL, Jotform) into a fully automated backend process:",
+        "Turns any intake form into a complete backend process—saving data to Airtable/CRM, notifying the team, and triggering onboarding or scheduling.",
       features: [
         "Save to Airtable or CRM",
         "Notify team on Slack/Email",
@@ -346,7 +346,7 @@ export const Services = () => {
       icon: Star,
       title: "Review & Testimonial Automation",
       description:
-        "Automatically request Google/Facebook/Trustpilot reviews after project milestones.",
+        "Requests reviews automatically after milestones and routes positive feedback to marketing while escalating negative responses for follow‑up.",
       features: [
         "Automatically request Google/Facebook/Trustpilot reviews after project milestones",
         "Route good feedback to marketing, and negative to support/escalation",
@@ -455,50 +455,33 @@ export const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="w-full mb-20">
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 justify-items-center">
+        <div className="w-full mb-16">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-6 justify-items-center">
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="group bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 flex flex-col hover:border-orange-500/30"
-                style={{ width: "498px", height: "516px" }}
+                className="group bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 flex flex-col hover:border-orange-500/30 w-full max-w-[498px]"
               >
                 {/* Icon Section */}
-                <div className="p-6 text-center">
-                  <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-orange-500 to-orange-400 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/20">
-                    <service.icon className="w-10 h-10 text-white" />
-                  </div>
-                </div>
 
                 {/* Content Section */}
-                <div className="px-6 pb-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-white dark:text-white light:text-gray-900 mb-3 text-left leading-tight">
-                    {service.title}
-                  </h3>
+                <div className="px-5 pb-5 flex flex-col flex-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center shadow-md shadow-orange-500/20">
+                      <service.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-base font-bold text-white dark:text-white light:text-gray-900 text-left leading-snug">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <h3 className="sr-only">{service.title}</h3>
                   <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm mb-4 leading-relaxed text-left">
                     {service.description}
                   </p>
 
-                  {/* Features List */}
-                  <div className="mb-6 flex-1">
-                    <div className="space-y-3">
-                      {service.features.map((feature, featureIndex) => (
-                        <div
-                          key={featureIndex}
-                          className="flex items-start gap-3"
-                        >
-                          <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0 shadow-sm"></div>
-                          <span className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm leading-relaxed">
-                            {feature}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* Call to Action Button */}
                   <div className="mt-auto">
-                    <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-medium py-2.5 px-5 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 group text-sm">
+                    <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 group text-sm">
                       <span>Learn More</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </Button>
