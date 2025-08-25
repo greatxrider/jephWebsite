@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode, HTMLAttributes } from "react";
 
-interface CardProps {
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
   hover?: boolean;
@@ -12,6 +12,7 @@ export const Card = ({
   className = "",
   hover = true,
   glow = false,
+  ...rest
 }: CardProps) => {
   const baseClasses = "card";
   const hoverClasses = hover ? "hover:transform hover:scale-105" : "";
@@ -19,32 +20,60 @@ export const Card = ({
 
   const classes = `${baseClasses} ${hoverClasses} ${glowClasses} ${className}`;
 
-  return <div className={classes}>{children}</div>;
+  return (
+    <div className={classes} {...rest}>
+      {children}
+    </div>
+  );
 };
 
-interface CardHeaderProps {
+interface CardHeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
 }
 
-export const CardHeader = ({ children, className = "" }: CardHeaderProps) => {
-  return <div className={`mb-4 ${className}`}>{children}</div>;
+export const CardHeader = ({
+  children,
+  className = "",
+  ...rest
+}: CardHeaderProps) => {
+  return (
+    <div className={`mb-4 ${className}`} {...rest}>
+      {children}
+    </div>
+  );
 };
 
-interface CardContentProps {
+interface CardContentProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
 }
 
-export const CardContent = ({ children, className = "" }: CardContentProps) => {
-  return <div className={`mb-4 ${className}`}>{children}</div>;
+export const CardContent = ({
+  children,
+  className = "",
+  ...rest
+}: CardContentProps) => {
+  return (
+    <div className={`mb-4 ${className}`} {...rest}>
+      {children}
+    </div>
+  );
 };
 
-interface CardFooterProps {
+interface CardFooterProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   className?: string;
 }
 
-export const CardFooter = ({ children, className = "" }: CardFooterProps) => {
-  return <div className={`mt-auto ${className}`}>{children}</div>;
+export const CardFooter = ({
+  children,
+  className = "",
+  ...rest
+}: CardFooterProps) => {
+  return (
+    <div className={`mt-auto ${className}`} {...rest}>
+      {children}
+    </div>
+  );
 };

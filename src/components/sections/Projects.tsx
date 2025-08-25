@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent } from "@/components/ui/Card";
 import {
@@ -56,13 +57,18 @@ const formatDateShort = (dateString: string) => {
   return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
 };
 
-export default function Projects() {
+export default function Projects({
+  showSeeMore = true,
+}: {
+  showSeeMore?: boolean;
+}) {
   const [projects, setProjects] = useState<Project[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showFullImage, setShowFullImage] = useState(false);
   // Removed overflow modal state in favor of hover popover
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -327,6 +333,10 @@ export default function Projects() {
   );
   const otherProjects = filteredProjects.filter((project) => !project.featured);
 
+  const displayedProjects = showSeeMore
+    ? filteredProjects.slice(0, 6)
+    : filteredProjects;
+
   const openModal = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
@@ -335,6 +345,7 @@ export default function Projects() {
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedProject(null);
+    setShowFullImage(false);
   };
 
   if (isLoading) {
@@ -434,12 +445,12 @@ export default function Projects() {
             {filteredProjects.length > 0 && (
               <div>
                 <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 justify-items-center overflow-visible">
-                  {filteredProjects.map((project) => (
+                  {displayedProjects.map((project) => (
                     <Card
                       key={project.id}
                       className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-visible group hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 cursor-pointer flex flex-col"
                       style={{ width: "498px", height: "516px" }}
-                      onClick={() => openModal(project)}
+                      onClick={() => openModal(project)} // Card click handler
                     >
                       <div className="aspect-video relative overflow-hidden">
                         <Image
@@ -513,10 +524,7 @@ export default function Projects() {
                         {/* Call to Action Buttons */}
                         <div className="mt-auto pt-4 space-y-3">
                           <Button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              openModal(project);
-                            }}
+                            onClick={() => openModal(project)}
                             className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 group"
                           >
                             <span>View Details</span>
@@ -542,6 +550,16 @@ export default function Projects() {
                     </Card>
                   ))}
                 </div>
+                {showSeeMore && filteredProjects.length > 6 && (
+                  <div className="flex justify-center mt-10">
+                    <Link href="/projects">
+                      <Button className="bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2">
+                        <span>See More Projects</span>
+                        <ArrowRight className="w-5 h-5" />
+                      </Button>
+                    </Link>
+                  </div>
+                )}
               </div>
             )}
 
@@ -576,8 +594,14 @@ export default function Projects() {
 
       {/* Project Modal */}
       {isModalOpen && selectedProject && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="p-6">
               {/* Modal Header */}
               <div className="flex items-center justify-between mb-6">
@@ -611,44 +635,81 @@ export default function Projects() {
                 </button>
               </div>
 
-              {/* Project Image */}
-              <div className="relative w-full h-64 mb-6 rounded-xl overflow-hidden">
+              {/* Project Image (automation schematic) */}
+              <div
+                className="relative w-full h-64 mb-6 rounded-xl overflow-hidden cursor-pointer group"
+                onClick={() => setShowFullImage(true)}
+              >
                 <Image
                   src={selectedProject.image_url}
                   alt={selectedProject.title}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent group-hover:from-black/40 group-hover:to-transparent transition-all duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                    <ExternalLink className="w-6 h-6 text-white" />
+                  </div>
+                </div>
               </div>
 
               {/* Project Details */}
               <div className="grid lg:grid-cols-2 gap-8">
-                {/* Left Column - Description */}
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-4">
-                    Project Overview
-                  </h4>
-                  <p className="text-gray-400 leading-relaxed mb-6">
-                    {selectedProject.detailed_description ||
-                      selectedProject.description}
-                  </p>
+                {/* Left Column */}
+                <div className="space-y-8">
+                  {/* Overview */}
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-3">
+                      Overview
+                    </h4>
+                    <p className="text-gray-400 leading-relaxed">
+                      {selectedProject.detailed_description ||
+                        selectedProject.description}
+                    </p>
+                  </div>
 
-                  {/* Tools Used */}
-                  <div className="mb-6">
-                    <h5 className="text-lg font-semibold text-white mb-3">
-                      Tools & Technologies
-                    </h5>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProject.tools_used.map((tool, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm border border-orange-500/30"
-                        >
-                          {tool}
-                        </span>
+                  {/* Key Features */}
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-3">
+                      Key Features
+                    </h4>
+                    <ul className="grid gap-2 text-gray-300 list-disc list-inside">
+                      {(selectedProject.tools_used.slice(0, 4).length
+                        ? selectedProject.tools_used.slice(0, 4)
+                        : [
+                            "Seamless integrations",
+                            "Automated workflows",
+                            "Scalable design",
+                            "Real-time insights",
+                          ]
+                      ).map((item, idx) => (
+                        <li key={idx} className="marker:text-orange-400">
+                          {item}
+                        </li>
                       ))}
-                    </div>
+                    </ul>
+                  </div>
+
+                  {/* How It Works */}
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-3">
+                      How It Works
+                    </h4>
+                    <ol className="grid gap-2 text-gray-300 list-decimal list-inside">
+                      <li className="marker:text-orange-400">
+                        Trigger captures an event or message.
+                      </li>
+                      <li className="marker:text-orange-400">
+                        Logic layer processes and enriches data.
+                      </li>
+                      <li className="marker:text-orange-400">
+                        AI/automation nodes make decisions and route tasks.
+                      </li>
+                      <li className="marker:text-orange-400">
+                        Results sync to connected apps and CRM.
+                      </li>
+                    </ol>
                   </div>
 
                   {/* GitHub Link */}
@@ -665,32 +726,97 @@ export default function Projects() {
                   )}
                 </div>
 
-                {/* Right Column - Technologies */}
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-4">
-                    Technology Stack
-                  </h4>
-                  <div className="space-y-4">
-                    {selectedProject.technologies?.map((tech, index) => (
-                      <div
-                        key={index}
-                        className="bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-colors"
-                      >
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-2xl">{tech.icon}</span>
-                          <h5 className="text-white font-semibold">
-                            {tech.name}
-                          </h5>
-                        </div>
-                        <p className="text-gray-400 text-sm">
-                          {tech.description}
-                        </p>
+                {/* Right Column */}
+                <div className="space-y-8">
+                  {/* Business Impact */}
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-3">
+                      Business Impact
+                    </h4>
+                    <ul className="grid gap-2 text-gray-300 list-disc list-inside">
+                      <li className="marker:text-orange-400">
+                        Reduced manual workload and response times.
+                      </li>
+                      <li className="marker:text-orange-400">
+                        Improved lead quality and conversion rates.
+                      </li>
+                      <li className="marker:text-orange-400">
+                        Higher data accuracy with automated sync.
+                      </li>
+                      <li className="marker:text-orange-400">
+                        Scales without additional headcount.
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Technical Specifications */}
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-3">
+                      Technical Specifications
+                    </h4>
+                    <div className="space-y-3">
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProject.tools_used.map((tool, index) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 bg-white/5 text-gray-200 rounded-full text-sm border border-white/10"
+                          >
+                            {tool}
+                          </span>
+                        ))}
                       </div>
-                    ))}
+                      {selectedProject.technologies &&
+                        selectedProject.technologies.length > 0 && (
+                          <div className="grid gap-3">
+                            {selectedProject.technologies.map((tech, index) => (
+                              <div
+                                key={index}
+                                className="bg-white/5 border border-white/10 rounded-lg p-4"
+                              >
+                                <div className="flex items-center gap-3">
+                                  <span className="text-2xl">{tech.icon}</span>
+                                  <div>
+                                    <p className="text-white font-semibold">
+                                      {tech.name}
+                                    </p>
+                                    <p className="text-gray-400 text-sm">
+                                      {tech.description}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+      {/* Full Image Modal */}
+      {showFullImage && selectedProject && (
+        <div
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-[60] flex items-center justify-center p-4"
+          onClick={() => setShowFullImage(false)}
+        >
+          <div className="relative max-w-[90vw] max-h-[90vh]">
+            <button
+              onClick={() => setShowFullImage(false)}
+              className="absolute -top-12 right-0 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors z-10"
+              aria-label="Close full image view"
+            >
+              <X className="w-5 h-5 text-white" />
+            </button>
+            <Image
+              src={selectedProject.image_url}
+              alt={selectedProject.title}
+              width={1200}
+              height={800}
+              className="object-contain max-w-full max-h-full rounded-lg shadow-2xl"
+            />
           </div>
         </div>
       )}

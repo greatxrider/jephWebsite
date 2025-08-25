@@ -101,13 +101,13 @@ export const About = () => {
     },
     {
       name: "Automation Anywhere",
-      logo: "/logo/ai-models-logo.png", // Using AI models logo as placeholder
+      logo: "/logo/automationAnywhere-logo.png",
       description: "RPA & process automation",
       expertise: "Advanced",
     },
     {
       name: "UiPath",
-      logo: "/logo/ai-models-logo.png", // Using AI models logo as placeholder
+      logo: "/logo/uipath-logo.png",
       description: "Enterprise RPA solutions",
       expertise: "Advanced",
     },
@@ -182,7 +182,7 @@ export const About = () => {
   const programmingLanguages = [
     {
       name: "JavaScript",
-      logo: "/logo/javascript-logo.png", // You can add actual JS logo
+      logo: "/logo/Unofficial_JavaScript_logo_2.svg.png",
       description: "Full-stack development & automation",
       expertise: "Expert",
       type: "Primary",
@@ -190,7 +190,7 @@ export const About = () => {
     },
     {
       name: "Python",
-      logo: "/logo/python-logo.png", // You can add actual Python logo
+      logo: "/programmingLogos/python-logo.svg", // Python logo
       description: "AI/ML, automation & backend development",
       expertise: "Expert",
       type: "Primary",
@@ -198,7 +198,7 @@ export const About = () => {
     },
     {
       name: "C#",
-      logo: "/logo/csharp-logo.png", // You can add actual C# logo
+      logo: "/programmingLogos/csharp-logo.png",
       description: "Enterprise applications & .NET development",
       expertise: "Advanced",
       type: "Secondary",
@@ -206,7 +206,7 @@ export const About = () => {
     },
     {
       name: "C++",
-      logo: "/logo/cpp-logo.png", // You can add actual C++ logo
+      logo: "/programmingLogos/cplus-logo.png",
       description: "System programming & performance optimization",
       expertise: "Advanced",
       type: "Secondary",
@@ -214,7 +214,7 @@ export const About = () => {
     },
     {
       name: "C",
-      logo: "/logo/c-logo.png", // You can add actual C logo
+      logo: "/programmingLogos/c-logo.png",
       description: "Low-level programming & embedded systems",
       expertise: "Intermediate",
       type: "Secondary",
@@ -649,7 +649,6 @@ export const About = () => {
                   <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-orange-400 transition-colors duration-300">
                     {platform.name}
                   </h4>
-
                 </div>
               ))}
             </div>
@@ -689,7 +688,6 @@ export const About = () => {
                   <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-purple-400 transition-colors duration-300">
                     {item.name}
                   </h4>
-
                 </div>
               ))}
             </div>
@@ -714,15 +712,20 @@ export const About = () => {
                 >
                   <div className="relative mb-3">
                     <div
-                      className={`w-16 h-16 bg-gradient-to-br ${lang.color} rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                      className={`w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}
                     >
-                      <Code className="w-8 h-8 text-white" />
+                      <Image
+                        src={lang.logo}
+                        alt={lang.name}
+                        width={36}
+                        height={36}
+                        className="object-contain"
+                      />
                     </div>
                   </div>
                   <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-green-400 transition-colors duration-300">
                     {lang.name}
                   </h4>
-
                 </div>
               ))}
             </div>
