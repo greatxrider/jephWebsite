@@ -221,7 +221,10 @@ export const Pricing = () => {
             Transparent Pricing for
             <span className="gradient-text-ai"> AI Automation Excellence</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p
+            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            style={{ color: "var(--text-color)" }}
+          >
             Choose the perfect package for your AI automation needs. All
             packages include Make, Zapier, n8n expertise and cutting-edge AI
             model integration.
@@ -281,7 +284,12 @@ export const Pricing = () => {
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {pkg.name}
                 </h3>
-                <p className="text-gray-300 mb-4">{pkg.description}</p>
+                <p
+                  className="text-gray-300 mb-4"
+                  style={{ color: "var(--text-color)" }}
+                >
+                  {pkg.description}
+                </p>
                 <div className="mb-4">
                   <span className="text-3xl font-bold text-white">
                     {pkg.price}
@@ -300,7 +308,12 @@ export const Pricing = () => {
                     {pkg.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start gap-2">
                         <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
+                        <span
+                          className="text-gray-300 text-sm"
+                          style={{ color: "var(--text-color)" }}
+                        >
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>

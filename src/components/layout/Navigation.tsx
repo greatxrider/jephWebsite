@@ -76,7 +76,7 @@ export const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-height ${
         isScrolled
-          ? "bg-black/80 backdrop-blur-md border-b border-gray-800 shadow-lg shadow-primary/20 dark:bg-black/80 dark:border-gray-800 light:bg-white/80 light:border-gray-200"
+          ? "bg-black/60 backdrop-blur-md border-b border-gray-800 shadow-lg shadow-primary/20 dark:bg-black/60 dark:border-gray-800 light:bg-white/60 light:border-gray-200"
           : "bg-transparent"
       }`}
     >
@@ -166,7 +166,7 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800 shadow-lg shadow-primary/10 dark:bg-black/95 dark:border-gray-800 light:bg-white/95 light:border-gray-200">
+          <div className="md:hidden bg-black/80 backdrop-blur-md border-t border-gray-800 shadow-lg shadow-primary/10 dark:bg-black/80 dark:border-gray-800 light:bg-white/80 light:border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <button
@@ -182,7 +182,7 @@ export const Navigation = () => {
                 href="https://github.com/jeph"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 flex items-center gap-2 dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900"
+                className="w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 flex items-center gap-2 dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900"
               >
                 <Github size={20} />
                 <span>GitHub</span>

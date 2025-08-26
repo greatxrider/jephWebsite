@@ -319,30 +319,38 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-50 light:via-white light:to-gray-100 overflow-hidden mb-20"
+      className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black overflow-hidden mb-20"
     >
       {/* Enhanced AI Background Effects */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-40"
+        className="absolute inset-0 w-full h-full opacity-55"
       />
       <canvas
         ref={particlesRef}
-        className="absolute inset-0 w-full h-full opacity-30"
+        className="absolute inset-0 w-full h-full opacity-45"
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/50 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-slate-800/35 to-black/60" />
+      <div
+        className="absolute inset-0"
+        style={{
+          pointerEvents: "none",
+          background:
+            "radial-gradient(1200px 600px at 20% 20%, rgba(255,107,53,0.08), transparent 60%), radial-gradient(1000px 500px at 80% 80%, rgba(255,147,30,0.06), transparent 60%)",
+        }}
+      />
 
       {/* Floating AI Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-full blur-3xl animate-pulse"></div>
         <div
-          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/20 to-orange-500/20 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/10 to-orange-600/10 rounded-full blur-2xl animate-pulse"
+          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/20 to-orange-600/20 rounded-full blur-2xl animate-pulse"
           style={{ animationDelay: "2s" }}
         ></div>
       </div>
@@ -352,7 +360,7 @@ export const Hero = () => {
           {/* Left Column - Main Content */}
           <div className="space-y-8">
             {/* Professional Badge */}
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-full">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 rounded-full">
               <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
               <span className="text-orange-500 text-sm font-medium tracking-wider">
                 AI AUTOMATION SPECIALIST
@@ -362,14 +370,20 @@ export const Hero = () => {
 
             {/* Main Headline */}
             <div className="space-y-6">
-              <h1 className="text-5xl md:text-6xl font-bold text-white dark:text-white light:text-gray-900 leading-tight">
+              <h1
+                className="text-5xl md:text-6xl font-bold text-white dark:text-white leading-tight"
+                style={{ color: "var(--text-primary)" }}
+              >
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
                   AI-Powered
                 </span>
                 <span className="block">Business Automation</span>
               </h1>
 
-              <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-800 font-light leading-relaxed max-w-lg">
+              <p
+                className="text-xl text-gray-700 dark:text-gray-300 font-light leading-relaxed max-w-lg"
+                style={{ color: "var(--text-color)" }}
+              >
                 Helping Businesses Scale With AI & Automation. Transform your
                 business operations with intelligent workflows,
                 <span className="text-orange-500 font-medium">
@@ -408,7 +422,7 @@ export const Hero = () => {
           {/* Right Column - Visual Elements */}
           <div className="space-y-8">
             {/* Profile Card */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-2xl p-8">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 rounded-2xl p-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 relative overflow-hidden rounded-full">
                   <Image
@@ -420,7 +434,10 @@ export const Hero = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white dark:text-white light:text-gray-900">
+                  <h3
+                    className="text-xl font-bold text-white dark:text-white"
+                    style={{ color: "var(--text-primary)" }}
+                  >
                     Jeph Daligdig
                   </h3>
                   <p className="text-orange-500 font-medium">
@@ -432,19 +449,28 @@ export const Hero = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-800">
+                  <span
+                    className="text-gray-300 dark:text-gray-300"
+                    style={{ color: "var(--text-color)" }}
+                  >
                     AI Workflow Automation Expert
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-800">
+                  <span
+                    className="text-gray-300 dark:text-gray-300"
+                    style={{ color: "var(--text-color)" }}
+                  >
                     System & API Integration Specialist
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-gray-300 dark:text-gray-300 light:text-gray-800">
+                  <span
+                    className="text-gray-300 dark:text-gray-300"
+                    style={{ color: "var(--text-color)" }}
+                  >
                     Business Process Automation
                   </span>
                 </div>
@@ -457,10 +483,16 @@ export const Hero = () => {
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-lg flex items-center justify-center mb-3">
                   <Workflow className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-sm font-semibold text-white mb-1">
+                <h3
+                  className="text-sm font-semibold text-white mb-1"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   AI Workflow Automation
                 </h3>
-                <p className="text-gray-300 text-xs">
+                <p
+                  className="text-gray-300 text-xs"
+                  style={{ color: "var(--text-color)" }}
+                >
                   Intelligent automation that adapts to your business needs.
                 </p>
               </div>
@@ -469,10 +501,16 @@ export const Hero = () => {
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-600 to-orange-500 rounded-lg flex items-center justify-center mb-3">
                   <Link2 className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-sm font-semibold text-white mb-1">
+                <h3
+                  className="text-sm font-semibold text-white mb-1"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   System & API Integration
                 </h3>
-                <p className="text-gray-300 text-xs">
+                <p
+                  className="text-gray-300 text-xs"
+                  style={{ color: "var(--text-color)" }}
+                >
                   Seamless integration with leading platforms.
                 </p>
               </div>
@@ -481,10 +519,16 @@ export const Hero = () => {
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-700 to-orange-600 rounded-lg flex items-center justify-center mb-3">
                   <TrendingUp className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-sm font-semibold text-white mb-1">
+                <h3
+                  className="text-sm font-semibold text-white mb-1"
+                  style={{ color: "var(--text-color)" }}
+                >
                   Business Process Automation
                 </h3>
-                <p className="text-gray-300 text-xs">
+                <p
+                  className="text-gray-300 text-xs"
+                  style={{ color: "var(--text-color)" }}
+                >
                   Streamline operations and boost efficiency.
                 </p>
               </div>
@@ -493,10 +537,16 @@ export const Hero = () => {
                 <div className="w-10 h-10 bg-gradient-to-br from-orange-800 to-orange-700 rounded-lg flex items-center justify-center mb-3">
                   <Brain className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-sm font-semibold text-white mb-1">
+                <h3
+                  className="text-sm font-semibold text-white mb-1"
+                  style={{ color: "var(--text-color)" }}
+                >
                   AI-Powered Solutions
                 </h3>
-                <p className="text-gray-300 text-xs">
+                <p
+                  className="text-gray-300 text-xs"
+                  style={{ color: "var(--text-color)" }}
+                >
                   Advanced AI models for predictive automation.
                 </p>
               </div>

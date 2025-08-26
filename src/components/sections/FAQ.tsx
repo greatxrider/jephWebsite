@@ -125,7 +125,10 @@ export const FAQ = () => {
             Common Questions About
             <span className="gradient-text-ai"> AI Automation</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p
+            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            style={{ color: "var(--text-color)" }}
+          >
             Get answers to the most common questions about AI automation using
             Make, Zapier, n8n, and cutting-edge AI models like Claude and
             OpenAI.
@@ -177,7 +180,10 @@ export const FAQ = () => {
                   </button>
                   {openIndex === index && (
                     <div className="px-4 pb-4">
-                      <p className="text-gray-300 leading-relaxed text-sm">
+                      <p
+                        className="text-gray-300 leading-relaxed text-sm"
+                        style={{ color: "var(--text-color)" }}
+                      >
                         {faq.answer}
                       </p>
                     </div>
@@ -196,7 +202,10 @@ export const FAQ = () => {
               <h3 className="text-xl font-bold text-white mb-2">
                 Fast Response
               </h3>
-              <p className="text-gray-300 text-sm">
+              <p
+                className="text-gray-300 text-sm"
+                style={{ color: "var(--text-color)" }}
+              >
                 24-hour response time guaranteed
               </p>
             </CardContent>
@@ -207,7 +216,10 @@ export const FAQ = () => {
               <h3 className="text-xl font-bold text-white mb-2">
                 Secure & Reliable
               </h3>
-              <p className="text-gray-300 text-sm">
+              <p
+                className="text-gray-300 text-sm"
+                style={{ color: "var(--text-color)" }}
+              >
                 Enterprise-grade security standards
               </p>
             </CardContent>
@@ -218,7 +230,10 @@ export const FAQ = () => {
               <h3 className="text-xl font-bold text-white mb-2">
                 200+ Happy Clients
               </h3>
-              <p className="text-gray-300 text-sm">
+              <p
+                className="text-gray-300 text-sm"
+                style={{ color: "var(--text-color)" }}
+              >
                 Proven track record of success
               </p>
             </CardContent>

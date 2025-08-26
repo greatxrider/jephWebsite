@@ -202,22 +202,22 @@ export const Testimonials = () => {
   };
 
   return (
-    <section className="section-padding relative bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 mt-20 mb-20">
+    <section className="section-padding relative bg-gradient-to-br from-gray-100 via-gray-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-black mt-20 mb-20">
       {/* AI Background Effects */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-30"
+        className="absolute inset-0 w-full h-full opacity-20 dark:opacity-30"
       />
 
       {/* Floating AI Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/20 to-orange-400/20 dark:from-orange-500/10 dark:to-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
         <div
-          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/20 to-orange-500/20 dark:from-orange-600/10 dark:to-orange-500/10 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/10 to-orange-600/10 rounded-full blur-2xl animate-pulse"
+          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/20 to-orange-600/20 dark:from-orange-700/10 dark:to-orange-600/10 rounded-full blur-2xl animate-pulse"
           style={{ animationDelay: "2s" }}
         ></div>
       </div>
@@ -227,12 +227,17 @@ export const Testimonials = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-full text-orange-500 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100/50 backdrop-blur-sm border border-orange-200 dark:bg-white/5 dark:border-white/10 rounded-full text-orange-500 text-sm font-medium mb-6">
               <Sparkles size={16} className="animate-pulse" />
-              <span>Client Success Stories</span>
+              <span style={{ color: "var(--text-primary)" }}>
+                Client Success Stories
+              </span>
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-6">
+            <h2
+              className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-6"
+              style={{ color: "var(--text-primary)" }}
+            >
               What Clients and Colleagues
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
                 {" "}
@@ -240,7 +245,10 @@ export const Testimonials = () => {
               </span>
             </h2>
 
-            <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 mb-8 leading-relaxed">
+            <p
+              className="text-xl text-gray-300 dark:text-gray-300 mb-8 leading-relaxed"
+              style={{ color: "var(--text-color)" }}
+            >
               Real feedback from partners on reliability, communication, and
               measurable outcomes achieved through AI automation solutions.
             </p>
@@ -252,10 +260,16 @@ export const Testimonials = () => {
                   <Brain className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold mb-1">
+                  <h3
+                    className="text-white font-semibold mb-1"
+                    style={{ color: "var(--text-primary)" }}
+                  >
                     AI-Driven Solutions
                   </h3>
-                  <p className="text-gray-400 text-sm">
+                  <p
+                    className="text-gray-400 text-sm"
+                    style={{ color: "var(--text-color)" }}
+                  >
                     Intelligent automation that adapts to your business needs
                   </p>
                 </div>
@@ -266,10 +280,16 @@ export const Testimonials = () => {
                   <Zap className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold mb-1">
+                  <h3
+                    className="text-white font-semibold mb-1"
+                    style={{ color: "var(--text-primary)" }}
+                  >
                     Rapid Implementation
                   </h3>
-                  <p className="text-gray-400 text-sm">
+                  <p
+                    className="text-gray-400 text-sm"
+                    style={{ color: "var(--text-color)" }}
+                  >
                     Quick deployment with lasting business impact
                   </p>
                 </div>
@@ -280,10 +300,16 @@ export const Testimonials = () => {
                   <MessageSquare className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold mb-1">
+                  <h3
+                    className="text-white font-semibold mb-1"
+                    style={{ color: "var(--text-primary)" }}
+                  >
                     Clear Communication
                   </h3>
-                  <p className="text-gray-400 text-sm">
+                  <p
+                    className="text-gray-400 text-sm"
+                    style={{ color: "var(--text-color)" }}
+                  >
                     Transparent process and regular updates throughout
                   </p>
                 </div>
@@ -293,7 +319,7 @@ export const Testimonials = () => {
 
           {/* Right Column - Testimonial Carousel */}
           <div className="relative">
-            <Card className="card-ai h-full min-h-[400px] bg-white/5 backdrop-blur-sm border border-white/10">
+            <Card className="card-ai h-full min-h-[400px] bg-white/10 backdrop-blur-sm border border-gray-200 dark:bg-white/5 dark:border-white/10">
               <CardContent className="p-8 flex flex-col justify-between h-full">
                 {/* Neural Network Decoration */}
                 <div className="absolute top-4 right-4 opacity-20">
@@ -322,7 +348,10 @@ export const Testimonials = () => {
 
                 {/* Testimonial Content */}
                 <div className="flex-grow flex flex-col justify-center">
-                  <p className="text-gray-300 text-lg leading-relaxed mb-8 italic">
+                  <p
+                    className="text-gray-300 text-lg leading-relaxed mb-8 italic"
+                    style={{ color: "var(--text-color)" }}
+                  >
                     "{testimonials[currentTestimonial].quote}"
                   </p>
 
@@ -338,10 +367,16 @@ export const Testimonials = () => {
                       />
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold text-lg">
+                      <h4
+                        className="text-white font-semibold text-lg"
+                        style={{ color: "var(--text-primary)" }}
+                      >
                         {testimonials[currentTestimonial].name}
                       </h4>
-                      <p className="text-gray-400">
+                      <p
+                        className="text-gray-400"
+                        style={{ color: "var(--text-color)" }}
+                      >
                         {testimonials[currentTestimonial].role}
                       </p>
                     </div>
@@ -352,10 +387,13 @@ export const Testimonials = () => {
                 <div className="flex items-center justify-between mt-8">
                   <button
                     onClick={prevTestimonial}
-                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors border border-white/10"
+                    className="w-10 h-10 bg-gray-300/70 hover:bg-gray-400/70 dark:bg-white/10 dark:hover:bg-white/20 rounded-full flex items-center justify-center transition-colors border border-gray-400 dark:border-white/10"
                     aria-label="Previous testimonial"
                   >
-                    <ChevronLeft className="w-5 h-5 text-white" />
+                    <ChevronLeft
+                      className="w-5 h-5"
+                      style={{ color: "var(--chevron-color)" }}
+                    />
                   </button>
 
                   {/* Dots Indicator */}
@@ -367,7 +405,7 @@ export const Testimonials = () => {
                         className={`w-2 h-2 rounded-full transition-colors ${
                           index === currentTestimonial
                             ? "bg-orange-500"
-                            : "bg-white/30"
+                            : "bg-gray-400 dark:bg-white/30"
                         }`}
                         aria-label={`Go to testimonial ${index + 1}`}
                       />
@@ -376,10 +414,13 @@ export const Testimonials = () => {
 
                   <button
                     onClick={nextTestimonial}
-                    className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors border border-white/10"
+                    className="w-10 h-10 bg-gray-300/70 hover:bg-gray-400/70 dark:bg-white/10 dark:hover:bg-white/20 rounded-full flex items-center justify-center transition-colors border border-gray-400 dark:border-white/10"
                     aria-label="Next testimonial"
                   >
-                    <ChevronRight className="w-5 h-5 text-white" />
+                    <ChevronRight
+                      className="w-5 h-5"
+                      style={{ color: "var(--chevron-color)" }}
+                    />
                   </button>
                 </div>
 

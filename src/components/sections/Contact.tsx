@@ -334,25 +334,33 @@ export const Contact = () => {
       {/* Enhanced AI Background Effects */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-40"
+        className="absolute inset-0 w-full h-full opacity-55"
       />
       <canvas
         ref={particlesRef}
-        className="absolute inset-0 w-full h-full opacity-30"
+        className="absolute inset-0 w-full h-full opacity-45"
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/50 to-black/80 dark:from-slate-900/70 dark:via-slate-800/50 dark:to-black/80 light:from-gray-200/70 light:via-gray-100/50 light:to-gray-50/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-slate-800/35 to-black/60 dark:from-slate-900/50 dark:via-slate-800/35 dark:to-black/60 light:from-gray-200/60 light:via-gray-100/40 light:to-gray-50/70" />
+      <div
+        className="absolute inset-0"
+        style={{
+          pointerEvents: "none",
+          background:
+            "radial-gradient(1200px 600px at 20% 20%, rgba(255,107,53,0.08), transparent 60%), radial-gradient(1000px 500px at 80% 80%, rgba(255,147,30,0.06), transparent 60%)",
+        }}
+      />
 
       {/* Floating AI Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-full blur-3xl animate-pulse"></div>
         <div
-          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/20 to-orange-500/20 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/10 to-orange-600/10 rounded-full blur-2xl animate-pulse"
+          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/20 to-orange-600/20 rounded-full blur-2xl animate-pulse"
           style={{ animationDelay: "2s" }}
         ></div>
       </div>
@@ -360,7 +368,7 @@ export const Contact = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-orange-500 text-sm font-medium mb-6 mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-full text-orange-500 text-sm font-medium mb-6 mx-auto">
             <Sparkles size={16} className="animate-pulse" />
             <span>Get In Touch</span>
           </div>
@@ -371,7 +379,10 @@ export const Contact = () => {
             </span>{" "}
             Your Business
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p
+            className="text-xl text-gray-400 max-w-3xl mx-auto"
+            style={{ color: "var(--text-color)" }}
+          >
             Ready to automate your processes and accelerate growth? Get in touch
             with our AI automation experts today.
           </p>
@@ -380,7 +391,7 @@ export const Contact = () => {
         {/* Contact Cards */}
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left Card - AI-Powered Consultation */}
-          <Card className="card-ai bg-white/5 backdrop-blur-sm border border-white/10 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300">
+          <Card className="card-ai bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
@@ -391,7 +402,10 @@ export const Contact = () => {
                 </h3>
               </div>
 
-              <p className="text-gray-400 mb-8">
+              <p
+                className="text-gray-400 mb-8"
+                style={{ color: "var(--text-color)" }}
+              >
                 Our AI specialists analyze your business needs and design custom
                 automation solutions that deliver measurable results.
               </p>
@@ -401,7 +415,7 @@ export const Contact = () => {
                 {contactInfo.map((info, index) => (
                   <div
                     key={index}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4"
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-lg p-4"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
@@ -409,7 +423,12 @@ export const Contact = () => {
                       </div>
                       <div>
                         <p className="text-white font-medium">{info.label}</p>
-                        <p className="text-gray-400 text-sm">{info.value}</p>
+                        <p
+                          className="text-gray-400 text-sm"
+                          style={{ color: "var(--text-color)" }}
+                        >
+                          {info.value}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -421,7 +440,7 @@ export const Contact = () => {
                 {features.map((feature, index) => (
                   <div
                     key={index}
-                    className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4"
+                    className="bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-lg p-4"
                   >
                     <div className="flex items-center justify-center mb-2">
                       <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
@@ -431,7 +450,10 @@ export const Contact = () => {
                     <h4 className="text-white font-semibold text-sm text-center mb-1">
                       {feature.title}
                     </h4>
-                    <p className="text-gray-400 text-xs text-center">
+                    <p
+                      className="text-gray-400 text-xs text-center"
+                      style={{ color: "var(--text-color)" }}
+                    >
                       {feature.description}
                     </p>
                   </div>
@@ -441,7 +463,7 @@ export const Contact = () => {
           </Card>
 
           {/* Right Card - Contact Form */}
-          <Card className="card-ai bg-white/5 backdrop-blur-sm border border-white/10 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300">
+          <Card className="card-ai bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
@@ -452,7 +474,10 @@ export const Contact = () => {
                 </h3>
               </div>
 
-              <p className="text-gray-400 mb-8">
+              <p
+                className="text-gray-400 mb-8"
+                style={{ color: "var(--text-color)" }}
+              >
                 Tell us about your automation needs
               </p>
 
@@ -466,7 +491,8 @@ export const Contact = () => {
                     type="text"
                     placeholder="Your name"
                     {...register("name", { required: "Name is required" })}
-                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
+                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
+                    style={{ color: "var(--input-text-color)" }}
                   />
                   {errors.name && (
                     <p className="text-red-400 text-sm mt-1">
@@ -490,7 +516,8 @@ export const Contact = () => {
                         message: "Invalid email address",
                       },
                     })}
-                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
+                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
+                    style={{ color: "var(--input-text-color)" }}
                   />
                   {errors.email && (
                     <p className="text-red-400 text-sm mt-1">
@@ -510,7 +537,8 @@ export const Contact = () => {
                     {...register("message", {
                       required: "Message is required",
                     })}
-                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-colors resize-none"
+                    style={{ color: "var(--input-text-color)" }}
                   />
                   {errors.message && (
                     <p className="text-red-400 text-sm mt-1">

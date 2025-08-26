@@ -410,25 +410,33 @@ export const Services = () => {
       {/* Enhanced AI Background Effects */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-40"
+        className="absolute inset-0 w-full h-full opacity-55"
       />
       <canvas
         ref={particlesRef}
-        className="absolute inset-0 w-full h-full opacity-30"
+        className="absolute inset-0 w-full h-full opacity-45"
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-slate-800/50 to-black/80 dark:from-slate-900/70 dark:via-slate-800/50 dark:to-black/80 light:from-gray-200/70 light:via-gray-100/50 light:to-gray-50/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-slate-800/35 to-black/60 dark:from-slate-900/50 dark:via-slate-800/35 dark:to-black/60 light:from-gray-200/60 light:via-gray-100/40 light:to-gray-50/70" />
+      <div
+        className="absolute inset-0"
+        style={{
+          pointerEvents: "none",
+          background:
+            "radial-gradient(1200px 600px at 20% 20%, rgba(255,107,53,0.08), transparent 60%), radial-gradient(1000px 500px at 80% 80%, rgba(255,147,30,0.06), transparent 60%)",
+        }}
+      />
 
       {/* Floating AI Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-full blur-3xl animate-pulse"></div>
         <div
-          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/20 to-orange-500/20 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/10 to-orange-600/10 rounded-full blur-2xl animate-pulse"
+          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/20 to-orange-600/20 rounded-full blur-2xl animate-pulse"
           style={{ animationDelay: "2s" }}
         ></div>
       </div>
@@ -436,18 +444,24 @@ export const Services = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-full text-orange-500 text-sm font-medium mb-6 mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-full text-orange-500 text-sm font-medium mb-6 mx-auto">
             <Sparkles size={16} className="animate-pulse" />
             <span>AI Automation Services</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-4"
+            style={{ color: "var(--text-primary)" }}
+          >
             Practical AI & Automation
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
               {" "}
               for Everyday Business
             </span>
           </h2>
-          <p className="text-xl text-gray-300 dark:text-gray-300 light:text-gray-600 max-w-4xl mx-auto">
+          <p
+            className="text-xl text-gray-300 dark:text-gray-300 max-w-4xl mx-auto"
+            style={{ color: "var(--text-color)" }}
+          >
             I help businesses simplify their operations with automation and AI.
             My focus is on creating reliable workflows that reduce manual work,
             connect your tools, and make day-to-day tasks easier to manage.
@@ -460,7 +474,7 @@ export const Services = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="group bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 flex flex-col hover:border-orange-500/30 w-full max-w-[498px]"
+                className="group bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 flex flex-col hover:border-orange-500/30 w-full max-w-[498px]"
               >
                 {/* Icon Section */}
 
@@ -470,12 +484,18 @@ export const Services = () => {
                     <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center shadow-md shadow-orange-500/20">
                       <service.icon className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-base font-bold text-white dark:text-white light:text-gray-900 text-left leading-snug">
+                    <h3
+                      className="text-base font-bold text-white dark:text-white text-left leading-snug"
+                      style={{ color: "var(--text-primary)" }}
+                    >
                       {service.title}
                     </h3>
                   </div>
                   <h3 className="sr-only">{service.title}</h3>
-                  <p className="text-gray-300 dark:text-gray-300 light:text-gray-600 text-sm mb-4 leading-relaxed text-left">
+                  <p
+                    className="text-gray-300 dark:text-gray-300 text-sm mb-4 leading-relaxed text-left"
+                    style={{ color: "var(--text-color)" }}
+                  >
                     {service.description}
                   </p>
 

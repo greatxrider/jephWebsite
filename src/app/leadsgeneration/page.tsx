@@ -61,7 +61,7 @@ export default function LeadGenerationPage() {
       {/* Hero Section - Using padding instead of margin for navbar separation */}
       <div className="pt-48 pb-32">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="max-w-5xl text-left">
             {/* Service Category Tag */}
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-sm border border-orange-400/30 rounded-full text-white text-sm font-medium mb-20">
               <Briefcase size={18} className="animate-pulse" />
@@ -72,20 +72,20 @@ export default function LeadGenerationPage() {
               Lead Generation & Qualification Automation
             </h1>
 
-            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-16 max-w-4xl mx-auto leading-relaxed">
+            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-16 max-w-4xl leading-relaxed">
               Automates lead capture from ads, web forms, and scrapers, enriches
               data, scores with AI, and routes qualified leads to your CRM
               instantly.
             </h2>
 
-            <p className="text-xl text-gray-300 mb-20 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 mb-20 leading-relaxed max-w-3xl">
               Transform your lead generation from manual chaos to automated
               precision. Our AI-powered system captures, enriches, and qualifies
               leads 24/7, delivering sales-ready prospects directly to your
               team.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-start">
               <Button
                 onClick={() =>
                   window.open("https://calendly.com/jeph", "_blank")
@@ -111,20 +111,20 @@ export default function LeadGenerationPage() {
       {/* How It Works Section */}
       <div className="py-32">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-24">
+          <div className="max-w-6xl">
+            <div className="text-left mb-24">
               <h3 className="text-4xl font-bold text-white mb-10">
                 How It Works
               </h3>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
                 Our automated system handles the entire lead generation pipeline
                 from capture to qualification
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-              <div className="text-center p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
                   <Database className="w-10 h-10 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold text-orange-400 mb-6">
@@ -136,8 +136,8 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="text-center p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
                   <CheckCircle className="w-10 h-10 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold text-orange-400 mb-6">
@@ -149,8 +149,8 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="text-center p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
                   <Brain className="w-10 h-10 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold text-orange-400 mb-6">
@@ -162,8 +162,8 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="text-center p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
                   <Zap className="w-10 h-10 text-white" />
                 </div>
                 <h4 className="text-xl font-semibold text-orange-400 mb-6">
@@ -182,12 +182,12 @@ export default function LeadGenerationPage() {
       {/* Key Benefits Section */}
       <div className="py-32">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-24">
+          <div className="max-w-6xl">
+            <div className="text-left mb-24">
               <h3 className="text-4xl font-bold text-white mb-10">
                 Why Choose Our Automation?
               </h3>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
                 Experience the power of AI-driven lead generation that never
                 sleeps
               </p>
@@ -265,18 +265,18 @@ export default function LeadGenerationPage() {
       {/* Statistics Section */}
       <div className="py-32">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-24">
+          <div className="max-w-6xl">
+            <div className="text-left mb-24">
               <h3 className="text-4xl font-bold text-white mb-10">
                 Results That Speak
               </h3>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
                 See the impact of automated lead generation on real businesses
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-12">
-              <div className="text-center p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300">
                 <div className="text-6xl font-bold text-orange-400 mb-6">
                   300%
                 </div>
@@ -288,7 +288,7 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="text-center p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300">
                 <div className="text-6xl font-bold text-orange-400 mb-6">
                   85%
                 </div>
@@ -300,7 +300,7 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="text-center p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300">
                 <div className="text-6xl font-bold text-orange-400 mb-6">
                   24/7
                 </div>
@@ -319,13 +319,13 @@ export default function LeadGenerationPage() {
       {/* CTA Section */}
       <div className="py-32 pb-16">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center">
+          <div className="max-w-6xl">
+            <div className="text-left">
               <div className="p-20 bg-gradient-to-r from-orange-500/10 to-orange-400/10 backdrop-blur-sm rounded-2xl border border-orange-500/20">
                 <h3 className="text-4xl font-bold text-white mb-10">
                   Ready to Automate Your Lead Generation?
                 </h3>
-                <p className="text-xl text-gray-300 mb-16 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-xl text-gray-300 mb-16 max-w-2xl leading-relaxed">
                   Stop chasing leads manually. Let our AI-powered automation
                   capture, enrich, and qualify prospects while you focus on
                   closing deals.

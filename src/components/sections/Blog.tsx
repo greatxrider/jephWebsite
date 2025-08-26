@@ -155,7 +155,10 @@ export const Blog = () => {
             Master AI Automation with
             <span className="gradient-text"> Expert Insights</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p
+            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            style={{ color: "var(--text-color)" }}
+          >
             Learn from real-world experience with Make, Zapier, n8n, and modern
             AI tools. Get practical tutorials, best practices, and insider tips
             for building intelligent automation.
@@ -202,7 +205,12 @@ export const Blog = () => {
                     <h3 className="text-2xl font-bold text-white mb-4">
                       {posts[0].title}
                     </h3>
-                    <p className="text-gray-300 mb-6">{posts[0].excerpt}</p>
+                    <p
+                      className="text-gray-300 mb-6"
+                      style={{ color: "var(--text-color)" }}
+                    >
+                      {posts[0].excerpt}
+                    </p>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {posts[0].tags.map((tag, index) => (
                         <span
@@ -261,7 +269,12 @@ export const Blog = () => {
                     <h3 className="text-lg font-bold text-white mb-3 hover:text-orange-500 transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-gray-300 text-sm mb-4">{post.excerpt}</p>
+                    <p
+                      className="text-gray-300 text-sm mb-4"
+                      style={{ color: "var(--text-color)" }}
+                    >
+                      {post.excerpt}
+                    </p>
                     <div className="flex flex-wrap gap-1 mb-4">
                       {post.tags.slice(0, 3).map((tag, index) => (
                         <span

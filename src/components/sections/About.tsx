@@ -362,7 +362,7 @@ export const About = () => {
         {/* Header Section */}
         <div className="mb-12">
           <div className="animate-on-scroll">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-200/50 rounded-full text-orange-500 text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-full text-orange-500 text-sm font-medium mb-6">
               <Sparkles size={16} className="animate-pulse" />
               <span>AI Automation Expert</span>
             </div>
@@ -371,7 +371,10 @@ export const About = () => {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               {/* Left Column - Main Headline */}
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">
+                <h2
+                  className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-4"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   Connecting Intelligence with
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
                     {" "}
@@ -382,7 +385,10 @@ export const About = () => {
 
               {/* Right Column - Description */}
               <div>
-                <p className="text-xl text-gray-400 dark:text-gray-400 light:text-gray-800 leading-relaxed">
+                <p
+                  className="text-xl text-gray-400 dark:text-gray-400 leading-relaxed"
+                  style={{ color: "var(--text-color)" }}
+                >
                   Specialized AI Automation Specialist transforming business
                   operations using coding and no-code platforms integrated with
                   cutting-edge AI models.
@@ -404,7 +410,10 @@ export const About = () => {
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
                   <Briefcase className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-white dark:text-white light:text-gray-900">
+                <h3
+                  className="text-3xl font-bold text-white dark:text-white"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   Work Experience
                 </h3>
               </div>
@@ -431,7 +440,10 @@ export const About = () => {
                           <div className="flex-1 min-w-0">
                             <div className="flex items-start justify-between mb-1">
                               <div className="flex-1">
-                                <h4 className="text-white dark:text-white light:text-gray-900 font-bold text-lg mb-1 group-hover:text-orange-400 transition-colors duration-300">
+                                <h4
+                                  className="text-white dark:text-white font-bold text-lg mb-1 group-hover:text-orange-400 transition-colors duration-300"
+                                  style={{ color: "var(--text-primary)" }}
+                                >
                                   {job.position}
                                 </h4>
                                 <div className="flex items-center gap-2 mb-1">
@@ -459,12 +471,18 @@ export const About = () => {
 
                             <div className="flex items-center gap-2 mb-2">
                               <Calendar className="w-3 h-3 text-gray-400" />
-                              <span className="text-gray-400 dark:text-gray-400 light:text-gray-800 text-xs font-medium">
+                              <span
+                                className="text-gray-400 dark:text-gray-400 text-xs font-medium"
+                                style={{ color: "var(--text-color)" }}
+                              >
                                 {job.period}
                               </span>
                             </div>
 
-                            <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 text-sm leading-relaxed mb-3">
+                            <p
+                              className="text-gray-400 dark:text-gray-400 text-sm leading-relaxed mb-3"
+                              style={{ color: "var(--text-color)" }}
+                            >
                               {job.description}
                             </p>
 
@@ -610,7 +628,12 @@ export const About = () => {
                     <prop.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-white font-bold mb-2">{prop.title}</h3>
-                  <p className="text-gray-400 text-sm">{prop.description}</p>
+                  <p
+                    className="text-gray-400 text-sm"
+                    style={{ color: "var(--text-color)" }}
+                  >
+                    {prop.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -625,7 +648,10 @@ export const About = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
                 <Zap className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white">
+              <h3
+                className="text-2xl font-bold text-white"
+                style={{ color: "var(--text-primary)" }}
+              >
                 Automation Platforms
               </h3>
             </div>
@@ -660,7 +686,10 @@ export const About = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-400 rounded-full flex items-center justify-center">
                 <Brain className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white">
+              <h3
+                className="text-2xl font-bold text-white"
+                style={{ color: "var(--text-primary)" }}
+              >
                 AI Technologies & Technical Expertise
               </h3>
             </div>
@@ -699,7 +728,10 @@ export const About = () => {
               <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-400 rounded-full flex items-center justify-center">
                 <Code className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white">
+              <h3
+                className="text-2xl font-bold text-white"
+                style={{ color: "var(--text-primary)" }}
+              >
                 Programming Languages
               </h3>
             </div>
@@ -738,11 +770,17 @@ export const About = () => {
             <CardContent className="p-8">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <Rocket className="w-8 h-8 text-orange-500" />
-                <h3 className="text-2xl font-bold text-white">
+                <h3
+                  className="text-2xl font-bold text-white"
+                  style={{ color: "var(--text-primary)" }}
+                >
                   Ready to Transform Your Business?
                 </h3>
               </div>
-              <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+              <p
+                className="text-gray-400 mb-6 max-w-2xl mx-auto"
+                style={{ color: "var(--text-color)" }}
+              >
                 Let's discuss how I can help you automate your processes,
                 integrate AI into your workflows, and create solutions that
                 drive real business value.

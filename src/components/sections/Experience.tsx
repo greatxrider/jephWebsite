@@ -213,7 +213,10 @@ export const Experience = () => {
               Automation
               <span className="gradient-text"> Excellence</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p
+              className="text-xl text-gray-300 max-w-3xl mx-auto"
+              style={{ color: "var(--text-color)" }}
+            >
               From simple workflows to complex AI-powered automations, discover
               my journey through the evolution of business process automation
               and artificial intelligence integration.
@@ -236,7 +239,12 @@ export const Experience = () => {
                     {metric.value}
                     {metric.suffix}
                   </div>
-                  <p className="text-gray-300 text-sm">{metric.label}</p>
+                  <p
+                    className="text-gray-300 text-sm"
+                    style={{ color: "var(--text-color)" }}
+                  >
+                    {metric.label}
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -279,12 +287,20 @@ export const Experience = () => {
                             </p>
                           </div>
                         </div>
-                        <p className="text-gray-300 mb-4">{item.description}</p>
+                        <p
+                          className="text-gray-300 mb-4"
+                          style={{ color: "var(--text-color)" }}
+                        >
+                          {item.description}
+                        </p>
                         <ul className="space-y-2">
                           {item.achievements.map((achievement, i) => (
                             <li key={i} className="flex items-start gap-2">
                               <Star className="w-4 h-4 text-orange-500 mt-1 flex-shrink-0" />
-                              <span className="text-gray-300 text-sm">
+                              <span
+                                className="text-gray-300 text-sm"
+                                style={{ color: "var(--text-color)" }}
+                              >
                                 {achievement}
                               </span>
                             </li>
