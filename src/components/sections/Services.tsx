@@ -2,13 +2,11 @@
 
 import { useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import {
   Workflow,
   Brain,
   Link,
-  ArrowRight,
   Sparkles,
   CheckCircle,
   Clock,
@@ -498,14 +496,6 @@ export const Services = () => {
                   >
                     {service.description}
                   </p>
-
-                  {/* Call to Action Button */}
-                  <div className="mt-auto">
-                    <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-medium py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 group text-sm">
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Button>
-                  </div>
                 </div>
               </Card>
             ))}
