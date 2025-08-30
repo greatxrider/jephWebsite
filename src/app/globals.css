@@ -350,7 +350,7 @@ body {
 
 @media (min-width: 1200px) {
   .container {
-    padding: 0 3rem;
+    padding: 3rem 3rem;
   }
 }
 
@@ -370,14 +370,6 @@ h6 {
 ::selection {
   background: rgba(255, 107, 53, 0.3);
   color: white;
-}
-
-/* Focus states */
-button:focus,
-input:focus,
-textarea:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
 }
 
 /* Cursor styles */

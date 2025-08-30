@@ -86,11 +86,22 @@ export const Navigation = () => {
           <div className="flex items-center">
             <button
               onClick={handleLogoClick}
-              className="text-4xl font-bold gradient-text-ai animate-glitch hover:animate-none transition-all duration-300 cursor-pointer hover:scale-105"
+              className="transition-all duration-300 cursor-pointer hover:scale-105"
+              aria-label="Go to homepage"
             >
-              JEPH
+              <Image
+                src={
+                  theme === "light"
+                    ? "/website-logo-light.png"
+                    : "/website-logo-dark.png"
+                }
+                alt="JEPH DALIGDIG Logo"
+                width={1100}
+                height={440}
+                className="h-48 w-auto"
+              />
             </button>
-            <div className="ml-2 w-2 h-2 bg-orange-light rounded-full animate-neural-pulse"></div>
+            <div className="ml-2 w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
           </div>
 
           {/* Desktop Navigation */}

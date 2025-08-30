@@ -1,14 +1,19 @@
+"use client";
+
 import {
   Github,
   Linkedin,
-  Mail,
   Twitter,
   Instagram,
-  Youtube,
+  Mail,
+  ArrowRight,
 } from "lucide-react";
+import Image from "next/image";
+import { useTheme } from "@/components/providers/ThemeProvider";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { theme } = useTheme();
 
   const socialLinks = [
     {
@@ -31,111 +36,178 @@ export const Footer = () => {
       href: "https://www.instagram.com/jephmari/",
       label: "Instagram",
     },
-    {
-      icon: <Youtube size={20} />,
-      href: "https://www.youtube.com/@jephdaligdig",
-      label: "YouTube",
-    },
   ];
 
   return (
-    <footer className="bg-black dark:bg-black light:bg-gray-900 border-t border-gray-800 dark:border-gray-800 light:border-gray-200 relative z-50 w-full pt-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
-          {/* Brand */}
-          <div className="col-span-1 sm:col-span-2 lg:col-span-6">
-            <div className="text-2xl font-bold gradient-text mb-4">JEPH</div>
-            <p className="text-gray-400 dark:text-gray-400 light:text-gray-300 mb-6 max-w-md leading-relaxed">
-              AI Automation Specialist helping businesses streamline operations
-              and boost productivity through intelligent automation solutions.
-            </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-orange-500 transition-colors duration-200 p-2 rounded-full hover:bg-orange-500/10"
-                  aria-label={link.label}
-                >
-                  {link.icon}
-                </a>
-              ))}
+    <footer className="relative w-full bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 border-t border-orange-500/20">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23FF6B35%22%20fill-opacity%3D%220.02%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-60"></div>
+
+      <div className="relative">
+        {/* Main Footer Content */}
+        <div className="container mx-auto px-5 py-8">
+          {/* 4-Column Layout with exact image spacing */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
+            {/* Column 1: Brand and Description */}
+            <div className="lg:col-span-1">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="relative">
+                  <Image
+                    src={
+                      theme === "light"
+                        ? "/website-logo-light.png"
+                        : "/website-logo-dark.png"
+                    }
+                    alt="JEPH DALIGDIG Logo"
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">
+                    <span className="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
+                      Jeph Daligdig
+                    </span>
+                  </h3>
+                </div>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
+                AI Automation Specialist helping businesses streamline
+                operations and boost productivity through intelligent automation
+                solutions. Subscribe to stay updated with the latest automation
+                insights.
+              </p>
             </div>
-          </div>
 
-          {/* Quick Links */}
-          <div className="lg:col-span-3">
-            <h4 className="!text-white font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#about"
-                  className="!text-white transition-colors duration-200 block py-1"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#services"
-                  className="!text-white transition-colors duration-200 block py-1"
-                >
-                  Services
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  className="!text-white transition-colors duration-200 block py-1"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#blog"
-                  className="!text-white transition-colors duration-200 block py-1"
-                >
-                  Blog
-                </a>
-              </li>
-            </ul>
-          </div>
+            {/* Column 2: Office Information */}
+            <div>
+              <h4 className="text-white font-bold text-lg mb-4 relative">
+                <span className="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
+                  Office
+                </span>
+                <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"></div>
+              </h4>
+              <div className="space-y-6">
+                <div>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    Philippines
+                  </p>
+                </div>
+                <div>
+                  <a
+                    href="mailto:jephdaligdig98@gmail.com"
+                    className="text-gray-300 text-sm hover:text-orange-400 transition-colors duration-300 underline"
+                  >
+                    jephdaligdig98@gmail.com
+                  </a>
+                </div>
+                <div>
+                  <p className="text-gray-300 text-sm">+63 - 9759483289</p>
+                </div>
+              </div>
+            </div>
 
-          {/* Services */}
-          <div className="lg:col-span-3">
-            <h4 className="!text-white font-semibold mb-4">Services</h4>
-            <ul className="space-y-3">
-              <li>
-                <span className="!text-white block py-1">
-                  Workflow Automation
+            {/* Column 3: Links */}
+            <div>
+              <h4 className="text-white font-bold text-lg mb-4 relative">
+                <span className="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
+                  Links
                 </span>
-              </li>
-              <li>
-                <span className="!text-white block py-1">AI Integration</span>
-              </li>
-              <li>
-                <span className="!text-white block py-1">
-                  System Integration
+                <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"></div>
+              </h4>
+              <ul className="space-y-4">
+                {["Home", "Services", "About Us", "Projects", "Contact"].map(
+                  (item) => (
+                    <li key={item}>
+                      <a
+                        href={`#${item.toLowerCase().replace(" ", "-")}`}
+                        className="text-gray-300 text-sm hover:text-orange-400 transition-colors duration-300 block py-2"
+                      >
+                        {item}
+                      </a>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+
+            {/* Column 4: Newsletter */}
+            <div>
+              <h4 className="text-white font-bold text-lg mb-4 relative">
+                <span className="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
+                  Newsletter
                 </span>
-              </li>
-              <li>
-                <span className="!text-white block py-1">
-                  Process Optimization
-                </span>
-              </li>
-            </ul>
+                <div className="absolute bottom-0 left-0 w-12 h-0.5 bg-gradient-to-r from-orange-500 to-orange-400 rounded-full"></div>
+              </h4>
+              <div className="mb-8">
+                <div className="relative">
+                  <Mail
+                    size={18}
+                    className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Enter your email id"
+                    className="w-full pl-10 pr-12 py-3 bg-transparent border-b-2 border-white/30 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500 transition-colors duration-300"
+                  />
+                  <button
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 text-white hover:text-orange-400 transition-colors duration-300"
+                    aria-label="Subscribe to newsletter"
+                    title="Subscribe to newsletter"
+                  >
+                    <ArrowRight size={18} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-4">
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-white/10 border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-orange-500 hover:border-orange-500 transition-all duration-300"
+                    aria-label={link.label}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4 w-full text-center md:text-left">
-            <p className="text-gray-400 text-sm">
-              © {currentYear} Jeph. All rights reserved.
-            </p>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/20 bg-black/20">
+          <div className="container mx-auto px-5 py-1">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <p className="text-gray-400 text-sm">
+                © {currentYear} Jeph Daligdig. All rights reserved.
+              </p>
+              <div className="flex items-center gap-8 text-sm text-gray-400">
+                <a
+                  href="#"
+                  className="hover:text-orange-400 transition-colors duration-300"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-orange-500 transition-colors duration-300"
+                >
+                  Terms of Service
+                </a>
+                <a
+                  href="#"
+                  className="hover:text-orange-400 transition-colors duration-300"
+                >
+                  Cookie Policy
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
