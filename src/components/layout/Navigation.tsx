@@ -129,7 +129,7 @@ export const Navigation = () => {
             </button>
 
             <a
-              href="https://github.com/jeph"
+              href="https://github.com/greatxrider"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
@@ -190,7 +190,7 @@ export const Navigation = () => {
                 </button>
               ))}
               <a
-                href="https://github.com/jeph"
+                href="https://github.com/greatxrider"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 flex items-center gap-2 dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900"

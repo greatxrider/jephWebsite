@@ -39,7 +39,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="relative w-full bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 border-t border-orange-500/20">
+    <footer className="relative w-full bg-gradient-to-br from-black via-[#0a0a0a] to-black border-t border-orange-500/20">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23FF6B35%22%20fill-opacity%3D%220.02%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-60"></div>
 
@@ -59,17 +59,10 @@ export const Footer = () => {
                         : "/website-logo-dark.png"
                     }
                     alt="JEPH DALIGDIG Logo"
-                    width={64}
-                    height={64}
-                    className="w-16 h-16 object-contain"
+                    width={80}
+                    height={80}
+                    className="w-20 h-20 object-contain"
                   />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">
-                    <span className="bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
-                      Jeph Daligdig
-                    </span>
-                  </h3>
                 </div>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed max-w-xs">

@@ -551,15 +551,10 @@ export default function Projects({
                                 e.stopPropagation();
                                 window.open(project.github_url!, "_blank");
                               }}
-                              className="w-full bg-white/5 text-black dark:text-white hover:bg-orange-500/20 transition-all duration-300 text-sm flex items-center justify-center gap-2 border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 hover:border-orange-500/30"
+                              className="w-full bg-white/5 text-white hover:bg-orange-500/20 transition-all duration-300 text-sm flex items-center justify-center gap-2 border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 hover:border-orange-500/30"
                             >
-                              <Github
-                                className="w-4 h-4"
-                                style={{ color: "var(--chevron-color)" }}
-                              />
-                              <span style={{ color: "var(--chevron-color)" }}>
-                                View Code
-                              </span>
+                              <Github className="w-4 h-4 text-white" />
+                              <span className="text-white">View Code</span>
                             </Button>
                           )}
                         </div>
@@ -616,9 +611,9 @@ export default function Projects({
           onClick={closeModal}
         >
           <div
-            className="!bg-white dark:bg-white/10 backdrop-blur-md border border-gray-200 dark:border-white/20 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white dark:bg-gray-900 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
-            style={{ backgroundColor: "#ffffff" }}
+            style={{ backgroundColor: "var(--bg-card)" }}
           >
             <div className="p-6">
               {/* Modal Header */}
@@ -628,10 +623,7 @@ export default function Projects({
                     <Code className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3
-                      className="text-2xl font-bold text-white"
-                      style={{ color: "var(--text-primary)" }}
-                    >
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                       {selectedProject.title}
                     </h3>
                     <div className="flex items-center gap-2">
@@ -639,12 +631,11 @@ export default function Projects({
                       <span className="text-orange-500 text-sm font-medium">
                         {selectedProject.category}
                       </span>
-                      <span className="text-gray-400">•</span>
-                      <Calendar className="w-4 h-4 text-gray-400" />
-                      <span
-                        className="text-gray-400 text-sm"
-                        style={{ color: "var(--text-color)" }}
-                      >
+                      <span className="text-gray-500 dark:text-gray-400">
+                        •
+                      </span>
+                      <Calendar className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+                      <span className="text-gray-500 dark:text-gray-400 text-sm">
                         {formatDateShort(selectedProject.created_at)}
                       </span>
                     </div>
@@ -652,13 +643,10 @@ export default function Projects({
                 </div>
                 <button
                   onClick={closeModal}
-                  className="w-10 h-10 bg-gray-200 hover:bg-gray-300 dark:bg-white/10 dark:hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg flex items-center justify-center transition-colors"
                   aria-label="Close modal"
                 >
-                  <X
-                    className="w-5 h-5"
-                    style={{ color: "var(--chevron-color)" }}
-                  />
+                  <X className="w-5 h-5 text-gray-700 dark:text-white" />
                 </button>
               </div>
 
@@ -676,10 +664,7 @@ export default function Projects({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 dark:from-black/60 to-transparent group-hover:from-black/10 dark:group-hover:from-black/40 group-hover:to-transparent transition-all duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
-                    <ExternalLink
-                      className="w-6 h-6"
-                      style={{ color: "var(--chevron-color)" }}
-                    />
+                    <ExternalLink className="w-6 h-6 text-white" />
                   </div>
                 </div>
               </div>
@@ -690,16 +675,10 @@ export default function Projects({
                 <div className="space-y-8">
                   {/* Overview */}
                   <div>
-                    <h4
-                      className="text-xl font-bold text-white mb-3"
-                      style={{ color: "var(--text-primary)" }}
-                    >
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                       Overview
                     </h4>
-                    <p
-                      className="text-gray-400 leading-relaxed"
-                      style={{ color: "var(--text-color)" }}
-                    >
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                       {selectedProject.detailed_description ||
                         selectedProject.description}
                     </p>
@@ -707,16 +686,10 @@ export default function Projects({
 
                   {/* Key Features */}
                   <div>
-                    <h4
-                      className="text-xl font-bold text-white mb-3"
-                      style={{ color: "var(--text-primary)" }}
-                    >
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                       Key Features
                     </h4>
-                    <ul
-                      className="grid gap-2 text-gray-300 list-disc list-inside"
-                      style={{ color: "var(--text-color)" }}
-                    >
+                    <ul className="grid gap-2 text-gray-700 dark:text-gray-300 list-disc list-inside">
                       {(selectedProject.tools_used.slice(0, 4).length
                         ? selectedProject.tools_used.slice(0, 4)
                         : [
@@ -735,16 +708,10 @@ export default function Projects({
 
                   {/* How It Works */}
                   <div>
-                    <h4
-                      className="text-xl font-bold text-white mb-3"
-                      style={{ color: "var(--text-primary)" }}
-                    >
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                       How It Works
                     </h4>
-                    <ol
-                      className="grid gap-2 text-gray-300 list-decimal list-inside"
-                      style={{ color: "var(--text-color)" }}
-                    >
+                    <ol className="grid gap-2 text-gray-700 dark:text-gray-300 list-decimal list-inside">
                       <li className="marker:text-orange-400">
                         Trigger captures an event or message.
                       </li>
@@ -768,13 +735,8 @@ export default function Projects({
                       }
                       className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 flex items-center gap-2"
                     >
-                      <Github
-                        className="w-5 h-5"
-                        style={{ color: "var(--chevron-color)" }}
-                      />
-                      <span style={{ color: "var(--chevron-color)" }}>
-                        View Code on GitHub
-                      </span>
+                      <Github className="w-5 h-5 text-white" />
+                      <span className="text-white">View Code on GitHub</span>
                     </Button>
                   )}
                 </div>
@@ -783,16 +745,10 @@ export default function Projects({
                 <div className="space-y-8">
                   {/* Business Impact */}
                   <div>
-                    <h4
-                      className="text-xl font-bold text-white mb-3"
-                      style={{ color: "var(--text-primary)" }}
-                    >
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                       Business Impact
                     </h4>
-                    <ul
-                      className="grid gap-2 text-gray-300 list-disc list-inside"
-                      style={{ color: "var(--text-color)" }}
-                    >
+                    <ul className="grid gap-2 text-gray-700 dark:text-gray-300 list-disc list-inside">
                       <li className="marker:text-orange-400">
                         Reduced manual workload and response times.
                       </li>
@@ -810,10 +766,7 @@ export default function Projects({
 
                   {/* Technical Specifications */}
                   <div>
-                    <h4
-                      className="text-xl font-bold text-white mb-3"
-                      style={{ color: "var(--text-primary)" }}
-                    >
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                       Technical Specifications
                     </h4>
                     <div className="space-y-3">
@@ -821,8 +774,7 @@ export default function Projects({
                         {selectedProject.tools_used.map((tool, index) => (
                           <span
                             key={index}
-                            className="px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-800 border border-gray-200 dark:bg-white/5 dark:text-gray-200 dark:border-white/10"
-                            style={{ color: "var(--text-color)" }}
+                            className="px-3 py-1 rounded-full text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600"
                           >
                             {tool}
                           </span>
@@ -834,21 +786,15 @@ export default function Projects({
                             {selectedProject.technologies.map((tech, index) => (
                               <div
                                 key={index}
-                                className="rounded-lg p-4 bg-gray-50 border border-gray-200 dark:bg-white/5 dark:border-white/10"
+                                className="rounded-lg p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
                               >
                                 <div className="flex items-center gap-3">
                                   <span className="text-2xl">{tech.icon}</span>
                                   <div>
-                                    <p
-                                      className="text-white font-semibold"
-                                      style={{ color: "var(--text-primary)" }}
-                                    >
+                                    <p className="text-gray-900 dark:text-white font-semibold">
                                       {tech.name}
                                     </p>
-                                    <p
-                                      className="text-gray-400 text-sm"
-                                      style={{ color: "var(--text-color)" }}
-                                    >
+                                    <p className="text-gray-700 dark:text-gray-300 text-sm">
                                       {tech.description}
                                     </p>
                                   </div>
