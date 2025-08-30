@@ -26,6 +26,10 @@ import {
   Mail,
   FormInput,
   Star,
+  Rocket,
+  Award,
+  Calendar,
+  ArrowRight,
 } from "lucide-react";
 
 export const Services = () => {
@@ -500,6 +504,59 @@ export const Services = () => {
               </Card>
             ))}
           </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-12 text-center animate-on-scroll">
+          <Card className="card-ai bg-gradient-to-r from-orange-500/10 to-orange-600/10 border-orange-500/20">
+            <CardContent className="p-8">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Rocket className="w-8 h-8 text-orange-500" />
+                <h3
+                  className="text-2xl font-bold text-white"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  Ready to Transform Your Business?
+                </h3>
+              </div>
+              <p
+                className="text-gray-400 mb-6 max-w-2xl mx-auto"
+                style={{ color: "var(--text-color)" }}
+              >
+                Let's discuss how I can help you automate your processes,
+                integrate AI into your workflows, and create solutions that
+                drive real business value.
+              </p>
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="flex items-center gap-2 text-orange-500">
+                  <Award className="w-5 h-5" />
+                  <span className="text-sm font-medium">Proven Results</span>
+                </div>
+                <div className="flex items-center gap-2 text-orange-500">
+                  <Clock className="w-5 h-5" />
+                  <span className="text-sm font-medium">Fast Delivery</span>
+                </div>
+                <div className="flex items-center gap-2 text-orange-500">
+                  <MessageSquare className="w-5 h-5" />
+                  <span className="text-sm font-medium">Ongoing Support</span>
+                </div>
+              </div>
+
+              {/* Book a Call Button */}
+              <div className="flex justify-center">
+                <button
+                  onClick={() =>
+                    window.open("https://calendly.com/jeph", "_blank")
+                  }
+                  className="group bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white border-0 px-8 py-4 text-lg font-semibold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 rounded-xl"
+                >
+                  <Calendar className="w-5 h-5 flex-shrink-0" />
+                  <span>Book a Call</span>
+                  <ArrowRight className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

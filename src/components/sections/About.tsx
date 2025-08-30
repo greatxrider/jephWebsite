@@ -642,83 +642,90 @@ export const About = () => {
 
         {/* Skills Showcase */}
         <div className="space-y-8">
-          {/* Automation Platforms */}
+          {/* Automation Platforms & AI Technologies - 2 Column Layout */}
           <div className="animate-on-scroll">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
-              <h3
-                className="text-2xl font-bold text-white"
-                style={{ color: "var(--text-primary)" }}
-              >
-                Automation Platforms
-              </h3>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {automationPlatforms.map((platform, index) => (
-                <div
-                  key={index}
-                  className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 hover:border-orange-500/50 transition-all duration-300 text-center"
-                >
-                  <div className="relative mb-3">
-                    <div className="w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <Image
-                        src={platform.logo}
-                        alt={platform.name}
-                        width={32}
-                        height={32}
-                        className="object-contain"
-                      />
-                    </div>
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Left Column - Automation Platforms */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
+                    <Zap className="w-5 h-5 text-white" />
                   </div>
-                  <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-orange-400 transition-colors duration-300">
-                    {platform.name}
-                  </h4>
+                  <h3
+                    className="text-2xl font-bold text-white"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    Automation Platforms
+                  </h3>
                 </div>
-              ))}
-            </div>
-          </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {automationPlatforms.map((platform, index) => (
+                    <div
+                      key={index}
+                      className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 hover:border-orange-500/50 transition-all duration-300 text-center"
+                    >
+                      <div className="relative mb-3">
+                        <div className="w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                          <Image
+                            src={platform.logo}
+                            alt={platform.name}
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                          />
+                        </div>
+                      </div>
+                      <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-orange-400 transition-colors duration-300">
+                        {platform.name}
+                      </h4>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-          {/* AI Technologies & Technical Expertise - Combined */}
-          <div className="animate-on-scroll">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-400 rounded-full flex items-center justify-center">
-                <Brain className="w-5 h-5 text-white" />
-              </div>
-              <h3
-                className="text-2xl font-bold text-white"
-                style={{ color: "var(--text-primary)" }}
-              >
-                AI Technologies & Technical Expertise
-              </h3>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[...aiTechnologies, ...technicalSkills].map((item, index) => (
-                <div
-                  key={index}
-                  className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 hover:border-purple-500/50 transition-all duration-300 text-center"
-                >
-                  <div className="relative mb-3">
-                    <div className="w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      {item.logo ? (
-                        <Image
-                          src={item.logo}
-                          alt={item.name}
-                          width={32}
-                          height={32}
-                          className="object-contain"
-                        />
-                      ) : (
-                        <Code className="w-8 h-8 text-purple-600" />
-                      )}
-                    </div>
+              {/* Right Column - AI Technologies & Technical Expertise */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-400 rounded-full flex items-center justify-center">
+                    <Brain className="w-5 h-5 text-white" />
                   </div>
-                  <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-purple-400 transition-colors duration-300">
-                    {item.name}
-                  </h4>
+                  <h3
+                    className="text-2xl font-bold text-white"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    AI Technologies & Technical Expertise
+                  </h3>
                 </div>
-              ))}
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {[...aiTechnologies, ...technicalSkills].map(
+                    (item, index) => (
+                      <div
+                        key={index}
+                        className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 hover:border-purple-500/50 transition-all duration-300 text-center"
+                      >
+                        <div className="relative mb-3">
+                          <div className="w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            {item.logo ? (
+                              <Image
+                                src={item.logo}
+                                alt={item.name}
+                                width={32}
+                                height={32}
+                                className="object-contain"
+                              />
+                            ) : (
+                              <Code className="w-8 h-8 text-purple-600" />
+                            )}
+                          </div>
+                        </div>
+                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-purple-400 transition-colors duration-300">
+                          {item.name}
+                        </h4>
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -762,45 +769,6 @@ export const About = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-12 text-center animate-on-scroll">
-          <Card className="card-ai bg-gradient-to-r from-orange-500/10 to-orange-600/10 border-orange-500/20">
-            <CardContent className="p-8">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Rocket className="w-8 h-8 text-orange-500" />
-                <h3
-                  className="text-2xl font-bold text-white"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  Ready to Transform Your Business?
-                </h3>
-              </div>
-              <p
-                className="text-gray-400 mb-6 max-w-2xl mx-auto"
-                style={{ color: "var(--text-color)" }}
-              >
-                Let's discuss how I can help you automate your processes,
-                integrate AI into your workflows, and create solutions that
-                drive real business value.
-              </p>
-              <div className="flex items-center justify-center gap-4">
-                <div className="flex items-center gap-2 text-orange-500">
-                  <Award className="w-5 h-5" />
-                  <span className="text-sm font-medium">Proven Results</span>
-                </div>
-                <div className="flex items-center gap-2 text-orange-500">
-                  <Clock className="w-5 h-5" />
-                  <span className="text-sm font-medium">Fast Delivery</span>
-                </div>
-                <div className="flex items-center gap-2 text-orange-500">
-                  <MessageSquare className="w-5 h-5" />
-                  <span className="text-sm font-medium">Ongoing Support</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

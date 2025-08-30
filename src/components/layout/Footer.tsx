@@ -23,12 +23,12 @@ export const Footer = () => {
     },
     {
       icon: <Twitter size={20} />,
-      href: "https://x.com/mrjephdev",
+      href: "https://x.com/jephmari98",
       label: "Twitter",
     },
     {
       icon: <Instagram size={20} />,
-      href: "https://www.instagram.com/imyouritguy/",
+      href: "https://www.instagram.com/jephmari/",
       label: "Instagram",
     },
     {
@@ -39,7 +39,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black dark:bg-black light:bg-gray-900 border-t border-gray-800 dark:border-gray-800 light:border-gray-200 relative z-50 w-full mt-20 pt-16">
+    <footer className="bg-black dark:bg-black light:bg-gray-900 border-t border-gray-800 dark:border-gray-800 light:border-gray-200 relative z-50 w-full pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Brand */}

@@ -319,7 +319,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black overflow-hidden mb-20"
+      className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-50 via-gray-100 to-white dark:from-slate-900 dark:via-slate-800 dark:to-black overflow-hidden mb-20"
     >
       {/* Enhanced AI Background Effects */}
       <canvas
@@ -332,25 +332,25 @@ export const Hero = () => {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-slate-800/35 to-black/60" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50/50 via-gray-100/35 to-white/60 dark:from-slate-900/50 dark:via-slate-800/35 dark:to-black/60" />
       <div
         className="absolute inset-0"
         style={{
           pointerEvents: "none",
           background:
-            "radial-gradient(1200px 600px at 20% 20%, rgba(255,107,53,0.08), transparent 60%), radial-gradient(1000px 500px at 80% 80%, rgba(255,147,30,0.06), transparent 60%)",
+            "radial-gradient(1200px 600px at 20% 20%, rgba(255,107,53,0.04), transparent 60%), radial-gradient(1000px 500px at 80% 80%, rgba(255,147,30,0.03), transparent 60%)",
         }}
       />
 
       {/* Floating AI Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-orange-400/10 dark:from-orange-500/20 dark:to-orange-400/20 rounded-full blur-3xl animate-pulse"></div>
         <div
-          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/20 to-orange-500/20 rounded-full blur-3xl animate-pulse"
+          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/10 to-orange-500/10 dark:from-orange-600/20 dark:to-orange-500/20 rounded-full blur-3xl animate-pulse"
           style={{ animationDelay: "1s" }}
         ></div>
         <div
-          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/20 to-orange-600/20 rounded-full blur-2xl animate-pulse"
+          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/10 to-orange-600/10 dark:from-orange-700/20 dark:to-orange-600/20 rounded-full blur-2xl animate-pulse"
           style={{ animationDelay: "2s" }}
         ></div>
       </div>
@@ -360,7 +360,7 @@ export const Hero = () => {
           {/* Left Column - Main Content */}
           <div className="space-y-8">
             {/* Professional Badge */}
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 rounded-full">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm border border-gray-200 dark:bg-white/5 dark:border-white/10 rounded-full">
               <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" />
               <span className="text-orange-500 text-sm font-medium tracking-wider">
                 AI AUTOMATION SPECIALIST
@@ -371,7 +371,7 @@ export const Hero = () => {
             {/* Main Headline */}
             <div className="space-y-6">
               <h1
-                className="text-5xl md:text-6xl font-bold text-white dark:text-white leading-tight"
+                className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight"
                 style={{ color: "var(--text-primary)" }}
               >
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
@@ -411,7 +411,7 @@ export const Hero = () => {
                 variant="outline"
                 size="lg"
                 onClick={() => scrollToSection("services")}
-                className="border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 dark:border-white/20 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/40 light:border-gray-300 light:text-gray-700 light:hover:bg-gray-100 light:hover:border-gray-400 px-8 py-4 text-lg font-semibold backdrop-blur-sm transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3"
+                className="border-2 border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400 dark:border-white/20 dark:text-white dark:hover:bg-white/10 dark:hover:border-white/40 px-8 py-4 text-lg font-semibold backdrop-blur-sm transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3"
               >
                 <Network className="w-5 h-5 flex-shrink-0" />
                 <span>View Services</span>
@@ -422,7 +422,7 @@ export const Hero = () => {
           {/* Right Column - Visual Elements */}
           <div className="space-y-8">
             {/* Profile Card */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 rounded-2xl p-8">
+            <div className="bg-white/80 backdrop-blur-sm border border-gray-200 dark:bg-white/5 dark:border-white/10 rounded-2xl p-8">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 relative overflow-hidden rounded-full">
                   <Image
@@ -435,7 +435,7 @@ export const Hero = () => {
                 </div>
                 <div>
                   <h3
-                    className="text-xl font-bold text-white dark:text-white"
+                    className="text-xl font-bold text-gray-900 dark:text-white"
                     style={{ color: "var(--text-primary)" }}
                   >
                     Jeph Daligdig
@@ -450,7 +450,7 @@ export const Hero = () => {
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
                   <span
-                    className="text-gray-300 dark:text-gray-300"
+                    className="text-gray-700 dark:text-gray-300"
                     style={{ color: "var(--text-color)" }}
                   >
                     AI Workflow Automation Expert
@@ -459,7 +459,7 @@ export const Hero = () => {
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
                   <span
-                    className="text-gray-300 dark:text-gray-300"
+                    className="text-gray-700 dark:text-gray-300"
                     style={{ color: "var(--text-color)" }}
                   >
                     System & API Integration Specialist
@@ -468,7 +468,7 @@ export const Hero = () => {
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500" />
                   <span
-                    className="text-gray-300 dark:text-gray-300"
+                    className="text-gray-700 dark:text-gray-300"
                     style={{ color: "var(--text-color)" }}
                   >
                     Business Process Automation
