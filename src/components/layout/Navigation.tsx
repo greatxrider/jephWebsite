@@ -76,7 +76,7 @@ export const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-height ${
         isScrolled
-          ? "bg-black/60 backdrop-blur-md border-b border-gray-800 shadow-lg shadow-primary/20 dark:bg-black/60 dark:border-gray-800 light:bg-white/60 light:border-gray-200"
+          ? "bg-white/80 dark:bg-black/60 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-lg shadow-primary/20"
           : "bg-transparent"
       }`}
     >
@@ -110,7 +110,7 @@ export const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href)}
-                className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 relative group cursor-pointer navbar-font"
+                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 relative group cursor-pointer navbar-font"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
@@ -120,7 +120,7 @@ export const Navigation = () => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
               aria-label={`Switch to ${
                 theme === "light" ? "dark" : "light"
               } mode`}
@@ -132,7 +132,7 @@ export const Navigation = () => {
               href="https://github.com/greatxrider"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
               aria-label="GitHub"
             >
               <Github size={20} />
@@ -158,7 +158,7 @@ export const Navigation = () => {
             {/* Theme Toggle for Mobile */}
             <button
               onClick={toggleTheme}
-              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
               aria-label={`Switch to ${
                 theme === "light" ? "dark" : "light"
               } mode`}
@@ -168,7 +168,7 @@ export const Navigation = () => {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-300 hover:text-white dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 transition-colors duration-200 cursor-pointer"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200 cursor-pointer"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -177,13 +177,13 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-black/80 backdrop-blur-md border-t border-gray-800 shadow-lg shadow-primary/10 dark:bg-black/80 dark:border-gray-800 light:bg-white/80 light:border-gray-200">
+          <div className="md:hidden bg-white/90 dark:bg-black/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 shadow-lg shadow-primary/10">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => handleNavigation(item.href)}
-                  className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 relative group cursor-pointer dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900 navbar-font"
+                  className="block w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 relative group cursor-pointer navbar-font"
                 >
                   {item.label}
                   <span className="absolute left-0 top-0 w-0 h-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-1 rounded-l-md"></span>
@@ -193,7 +193,7 @@ export const Navigation = () => {
                 href="https://github.com/greatxrider"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 flex items-center gap-2 dark:text-gray-300 dark:hover:text-white light:text-gray-700 light:hover:text-gray-900"
+                className="w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 flex items-center gap-2"
               >
                 <Github size={20} />
                 <span>GitHub</span>
