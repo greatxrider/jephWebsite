@@ -347,7 +347,7 @@ export const Pricing = () => {
                       ? "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
                       : ""
                   }`}
-                  variant={pkg.popular ? "default" : "outline"}
+                  variant={pkg.popular ? "primary" : "outline"}
                   onClick={() =>
                     document.getElementById("contact")?.scrollIntoView({
                       behavior: "smooth",

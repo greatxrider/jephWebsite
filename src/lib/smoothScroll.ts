@@ -110,7 +110,7 @@ export const initPageScrolling = () => {
     // Add momentum scrolling for touch devices
     if ('ontouchstart' in window) {
         document.body.style.overflowY = 'scroll';
-        document.body.style.webkitOverflowScrolling = 'touch';
+        (document.body.style as any).webkitOverflowScrolling = 'touch';
     }
 
     console.log("Page scrolling initialized");

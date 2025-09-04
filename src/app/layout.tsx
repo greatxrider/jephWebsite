@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   creator: "Jeph",
   publisher: "Jeph",
   robots: "index, follow",
+  metadataBase: new URL("https://jeph.dev"),
   openGraph: {
     type: "website",
     locale: "en_US",

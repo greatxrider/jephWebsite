@@ -111,6 +111,7 @@ export const Hero = () => {
     let time = 0;
 
     const animate = () => {
+      if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Draw data streams
@@ -243,7 +244,7 @@ export const Hero = () => {
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
-    if (!canvas) return;
+    if (!ctx) return;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -270,6 +271,7 @@ export const Hero = () => {
     }
 
     const animate = () => {
+      if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle, i) => {

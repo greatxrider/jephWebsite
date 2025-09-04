@@ -12,7 +12,7 @@ export default function CookieTestPage() {
     // Check current cookie status
     const consent = localStorage.getItem("cookieConsent");
     const prefs = CookieManager.getPreferences();
-    
+
     setCookieStatus(consent || "No consent given");
     setPreferences(prefs);
   }, []);
@@ -23,8 +23,10 @@ export default function CookieTestPage() {
       CookieManager.setCookie("test_cookie", "test_value", 1);
       CookieManager.setAnalyticsCookie("analytics_test", "enabled");
       CookieManager.setMarketingCookie("marketing_test", "enabled");
-      
-      alert("Test cookies have been set! Check your browser's developer tools.");
+
+      alert(
+        "Test cookies have been set! Check your browser's developer tools."
+      );
     } else {
       alert("Please accept cookies first!");
     }
@@ -40,7 +42,9 @@ export default function CookieTestPage() {
   const handleResetConsent = () => {
     localStorage.removeItem("cookieConsent");
     setCookieStatus("No consent given");
-    alert("Cookie consent has been reset. Refresh the page to see the consent popup again.");
+    alert(
+      "Cookie consent has been reset. Refresh the page to see the consent popup again."
+    );
   };
 
   return (
@@ -50,7 +54,7 @@ export default function CookieTestPage() {
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
             Cookie Consent Test Page
           </h1>
-          
+
           <div className="space-y-6">
             {/* Current Status */}
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
@@ -58,15 +62,42 @@ export default function CookieTestPage() {
                 Current Cookie Status
               </h2>
               <div className="space-y-2 text-sm">
-                <p><strong>Consent Status:</strong> <span className="text-blue-600 dark:text-blue-400">{cookieStatus}</span></p>
-                <p><strong>Has Consent:</strong> <span className="text-blue-600 dark:text-blue-400">{CookieManager.hasConsent().toString()}</span></p>
+                <p>
+                  <strong>Consent Status:</strong>{" "}
+                  <span className="text-blue-600 dark:text-blue-400">
+                    {cookieStatus}
+                  </span>
+                </p>
+                <p>
+                  <strong>Has Consent:</strong>{" "}
+                  <span className="text-blue-600 dark:text-blue-400">
+                    {CookieManager.hasConsent().toString()}
+                  </span>
+                </p>
                 {preferences && (
                   <div>
-                    <p><strong>Preferences:</strong></p>
+                    <p>
+                      <strong>Preferences:</strong>
+                    </p>
                     <ul className="ml-4 space-y-1">
-                      <li>Essential: <span className="text-green-600">{preferences.essential.toString()}</span></li>
-                      <li>Analytics: <span className="text-blue-600">{preferences.analytics.toString()}</span></li>
-                      <li>Marketing: <span className="text-purple-600">{preferences.marketing.toString()}</span></li>
+                      <li>
+                        Essential:{" "}
+                        <span className="text-green-600">
+                          {preferences.essential.toString()}
+                        </span>
+                      </li>
+                      <li>
+                        Analytics:{" "}
+                        <span className="text-blue-600">
+                          {preferences.analytics.toString()}
+                        </span>
+                      </li>
+                      <li>
+                        Marketing:{" "}
+                        <span className="text-purple-600">
+                          {preferences.marketing.toString()}
+                        </span>
+                      </li>
                     </ul>
                   </div>
                 )}
@@ -109,11 +140,20 @@ export default function CookieTestPage() {
                 How to Test
               </h2>
               <ol className="list-decimal list-inside space-y-2 text-sm text-blue-800 dark:text-blue-200">
-                <li>If you haven't seen the cookie consent popup, refresh the page</li>
+                <li>
+                  If you haven't seen the cookie consent popup, refresh the page
+                </li>
                 <li>Accept cookies (either all or selected ones)</li>
-                <li>Use the "Set Test Cookies" button to create test cookies</li>
-                <li>Check your browser's Developer Tools → Application → Cookies to see the cookies</li>
-                <li>Use "Clear All Cookies" to remove everything and test again</li>
+                <li>
+                  Use the "Set Test Cookies" button to create test cookies
+                </li>
+                <li>
+                  Check your browser's Developer Tools → Application → Cookies
+                  to see the cookies
+                </li>
+                <li>
+                  Use "Clear All Cookies" to remove everything and test again
+                </li>
               </ol>
             </div>
 
@@ -124,7 +164,9 @@ export default function CookieTestPage() {
               </h2>
               <div className="bg-white dark:bg-gray-800 rounded border p-3 font-mono text-sm">
                 <p className="text-gray-600 dark:text-gray-400">
-                  {document.cookie || "No cookies found"}
+                  {typeof document !== "undefined"
+                    ? document.cookie || "No cookies found"
+                    : "No cookies found"}
                 </p>
               </div>
             </div>

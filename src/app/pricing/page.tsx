@@ -348,7 +348,7 @@ export default function PricingPage() {
                       ? "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
                       : ""
                   }`}
-                  variant={pkg.popular ? "default" : "outline"}
+                  variant={pkg.popular ? "primary" : "outline"}
                   onClick={() => window.open("/", "_self")}
                 >
                   Get Started
