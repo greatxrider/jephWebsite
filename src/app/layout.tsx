@@ -70,6 +70,47 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/website-logo-dark.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#FF6B35" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Jeph - AI Automation Specialist",
+              url: "https://jeph.dev",
+              logo: "https://jeph.dev/website-logo-dark.png",
+              sameAs: [
+                "https://github.com/greatxrider",
+                "https://www.linkedin.com/in/jephmari/",
+                "https://x.com/jephmari98",
+                "https://www.instagram.com/jephmari/",
+              ],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  contactType: "customer support",
+                  email: "jephdaligdig98@gmail.com",
+                },
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Jeph Portfolio",
+              url: "https://jeph.dev",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://jeph.dev/search?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
+        />
       </head>
       <body
         className={`${inter.variable} antialiased`}
