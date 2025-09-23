@@ -74,11 +74,10 @@ export const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-height ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-height ${isScrolled
           ? "bg-white/80 dark:bg-black/60 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-lg shadow-primary/20"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4 h-full">
         <div className="flex items-center justify-between h-full">
@@ -98,10 +97,10 @@ export const Navigation = () => {
                 alt="JEPH DALIGDIG Logo"
                 width={1100}
                 height={440}
-                className="h-48 w-auto"
+                className="h-14 w-auto sm:h-20 md:h-28 lg:h-36 xl:h-44 2xl:h-48"
               />
             </button>
-            <div className="ml-2 w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+            <div className="ml-2 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-500 rounded-full animate-pulse"></div>
           </div>
 
           {/* Desktop Navigation */}
@@ -121,9 +120,8 @@ export const Navigation = () => {
             <button
               onClick={toggleTheme}
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
-              aria-label={`Switch to ${
-                theme === "light" ? "dark" : "light"
-              } mode`}
+              aria-label={`Switch to ${theme === "light" ? "dark" : "light"
+                } mode`}
             >
               {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
             </button>
@@ -159,9 +157,8 @@ export const Navigation = () => {
             <button
               onClick={toggleTheme}
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
-              aria-label={`Switch to ${
-                theme === "light" ? "dark" : "light"
-              } mode`}
+              aria-label={`Switch to ${theme === "light" ? "dark" : "light"
+                } mode`}
             >
               {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
             </button>

@@ -98,7 +98,7 @@ export const Contact = () => {
           const targetNode = nodes[connectionIndex];
           const distance = Math.sqrt(
             Math.pow(node.x - targetNode.x, 2) +
-              Math.pow(node.y - targetNode.y, 2)
+            Math.pow(node.y - targetNode.y, 2)
           );
 
           if (distance < 200) {
@@ -389,9 +389,9 @@ export const Contact = () => {
         </div>
 
         {/* Contact Cards */}
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto justify-items-center items-stretch">
           {/* Left Card - AI-Powered Consultation */}
-          <Card className="card-ai bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300">
+          <Card hover={false} className="bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 transition-colors duration-300 mx-auto w-full max-w-md sm:max-w-xl">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
@@ -463,7 +463,7 @@ export const Contact = () => {
           </Card>
 
           {/* Right Card - Contact Form */}
-          <Card className="card-ai bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300">
+          <Card hover={false} className="bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 transition-colors duration-300 mx-auto w-full max-w-md sm:max-w-xl">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
@@ -550,11 +550,10 @@ export const Contact = () => {
                 {/* Submit Status */}
                 {submitStatus !== "idle" && (
                   <div
-                    className={`p-4 rounded-lg ${
-                      submitStatus === "success"
-                        ? "bg-green-500/10 border border-green-500/20"
-                        : "bg-red-500/10 border border-red-500/20"
-                    }`}
+                    className={`p-4 rounded-lg ${submitStatus === "success"
+                      ? "bg-green-500/10 border border-green-500/20"
+                      : "bg-red-500/10 border border-red-500/20"
+                      }`}
                   >
                     <div className="flex items-center gap-2">
                       {submitStatus === "success" ? (
@@ -563,11 +562,10 @@ export const Contact = () => {
                         <AlertCircle className="w-5 h-5 text-red-500" />
                       )}
                       <p
-                        className={`text-sm ${
-                          submitStatus === "success"
-                            ? "text-green-400"
-                            : "text-red-400"
-                        }`}
+                        className={`text-sm ${submitStatus === "success"
+                          ? "text-green-400"
+                          : "text-red-400"
+                          }`}
                       >
                         {submitMessage}
                       </p>

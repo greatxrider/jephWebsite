@@ -350,7 +350,8 @@ body {
 
 @media (min-width: 1200px) {
   .container {
-    padding: 3rem 3rem;
+    /* Remove top/bottom padding globally; keep horizontal gutters */
+    padding: 0 3rem;
   }
 }
 
@@ -413,5 +414,20 @@ section {
   .animate-neural-pulse,
   .animate-neon-glow {
     animation: none;
+  }
+}
+
+/* Footer responsive padding: ensure gutters below 1200px */
+@media (max-width: 1199px) {
+  footer .container {
+    padding: 2rem 2rem;
+  }
+}
+
+/* Restore footer vertical padding on large screens */
+@media (min-width: 1200px) {
+  footer .container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/Card";
 import Image from "next/image";
 import {
@@ -356,7 +356,7 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="section-padding relative bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 mt-20 mb-20"
+      className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 mt-20 mb-20"
     >
       <div className="container mx-auto px-4 relative z-10">
         {/* Header Section */}
@@ -389,9 +389,7 @@ export const About = () => {
                   className="text-xl text-gray-400 dark:text-gray-400 leading-relaxed"
                   style={{ color: "var(--text-color)" }}
                 >
-                  Specialized AI Automation Specialist transforming business
-                  operations using coding and no-code platforms integrated with
-                  cutting-edge AI models.
+                  I help business owners boost their teams’ productivity by automating repetitive, low-impact tasks. With automation, teams can focus on high-priority work that drives significant business growth and exceptional customer service.
                 </p>
                 <p className="text-xl text-orange-500 font-semibold mt-4 leading-relaxed">
                   Manual workflows automated — or you don&apos;t pay.
@@ -401,216 +399,109 @@ export const About = () => {
           </div>
         </div>
 
-        {/* Work Experience + Education & Certifications */}
+        {/* Background - Tabbed: Experience / Education / Certifications */}
         <div className="mb-12 animate-on-scroll">
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Left: Work Experience */}
-            <div>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
-                  <Briefcase className="w-6 h-6 text-white" />
-                </div>
-                <h3
-                  className="text-3xl font-bold text-white dark:text-white"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  Work Experience
-                </h3>
-              </div>
+          {(() => {
+            const [activeBgTab, setActiveBgTab] = useState<"experience" | "education" | "certs">("experience");
 
+            const Experience = (
               <div className="space-y-4">
                 {workExperience.map((job, index) => (
-                  <div key={index} className="relative group">
-                    <Card className="card-ai bg-white/60 backdrop-blur-sm border border-white/40 dark:bg-white/40 dark:border-white/30 light:bg-gray-100/90 light:border-gray-300/80 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 via-transparent to-orange-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                      <CardContent className="p-4 relative z-10">
-                        <div className="flex items-start gap-3">
-                          <div className="w-12 h-12 relative flex-shrink-0">
-                            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-lg blur-sm"></div>
-                            <Image
-                              src={job.logo}
-                              alt={job.company}
-                              width={48}
-                              height={48}
-                              className="object-contain w-full h-full rounded-lg relative z-10"
-                            />
-                          </div>
-
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-start justify-between mb-1">
-                              <div className="flex-1">
-                                <h4
-                                  className="text-white dark:text-white font-bold text-lg mb-1 group-hover:text-orange-400 transition-colors duration-300"
-                                  style={{ color: "var(--text-primary)" }}
-                                >
-                                  {job.position}
-                                </h4>
-                                <div className="flex items-center gap-2 mb-1">
-                                  <span className="text-orange-400 font-semibold text-base">
-                                    {job.company}
-                                  </span>
-                                  <div className="w-1 h-1 bg-orange-500 rounded-full animate-pulse"></div>
-                                </div>
-                              </div>
-
-                              <div className="flex items-center gap-2">
-                                <span
-                                  className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                                    job.period.includes("Present")
-                                      ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                                      : "bg-gray-500/20 text-gray-400 border border-gray-500/30"
-                                  }`}
-                                >
-                                  {job.period.includes("Present")
-                                    ? "Current"
-                                    : "Previous"}
-                                </span>
-                              </div>
-                            </div>
-
-                            <div className="flex items-center gap-2 mb-2">
-                              <Calendar className="w-3 h-3 text-gray-400" />
-                              <span
-                                className="text-gray-400 dark:text-gray-400 text-xs font-medium"
-                                style={{ color: "var(--text-color)" }}
-                              >
-                                {job.period}
-                              </span>
-                            </div>
-
-                            <p
-                              className="text-gray-400 dark:text-gray-400 text-sm leading-relaxed mb-3"
-                              style={{ color: "var(--text-color)" }}
-                            >
-                              {job.description}
-                            </p>
-
-                            <div className="flex flex-wrap gap-1">
-                              <span className="px-2 py-0.5 bg-orange-500/10 text-orange-400 text-xs font-medium rounded-full border border-orange-500/20">
-                                AI Automation
-                              </span>
-                              <span className="px-2 py-0.5 bg-blue-500/10 text-blue-400 text-xs font-medium rounded-full border border-blue-500/20">
-                                Workflow Design
-                              </span>
-                              <span className="px-2 py-0.5 bg-purple-500/10 text-purple-400 text-xs font-medium rounded-full border border-purple-500/20">
-                                System Integration
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="mt-3 h-0.5 bg-gray-700/50 rounded-full overflow-hidden">
-                          <div
-                            className={`h-full bg-gradient-to-r ${job.color} rounded-full transition-all duration-1000 ease-out`}
-                            style={{
-                              width: "0%",
-                              animation: "progressFill 2s ease-out forwards",
-                              animationDelay: `${index * 0.2}s`,
-                            }}
-                          ></div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Right: Education & Certifications */}
-            <div className="space-y-8">
-              {/* Education */}
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-400 rounded-full flex items-center justify-center">
-                    <GraduationCap className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-white">Education</h3>
-                </div>
-                <div className="space-y-4">
-                  {education.map((edu, idx) => (
-                    <Card
-                      key={idx}
-                      className="card-ai bg-white/60 backdrop-blur-sm border border-white/40 dark:bg-white/40 dark:border-white/30 light:bg-gray-100/90 light:border-gray-300/80"
-                    >
-                      <CardContent className="p-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 relative flex-shrink-0">
-                            <Image
-                              src={edu.logo}
-                              alt={edu.name}
-                              width={48}
-                              height={48}
-                              className="object-contain w-full h-full rounded-lg"
-                            />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-white font-semibold text-base leading-snug">
-                              {edu.name}
-                            </h4>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
-              {/* Certifications */}
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-400 rounded-full flex items-center justify-center">
-                    <Award className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-white">
-                    Certifications
-                  </h3>
-                </div>
-                <div className="grid grid-cols-1 gap-4">
-                  {certifications.map((cert, idx) => (
-                    <Card
-                      key={idx}
-                      className="card-ai bg-white/60 backdrop-blur-sm border border-white/40 dark:bg-white/40 dark:border-white/30 light:bg-gray-100/90 light:border-gray-300/80"
-                    >
-                      <CardContent className="p-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 relative flex-shrink-0">
-                            <Image
-                              src={cert.logo}
-                              alt={cert.name}
-                              width={40}
-                              height={40}
-                              className="object-contain w-full h-full rounded"
-                            />
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-white font-medium text-sm leading-snug">
-                              {cert.name}
-                            </h4>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                  {/* And More */}
-                  <Card className="card-ai bg-white/60 backdrop-blur-sm border border-white/40 dark:bg-white/40 dark:border-white/30 light:bg-gray-100/90 light:border-gray-300/80">
+                  <Card key={index} className="bg-white/10 border border-white/20">
                     <CardContent className="p-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded bg-white/20 flex items-center justify-center text-white text-xs font-semibold">
-                          +
+                      <div className="flex items-start gap-3">
+                        <div className="w-12 h-12 relative flex-shrink-0">
+                          <Image src={job.logo} alt={job.company} width={48} height={48} className="object-contain w-full h-full rounded-lg" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-white font-medium text-sm leading-snug">
-                            And More...
-                          </h4>
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <h4 className="text-white font-bold text-base">{job.position}</h4>
+                              <div className="flex items-center gap-2 text-sm">
+                                <span className="text-orange-400 font-semibold">{job.company}</span>
+                                <div className="w-1 h-1 bg-orange-500 rounded-full"></div>
+                                <span className="text-gray-400">{job.period}</span>
+                              </div>
+                            </div>
+                            <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${job.period.includes("Present") ? "bg-green-500/20 text-green-400 border border-green-500/30" : "bg-gray-500/20 text-gray-400 border border-gray-500/30"}`}>
+                              {job.period.includes("Present") ? "Current" : "Previous"}
+                            </span>
+                          </div>
+                          <p className="text-gray-300 text-sm mt-2">{job.description}</p>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
+                ))}
+              </div>
+            );
+
+            const Education = (
+              <div className="space-y-3">
+                {education.map((edu, idx) => (
+                  <Card key={idx} className="bg-white/10 border border-white/20">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 relative flex-shrink-0">
+                          <Image src={edu.logo} alt={edu.name} width={40} height={40} className="object-contain w-full h-full rounded" />
+                        </div>
+                        <h4 className="text-white font-medium text-sm leading-snug">{edu.name}</h4>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            );
+
+            const Certifications = (
+              <div className="grid grid-cols-1 gap-3">
+                {certifications.map((cert, idx) => (
+                  <Card key={idx} className="bg-white/10 border border-white/20">
+                    <CardContent className="p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 relative flex-shrink-0">
+                          <Image src={cert.logo} alt={cert.name} width={40} height={40} className="object-contain w-full h-full rounded" />
+                        </div>
+                        <h4 className="text-white font-medium text-sm leading-snug">{cert.name}</h4>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            );
+
+            return (
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
+                    <Briefcase className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Background</h3>
+                </div>
+
+                <div className="inline-flex rounded-xl border border-white/10 bg-white/5 p-1">
+                  <button onClick={() => setActiveBgTab("experience")} className={`px-4 py-2 text-sm rounded-lg transition ${activeBgTab === "experience" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>Experience</button>
+                  <button onClick={() => setActiveBgTab("education")} className={`px-4 py-2 text-sm rounded-lg transition ${activeBgTab === "education" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>Education</button>
+                  <button onClick={() => setActiveBgTab("certs")} className={`px-4 py-2 text-sm rounded-lg transition ${activeBgTab === "certs" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>Certifications</button>
+                </div>
+
+                {/* Mobile horizontal scroll */}
+                <div className="md:hidden -mx-4 px-4 pb-2 overflow-x-auto snap-x snap-mandatory">
+                  <div className="min-w-[90%] snap-start">
+                    {activeBgTab === "experience" && Experience}
+                    {activeBgTab === "education" && Education}
+                    {activeBgTab === "certs" && Certifications}
+                  </div>
+                </div>
+                {/* Desktop grid */}
+                <div className="hidden md:block">
+                  {activeBgTab === "experience" && Experience}
+                  {activeBgTab === "education" && Education}
+                  {activeBgTab === "certs" && Certifications}
                 </div>
               </div>
-            </div>
-          </div>
+            );
+          })()}
         </div>
 
         {/* Value Propositions */}
@@ -640,135 +531,79 @@ export const About = () => {
           </div>
         </div>
 
-        {/* Skills Showcase */}
-        <div className="space-y-8">
-          {/* Automation Platforms & AI Technologies - 2 Column Layout */}
-          <div className="animate-on-scroll">
-            <div className="grid lg:grid-cols-2 gap-8">
-              {/* Left Column - Automation Platforms */}
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
-                    <Zap className="w-5 h-5 text-white" />
+        {/* Tools & Skills - Tabbed, mobile scrollable */}
+        <div className="space-y-6 animate-on-scroll">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
+              <Zap className="w-5 h-5 text-white" />
+            </div>
+            <h3 className="text-2xl font-bold text-white" style={{ color: "var(--text-primary)" }}>
+              Tools & Skills
+            </h3>
+          </div>
+
+          {/* Tabs */}
+          {(() => {
+            const [activeSkillTab, setActiveSkillTab] = useState<"platforms" | "ai" | "languages">("platforms");
+            const renderCards = (items: Array<any>, colorHover: string = "orange") => (
+              <>
+                {/* Mobile: horizontal scroll */}
+                <div className="md:hidden -mx-4 px-4 pb-2 overflow-x-auto snap-x snap-mandatory">
+                  <div className="flex gap-4">
+                    {items.map((item, idx) => (
+                      <div key={idx} className="min-w-[200px] snap-start bg-white/10 border border-white/20 rounded-xl p-4">
+                        <div className="w-12 h-12 bg-white/90 rounded-lg flex items-center justify-center mb-3">
+                          {item.logo ? (
+                            <Image src={item.logo} alt={item.name} width={28} height={28} className="object-contain" />
+                          ) : (
+                            <Code className="w-6 h-6 text-orange-600" />
+                          )}
+                        </div>
+                        <h4 className="text-white font-semibold text-sm mb-1">{item.name}</h4>
+                        {item.description && (
+                          <p className="text-xs text-gray-300">{item.description}</p>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                  <h3
-                    className="text-2xl font-bold text-white"
-                    style={{ color: "var(--text-primary)" }}
-                  >
-                    Automation Platforms
-                  </h3>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {automationPlatforms.map((platform, index) => (
-                    <div
-                      key={index}
-                      className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 hover:border-orange-500/50 transition-all duration-300 text-center"
-                    >
+                {/* Desktop: grid */}
+                <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+                  {items.map((item, idx) => (
+                    <div key={idx} className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
                       <div className="relative mb-3">
-                        <div className="w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                          <Image
-                            src={platform.logo}
-                            alt={platform.name}
-                            width={32}
-                            height={32}
-                            className="object-contain"
-                          />
+                        <div className="w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto shadow-lg">
+                          {item.logo ? (
+                            <Image src={item.logo} alt={item.name} width={32} height={32} className="object-contain" />
+                          ) : (
+                            <Code className="w-8 h-8 text-orange-600" />
+                          )}
                         </div>
                       </div>
-                      <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-orange-400 transition-colors duration-300">
-                        {platform.name}
-                      </h4>
+                      <h4 className="text-white font-semibold text-sm mb-1">{item.name}</h4>
+                      {item.description && (
+                        <p className="text-xs text-gray-300">{item.description}</p>
+                      )}
                     </div>
                   ))}
                 </div>
-              </div>
+              </>
+            );
 
-              {/* Right Column - AI Technologies & Technical Expertise */}
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-400 rounded-full flex items-center justify-center">
-                    <Brain className="w-5 h-5 text-white" />
-                  </div>
-                  <h3
-                    className="text-2xl font-bold text-white"
-                    style={{ color: "var(--text-primary)" }}
-                  >
-                    AI Technologies & Technical Expertise
-                  </h3>
+            return (
+              <div className="space-y-6">
+                <div className="inline-flex rounded-xl border border-white/10 bg-white/5 p-1">
+                  <button onClick={() => setActiveSkillTab("platforms")} className={`px-4 py-2 text-sm rounded-lg transition ${activeSkillTab === "platforms" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>Platforms</button>
+                  <button onClick={() => setActiveSkillTab("ai")} className={`px-4 py-2 text-sm rounded-lg transition ${activeSkillTab === "ai" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>AI & Tech</button>
+                  <button onClick={() => setActiveSkillTab("languages")} className={`px-4 py-2 text-sm rounded-lg transition ${activeSkillTab === "languages" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>Languages</button>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {[...aiTechnologies, ...technicalSkills].map(
-                    (item, index) => (
-                      <div
-                        key={index}
-                        className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 hover:border-purple-500/50 transition-all duration-300 text-center"
-                      >
-                        <div className="relative mb-3">
-                          <div className="w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                            {item.logo ? (
-                              <Image
-                                src={item.logo}
-                                alt={item.name}
-                                width={32}
-                                height={32}
-                                className="object-contain"
-                              />
-                            ) : (
-                              <Code className="w-8 h-8 text-purple-600" />
-                            )}
-                          </div>
-                        </div>
-                        <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-purple-400 transition-colors duration-300">
-                          {item.name}
-                        </h4>
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Programming Languages */}
-          <div className="animate-on-scroll">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-400 rounded-full flex items-center justify-center">
-                <Code className="w-5 h-5 text-white" />
+                {activeSkillTab === "platforms" && renderCards(automationPlatforms)}
+                {activeSkillTab === "ai" && renderCards([...aiTechnologies, ...technicalSkills])}
+                {activeSkillTab === "languages" && renderCards(programmingLanguages)}
               </div>
-              <h3
-                className="text-2xl font-bold text-white"
-                style={{ color: "var(--text-primary)" }}
-              >
-                Programming Languages
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {programmingLanguages.map((lang, index) => (
-                <div
-                  key={index}
-                  className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 hover:bg-white/20 hover:border-green-500/50 transition-all duration-300 text-center"
-                >
-                  <div className="relative mb-3">
-                    <div
-                      className={`w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}
-                    >
-                      <Image
-                        src={lang.logo}
-                        alt={lang.name}
-                        width={36}
-                        height={36}
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>
-                  <h4 className="text-white font-semibold text-sm mb-1 group-hover:text-green-400 transition-colors duration-300">
-                    {lang.name}
-                  </h4>
-                </div>
-              ))}
-            </div>
-          </div>
+            );
+          })()}
         </div>
       </div>
     </section>

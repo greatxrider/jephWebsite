@@ -275,7 +275,7 @@ export default function Projects({
           const targetNode = nodes[connectionIndex];
           const distance = Math.sqrt(
             Math.pow(node.x - targetNode.x, 2) +
-              Math.pow(node.y - targetNode.y, 2)
+            Math.pow(node.y - targetNode.y, 2)
           );
           const opacity = Math.max(0.1, 1 - distance / 300);
 
@@ -416,31 +416,30 @@ export default function Projects({
           </div>
 
           {/* Filters */}
-          <div className="flex items-center justify-center gap-6 mb-8 w-full">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-8 w-full">
+            <div className="flex flex-wrap items-center gap-3">
               <Filter className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-700" />
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    selectedCategory === category
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${selectedCategory === category
                       ? "bg-orange-500 text-white shadow-lg shadow-orange-500/25"
                       : "bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-gray-200/50 border border-white/10 dark:border-white/10 light:border-gray-300/70"
-                  }`}
+                    }`}
                 >
                   {category}
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 w-full sm:w-auto">
               <Search className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-700" />
               <input
                 type="text"
                 placeholder="Search projects..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-64 px-4 py-2 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 border border-white/10 dark:border-white/10 light:border-gray-300/70 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 dark:placeholder-gray-400 light:placeholder-gray-600 text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                className="w-full sm:w-64 px-4 py-2 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 border border-white/10 dark:border-white/10 light:border-gray-300/70 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 dark:placeholder-gray-400 light:placeholder-gray-600 text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
               />
             </div>
           </div>
@@ -450,12 +449,11 @@ export default function Projects({
             {/* All Projects */}
             {filteredProjects.length > 0 && (
               <div>
-                <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 justify-items-center overflow-visible">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 justify-items-stretch md:justify-items-center overflow-visible">
                   {displayedProjects.map((project) => (
                     <Card
                       key={project.id}
-                      className="bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-xl overflow-visible group hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 cursor-pointer flex flex-col"
-                      style={{ width: "498px", height: "516px" }}
+                      className="bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-xl overflow-visible group hover:scale-[1.01] transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 cursor-pointer flex flex-col w-full max-w-[498px] md:w-[498px]"
                       onClick={() => openModal(project)} // Card click handler
                     >
                       <div className="aspect-video relative overflow-hidden">
@@ -503,9 +501,8 @@ export default function Projects({
                                 <div className="group/tooltip relative inline-block">
                                   <span
                                     className="px-3 py-1.5 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-sm border border-white/10 dark:border-white/10 light:border-gray-300/70 cursor-default hover:bg-white/10 transition-colors"
-                                    aria-label={`${
-                                      project.tools_used.length - 3
-                                    } more tools`}
+                                    aria-label={`${project.tools_used.length - 3
+                                      } more tools`}
                                   >
                                     +{project.tools_used.length - 3}
                                   </span>
@@ -693,11 +690,11 @@ export default function Projects({
                       {(selectedProject.tools_used.slice(0, 4).length
                         ? selectedProject.tools_used.slice(0, 4)
                         : [
-                            "Seamless integrations",
-                            "Automated workflows",
-                            "Scalable design",
-                            "Real-time insights",
-                          ]
+                          "Seamless integrations",
+                          "Automated workflows",
+                          "Scalable design",
+                          "Real-time insights",
+                        ]
                       ).map((item, idx) => (
                         <li key={idx} className="marker:text-orange-400">
                           {item}
