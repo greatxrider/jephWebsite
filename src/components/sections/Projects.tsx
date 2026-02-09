@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
+import { HoneycombBackground } from "@/components/ui/HoneycombBackground";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
@@ -70,7 +71,6 @@ export default function Projects({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showFullImage, setShowFullImage] = useState(false);
   // Removed overflow modal state in favor of hover popover
-  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   // Mock data for demonstration
   const mockProjects: Project[] = [
@@ -230,94 +230,6 @@ export default function Projects({
     }, 1000);
   }, []);
 
-  // AI Background Animation
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const nodes: Array<{ x: number; y: number; connections: number[] }> = [];
-    const numNodes = 8;
-
-    // Initialize nodes
-    for (let i = 0; i < numNodes; i++) {
-      nodes.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        connections: [],
-      });
-    }
-
-    // Create connections
-    nodes.forEach((node, i) => {
-      const numConnections = Math.floor(Math.random() * 3) + 1;
-      for (let j = 0; j < numConnections; j++) {
-        const targetIndex = (i + j + 1) % numNodes;
-        if (!node.connections.includes(targetIndex)) {
-          node.connections.push(targetIndex);
-        }
-      }
-    });
-
-    let time = 0;
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw connections
-      nodes.forEach((node, i) => {
-        node.connections.forEach((connectionIndex) => {
-          const targetNode = nodes[connectionIndex];
-          const distance = Math.sqrt(
-            Math.pow(node.x - targetNode.x, 2) +
-            Math.pow(node.y - targetNode.y, 2)
-          );
-          const opacity = Math.max(0.1, 1 - distance / 300);
-
-          ctx.strokeStyle = `rgba(255, 165, 0, ${opacity * 0.3})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(node.x, node.y);
-          ctx.lineTo(targetNode.x, targetNode.y);
-          ctx.stroke();
-        });
-      });
-
-      // Draw nodes
-      nodes.forEach((node, i) => {
-        const pulse = Math.sin(time * 0.01 + i) * 0.3 + 0.7;
-
-        // Glow effect
-        ctx.shadowColor = "rgba(255, 165, 0, 0.5)";
-        ctx.shadowBlur = 20;
-        ctx.fillStyle = `rgba(255, 165, 0, ${pulse * 0.6})`;
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, 4, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Reset shadow
-        ctx.shadowBlur = 0;
-      });
-
-      time++;
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const filteredProjects = projects.filter((project) => {
     const matchesCategory =
@@ -356,7 +268,7 @@ export default function Projects({
       >
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-honey-gold mx-auto"></div>
             <p className="text-gray-400 mt-4">Loading projects...</p>
           </div>
         </div>
@@ -368,32 +280,16 @@ export default function Projects({
     <>
       <section
         id="projects"
-        className="section-padding relative bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 mt-20 mb-20"
+        className="section-padding relative bg-[#FFFEF7] dark:bg-black mt-20 mb-20"
       >
-        {/* AI Background */}
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full opacity-30"
-        />
-
-        {/* Floating AI Elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "1s" }}
-          ></div>
-          <div
-            className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/10 to-orange-600/10 rounded-full blur-2xl animate-pulse"
-            style={{ animationDelay: "2s" }}
-          ></div>
-        </div>
+        {/* Honeycomb Background */}
+        <HoneycombBackground variant="swarm" density="low" />
 
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-full text-orange-500 text-sm font-medium mb-4">
-              <Sparkles size={16} className="animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 rounded-full text-honey-gold text-sm font-medium mb-4">
+              <Sparkles size={16} className="text-honey-gold" />
               <span>AI-Powered Portfolio</span>
             </div>
             <h2
@@ -401,7 +297,7 @@ export default function Projects({
               style={{ color: "var(--text-primary)" }}
             >
               Intelligent
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
+              <span className="text-primary">
                 {" "}
                 Automation Projects
               </span>
@@ -418,14 +314,14 @@ export default function Projects({
           {/* Filters */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-8 w-full">
             <div className="flex flex-wrap items-center gap-3">
-              <Filter className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-700" />
+              <Filter className="w-4 h-4 text-gray-400 dark:text-gray-400" />
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${selectedCategory === category
-                      ? "bg-orange-500 text-white shadow-lg shadow-orange-500/25"
-                      : "bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-gray-200/50 border border-white/10 dark:border-white/10 light:border-gray-300/70"
+                      ? "bg-primary text-white shadow-lg shadow-honey-gold/25"
+                      : "bg-white/5 dark:bg-white/5 text-gray-400 dark:text-gray-400 hover:bg-white/10 dark:hover:bg-white/10 border border-white/10 dark:border-white/10"
                     }`}
                 >
                   {category}
@@ -433,13 +329,13 @@ export default function Projects({
               ))}
             </div>
             <div className="flex items-center gap-3 w-full sm:w-auto">
-              <Search className="w-4 h-4 text-gray-400 dark:text-gray-400 light:text-gray-700" />
+              <Search className="w-4 h-4 text-gray-400 dark:text-gray-400" />
               <input
                 type="text"
                 placeholder="Search projects..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full sm:w-64 px-4 py-2 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 border border-white/10 dark:border-white/10 light:border-gray-300/70 rounded-lg text-white dark:text-white light:text-gray-900 placeholder-gray-400 dark:placeholder-gray-400 light:placeholder-gray-600 text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                className="w-full sm:w-64 px-4 py-2 bg-white/5 dark:bg-white/5 border border-white/10 dark:border-white/10 rounded-lg text-white dark:text-white placeholder-gray-400 dark:placeholder-gray-400 text-sm focus:outline-none focus:border-honey-gold focus:ring-1 focus:ring-honey-gold"
               />
             </div>
           </div>
@@ -453,7 +349,7 @@ export default function Projects({
                   {displayedProjects.map((project) => (
                     <Card
                       key={project.id}
-                      className="bg-white/5 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-xl overflow-visible group hover:scale-[1.01] transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 cursor-pointer flex flex-col w-full max-w-[498px] md:w-[498px]"
+                      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-visible group hover:scale-[1.01] transition-all duration-300 hover:shadow-2xl hover:shadow-honey-gold/10 cursor-pointer flex flex-col w-full max-w-[498px] md:w-[498px]"
                       onClick={() => openModal(project)} // Card click handler
                     >
                       <div className="aspect-video relative overflow-hidden">
@@ -463,13 +359,13 @@ export default function Projects({
                           fill
                           className="object-cover group-hover:scale-110 transition-transform duration-300"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute inset-0 bg-black/40" />
                       </div>
                       <CardContent className="p-6 relative flex flex-col h-full">
                         <div className="flex-1">
                           <div className="flex items-center gap-2 mb-4">
-                            <Tag className="w-4 h-4 text-orange-500" />
-                            <span className="text-orange-500 text-sm font-medium">
+                            <Tag className="w-4 h-4 text-honey-gold" />
+                            <span className="text-honey-gold text-sm font-medium">
                               {project.category}
                             </span>
                           </div>
@@ -491,7 +387,7 @@ export default function Projects({
                               .map((tool, index) => (
                                 <span
                                   key={index}
-                                  className="px-3 py-1.5 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-sm border border-white/10 dark:border-white/10 light:border-gray-300/70"
+                                  className="px-3 py-1.5 bg-white/5 dark:bg-white/5 text-gray-400 dark:text-gray-400 rounded text-sm border border-white/10 dark:border-white/10"
                                 >
                                   {tool}
                                 </span>
@@ -500,7 +396,7 @@ export default function Projects({
                               <div className="relative">
                                 <div className="group/tooltip relative inline-block">
                                   <span
-                                    className="px-3 py-1.5 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 text-gray-400 dark:text-gray-400 light:text-gray-800 rounded text-sm border border-white/10 dark:border-white/10 light:border-gray-300/70 cursor-default hover:bg-white/10 transition-colors"
+                                    className="px-3 py-1.5 bg-white/5 dark:bg-white/5 text-gray-400 dark:text-gray-400 rounded text-sm border border-white/10 dark:border-white/10 cursor-default hover:bg-white/10 transition-colors"
                                     aria-label={`${project.tools_used.length - 3
                                       } more tools`}
                                   >
@@ -514,7 +410,7 @@ export default function Projects({
                                           .map((tool, idx2) => (
                                             <span
                                               key={idx2}
-                                              className="px-2 py-1 bg-orange-500/20 text-orange-400 rounded-full text-xs border border-orange-500/30 whitespace-nowrap"
+                                              className="px-2 py-1 bg-honey-gold/20 text-honey-gold rounded-full text-xs border border-honey-gold/30 whitespace-nowrap"
                                             >
                                               {tool}
                                             </span>
@@ -534,7 +430,7 @@ export default function Projects({
                         <div className="mt-auto pt-4 space-y-3">
                           <Button
                             onClick={() => openModal(project)}
-                            className="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2 group"
+                            className="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-honey-gold/25 flex items-center justify-center gap-2 group"
                           >
                             <span>View Details</span>
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -548,7 +444,7 @@ export default function Projects({
                                 e.stopPropagation();
                                 window.open(project.github_url!, "_blank");
                               }}
-                              className="w-full bg-white/5 text-white hover:bg-orange-500/20 transition-all duration-300 text-sm flex items-center justify-center gap-2 border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 hover:border-orange-500/30"
+                              className="w-full bg-white/5 text-white hover:bg-honey-gold/20 transition-all duration-300 text-sm flex items-center justify-center gap-2 border border-white/10 hover:border-honey-gold/30"
                             >
                               <Github className="w-4 h-4 text-white" />
                               <span className="text-white">View Code</span>
@@ -562,7 +458,7 @@ export default function Projects({
                 {showSeeMore && filteredProjects.length > 6 && (
                   <div className="flex justify-center mt-10">
                     <Link href="/projects">
-                      <Button className="bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-orange-500/25 flex items-center justify-center gap-2">
+                      <Button className="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-honey-gold/25 flex items-center justify-center gap-2">
                         <span>See More Projects</span>
                         <ArrowRight className="w-5 h-5" />
                       </Button>
@@ -575,13 +471,13 @@ export default function Projects({
             {/* Empty State */}
             {filteredProjects.length === 0 && (
               <div className="text-center py-16">
-                <div className="w-24 h-24 bg-white/5 dark:bg-white/5 light:bg-gray-100/50 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Brain className="w-12 h-12 text-gray-400 dark:text-gray-400 light:text-gray-700" />
+                <div className="w-24 h-24 bg-white/5 dark:bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Brain className="w-12 h-12 text-gray-400 dark:text-gray-400" />
                 </div>
-                <h3 className="text-2xl font-bold text-white dark:text-white light:text-gray-900 mb-3">
+                <h3 className="text-2xl font-bold text-white dark:text-white mb-3">
                   No Projects Found
                 </h3>
-                <p className="text-gray-400 dark:text-gray-400 light:text-gray-700 text-lg mb-8 max-w-md mx-auto">
+                <p className="text-gray-400 dark:text-gray-400 text-lg mb-8 max-w-md mx-auto">
                   Try adjusting your search or filter criteria to find the
                   perfect AI automation solution
                 </p>
@@ -590,7 +486,7 @@ export default function Projects({
                     setSearchTerm("");
                     setSelectedCategory("All");
                   }}
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 text-base"
+                  className="bg-primary hover:bg-primary-dark text-white px-6 py-3 text-base"
                 >
                   <RefreshCw className="w-5 h-5 mr-2" />
                   Clear Filters
@@ -616,7 +512,7 @@ export default function Projects({
               {/* Modal Header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-primary clip-hex flex items-center justify-center">
                     <Code className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -624,8 +520,8 @@ export default function Projects({
                       {selectedProject.title}
                     </h3>
                     <div className="flex items-center gap-2">
-                      <Tag className="w-4 h-4 text-orange-500" />
-                      <span className="text-orange-500 text-sm font-medium">
+                      <Tag className="w-4 h-4 text-honey-gold" />
+                      <span className="text-honey-gold text-sm font-medium">
                         {selectedProject.category}
                       </span>
                       <span className="text-gray-500 dark:text-gray-400">
@@ -658,7 +554,7 @@ export default function Projects({
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 dark:from-black/60 to-transparent group-hover:from-black/10 dark:group-hover:from-black/40 group-hover:to-transparent transition-all duration-300" />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
                     <ExternalLink className="w-6 h-6 text-white" />
@@ -696,7 +592,7 @@ export default function Projects({
                           "Real-time insights",
                         ]
                       ).map((item, idx) => (
-                        <li key={idx} className="marker:text-orange-400">
+                        <li key={idx} className="marker:text-honey-gold">
                           {item}
                         </li>
                       ))}
@@ -709,16 +605,16 @@ export default function Projects({
                       How It Works
                     </h4>
                     <ol className="grid gap-2 text-gray-700 dark:text-gray-300 list-decimal list-inside">
-                      <li className="marker:text-orange-400">
+                      <li className="marker:text-honey-gold">
                         Trigger captures an event or message.
                       </li>
-                      <li className="marker:text-orange-400">
+                      <li className="marker:text-honey-gold">
                         Logic layer processes and enriches data.
                       </li>
-                      <li className="marker:text-orange-400">
+                      <li className="marker:text-honey-gold">
                         AI/automation nodes make decisions and route tasks.
                       </li>
-                      <li className="marker:text-orange-400">
+                      <li className="marker:text-honey-gold">
                         Results sync to connected apps and CRM.
                       </li>
                     </ol>
@@ -730,7 +626,7 @@ export default function Projects({
                       onClick={() =>
                         window.open(selectedProject.github_url!, "_blank")
                       }
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 flex items-center gap-2"
+                      className="bg-primary hover:bg-primary-dark text-white px-6 py-3 flex items-center gap-2"
                     >
                       <Github className="w-5 h-5 text-white" />
                       <span className="text-white">View Code on GitHub</span>
@@ -746,16 +642,16 @@ export default function Projects({
                       Business Impact
                     </h4>
                     <ul className="grid gap-2 text-gray-700 dark:text-gray-300 list-disc list-inside">
-                      <li className="marker:text-orange-400">
+                      <li className="marker:text-honey-gold">
                         Reduced manual workload and response times.
                       </li>
-                      <li className="marker:text-orange-400">
+                      <li className="marker:text-honey-gold">
                         Improved lead quality and conversion rates.
                       </li>
-                      <li className="marker:text-orange-400">
+                      <li className="marker:text-honey-gold">
                         Higher data accuracy with automated sync.
                       </li>
-                      <li className="marker:text-orange-400">
+                      <li className="marker:text-honey-gold">
                         Scales without additional headcount.
                       </li>
                     </ul>

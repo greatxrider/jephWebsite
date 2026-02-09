@@ -49,7 +49,7 @@ export const Pricing = () => {
         "Priority support",
       ],
       popular: false,
-      color: "from-blue-500 to-cyan-500",
+      color: "bg-blue-500",
       icon: <Zap className="w-8 h-8" />,
     },
     {
@@ -76,7 +76,7 @@ export const Pricing = () => {
         "Advanced analytics",
       ],
       popular: true,
-      color: "from-orange-500 to-red-500",
+      color: "bg-primary",
       icon: <Brain className="w-8 h-8" />,
     },
     {
@@ -101,7 +101,7 @@ export const Pricing = () => {
       ],
       notIncluded: [],
       popular: false,
-      color: "from-purple-500 to-pink-500",
+      color: "bg-purple-500",
       icon: <Workflow className="w-8 h-8" />,
     },
   ];
@@ -128,7 +128,7 @@ export const Pricing = () => {
         "Custom integrations",
       ],
       popular: false,
-      color: "from-green-500 to-teal-500",
+      color: "bg-green-500",
       icon: <Shield className="w-8 h-8" />,
     },
     {
@@ -153,7 +153,7 @@ export const Pricing = () => {
         "Dedicated support team",
       ],
       popular: true,
-      color: "from-orange-500 to-red-500",
+      color: "bg-primary",
       icon: <Users className="w-8 h-8" />,
     },
     {
@@ -176,7 +176,7 @@ export const Pricing = () => {
       ],
       notIncluded: [],
       popular: false,
-      color: "from-purple-500 to-pink-500",
+      color: "bg-purple-500",
       icon: <Award className="w-8 h-8" />,
     },
   ];
@@ -209,11 +209,13 @@ export const Pricing = () => {
     billingCycle === "project" ? projectPackages : retainerPackages;
 
   return (
-    <section id="pricing" className="section-padding relative">
+    <section id="pricing" className="section-padding relative bg-[#FFFEF7] dark:bg-black">
+      {/* Honeycomb Overlay */}
+      <div className="absolute inset-0 bg-honeycomb opacity-30 pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-bright/10 to-orange-gold/10 border border-orange-bright/30 rounded-full text-orange-bright text-sm font-medium mb-4 animate-neon-glow">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-medium mb-4">
             <Sparkles size={16} className="animate-neural-pulse" />
             <span className="gradient-text-neon">AI Automation Pricing</span>
           </div>
@@ -238,7 +240,7 @@ export const Pricing = () => {
               onClick={() => setBillingCycle("project")}
               className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
                 billingCycle === "project"
-                  ? "bg-orange-500 text-white"
+                  ? "bg-honey-gold text-white"
                   : "text-gray-300 hover:text-white"
               }`}
             >
@@ -248,7 +250,7 @@ export const Pricing = () => {
               onClick={() => setBillingCycle("retainer")}
               className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
                 billingCycle === "retainer"
-                  ? "bg-orange-500 text-white"
+                  ? "bg-honey-gold text-white"
                   : "text-gray-300 hover:text-white"
               }`}
             >
@@ -263,12 +265,12 @@ export const Pricing = () => {
             <Card
               key={index}
               className={`relative h-full card-ai ${
-                pkg.popular ? "ring-2 ring-orange-500" : ""
+                pkg.popular ? "ring-2 ring-honey-gold" : ""
               }`}
             >
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-1">
+                  <div className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-1">
                     <Star className="w-4 h-4" />
                     Most Popular
                   </div>
@@ -277,7 +279,7 @@ export const Pricing = () => {
 
               <CardHeader className="text-center">
                 <div
-                  className={`w-16 h-16 bg-gradient-to-br ${pkg.color} rounded-full flex items-center justify-center text-white mb-4 mx-auto`}
+                  className={`w-16 h-16 ${pkg.color} clip-hex flex items-center justify-center text-white mb-4 mx-auto`}
                 >
                   {pkg.icon}
                 </div>
@@ -344,7 +346,7 @@ export const Pricing = () => {
                 <Button
                   className={`w-full ${
                     pkg.popular
-                      ? "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
+                      ? "bg-primary hover:bg-primary-dark"
                       : ""
                   }`}
                   variant={pkg.popular ? "primary" : "outline"}
@@ -376,7 +378,7 @@ export const Pricing = () => {
                   <h4 className="text-lg font-semibold text-white mb-2">
                     {addon.name}
                   </h4>
-                  <p className="text-2xl font-bold text-orange-500 mb-3">
+                  <p className="text-2xl font-bold text-honey-gold mb-3">
                     {addon.price}
                   </p>
                   <p className="text-gray-300 text-sm">{addon.description}</p>
@@ -443,7 +445,7 @@ export const Pricing = () => {
 
         {/* Money-back Guarantee */}
         <div className="mb-16">
-          <Card className="max-w-4xl mx-auto card-ai bg-gradient-to-r from-green-500/10 to-teal-500/10 border-green-500/20">
+          <Card className="max-w-4xl mx-auto card-ai bg-green-500/10 border-green-500/20">
             <CardContent className="p-8 text-center">
               <Shield className="w-16 h-16 text-green-500 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-4">

@@ -111,19 +111,20 @@ export const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="section-padding relative">
+    <section id="faq" className="section-padding relative bg-transparent dark:bg-black">
+      <div className="absolute inset-0 bg-honeycomb opacity-30 pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-bright/10 to-orange-gold/10 border border-orange-bright/30 rounded-full text-orange-bright text-sm font-medium mb-4 animate-neon-glow">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-orange-bright/30 rounded-full text-orange-bright text-sm font-medium mb-4 animate-neon-glow">
             <Sparkles size={16} className="animate-neural-pulse" />
-            <span className="gradient-text-neon">
+            <span className="text-primary">
               Frequently Asked Questions
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Common Questions About
-            <span className="gradient-text-ai"> AI Automation</span>
+            <span className="text-primary"> AI Automation</span>
           </h2>
           <p
             className="text-xl text-gray-300 max-w-3xl mx-auto"
@@ -143,7 +144,7 @@ export const FAQ = () => {
               onClick={() => setSelectedCategory(category)}
               className={`faq-category-button px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 selectedCategory === category
-                  ? "bg-orange-500 text-white"
+                  ? "bg-honey-gold text-white"
                   : "bg-gray-800 text-gray-300 hover:bg-gray-700"
               }`}
             >
@@ -163,7 +164,7 @@ export const FAQ = () => {
                     className="faq-toggle-button w-full p-4 text-left flex items-center justify-between hover:bg-gray-800/50 transition-colors"
                   >
                     <div>
-                      <span className="inline-block px-2 py-1 bg-orange-500/20 text-orange-500 rounded text-xs font-medium mb-2">
+                      <span className="inline-block px-2 py-1 bg-honey-gold/20 text-honey-gold rounded text-xs font-medium mb-2">
                         {faq.category}
                       </span>
                       <h3 className="text-base font-semibold text-white pr-4">
@@ -172,7 +173,7 @@ export const FAQ = () => {
                     </div>
                     <div className="flex-shrink-0">
                       {openIndex === index ? (
-                        <ChevronUp className="w-4 h-4 text-orange-500" />
+                        <ChevronUp className="w-4 h-4 text-honey-gold" />
                       ) : (
                         <ChevronDown className="w-4 h-4 text-gray-400" />
                       )}
@@ -240,7 +241,7 @@ export const FAQ = () => {
           </Card>
           <Card className="card-ai text-center">
             <CardContent className="p-6">
-              <CheckCircle className="w-8 h-8 text-orange-500 mx-auto mb-4" />
+              <CheckCircle className="w-8 h-8 text-honey-gold mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">
                 99.9% Uptime
               </h3>
@@ -256,10 +257,10 @@ export const FAQ = () => {
           <Card className="max-w-3xl mx-auto card-ai">
             <CardContent className="p-8">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full flex items-center justify-center animate-neural-pulse">
+                <div className="w-12 h-12 bg-primary clip-hex flex items-center justify-center animate-neural-pulse">
                   <HelpCircle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white gradient-text-ai">
+                <h3 className="text-2xl font-bold text-primary">
                   Still Have Questions?
                 </h3>
               </div>

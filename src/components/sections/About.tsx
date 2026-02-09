@@ -58,25 +58,25 @@ export const About = () => {
       icon: Workflow,
       title: "No-Code Automation",
       description: "Make, Zapier, n8n Expert",
-      color: "from-orange-500 to-orange-400",
+      color: "bg-orange-500",
     },
     {
       icon: Brain,
       title: "AI Integration",
       description: "OpenAI, Claude, ChatGPT",
-      color: "from-orange-600 to-orange-500",
+      color: "bg-orange-600",
     },
     {
       icon: Link2,
       title: "API Connections",
       description: "REST, GraphQL, Webhooks",
-      color: "from-orange-700 to-orange-600",
+      color: "bg-orange-700",
     },
     {
       icon: GitBranch,
       title: "Complex Workflows",
       description: "Multi-step Logic & Routing",
-      color: "from-orange-800 to-orange-700",
+      color: "bg-orange-800",
     },
   ];
 
@@ -186,7 +186,7 @@ export const About = () => {
       description: "Full-stack development & automation",
       expertise: "Expert",
       type: "Primary",
-      color: "from-yellow-500 to-yellow-400",
+      color: "bg-yellow-500",
     },
     {
       name: "Python",
@@ -194,7 +194,7 @@ export const About = () => {
       description: "AI/ML, automation & backend development",
       expertise: "Expert",
       type: "Primary",
-      color: "from-blue-500 to-blue-400",
+      color: "bg-blue-500",
     },
     {
       name: "C#",
@@ -202,7 +202,7 @@ export const About = () => {
       description: "Enterprise applications & .NET development",
       expertise: "Advanced",
       type: "Secondary",
-      color: "from-purple-500 to-purple-400",
+      color: "bg-purple-500",
     },
     {
       name: "C++",
@@ -210,7 +210,7 @@ export const About = () => {
       description: "System programming & performance optimization",
       expertise: "Advanced",
       type: "Secondary",
-      color: "from-pink-500 to-pink-400",
+      color: "bg-pink-500",
     },
     {
       name: "C",
@@ -218,7 +218,7 @@ export const About = () => {
       description: "Low-level programming & embedded systems",
       expertise: "Intermediate",
       type: "Secondary",
-      color: "from-gray-500 to-gray-400",
+      color: "bg-gray-500",
     },
   ];
 
@@ -227,25 +227,25 @@ export const About = () => {
       icon: Clock,
       title: "Rapid Deployment",
       description: "Milestone-based delivery with realistic timelines",
-      color: "from-green-500 to-green-400",
+      color: "bg-green-500",
     },
     {
       icon: Target,
       title: "ROI Focused",
       description: "Every solution designed to maximize your return",
-      color: "from-blue-500 to-blue-400",
+      color: "bg-blue-500",
     },
     {
       icon: Shield,
       title: "Enterprise Ready",
       description: "Scalable solutions that grow with your business",
-      color: "from-purple-500 to-purple-400",
+      color: "bg-purple-500",
     },
     {
       icon: Users,
       title: "Ongoing Support",
       description: "Continuous optimization and maintenance",
-      color: "from-orange-500 to-orange-400",
+      color: "bg-orange-500",
     },
   ];
 
@@ -257,7 +257,7 @@ export const About = () => {
       description:
         "Streamlined outsourcing processes through intelligent automation",
       logo: "/companyLogos/easyoutsource-logo.png",
-      color: "from-indigo-500 to-indigo-400",
+      color: "bg-indigo-500",
     },
     {
       company: "MetaWatt",
@@ -266,7 +266,7 @@ export const About = () => {
       description:
         "Specialized in energy sector automation and AI-powered optimization",
       logo: "/companyLogos/metawatt-logo.png",
-      color: "from-yellow-500 to-yellow-400",
+      color: "bg-yellow-500",
     },
     {
       company: "Haivyne",
@@ -275,7 +275,7 @@ export const About = () => {
       description:
         "Creating intelligent automation workflows and AI integration solutions",
       logo: "/companyLogos/haivyne-logo.png",
-      color: "from-pink-500 to-pink-400",
+      color: "bg-pink-500",
     },
     {
       company: "Bamboo Works",
@@ -284,7 +284,7 @@ export const About = () => {
       description:
         "Developed and implemented AI automation solutions for business processes",
       logo: "/companyLogos/bambooworks-logo.png",
-      color: "from-orange-500 to-orange-400",
+      color: "bg-orange-500",
     },
     {
       company: "RevWised",
@@ -293,7 +293,7 @@ export const About = () => {
       description:
         "Specialized in AI-powered workflow automation and process optimization",
       logo: "/companyLogos/revwise-logo.png",
-      color: "from-purple-500 to-purple-400",
+      color: "bg-purple-500",
     },
     {
       company: "Nyxpro",
@@ -302,7 +302,7 @@ export const About = () => {
       description:
         "Chief Technology Officer overseeing technical strategy and development",
       logo: "/companyLogos/nyxpro-logo.jpg",
-      color: "from-green-500 to-green-400",
+      color: "bg-green-500",
     },
     {
       company: "Nyxpro",
@@ -311,7 +311,7 @@ export const About = () => {
       description:
         "Co-founded and led strategic initiatives for technology innovation",
       logo: "/companyLogos/nyxpro-logo.jpg",
-      color: "from-blue-500 to-blue-400",
+      color: "bg-blue-500",
     },
   ];
 
@@ -356,15 +356,17 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 mt-20 mb-20"
+      className="relative bg-[#FFFEF7] dark:bg-black mt-20 mb-20"
     >
+      {/* Honeycomb background overlay */}
+      <div className="absolute inset-0 bg-honeycomb opacity-40 pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         {/* Header Section */}
         <div className="mb-12">
           <div className="animate-on-scroll">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-full text-orange-500 text-sm font-medium mb-6">
-              <Sparkles size={16} className="animate-pulse" />
-              <span>AI Automation Expert</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-honey-gold/15 dark:bg-white/5 dark:border-honey-gold/15 rounded-full text-sm font-medium mb-6">
+              <Sparkles size={16} className="text-honey-gold" />
+              <span className="text-primary">AI Automation Expert</span>
             </div>
 
             {/* 2-Column Header Layout */}
@@ -376,10 +378,11 @@ export const About = () => {
                   style={{ color: "var(--text-primary)" }}
                 >
                   Connecting Intelligence with
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
+                  <span className="text-primary">
                     {" "}
                     Automation Excellence
                   </span>
+
                 </h2>
               </div>
 
@@ -391,7 +394,7 @@ export const About = () => {
                 >
                   I help business owners boost their teams’ productivity by automating repetitive, low-impact tasks. With automation, teams can focus on high-priority work that drives significant business growth and exceptional customer service.
                 </p>
-                <p className="text-xl text-orange-500 font-semibold mt-4 leading-relaxed">
+                <p className="text-xl text-primary font-semibold mt-4 leading-relaxed">
                   Manual workflows automated — or you don&apos;t pay.
                 </p>
               </div>
@@ -418,8 +421,8 @@ export const About = () => {
                             <div>
                               <h4 className="text-white font-bold text-base">{job.position}</h4>
                               <div className="flex items-center gap-2 text-sm">
-                                <span className="text-orange-400 font-semibold">{job.company}</span>
-                                <div className="w-1 h-1 bg-orange-500 rounded-full"></div>
+                                <span className="text-honey-gold font-semibold">{job.company}</span>
+                                <div className="w-1 h-1 bg-honey-gold clip-hex"></div>
                                 <span className="text-gray-400">{job.period}</span>
                               </div>
                             </div>
@@ -473,16 +476,16 @@ export const About = () => {
             return (
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-primary clip-hex flex items-center justify-center">
                     <Briefcase className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">Background</h3>
                 </div>
 
                 <div className="inline-flex rounded-xl border border-white/10 bg-white/5 p-1">
-                  <button onClick={() => setActiveBgTab("experience")} className={`px-4 py-2 text-sm rounded-lg transition ${activeBgTab === "experience" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>Experience</button>
-                  <button onClick={() => setActiveBgTab("education")} className={`px-4 py-2 text-sm rounded-lg transition ${activeBgTab === "education" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>Education</button>
-                  <button onClick={() => setActiveBgTab("certs")} className={`px-4 py-2 text-sm rounded-lg transition ${activeBgTab === "certs" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>Certifications</button>
+                  <button onClick={() => setActiveBgTab("experience")} className={`px-4 py-2 text-sm rounded-lg transition ${activeBgTab === "experience" ? "bg-primary text-white" : "text-gray-300 hover:text-white"}`}>Experience</button>
+                  <button onClick={() => setActiveBgTab("education")} className={`px-4 py-2 text-sm rounded-lg transition ${activeBgTab === "education" ? "bg-primary text-white" : "text-gray-300 hover:text-white"}`}>Education</button>
+                  <button onClick={() => setActiveBgTab("certs")} className={`px-4 py-2 text-sm rounded-lg transition ${activeBgTab === "certs" ? "bg-primary text-white" : "text-gray-300 hover:text-white"}`}>Certifications</button>
                 </div>
 
                 {/* Mobile horizontal scroll */}
@@ -514,7 +517,7 @@ export const About = () => {
               >
                 <CardContent className="p-6 text-center">
                   <div
-                    className={`w-12 h-12 bg-gradient-to-br ${prop.color} rounded-full flex items-center justify-center mx-auto mb-4`}
+                    className={`w-12 h-12 ${prop.color} rounded-full flex items-center justify-center mx-auto mb-4`}
                   >
                     <prop.icon className="w-6 h-6 text-white" />
                   </div>
@@ -534,7 +537,7 @@ export const About = () => {
         {/* Tools & Skills - Tabbed, mobile scrollable */}
         <div className="space-y-6 animate-on-scroll">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-primary clip-hex flex items-center justify-center">
               <Zap className="w-5 h-5 text-white" />
             </div>
             <h3 className="text-2xl font-bold text-white" style={{ color: "var(--text-primary)" }}>
@@ -593,9 +596,9 @@ export const About = () => {
             return (
               <div className="space-y-6">
                 <div className="inline-flex rounded-xl border border-white/10 bg-white/5 p-1">
-                  <button onClick={() => setActiveSkillTab("platforms")} className={`px-4 py-2 text-sm rounded-lg transition ${activeSkillTab === "platforms" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>Platforms</button>
-                  <button onClick={() => setActiveSkillTab("ai")} className={`px-4 py-2 text-sm rounded-lg transition ${activeSkillTab === "ai" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>AI & Tech</button>
-                  <button onClick={() => setActiveSkillTab("languages")} className={`px-4 py-2 text-sm rounded-lg transition ${activeSkillTab === "languages" ? "bg-orange-500 text-white" : "text-gray-300 hover:text-white"}`}>Languages</button>
+                  <button onClick={() => setActiveSkillTab("platforms")} className={`px-4 py-2 text-sm rounded-lg transition ${activeSkillTab === "platforms" ? "bg-primary text-white" : "text-gray-300 hover:text-white"}`}>Platforms</button>
+                  <button onClick={() => setActiveSkillTab("ai")} className={`px-4 py-2 text-sm rounded-lg transition ${activeSkillTab === "ai" ? "bg-primary text-white" : "text-gray-300 hover:text-white"}`}>AI & Tech</button>
+                  <button onClick={() => setActiveSkillTab("languages")} className={`px-4 py-2 text-sm rounded-lg transition ${activeSkillTab === "languages" ? "bg-primary text-white" : "text-gray-300 hover:text-white"}`}>Languages</button>
                 </div>
 
                 {activeSkillTab === "platforms" && renderCards(automationPlatforms)}

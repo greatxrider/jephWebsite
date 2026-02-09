@@ -50,7 +50,7 @@ export default function PricingPage() {
         "Priority support",
       ],
       popular: false,
-      color: "from-blue-500 to-cyan-500",
+      color: "bg-blue-500",
       icon: <Zap className="w-8 h-8" />,
     },
     {
@@ -77,7 +77,7 @@ export default function PricingPage() {
         "Advanced analytics",
       ],
       popular: true,
-      color: "from-orange-500 to-red-500",
+      color: "bg-primary",
       icon: <Brain className="w-8 h-8" />,
     },
     {
@@ -102,7 +102,7 @@ export default function PricingPage() {
       ],
       notIncluded: [],
       popular: false,
-      color: "from-purple-500 to-pink-500",
+      color: "bg-purple-500",
       icon: <Workflow className="w-8 h-8" />,
     },
   ];
@@ -129,7 +129,7 @@ export default function PricingPage() {
         "Custom integrations",
       ],
       popular: false,
-      color: "from-green-500 to-teal-500",
+      color: "bg-green-500",
       icon: <Shield className="w-8 h-8" />,
     },
     {
@@ -154,7 +154,7 @@ export default function PricingPage() {
         "Dedicated support team",
       ],
       popular: true,
-      color: "from-orange-500 to-red-500",
+      color: "bg-primary",
       icon: <Users className="w-8 h-8" />,
     },
     {
@@ -177,7 +177,7 @@ export default function PricingPage() {
       ],
       notIncluded: [],
       popular: false,
-      color: "from-purple-500 to-pink-500",
+      color: "bg-purple-500",
       icon: <Award className="w-8 h-8" />,
     },
   ];
@@ -211,10 +211,11 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen relative pt-20">
-      {/* Optimized Background - Simple gradient instead of large image */}
+      {/* Honeycomb Background */}
       <div className="fixed inset-0 w-full h-full z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black"></div>
+        <div className="absolute inset-0 bg-honeycomb opacity-40"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
       <div className="container mx-auto px-4 py-12 relative z-10">
         {/* Header */}
@@ -227,13 +228,13 @@ export default function PricingPage() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Portfolio
           </Button>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-bright/10 to-orange-gold/10 border border-orange-bright/30 rounded-full text-orange-bright text-sm font-medium mb-4 animate-neon-glow">
-            <Sparkles size={16} className="animate-neural-pulse" />
-            <span className="gradient-text-neon">AI Automation Pricing</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-honey-gold/10 border border-honey-gold/20 rounded-full text-honey-gold text-sm font-medium mb-4">
+            <Sparkles size={16} className="text-honey-gold" />
+            <span className="text-primary">AI Automation Pricing</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Transparent Pricing for
-            <span className="gradient-text-ai"> AI Automation Excellence</span>
+            <span className="text-primary"> AI Automation Excellence</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Choose the perfect package for your AI automation needs. All
@@ -249,7 +250,7 @@ export default function PricingPage() {
               onClick={() => setBillingCycle("project")}
               className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
                 billingCycle === "project"
-                  ? "bg-orange-500 text-white"
+                  ? "bg-primary text-white"
                   : "text-gray-300 hover:text-white"
               }`}
             >
@@ -259,7 +260,7 @@ export default function PricingPage() {
               onClick={() => setBillingCycle("retainer")}
               className={`px-6 py-3 rounded-md font-medium transition-all duration-300 ${
                 billingCycle === "retainer"
-                  ? "bg-orange-500 text-white"
+                  ? "bg-primary text-white"
                   : "text-gray-300 hover:text-white"
               }`}
             >
@@ -274,12 +275,12 @@ export default function PricingPage() {
             <Card
               key={index}
               className={`relative h-full card-ai ${
-                pkg.popular ? "ring-2 ring-orange-500" : ""
+                pkg.popular ? "ring-2 ring-honey-gold" : ""
               }`}
             >
               {pkg.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-1">
+                  <div className="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium flex items-center gap-1">
                     <Star className="w-4 h-4" />
                     Most Popular
                   </div>
@@ -288,7 +289,7 @@ export default function PricingPage() {
 
               <CardHeader className="text-center">
                 <div
-                  className={`w-16 h-16 bg-gradient-to-br ${pkg.color} rounded-full flex items-center justify-center text-white mb-4 mx-auto`}
+                  className={`w-16 h-16 ${pkg.color} clip-hex flex items-center justify-center text-white mb-4 mx-auto`}
                 >
                   {pkg.icon}
                 </div>
@@ -345,7 +346,7 @@ export default function PricingPage() {
                 <Button
                   className={`w-full ${
                     pkg.popular
-                      ? "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
+                      ? "bg-primary hover:bg-primary-dark"
                       : ""
                   }`}
                   variant={pkg.popular ? "primary" : "outline"}
@@ -362,7 +363,7 @@ export default function PricingPage() {
         {/* Add-ons */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-white mb-8 text-center">
-            Optional <span className="gradient-text-ai">Add-ons</span>
+            Optional <span className="text-primary">Add-ons</span>
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {addOns.map((addon, index) => (
@@ -371,7 +372,7 @@ export default function PricingPage() {
                   <h4 className="text-lg font-semibold text-white mb-2">
                     {addon.name}
                   </h4>
-                  <p className="text-2xl font-bold text-orange-500 mb-3">
+                  <p className="text-2xl font-bold text-honey-gold mb-3">
                     {addon.price}
                   </p>
                   <p className="text-gray-300 text-sm">{addon.description}</p>
@@ -384,7 +385,7 @@ export default function PricingPage() {
         {/* FAQ Section */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-white mb-8 text-center">
-            Pricing <span className="gradient-text-ai">FAQ</span>
+            Pricing <span className="text-primary">FAQ</span>
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="card-ai">
@@ -438,7 +439,7 @@ export default function PricingPage() {
 
         {/* Money-back Guarantee */}
         <div className="mb-16">
-          <Card className="max-w-4xl mx-auto card-ai bg-gradient-to-r from-green-500/10 to-teal-500/10 border-green-500/20">
+          <Card className="max-w-4xl mx-auto card-ai bg-green-500/10 border-green-500/20">
             <CardContent className="p-8 text-center">
               <Shield className="w-16 h-16 text-green-500 mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white mb-4">

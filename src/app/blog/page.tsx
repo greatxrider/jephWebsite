@@ -170,10 +170,11 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen relative pt-20">
-      {/* Optimized Background - Simple gradient instead of large image */}
+      {/* Honeycomb Background */}
       <div className="fixed inset-0 w-full h-full z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800"></div>
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black"></div>
+        <div className="absolute inset-0 bg-honeycomb opacity-40"></div>
+        <div className="absolute inset-0 bg-black/30"></div>
       </div>
       <div className="container mx-auto px-4 py-12 relative z-10">
         {/* Header */}
@@ -186,8 +187,8 @@ export default function BlogPage() {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Portfolio
           </Button>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-orange-500/20 rounded-full text-orange-500 text-sm font-medium mb-4">
-            <Sparkles size={16} />
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-honey-gold/10 border border-honey-gold/20 rounded-full text-honey-gold text-sm font-medium mb-4">
+            <Sparkles size={16} className="text-honey-gold" />
             AI Automation Insights
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -218,7 +219,7 @@ export default function BlogPage() {
                       className="object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                         Featured
                       </span>
                     </div>
@@ -246,7 +247,7 @@ export default function BlogPage() {
                       {posts[0].tags.map((tag, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-gray-800 text-orange-500 rounded-full text-sm"
+                          className="px-3 py-1 bg-gray-800 text-honey-gold rounded-full text-sm"
                         >
                           #{tag}
                         </span>
@@ -301,7 +302,7 @@ export default function BlogPage() {
                           </span>
                         </div>
                       </div>
-                      <h3 className="text-lg font-bold text-white mb-3 hover:text-orange-500 transition-colors">
+                      <h3 className="text-lg font-bold text-white mb-3 hover:text-honey-gold transition-colors">
                         {post.title}
                       </h3>
                       <p className="text-gray-300 text-sm mb-4">
@@ -311,7 +312,7 @@ export default function BlogPage() {
                         {post.tags.slice(0, 3).map((tag, index) => (
                           <span
                             key={index}
-                            className="px-2 py-1 bg-gray-800 text-orange-500 rounded text-xs"
+                            className="px-2 py-1 bg-gray-800 text-honey-gold rounded text-xs"
                           >
                             #{tag}
                           </span>
@@ -323,7 +324,7 @@ export default function BlogPage() {
                         onClick={() =>
                           window.open(`/blog/${post.slug}`, "_blank")
                         }
-                        className="p-0 h-auto text-orange-500 hover:text-orange-400"
+                        className="p-0 h-auto text-honey-gold hover:text-honey-gold"
                       >
                         Read More
                         <ArrowRight className="ml-2 w-4 h-4" />

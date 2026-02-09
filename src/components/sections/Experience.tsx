@@ -97,7 +97,7 @@ export const Experience = () => {
       description:
         "Advanced AI model integration with Claude, OpenAI, and Perplexity",
       icon: <Brain className="w-6 h-6" />,
-      color: "from-purple-500 to-pink-500",
+      color: "bg-purple-500",
       achievements: [
         "Integrated 15+ AI models into automation workflows",
         "Built intelligent content generation systems",
@@ -109,7 +109,7 @@ export const Experience = () => {
       title: "Senior Automation Engineer",
       description: "Complex multi-platform automation architecture",
       icon: <Rocket className="w-6 h-6" />,
-      color: "from-blue-500 to-cyan-500",
+      color: "bg-blue-500",
       achievements: [
         "Architected 50+ enterprise automation solutions",
         "Implemented advanced API integrations",
@@ -121,7 +121,7 @@ export const Experience = () => {
       title: "No-Code Automation Expert",
       description: "Mastered Make, Zapier, and n8n platforms",
       icon: <Workflow className="w-6 h-6" />,
-      color: "from-green-500 to-emerald-500",
+      color: "bg-green-500",
       achievements: [
         "Completed 100+ automation projects",
         "Reduced manual work by 80% for clients",
@@ -133,7 +133,7 @@ export const Experience = () => {
       title: "API Integration Specialist",
       description: "REST API and webhook automation mastery",
       icon: <Code className="w-6 h-6" />,
-      color: "from-orange-500 to-red-500",
+      color: "bg-primary",
       achievements: [
         "Integrated 200+ different APIs",
         "Built custom webhook handlers",
@@ -145,7 +145,7 @@ export const Experience = () => {
       title: "Automation Enthusiast",
       description: "Started journey into business process automation",
       icon: <Zap className="w-6 h-6" />,
-      color: "from-yellow-500 to-orange-500",
+      color: "bg-honey-gold",
       achievements: [
         "First automation workflows created",
         "Learned fundamental automation principles",
@@ -169,7 +169,7 @@ export const Experience = () => {
       value: counters.years,
       suffix: "+",
       icon: <Calendar className="w-8 h-8" />,
-      color: "text-orange-500",
+      color: "text-honey-gold",
     },
     {
       label: "Projects Completed",
@@ -198,20 +198,21 @@ export const Experience = () => {
     <section
       id="experience"
       ref={sectionRef}
-      className="section-padding relative"
+      className="section-padding relative bg-transparent dark:bg-black"
     >
+      <div className="absolute inset-0 bg-honeycomb opacity-30 pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <div className="animate-on-scroll">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-bright/10 to-orange-gold/10 border border-orange-bright/30 rounded-full text-orange-bright text-sm font-medium mb-4 animate-neon-glow">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-orange-bright/30 rounded-full text-orange-bright text-sm font-medium mb-4 animate-neon-glow">
               <Clock size={16} className="animate-neural-pulse" />
-              <span className="gradient-text-neon">Professional Journey</span>
+              <span className="text-primary">Professional Journey</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              <span className="gradient-text-ai">5+ Years</span> of AI
+              <span className="text-primary">5+ Years</span> of AI
               Automation
-              <span className="gradient-text"> Excellence</span>
+              <span className="text-primary"> Excellence</span>
             </h2>
             <p
               className="text-xl text-gray-300 max-w-3xl mx-auto"
@@ -255,12 +256,12 @@ export const Experience = () => {
         <div className="mb-16">
           <div className="animate-on-scroll">
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
-              Professional <span className="gradient-text-ai">Timeline</span>
+              Professional <span className="text-primary">Timeline</span>
             </h3>
           </div>
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-orange-500 via-blue-500 to-purple-500 rounded-full"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary rounded-full"></div>
 
             {experienceTimeline.map((item, index) => (
               <div key={index} className="animate-on-scroll">
@@ -274,7 +275,7 @@ export const Experience = () => {
                       <CardContent className="p-6">
                         <div className="flex items-center gap-3 mb-3">
                           <div
-                            className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center text-white`}
+                            className={`w-12 h-12 ${item.color} clip-hex flex items-center justify-center text-white`}
                           >
                             {item.icon}
                           </div>
@@ -282,7 +283,7 @@ export const Experience = () => {
                             <h4 className="text-xl font-bold text-white">
                               {item.title}
                             </h4>
-                            <p className="text-orange-500 font-medium">
+                            <p className="text-honey-gold font-medium">
                               {item.year}
                             </p>
                           </div>
@@ -296,7 +297,7 @@ export const Experience = () => {
                         <ul className="space-y-2">
                           {item.achievements.map((achievement, i) => (
                             <li key={i} className="flex items-start gap-2">
-                              <Star className="w-4 h-4 text-orange-500 mt-1 flex-shrink-0" />
+                              <Star className="w-4 h-4 text-honey-gold mt-1 flex-shrink-0" />
                               <span
                                 className="text-gray-300 text-sm"
                                 style={{ color: "var(--text-color)" }}
@@ -310,7 +311,7 @@ export const Experience = () => {
                     </Card>
                   </div>
                   <div className="w-2/12 flex justify-center">
-                    <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm animate-pulse">
+                    <div className="w-8 h-8 bg-primary clip-hex flex items-center justify-center text-white font-bold text-sm">
                       {item.year.slice(-2)}
                     </div>
                   </div>
@@ -325,7 +326,7 @@ export const Experience = () => {
         <div className="mb-16">
           <div className="animate-on-scroll">
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
-              Skills <span className="gradient-text-ai">Evolution</span>
+              Skills <span className="text-primary">Evolution</span>
             </h3>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -338,7 +339,7 @@ export const Experience = () => {
                         {skill.skill}
                       </h4>
                       <div className="flex items-center gap-2">
-                        <span className="text-orange-500 font-bold">
+                        <span className="text-honey-gold font-bold">
                           {skill.level}%
                         </span>
                         <div className="flex items-center gap-1 text-green-500 text-sm">
@@ -350,11 +351,11 @@ export const Experience = () => {
                     <div className="relative">
                       <div className="w-full bg-gray-700 rounded-full h-3">
                         <div
-                          className="bg-gradient-to-r from-orange-500 to-purple-500 h-3 rounded-full transition-all duration-2000 ease-out"
+                          className="bg-primary h-3 rounded-full transition-all duration-2000 ease-out"
                           style={{ width: `${skill.level}%` }}
                         ></div>
                       </div>
-                      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-orange-500/20 to-purple-500/20 rounded-full animate-pulse"></div>
+                      <div className="absolute top-0 left-0 w-full h-full bg-primary/20 rounded-full"></div>
                     </div>
                   </CardContent>
                 </Card>
@@ -368,10 +369,10 @@ export const Experience = () => {
           <Card className="max-w-3xl mx-auto card-ai">
             <CardContent className="p-8">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full flex items-center justify-center animate-neural-pulse">
+                <div className="w-12 h-12 bg-primary clip-hex flex items-center justify-center animate-neural-pulse">
                   <Award className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white gradient-text-ai">
+                <h3 className="text-2xl font-bold text-primary">
                   Ready to Leverage My Experience?
                 </h3>
               </div>

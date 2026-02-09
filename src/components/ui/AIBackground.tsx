@@ -45,10 +45,10 @@ export const AIBackground = ({
     }> = [];
 
     const colors = [
-      "rgba(255, 107, 53, 0.6)", // primary orange
-      "rgba(247, 147, 30, 0.6)", // secondary orange
-      "rgba(255, 140, 66, 0.6)", // light orange
-      "rgba(229, 90, 43, 0.6)", // deep orange
+      "rgba(255, 105, 0, 0.6)", // primary orange
+      "rgba(255, 105, 0, 0.6)", // secondary orange
+      "rgba(255, 133, 51, 0.6)", // light orange
+      "rgba(224, 93, 0, 0.6)", // deep orange
     ];
 
     // Create particles
@@ -94,7 +94,7 @@ export const AIBackground = ({
               ctx.beginPath();
               ctx.moveTo(particle.x, particle.y);
               ctx.lineTo(otherParticle.x, otherParticle.y);
-              ctx.strokeStyle = `rgba(255, 107, 53, ${
+              ctx.strokeStyle = `rgba(255, 105, 0, ${
                 0.1 * (1 - distance / 80)
               })`;
               ctx.lineWidth = 0.5;
