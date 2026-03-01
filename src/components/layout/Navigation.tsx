@@ -85,7 +85,7 @@ export const Navigation = () => {
           <div className="flex items-center">
             <button
               onClick={handleLogoClick}
-              className="transition-all duration-300 cursor-pointer hover:scale-105"
+              className="transition-all duration-300 cursor-pointer flex items-center pl-2 md:pl-4 group"
               aria-label="Go to homepage"
             >
               <Image
@@ -95,12 +95,14 @@ export const Navigation = () => {
                     : "/website-logo-dark.png"
                 }
                 alt="JEPH DALIGDIG Logo"
-                width={300}
-                height={64}
-                className="h-14 w-auto"
+                width={400}
+                height={120}
+                className="h-16 md:h-24 w-auto scale-[1.3] md:scale-[1.8] origin-left group-hover:scale-[1.35] md:group-hover:scale-[1.85] transition-transform"
+                style={{ objectFit: 'contain' }}
+                priority
               />
             </button>
-            <div className="ml-1.5 w-1.5 h-1.5 bg-primary clip-hex animate-pulse"></div>
+            <div className="ml-4 md:ml-12 w-1.5 h-1.5 bg-primary clip-hex animate-pulse"></div>
           </div>
 
           {/* Desktop Navigation */}
@@ -109,10 +111,11 @@ export const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 relative group cursor-pointer navbar-font"
+                className="text-gray-700 dark:text-gray-300 hover:text-honey-gold dark:hover:text-honey-gold transition-all duration-300 relative group cursor-pointer navbar-font uppercase tracking-wider font-bold text-xs"
+                style={{ fontFamily: 'var(--font-chakra-petch)' }}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-honey-gold transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
 
@@ -180,10 +183,11 @@ export const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => handleNavigation(item.href)}
-                  className="block w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-primary/10 rounded-md transition-all duration-300 relative group cursor-pointer navbar-font"
+                  className="block w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-honey-gold dark:hover:text-honey-gold hover:bg-honey-gold/10 rounded-none transition-all duration-300 relative group cursor-pointer navbar-font uppercase tracking-widest font-bold text-xs"
+                  style={{ fontFamily: 'var(--font-chakra-petch)' }}
                 >
                   {item.label}
-                  <span className="absolute left-0 top-0 w-0 h-full bg-primary transition-all duration-300 group-hover:w-1 rounded-l-md"></span>
+                  <span className="absolute left-0 top-0 w-0 h-full bg-honey-gold transition-all duration-300 group-hover:w-1"></span>
                 </button>
               ))}
               <a

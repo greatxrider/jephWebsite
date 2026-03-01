@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk, Chakra_Petch } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { EnhancedCookieConsent } from "@/components/ui/EnhancedCookieConsent";
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-space-grotesk",
+});
+
+const chakraPetch = Chakra_Petch({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-chakra-petch",
 });
 
 export const metadata: Metadata = {
@@ -113,7 +119,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${chakraPetch.variable} font-sans antialiased`}
         suppressHydrationWarning={true}
       >
         <ThemeProvider>

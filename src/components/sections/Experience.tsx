@@ -205,17 +205,17 @@ export const Experience = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <div className="animate-on-scroll">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-orange-bright/30 rounded-full text-orange-bright text-sm font-medium mb-4 animate-neon-glow">
-              <Clock size={16} className="animate-neural-pulse" />
-              <span className="text-primary">Professional Journey</span>
+            <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)] mb-6 mx-auto animate-neon-glow">
+              <Clock size={16} className="text-honey-gold animate-neural-pulse" />
+              <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Professional Journey</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
               <span className="text-primary">5+ Years</span> of AI
               Automation
-              <span className="text-primary"> Excellence</span>
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">Excellence</span>
             </h2>
             <p
-              className="text-xl text-gray-300 max-w-3xl mx-auto"
+              className="text-lg md:text-xl text-gray-400 font-light max-w-3xl mx-auto border-t border-b border-honey-gold/20 py-4 mt-6"
               style={{ color: "var(--text-color)" }}
             >
               From simple workflows to complex AI-powered automations, discover

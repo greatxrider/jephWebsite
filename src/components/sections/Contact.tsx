@@ -137,19 +137,19 @@ export const Contact = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-honey-gold text-sm font-medium mb-6 mx-auto">
+          <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)] mb-6 mx-auto">
             <Sparkles size={16} className="text-honey-gold" />
-            <span>Get In Touch</span>
+            <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Get In Touch</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
             Let&apos;s{" "}
-            <span className="text-primary">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">
               Transform
             </span>{" "}
             Your Business
           </h2>
           <p
-            className="text-xl text-gray-400 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-gray-400 font-light max-w-3xl mx-auto border-t border-b border-honey-gold/20 py-4 mt-6"
             style={{ color: "var(--text-color)" }}
           >
             Ready to automate your processes and accelerate growth? Get in touch
@@ -160,7 +160,7 @@ export const Contact = () => {
         {/* Contact Cards */}
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto justify-items-center items-stretch">
           {/* Left Card - AI-Powered Consultation */}
-          <Card hover={false} className="bg-white/5 backdrop-blur-sm border border-white/10 transition-colors duration-300 mx-auto w-full max-w-md sm:max-w-xl">
+          <Card hover={false} className="card-hex transition-colors duration-300 mx-auto w-full max-w-md sm:max-w-xl">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-primary clip-hex flex items-center justify-center">
@@ -232,7 +232,7 @@ export const Contact = () => {
           </Card>
 
           {/* Right Card - Contact Form */}
-          <Card hover={false} className="bg-white/5 backdrop-blur-sm border border-white/10 transition-colors duration-300 mx-auto w-full max-w-md sm:max-w-xl">
+          <Card hover={false} className="card-hex transition-colors duration-300 mx-auto w-full max-w-md sm:max-w-xl">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-primary clip-hex flex items-center justify-center">

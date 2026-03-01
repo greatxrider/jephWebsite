@@ -288,22 +288,21 @@ export default function Projects({
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 rounded-full text-honey-gold text-sm font-medium mb-4">
+            <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)] mb-6 mx-auto">
               <Sparkles size={16} className="text-honey-gold" />
-              <span>AI-Powered Portfolio</span>
+              <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">AI-Powered Portfolio</span>
             </div>
             <h2
-              className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-4"
+              className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white dark:text-white mb-4"
               style={{ color: "var(--text-primary)" }}
             >
               Intelligent
-              <span className="text-primary">
-                {" "}
+              <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">
                 Automation Projects
               </span>
             </h2>
             <p
-              className="text-xl text-gray-400 dark:text-gray-400 max-w-4xl mx-auto"
+              className="text-lg md:text-xl text-gray-400 dark:text-gray-400 font-light max-w-4xl mx-auto border-t border-b border-honey-gold/20 py-4 mt-6"
               style={{ color: "var(--text-color)" }}
             >
               Showcasing cutting-edge AI solutions that transform business
@@ -345,11 +344,11 @@ export default function Projects({
             {/* All Projects */}
             {filteredProjects.length > 0 && (
               <div>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 justify-items-stretch md:justify-items-center overflow-visible">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 justify-items-stretch">
                   {displayedProjects.map((project) => (
                     <Card
                       key={project.id}
-                      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl overflow-visible group hover:scale-[1.01] transition-all duration-300 hover:shadow-2xl hover:shadow-honey-gold/10 cursor-pointer flex flex-col w-full max-w-[498px] md:w-[498px]"
+                      className="card backdrop-blur-sm rounded-xl overflow-visible group hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-honey-gold/10 cursor-pointer flex flex-col w-full h-full"
                       onClick={() => openModal(project)} // Card click handler
                     >
                       <div className="aspect-video relative overflow-hidden">

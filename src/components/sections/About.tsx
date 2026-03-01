@@ -364,9 +364,9 @@ export const About = () => {
         {/* Header Section */}
         <div className="mb-12">
           <div className="animate-on-scroll">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-honey-gold/15 dark:bg-white/5 dark:border-honey-gold/15 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)] mb-6">
               <Sparkles size={16} className="text-honey-gold" />
-              <span className="text-primary">AI Automation Expert</span>
+              <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">AI Automation Expert</span>
             </div>
 
             {/* 2-Column Header Layout */}
@@ -374,27 +374,25 @@ export const About = () => {
               {/* Left Column - Main Headline */}
               <div>
                 <h2
-                  className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-4"
+                  className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight mb-4"
                   style={{ color: "var(--text-primary)" }}
                 >
                   Connecting Intelligence with
-                  <span className="text-primary">
-                    {" "}
+                  <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">
                     Automation Excellence
                   </span>
-
                 </h2>
               </div>
 
               {/* Right Column - Description */}
-              <div>
+              <div className="border-l-2 border-honey-gold/30 pl-6">
                 <p
-                  className="text-xl text-gray-400 dark:text-gray-400 leading-relaxed"
+                  className="text-lg text-gray-400 dark:text-gray-400 font-light leading-relaxed"
                   style={{ color: "var(--text-color)" }}
                 >
                   I help business owners boost their teams’ productivity by automating repetitive, low-impact tasks. With automation, teams can focus on high-priority work that drives significant business growth and exceptional customer service.
                 </p>
-                <p className="text-xl text-primary font-semibold mt-4 leading-relaxed">
+                <p className="text-lg text-primary font-bold mt-4 uppercase tracking-widest text-sm">
                   Manual workflows automated — or you don&apos;t pay.
                 </p>
               </div>
@@ -410,8 +408,8 @@ export const About = () => {
             const Experience = (
               <div className="space-y-4">
                 {workExperience.map((job, index) => (
-                  <Card key={index} className="bg-white/10 border border-white/20">
-                    <CardContent className="p-4">
+                  <Card key={index} className="card-ai p-4">
+                    <CardContent>
                       <div className="flex items-start gap-3">
                         <div className="w-12 h-12 relative flex-shrink-0">
                           <Image src={job.logo} alt={job.company} width={48} height={48} className="object-contain w-full h-full rounded-lg" />
@@ -442,7 +440,7 @@ export const About = () => {
             const Education = (
               <div className="space-y-3">
                 {education.map((edu, idx) => (
-                  <Card key={idx} className="bg-white/10 border border-white/20">
+                  <Card key={idx} className="card-ai">
                     <CardContent className="p-4">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 relative flex-shrink-0">
@@ -459,7 +457,7 @@ export const About = () => {
             const Certifications = (
               <div className="grid grid-cols-1 gap-3">
                 {certifications.map((cert, idx) => (
-                  <Card key={idx} className="bg-white/10 border border-white/20">
+                  <Card key={idx} className="card-ai">
                     <CardContent className="p-4">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 relative flex-shrink-0">
@@ -554,7 +552,7 @@ export const About = () => {
                 <div className="md:hidden -mx-4 px-4 pb-2 overflow-x-auto snap-x snap-mandatory">
                   <div className="flex gap-4">
                     {items.map((item, idx) => (
-                      <div key={idx} className="min-w-[200px] snap-start bg-white/10 border border-white/20 rounded-xl p-4">
+                      <div key={idx} className="min-w-[200px] snap-start card-ai p-4">
                         <div className="w-12 h-12 bg-white/90 rounded-lg flex items-center justify-center mb-3">
                           {item.logo ? (
                             <Image src={item.logo} alt={item.name} width={28} height={28} className="object-contain" />
@@ -573,7 +571,7 @@ export const About = () => {
                 {/* Desktop: grid */}
                 <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
                   {items.map((item, idx) => (
-                    <div key={idx} className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
+                    <div key={idx} className="group card-ai p-4 text-center">
                       <div className="relative mb-3">
                         <div className="w-16 h-16 bg-white/90 rounded-xl flex items-center justify-center mx-auto shadow-lg">
                           {item.logo ? (

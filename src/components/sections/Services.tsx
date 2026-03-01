@@ -210,22 +210,21 @@ export const Services = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-honey-gold/15 dark:bg-white/5 dark:border-honey-gold/15 rounded-full text-sm font-medium mb-6 mx-auto">
+          <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)] mb-6 mx-auto">
             <Sparkles size={16} className="text-honey-gold" />
-            <span className="text-primary">AI Automation Services</span>
+            <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">AI Automation Services</span>
           </div>
           <h2
-            className="text-3xl md:text-4xl font-bold mb-4"
+            className="text-4xl md:text-5xl font-extrabold mb-4 uppercase tracking-tight"
             style={{ color: "var(--text-primary)" }}
           >
             Practical AI & Automation
-            <span className="text-primary">
-              {" "}
+            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">
               for Everyday Business
             </span>
           </h2>
           <p
-            className="text-xl text-gray-300 dark:text-gray-300 max-w-4xl mx-auto"
+            className="text-lg md:text-xl text-gray-300 dark:text-gray-300 max-w-4xl mx-auto font-light leading-relaxed border-t border-b border-honey-gold/20 py-4 mt-6"
             style={{ color: "var(--text-color)" }}
           >
             I help businesses simplify their operations with automation and AI.
@@ -236,11 +235,11 @@ export const Services = () => {
 
         {/* Services Grid */}
         <div className="w-full mb-16">
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-6 justify-items-center">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-6 justify-items-stretch">
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="group card-hex bg-white/5 dark:bg-white/5 backdrop-blur-sm overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-honey-gold/10 flex flex-col w-full max-w-[498px]"
+                className="group card-hex backdrop-blur-sm overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-honey-gold/10 flex flex-col w-full h-full"
               >
                 {/* Icon Section */}
 
