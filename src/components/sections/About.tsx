@@ -55,60 +55,60 @@ export const About = () => {
 
   const specializations = [
     {
-      icon: Workflow,
-      title: "No-Code Automation",
-      description: "Make, Zapier, n8n Expert",
+      icon: Code,
+      title: "Full-Stack Development",
+      description: "Next.js, React, Node.js, Python",
       color: "bg-orange-500",
     },
     {
       icon: Brain,
-      title: "AI Integration",
-      description: "OpenAI, Claude, ChatGPT",
+      title: "AI & ML Solutions",
+      description: "AI Receptionists, Chatbots, LLMs",
       color: "bg-orange-600",
     },
     {
       icon: Link2,
-      title: "API Connections",
-      description: "REST, GraphQL, Webhooks",
+      title: "Healthcare Tech",
+      description: "EMR/EHR Systems, Clinical Apps",
       color: "bg-orange-700",
     },
     {
       icon: GitBranch,
-      title: "Complex Workflows",
-      description: "Multi-step Logic & Routing",
+      title: "SaaS & Automation",
+      description: "SaaS Platforms, Workflow Automation",
       color: "bg-orange-800",
     },
   ];
 
-  const automationPlatforms = [
+  const techPlatforms = [
     {
-      name: "Make (Integromat)",
+      name: "Next.js",
       logo: "/logo/make-logo.png",
-      description: "Advanced workflow automation",
+      description: "Full-stack React framework",
       expertise: "Expert",
     },
     {
-      name: "Zapier",
+      name: "React / React Native",
       logo: "/logo/Zapier_logo.svg.png",
-      description: "Multi-app integrations",
+      description: "Web & mobile applications",
       expertise: "Expert",
     },
     {
-      name: "n8n",
+      name: "Node.js",
       logo: "/logo/N8n-logo-new.svg.png",
-      description: "Self-hosted automation",
+      description: "Backend & API development",
       expertise: "Expert",
     },
     {
-      name: "Automation Anywhere",
+      name: "Make / n8n / Zapier",
       logo: "/logo/automationAnywhere-logo.png",
-      description: "RPA & process automation",
-      expertise: "Advanced",
+      description: "Workflow automation platforms",
+      expertise: "Expert",
     },
     {
-      name: "UiPath",
+      name: "Supabase / PostgreSQL",
       logo: "/logo/uipath-logo.png",
-      description: "Enterprise RPA solutions",
+      description: "Database & backend-as-a-service",
       expertise: "Advanced",
     },
   ];
@@ -317,11 +317,11 @@ export const About = () => {
 
   const education = [
     {
-      name: "Mindanao State University - Iligan Institute of Technology — Bachelor of Science in Electronics Engineering",
+      name: "Mindanao State University - Iligan Institute of Technology, Bachelor of Science in Electronics Engineering",
       logo: "/educationWorkLogos/msuiit-logo.png",
     },
     {
-      name: "Mindanao State University - Iligan Institute of Technology — Bachelor of Technology — Mechanical Engineering Technology",
+      name: "Mindanao State University - Iligan Institute of Technology, Bachelor of Technology, Mechanical Engineering Technology",
       logo: "/educationWorkLogos/msuiit-logo.png",
     },
   ];
@@ -348,7 +348,7 @@ export const About = () => {
       logo: "/educationWorkLogos/nucamp-logo.svg",
     },
     {
-      name: "Youngstown State University — IBM IT Pre-Apprenticeship Software Engineer",
+      name: "Youngstown State University, IBM IT Pre-Apprenticeship Software Engineer",
       logo: "/educationWorkLogos/ysu-logo.png",
     },
   ];
@@ -366,7 +366,7 @@ export const About = () => {
           <div className="animate-on-scroll">
             <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)] mb-6">
               <Sparkles size={16} className="text-honey-gold" />
-              <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">AI Automation Expert</span>
+              <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Full-Stack AI Engineer</span>
             </div>
 
             {/* 2-Column Header Layout */}
@@ -377,9 +377,9 @@ export const About = () => {
                   className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight mb-4"
                   style={{ color: "var(--text-primary)" }}
                 >
-                  Connecting Intelligence with
+                  Software Engineering &
                   <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">
-                    Automation Excellence
+                    AI Solutions
                   </span>
                 </h2>
               </div>
@@ -390,10 +390,10 @@ export const About = () => {
                   className="text-lg text-gray-400 dark:text-gray-400 font-light leading-relaxed"
                   style={{ color: "var(--text-color)" }}
                 >
-                  I help business owners boost their teams’ productivity by automating repetitive, low-impact tasks. With automation, teams can focus on high-priority work that drives significant business growth and exceptional customer service.
+                  I build full-stack web apps, SaaS platforms, AI receptionists, and automation systems. From React and Next.js development to AI chatbots, healthcare EMR, and business workflow automation.
                 </p>
-                <p className="text-lg text-primary font-bold mt-4 uppercase tracking-widest text-sm">
-                  Manual workflows automated — or you don&apos;t pay.
+                <p className="text-sm text-primary font-bold mt-4 uppercase tracking-widest">
+                  End-to-end software solutions, built to scale.
                 </p>
               </div>
             </div>
@@ -599,7 +599,7 @@ export const About = () => {
                   <button onClick={() => setActiveSkillTab("languages")} className={`px-4 py-2 text-sm rounded-lg transition ${activeSkillTab === "languages" ? "bg-primary text-white" : "text-gray-300 hover:text-white"}`}>Languages</button>
                 </div>
 
-                {activeSkillTab === "platforms" && renderCards(automationPlatforms)}
+                {activeSkillTab === "platforms" && renderCards(techPlatforms)}
                 {activeSkillTab === "ai" && renderCards([...aiTechnologies, ...technicalSkills])}
                 {activeSkillTab === "languages" && renderCards(programmingLanguages)}
               </div>

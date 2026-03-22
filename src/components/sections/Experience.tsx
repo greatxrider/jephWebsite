@@ -93,74 +93,74 @@ export const Experience = () => {
   const experienceTimeline = [
     {
       year: "2024",
-      title: "AI Integration Specialist",
+      title: "AI Solutions Architect",
       description:
-        "Advanced AI model integration with Claude, OpenAI, and Perplexity",
+        "Building AI receptionists, healthcare EMR systems, and SaaS platforms",
       icon: <Brain className="w-6 h-6" />,
       color: "bg-purple-500",
       achievements: [
-        "Integrated 15+ AI models into automation workflows",
-        "Built intelligent content generation systems",
-        "Developed AI-powered decision making logic",
+        "Built AI receptionist systems for medical clinics",
+        "Developed custom EMR/EHR healthcare platforms",
+        "Launched SaaS products with AI-powered features",
       ],
     },
     {
       year: "2023",
-      title: "Senior Automation Engineer",
-      description: "Complex multi-platform automation architecture",
+      title: "Senior Software Engineer",
+      description: "Full-stack development and enterprise AI integration",
       icon: <Rocket className="w-6 h-6" />,
       color: "bg-blue-500",
       achievements: [
-        "Architected 50+ enterprise automation solutions",
-        "Implemented advanced API integrations",
-        "Optimized workflow performance by 300%",
+        "Architected 50+ web applications and automation solutions",
+        "Implemented advanced API integrations and microservices",
+        "Built scalable SaaS platforms with multi-tenant architecture",
       ],
     },
     {
       year: "2022",
-      title: "No-Code Automation Expert",
-      description: "Mastered Make, Zapier, and n8n platforms",
+      title: "Full-Stack Developer",
+      description: "Mastered React, Next.js, and cloud-native development",
       icon: <Workflow className="w-6 h-6" />,
       color: "bg-green-500",
       achievements: [
-        "Completed 100+ automation projects",
-        "Reduced manual work by 80% for clients",
-        "Specialized in complex workflow logic",
+        "Completed 100+ software and automation projects",
+        "Specialized in React, Next.js, and Node.js",
+        "Built mobile apps with React Native",
       ],
     },
     {
       year: "2021",
-      title: "API Integration Specialist",
-      description: "REST API and webhook automation mastery",
+      title: "Backend & API Engineer",
+      description: "REST API development, database design, and system architecture",
       icon: <Code className="w-6 h-6" />,
       color: "bg-primary",
       achievements: [
-        "Integrated 200+ different APIs",
-        "Built custom webhook handlers",
-        "Achieved 99.9% uptime reliability",
+        "Integrated 200+ APIs and third-party services",
+        "Designed scalable database architectures",
+        "Built custom backend systems and middleware",
       ],
     },
     {
       year: "2020",
-      title: "Automation Enthusiast",
-      description: "Started journey into business process automation",
+      title: "Software Developer",
+      description: "Started professional journey in software engineering",
       icon: <Zap className="w-6 h-6" />,
       color: "bg-honey-gold",
       achievements: [
-        "First automation workflows created",
-        "Learned fundamental automation principles",
-        "Helped first 10 clients automate processes",
+        "First production applications deployed",
+        "Learned full-stack development fundamentals",
+        "Delivered projects for first 10 clients",
       ],
     },
   ];
 
   const skillsProgression = [
+    { skill: "React / Next.js", level: 96, trend: "+20%" },
     { skill: "AI Integration", level: 95, trend: "+25%" },
-    { skill: "Make (Integromat)", level: 98, trend: "+15%" },
-    { skill: "Zapier", level: 92, trend: "+20%" },
-    { skill: "n8n", level: 90, trend: "+30%" },
-    { skill: "API Development", level: 94, trend: "+18%" },
-    { skill: "Workflow Design", level: 96, trend: "+12%" },
+    { skill: "Node.js / Python", level: 94, trend: "+18%" },
+    { skill: "Healthcare Tech (EMR/EHR)", level: 88, trend: "+35%" },
+    { skill: "Automation (Make/n8n/Zapier)", level: 95, trend: "+15%" },
+    { skill: "SaaS Architecture", level: 92, trend: "+22%" },
   ];
 
   const metrics = [
@@ -186,7 +186,7 @@ export const Experience = () => {
       color: "text-green-500",
     },
     {
-      label: "Automations Built",
+      label: "Solutions Delivered",
       value: counters.automations,
       suffix: "+",
       icon: <Bot className="w-8 h-8" />,
@@ -210,17 +210,17 @@ export const Experience = () => {
               <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Professional Journey</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
-              <span className="text-primary">5+ Years</span> of AI
-              Automation
+              <span className="text-primary">5+ Years</span> of Software
+              Engineering
               <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">Excellence</span>
             </h2>
             <p
               className="text-lg md:text-xl text-gray-400 font-light max-w-3xl mx-auto border-t border-b border-honey-gold/20 py-4 mt-6"
               style={{ color: "var(--text-color)" }}
             >
-              From simple workflows to complex AI-powered automations, discover
-              my journey through the evolution of business process automation
-              and artificial intelligence integration.
+              Web development, SaaS, AI automation, AI receptionists, and
+              healthcare systems. Here's my journey through software
+              engineering.
             </p>
           </div>
         </div>
@@ -373,13 +373,12 @@ export const Experience = () => {
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-primary">
-                  Ready to Leverage My Experience?
+                  Let's Work Together
                 </h3>
               </div>
               <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                With 5+ years of proven expertise in AI automation, I bring deep
-                knowledge of Make, Zapier, n8n, and cutting-edge AI models to
-                transform your business processes.
+                5+ years building web apps, SaaS products, AI receptionists,
+                and automation systems. I can help you ship your next project.
               </p>
               <button
                 onClick={() =>
@@ -391,7 +390,7 @@ export const Experience = () => {
                 }
                 className="btn-ai px-8 py-3 rounded-lg font-medium inline-flex items-center gap-2 group animate-neon-glow"
               >
-                Start Your AI Automation Journey
+                Start Your Project
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </CardContent>

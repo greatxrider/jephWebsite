@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
-import { HoneycombBackground } from "@/components/ui/HoneycombBackground";
+import { WavingBackground } from "@/components/ui/WavingBackground";
 import {
   Brain,
   ArrowRight,
@@ -35,8 +35,8 @@ export const Hero = () => {
       id="hero"
       className="relative min-h-screen flex items-center bg-[#FFFEF7] dark:bg-black overflow-hidden mb-20"
     >
-      {/* Honeycomb Neural Hive Background */}
-      <HoneycombBackground variant="neural-hive" density="medium" />
+      {/* Waving Neon Background */}
+      <WavingBackground />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
@@ -46,7 +46,7 @@ export const Hero = () => {
             <div className="inline-flex items-center gap-3 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)]">
               <div className="w-2 h-2 bg-primary clip-hex animate-pulse-custom" />
               <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">
-                AI AUTOMATION ARCHITECT
+                FULL-STACK AI ENGINEER
               </span>
               <Cpu className="w-3.5 h-3.5 text-honey-gold opacity-80" />
             </div>
@@ -58,17 +58,17 @@ export const Hero = () => {
                 style={{ color: "var(--text-primary)" }}
               >
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light animate-gradient-x">
-                  Intelligent
+                  Software
                 </span>
-                <span className="block mt-2">Systems &</span>
-                <span className="block text-3xl md:text-5xl mt-2 font-light tracking-widest text-honey-gold/80">Automation</span>
+                <span className="block mt-2">Engineering &</span>
+                <span className="block text-3xl md:text-5xl mt-2 font-light tracking-widest text-honey-gold/80">AI Solutions</span>
               </h1>
 
               <p
                 className="text-lg md:text-xl font-light leading-relaxed max-w-xl border-l-2 border-primary/50 pl-6 py-2"
                 style={{ color: "var(--text-color)" }}
               >
-                Architecting autonomous workflows and scalable AI infrastructure. Transforming complex business logic into <span className="text-primary font-medium">seamless execution</span>.
+                I build web apps, SaaS platforms, AI receptionists, and automation systems. Full-stack development with <span className="text-primary font-medium">AI integration</span>.
               </p>
             </div>
 
@@ -77,7 +77,7 @@ export const Hero = () => {
               <Button
                 size="lg"
                 onClick={() =>
-                  window.open("https://calendly.com/jeph", "_blank")
+                  window.open("https://calendar.app.google/6CJuytpfYx9vU49fA", "_blank")
                 }
                 className="group bg-primary hover:bg-primary-dark text-white border-0 px-8 py-4 text-lg font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3"
               >
@@ -133,7 +133,7 @@ export const Hero = () => {
                     <CheckCircle className="w-3 h-3 text-honey-gold group-hover/item:text-black group-hover/item:dark:text-black" />
                   </div>
                   <span className="text-sm tracking-wide" style={{ color: "var(--text-color)" }}>
-                    Neural Workflow Architecture
+                    Full-Stack Development
                   </span>
                 </div>
                 <div className="flex items-center gap-4 group/item">
@@ -141,7 +141,7 @@ export const Hero = () => {
                     <CheckCircle className="w-3 h-3 text-honey-gold group-hover/item:text-black group-hover/item:dark:text-black" />
                   </div>
                   <span className="text-sm tracking-wide" style={{ color: "var(--text-color)" }}>
-                    Enterprise API Orchestration
+                    AI & Healthcare Solutions
                   </span>
                 </div>
                 <div className="flex items-center gap-4 group/item">
@@ -149,7 +149,7 @@ export const Hero = () => {
                     <CheckCircle className="w-3 h-3 text-honey-gold group-hover/item:text-black group-hover/item:dark:text-black" />
                   </div>
                   <span className="text-sm tracking-wide" style={{ color: "var(--text-color)" }}>
-                    Autonomous Agent Swarms
+                    SaaS & Automation Platforms
                   </span>
                 </div>
               </div>
@@ -160,23 +160,23 @@ export const Hero = () => {
               {[
                 {
                   icon: <Workflow className="w-5 h-5 text-honey-gold" />,
-                  title: "Neural Workflows",
-                  desc: "Self-optimizing autonomous agent pipelines.",
+                  title: "Web & Mobile Apps",
+                  desc: "Full-stack Next.js, React Native, and SaaS platforms.",
                 },
                 {
                   icon: <Link2 className="w-5 h-5 text-honey-gold" />,
-                  title: "API Orchestration",
-                  desc: "Robust enterprise-grade system integrations.",
+                  title: "AI Integration",
+                  desc: "AI receptionists, chatbots, and intelligent workflows.",
                 },
                 {
                   icon: <TrendingUp className="w-5 h-5 text-honey-gold" />,
-                  title: "Process Scalability",
-                  desc: "High-throughput automation architectures.",
+                  title: "Healthcare Tech",
+                  desc: "Custom EMR/EHR systems and clinical solutions.",
                 },
                 {
                   icon: <Brain className="w-5 h-5 text-honey-gold" />,
-                  title: "Cognitive Systems",
-                  desc: "Advanced LLM and swarm intelligence deployments.",
+                  title: "Automation & SaaS",
+                  desc: "Scalable SaaS products and business process automation.",
                 },
               ].map((feature, i) => (
                 <div

@@ -24,85 +24,85 @@ export default function BlogPage() {
   const mockPosts: BlogPost[] = [
     {
       id: "1",
-      title: "Building Intelligent Workflows: Make vs Zapier vs n8n in 2024",
+      title: "Building a SaaS Platform with Next.js, Supabase, and Stripe",
       content:
-        "A comprehensive comparison of the top no-code automation platforms and how to choose the right one for your AI-powered workflows...",
+        "A comprehensive guide to building a production-ready SaaS platform with authentication, billing, and multi-tenant architecture...",
       excerpt:
-        "Discover the strengths and use cases of Make, Zapier, and n8n for building AI-powered automation workflows in 2024.",
+        "Learn how to build a full-featured SaaS platform from scratch using Next.js, Supabase, and Stripe for subscription billing.",
       image_url: "https://picsum.photos/600/400?random=7",
-      tags: ["Make", "Zapier", "n8n", "Comparison", "Automation"],
+      tags: ["Next.js", "SaaS", "Supabase", "Stripe"],
       published: true,
-      slug: "make-vs-zapier-vs-n8n-2024",
+      slug: "building-saas-nextjs-supabase-stripe",
       created_at: "2024-01-15T00:00:00Z",
       updated_at: "2024-01-15T00:00:00Z",
     },
     {
       id: "2",
-      title: "Integrating Claude AI into Your Automation Workflows",
+      title: "How to Build an AI Receptionist for Your Business",
       content:
-        "Learn how to leverage Claude (Anthropic) in your automation workflows for superior content generation and analysis...",
+        "Step-by-step guide to building an AI-powered virtual receptionist that handles calls, books appointments, and qualifies leads...",
       excerpt:
-        "A step-by-step guide to integrating Claude AI into Make, Zapier, and n8n workflows for enhanced automation intelligence.",
+        "A practical guide to building AI receptionists using GPT-4, Twilio, and modern web technologies for 24/7 customer engagement.",
       image_url: "https://picsum.photos/600/400?random=8",
-      tags: ["Claude", "Anthropic", "AI Integration", "Workflows"],
+      tags: ["AI", "Receptionist", "GPT-4", "Twilio"],
       published: true,
-      slug: "claude-ai-automation-workflows",
+      slug: "build-ai-receptionist-business",
       created_at: "2024-01-10T00:00:00Z",
       updated_at: "2024-01-10T00:00:00Z",
     },
     {
       id: "3",
-      title: "OpenAI API Best Practices for Business Automation",
+      title: "Custom EMR Development: What Clinics Need to Know",
       content:
-        "Master the OpenAI API with proven strategies for building reliable, cost-effective AI automation systems...",
+        "Everything you need to know about building a custom electronic medical records system for your healthcare practice...",
       excerpt:
-        "Essential best practices for implementing OpenAI GPT models in your business automation workflows with real examples.",
+        "Key considerations for developing HIPAA-compliant EMR/EHR systems, from patient management to clinical documentation.",
       image_url: "https://picsum.photos/600/400?random=9",
-      tags: ["OpenAI", "GPT", "API", "Best Practices", "Business"],
+      tags: ["Healthcare", "EMR", "EHR", "HIPAA"],
       published: true,
-      slug: "openai-api-business-automation-best-practices",
+      slug: "custom-emr-development-clinics",
       created_at: "2024-01-05T00:00:00Z",
       updated_at: "2024-01-05T00:00:00Z",
     },
     {
       id: "4",
-      title: "Advanced n8n Workflows: REST API Integration with Error Handling",
+      title: "React Native vs Flutter: Choosing the Right Mobile Framework",
       content:
-        "Build robust n8n workflows that handle REST API integrations with proper error handling and retry logic...",
+        "An honest comparison of React Native and Flutter for cross-platform mobile development based on real project experience...",
       excerpt:
-        "Learn advanced n8n techniques for building bulletproof API integrations with comprehensive error handling strategies.",
+        "Comparing React Native and Flutter for mobile app development: performance, developer experience, and when to use each.",
       image_url: "https://picsum.photos/600/400?random=10",
-      tags: ["n8n", "REST API", "Error Handling", "Advanced", "Integration"],
+      tags: ["React Native", "Flutter", "Mobile", "Cross-Platform"],
       published: true,
-      slug: "advanced-n8n-rest-api-error-handling",
+      slug: "react-native-vs-flutter-comparison",
       created_at: "2024-01-01T00:00:00Z",
       updated_at: "2024-01-01T00:00:00Z",
     },
     {
       id: "5",
-      title: "Automating Customer Support with AI: Complete Guide",
+      title: "Automating Business Operations with Make, Zapier, and n8n",
       content:
-        "Transform your customer support with AI-powered automation using Make, Zapier, and modern AI models...",
+        "How to choose the right automation platform and build workflows that save your team 20+ hours per week...",
       excerpt:
-        "A comprehensive guide to building AI-powered customer support automation that reduces response times and improves satisfaction.",
+        "A practical guide to business process automation using Make, Zapier, and n8n with real-world examples and best practices.",
       image_url: "https://picsum.photos/600/400?random=11",
-      tags: ["Customer Support", "AI", "Automation", "Chatbots"],
+      tags: ["Automation", "Make", "Zapier", "n8n"],
       published: true,
-      slug: "ai-customer-support-automation-guide",
+      slug: "automating-business-operations-guide",
       created_at: "2023-12-28T00:00:00Z",
       updated_at: "2023-12-28T00:00:00Z",
     },
     {
       id: "6",
-      title: "Scaling Business Operations with Intelligent Automation",
+      title: "Integrating AI into Your Existing Software Stack",
       content:
-        "Learn how to scale your business operations efficiently using intelligent automation workflows and AI decision-making...",
+        "Learn how to add AI capabilities to your existing applications using OpenAI, Claude, and custom model deployments...",
       excerpt:
-        "Discover proven strategies for scaling business operations using intelligent automation that grows with your business.",
+        "Practical strategies for integrating AI models into existing software systems without rebuilding from scratch.",
       image_url: "https://picsum.photos/600/400?random=12",
-      tags: ["Business Operations", "Scaling", "Automation", "Growth"],
+      tags: ["AI Integration", "OpenAI", "Claude", "Software"],
       published: true,
-      slug: "scaling-business-operations-intelligent-automation",
+      slug: "integrating-ai-existing-software-stack",
       created_at: "2023-12-20T00:00:00Z",
       updated_at: "2023-12-20T00:00:00Z",
     },
@@ -189,16 +189,15 @@ export default function BlogPage() {
           </Button>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-honey-gold/10 border border-honey-gold/20 rounded-full text-honey-gold text-sm font-medium mb-4">
             <Sparkles size={16} className="text-honey-gold" />
-            AI Automation Insights
+            Tech & AI Insights
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Master AI Automation with
+            Master Software Engineering with
             <span className="gradient-text"> Expert Insights</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Learn from real-world experience with Make, Zapier, n8n, and modern
-            AI tools. Get practical tutorials, best practices, and insider tips
-            for building intelligent automation.
+            Practical tutorials and insights on web development, SaaS,
+            AI automation, AI receptionists, and software engineering.
           </p>
         </div>
 
@@ -342,7 +341,7 @@ export default function BlogPage() {
               Coming Soon
             </h3>
             <p className="text-gray-500 max-w-md mx-auto">
-              I&apos;m working on some exciting content about automation and AI.
+              I&apos;m working on some exciting content about software engineering and AI.
               Check back soon for the latest insights!
             </p>
           </div>
@@ -353,19 +352,18 @@ export default function BlogPage() {
           <Card className="max-w-3xl mx-auto card-ai">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Ready to Master AI Automation?
+                Ready to Build Something Great?
               </h3>
               <p className="text-gray-300 mb-6">
-                Get expert guidance on implementing Make, Zapier, n8n, and AI
-                tools in your business. Let&apos;s build intelligent automation
-                that delivers real results.
+                Need a web app, SaaS platform, AI receptionist, or automation
+                system? Let&apos;s talk about your project.
               </p>
               <Button
                 size="lg"
                 onClick={() => window.open("/", "_self")}
                 className="group"
               >
-                Start AI Automation Project
+                Start Your Project
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </CardContent>

@@ -118,8 +118,8 @@ export const Contact = () => {
     },
     {
       icon: <Users className="w-5 h-5" />,
-      title: "Expert Team",
-      description: "AI specialists & engineers",
+      title: "Expert Engineer",
+      description: "Full-stack & AI specialist",
     },
   ];
 
@@ -144,16 +144,16 @@ export const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
             Let&apos;s{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">
-              Transform
+              Build
             </span>{" "}
-            Your Business
+            Your Project
           </h2>
           <p
             className="text-lg md:text-xl text-gray-400 font-light max-w-3xl mx-auto border-t border-b border-honey-gold/20 py-4 mt-6"
             style={{ color: "var(--text-color)" }}
           >
-            Ready to automate your processes and accelerate growth? Get in touch
-            with our AI automation experts today.
+            Need a web app, SaaS platform, AI receptionist, or automation system?
+            Get in touch to discuss your project.
           </p>
         </div>
 
@@ -167,7 +167,7 @@ export const Contact = () => {
                   <Brain className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-white">
-                  AI-Powered Consultation
+                  Expert Consultation
                 </h3>
               </div>
 
@@ -175,8 +175,8 @@ export const Contact = () => {
                 className="text-gray-400 mb-8"
                 style={{ color: "var(--text-color)" }}
               >
-                Our AI specialists analyze your business needs and design custom
-                automation solutions that deliver measurable results.
+                I scope your project, plan the architecture, and build your
+                software, AI system, or automation from start to finish.
               </p>
 
               {/* Contact Information */}
@@ -247,7 +247,7 @@ export const Contact = () => {
                 className="text-gray-400 mb-8"
                 style={{ color: "var(--text-color)" }}
               >
-                Tell us about your automation needs
+                Tell me about your project
               </p>
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -301,7 +301,7 @@ export const Contact = () => {
                     Message *
                   </label>
                   <textarea
-                    placeholder="Tell us about your automation needs..."
+                    placeholder="Tell me about your project needs..."
                     rows={4}
                     {...register("message", {
                       required: "Message is required",

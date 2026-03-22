@@ -237,9 +237,8 @@ export default function PricingPage() {
             <span className="text-primary"> AI Automation Excellence</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Choose the perfect package for your AI automation needs. All
-            packages include Make, Zapier, n8n expertise and cutting-edge AI
-            model integration.
+            Choose the right package for your project. All packages
+            include Make, Zapier, n8n expertise and AI model integration.
           </p>
         </div>
 
@@ -473,12 +472,11 @@ export default function PricingPage() {
           <Card className="max-w-3xl mx-auto card-ai">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Ready to Transform Your Business?
+                Ready to Start Your Project?
               </h3>
               <p className="text-gray-300 mb-6">
-                Get started with AI automation today. Schedule a free
-                consultation to discuss your specific needs and find the perfect
-                package.
+                Schedule a free consultation to scope your web app, SaaS,
+                AI receptionist, or automation project.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -493,7 +491,7 @@ export default function PricingPage() {
                   variant="outline"
                   size="lg"
                   onClick={() =>
-                    window.open("https://calendly.com/jeph", "_blank")
+                    window.open("https://calendar.app.google/6CJuytpfYx9vU49fA", "_blank")
                   }
                 >
                   <Calendar className="mr-2 w-5 h-5" />

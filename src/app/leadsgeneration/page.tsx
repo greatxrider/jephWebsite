@@ -45,16 +45,15 @@ export default function LeadGenerationPage() {
             </h2>
 
             <p className="text-xl text-gray-300 mb-20 leading-relaxed max-w-3xl">
-              Transform your lead generation from manual chaos to automated
-              precision. Our AI-powered system captures, enriches, and qualifies
-              leads 24/7, delivering sales-ready prospects directly to your
-              team.
+              Stop doing lead gen manually. My system captures, enriches, and
+              qualifies leads 24/7, routing sales-ready prospects directly to
+              your CRM.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-start">
               <Button
                 onClick={() =>
-                  window.open("https://calendly.com/jeph", "_blank")
+                  window.open("https://calendar.app.google/6CJuytpfYx9vU49fA", "_blank")
                 }
                 className="bg-primary hover:bg-primary-dark text-white px-10 py-5 text-lg font-semibold rounded-xl shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 group"
               >
@@ -83,7 +82,7 @@ export default function LeadGenerationPage() {
                 How It Works
               </h3>
               <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
-                Our automated system handles the entire lead generation pipeline
+                My automated system handles the entire lead generation pipeline
                 from capture to qualification
               </p>
             </div>
@@ -151,11 +150,10 @@ export default function LeadGenerationPage() {
           <div className="max-w-6xl">
             <div className="text-left mb-24">
               <h3 className="text-4xl font-bold text-white mb-10">
-                Why Choose Our Automation?
+                Why Choose My Automation?
               </h3>
               <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
-                Experience the power of AI-driven lead generation that never
-                sleeps
+                AI-driven lead generation that runs while you sleep
               </p>
             </div>
 
@@ -202,9 +200,8 @@ export default function LeadGenerationPage() {
                   </h4>
                 </div>
                 <p className="text-gray-300 leading-relaxed text-lg">
-                  Seamlessly integrates with your existing CRM systems,
-                  automatically syncing qualified leads with complete context
-                  and history.
+                  Plugs into your existing CRM, automatically syncing
+                  qualified leads with full context and history.
                 </p>
               </div>
 
@@ -292,13 +289,12 @@ export default function LeadGenerationPage() {
                   Ready to Automate Your Lead Generation?
                 </h3>
                 <p className="text-xl text-gray-300 mb-16 max-w-2xl leading-relaxed">
-                  Stop chasing leads manually. Let our AI-powered automation
-                  capture, enrich, and qualify prospects while you focus on
-                  closing deals.
+                  Let the automation handle capture, enrichment, and
+                  qualification while you focus on closing deals.
                 </p>
                 <Button
                   onClick={() =>
-                    window.open("https://calendly.com/jeph", "_blank")
+                    window.open("https://calendar.app.google/6CJuytpfYx9vU49fA", "_blank")
                   }
                   className="bg-primary hover:bg-primary-dark text-white px-14 py-7 text-xl font-semibold rounded-xl shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 group"
                 >

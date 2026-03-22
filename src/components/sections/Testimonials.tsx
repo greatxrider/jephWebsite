@@ -144,8 +144,8 @@ export const Testimonials = () => {
               className="text-xl text-gray-300 dark:text-gray-300 mb-8 leading-relaxed"
               style={{ color: "var(--text-color)" }}
             >
-              Real feedback from partners on reliability, communication, and
-              measurable outcomes achieved through AI automation solutions.
+              Real feedback from clients and colleagues on my software engineering,
+              AI automation, and web development work.
             </p>
 
             {/* AI-Inspired Features */}
@@ -159,13 +159,13 @@ export const Testimonials = () => {
                     className="text-white font-semibold mb-1"
                     style={{ color: "var(--text-primary)" }}
                   >
-                    AI-Driven Solutions
+                    Full-Stack Development & AI
                   </h3>
                   <p
                     className="text-gray-400 text-sm"
                     style={{ color: "var(--text-color)" }}
                   >
-                    Intelligent automation that adapts to your business needs
+                    Web apps, SaaS, AI receptionists, and automation systems
                   </p>
                 </div>
               </div>
@@ -179,13 +179,13 @@ export const Testimonials = () => {
                     className="text-white font-semibold mb-1"
                     style={{ color: "var(--text-primary)" }}
                   >
-                    Rapid Implementation
+                    Fast Delivery
                   </h3>
                   <p
                     className="text-gray-400 text-sm"
                     style={{ color: "var(--text-color)" }}
                   >
-                    Quick deployment with lasting business impact
+                    Quick turnaround on projects and milestones
                   </p>
                 </div>
               </div>

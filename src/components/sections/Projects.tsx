@@ -48,9 +48,10 @@ interface Project {
 
 const categories = [
   "All",
-  "n8n Automations",
-  "Zapier Automations",
-  "Make Automations",
+  "Web & SaaS",
+  "AI Solutions",
+  "Healthcare",
+  "Automation",
 ];
 
 const formatDateShort = (dateString: string) => {
@@ -76,148 +77,84 @@ export default function Projects({
   const mockProjects: Project[] = [
     {
       id: "1",
-      title: "AI-Powered Customer Support Bot",
+      title: "AI Receptionist for Medical Clinic",
       description:
-        "Intelligent chatbot that handles customer inquiries with 95% accuracy using NLP and machine learning.",
+        "AI-powered virtual receptionist handling patient inquiries, appointment booking, and triage with 95% accuracy.",
       detailed_description:
-        "This advanced AI chatbot system leverages natural language processing and machine learning algorithms to provide human-like customer support. The system integrates seamlessly with existing CRM platforms and can handle complex queries, route tickets appropriately, and provide instant responses to common questions. Features include sentiment analysis, multi-language support, and continuous learning capabilities.",
+        "Built an intelligent AI receptionist system for a medical clinic that handles patient calls, books appointments, answers FAQs, and performs basic triage. Integrates with the clinic's EMR system for real-time availability and patient records.",
       image_url:
         "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
-      category: "Zapier Automations",
-      tools_used: ["OpenAI GPT-4", "Zapier", "Slack", "HubSpot"],
+      category: "AI Solutions",
+      tools_used: ["OpenAI GPT-4", "Next.js", "Twilio", "Supabase"],
       github_url: "https://github.com/example",
       created_at: "2024-01-15",
       featured: true,
       technologies: [
-        {
-          name: "OpenAI GPT-4",
-          icon: "🤖",
-          description: "Advanced language model for natural conversations",
-        },
-        {
-          name: "Zapier",
-          icon: "🔗",
-          description: "Workflow automation and app integration",
-        },
-        {
-          name: "Slack",
-          icon: "💬",
-          description: "Team communication and notification system",
-        },
-        {
-          name: "HubSpot",
-          icon: "📊",
-          description: "CRM integration for customer data management",
-        },
+        { name: "OpenAI GPT-4", icon: "🤖", description: "Natural language understanding for patient conversations" },
+        { name: "Next.js", icon: "⚡", description: "Full-stack web application framework" },
+        { name: "Twilio", icon: "📞", description: "Voice and SMS communication APIs" },
+        { name: "Supabase", icon: "🗄️", description: "Backend database and real-time subscriptions" },
       ],
     },
     {
       id: "2",
-      title: "Automated Data Processing Pipeline",
+      title: "Healthcare EMR Platform",
       description:
-        "End-to-end data processing system that transforms raw data into actionable insights.",
+        "Custom electronic medical records system with patient management, clinical documentation, and billing.",
       detailed_description:
-        "A comprehensive data processing pipeline that automates the entire data workflow from ingestion to visualization. The system handles data cleaning, transformation, and analysis using advanced algorithms. It includes real-time monitoring, error handling, and automated reporting capabilities. The pipeline is designed to scale with business growth and can process millions of records efficiently.",
+        "A comprehensive EMR platform built for a network of private clinics. Features include patient records management, clinical documentation, appointment scheduling, e-prescribing, lab integration, and automated billing. HIPAA-compliant architecture with role-based access control.",
       image_url:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      category: "n8n Automations",
-      tools_used: ["Python", "Apache Airflow", "PostgreSQL", "AWS"],
+      category: "Healthcare",
+      tools_used: ["Next.js", "PostgreSQL", "Supabase", "React"],
       github_url: "https://github.com/example",
       created_at: "2024-01-10",
       featured: true,
       technologies: [
-        {
-          name: "Python",
-          icon: "🐍",
-          description: "Core programming language for data processing",
-        },
-        {
-          name: "Apache Airflow",
-          icon: "🌪️",
-          description: "Workflow orchestration and scheduling",
-        },
-        {
-          name: "PostgreSQL",
-          icon: "🗄️",
-          description: "Reliable database for data storage",
-        },
-        {
-          name: "AWS",
-          icon: "☁️",
-          description: "Cloud infrastructure and services",
-        },
+        { name: "Next.js", icon: "⚡", description: "Full-stack React framework" },
+        { name: "PostgreSQL", icon: "🗄️", description: "HIPAA-compliant database" },
+        { name: "Supabase", icon: "🔐", description: "Auth and real-time backend" },
+        { name: "React", icon: "⚛️", description: "Interactive clinical UI components" },
       ],
     },
     {
       id: "3",
-      title: "Smart Email Marketing Automation",
+      title: "SaaS Analytics Dashboard",
       description:
-        "AI-driven email campaigns that personalize content based on user behavior and preferences.",
+        "Multi-tenant SaaS platform with real-time analytics, user management, and Stripe billing integration.",
       detailed_description:
-        "An intelligent email marketing system that uses AI to create personalized campaigns based on user behavior, preferences, and engagement patterns. The system automatically segments audiences, optimizes send times, and A/B tests content variations. It includes advanced analytics, predictive modeling, and automated campaign management.",
+        "A white-label SaaS analytics dashboard with multi-tenant architecture, real-time data visualization, role-based access, Stripe subscription billing, and automated reporting. Built to handle thousands of concurrent users.",
       image_url:
-        "https://images.unsplash.com/photo-1557838923-2985c318be48?w=800&h=600&fit=crop",
-      category: "Zapier Automations",
-      tools_used: ["Mailchimp", "Zapier", "Google Analytics", "Segment"],
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      category: "Web & SaaS",
+      tools_used: ["Next.js", "Tailwind", "Stripe", "PostgreSQL"],
       github_url: "https://github.com/example",
       created_at: "2024-01-05",
       technologies: [
-        {
-          name: "Mailchimp",
-          icon: "📧",
-          description: "Email marketing platform integration",
-        },
-        {
-          name: "Zapier",
-          icon: "🔗",
-          description: "Automated workflow connections",
-        },
-        {
-          name: "Google Analytics",
-          icon: "📊",
-          description: "User behavior tracking and analysis",
-        },
-        {
-          name: "Segment",
-          icon: "📈",
-          description: "Customer data platform integration",
-        },
+        { name: "Next.js", icon: "⚡", description: "Server-side rendered React application" },
+        { name: "Tailwind CSS", icon: "🎨", description: "Responsive utility-first styling" },
+        { name: "Stripe", icon: "💳", description: "Subscription billing and payments" },
+        { name: "PostgreSQL", icon: "🗄️", description: "Multi-tenant database architecture" },
       ],
     },
     {
       id: "4",
-      title: "Real-time Analytics Dashboard",
+      title: "Business Automation Suite",
       description:
-        "Interactive dashboard providing real-time insights into business metrics and KPIs.",
+        "End-to-end workflow automation handling lead gen, CRM sync, onboarding, and reporting across 20+ tools.",
       detailed_description:
-        "A comprehensive real-time analytics dashboard that provides instant insights into business performance. The dashboard includes customizable widgets, interactive charts, and automated alerts. It integrates with multiple data sources and provides drill-down capabilities for detailed analysis. The system supports multiple user roles and permissions.",
+        "A comprehensive business automation suite connecting 20+ tools via Make and n8n. Handles lead capture from multiple sources, automatic CRM updates, client onboarding workflows, automated reporting, and team notifications. Reduced manual work by 80%.",
       image_url:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      category: "Make Automations",
-      tools_used: ["Tableau", "Power BI", "Google Data Studio", "SQL"],
+        "https://images.unsplash.com/photo-1557838923-2985c318be48?w=800&h=600&fit=crop",
+      category: "Automation",
+      tools_used: ["Make", "n8n", "HubSpot", "Slack", "OpenAI"],
       github_url: "https://github.com/example",
       created_at: "2024-01-01",
       technologies: [
-        {
-          name: "Tableau",
-          icon: "📊",
-          description: "Advanced data visualization platform",
-        },
-        {
-          name: "Power BI",
-          icon: "📈",
-          description: "Business intelligence and reporting",
-        },
-        {
-          name: "Google Data Studio",
-          icon: "📋",
-          description: "Interactive dashboard creation",
-        },
-        {
-          name: "SQL",
-          icon: "🗄️",
-          description: "Database querying and data extraction",
-        },
+        { name: "Make", icon: "⚙️", description: "Visual workflow automation platform" },
+        { name: "n8n", icon: "🔄", description: "Self-hosted automation engine" },
+        { name: "HubSpot", icon: "📊", description: "CRM and sales pipeline management" },
+        { name: "OpenAI", icon: "🤖", description: "AI-powered lead scoring and content" },
       ],
     },
   ];
@@ -290,23 +227,22 @@ export default function Projects({
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)] mb-6 mx-auto">
               <Sparkles size={16} className="text-honey-gold" />
-              <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">AI-Powered Portfolio</span>
+              <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Project Portfolio</span>
             </div>
             <h2
               className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white dark:text-white mb-4"
               style={{ color: "var(--text-primary)" }}
             >
-              Intelligent
+              Featured
               <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">
-                Automation Projects
+                Projects & Solutions
               </span>
             </h2>
             <p
               className="text-lg md:text-xl text-gray-400 dark:text-gray-400 font-light max-w-4xl mx-auto border-t border-b border-honey-gold/20 py-4 mt-6"
               style={{ color: "var(--text-color)" }}
             >
-              Showcasing cutting-edge AI solutions that transform business
-              operations
+              Web apps, SaaS platforms, AI receptionists, and automation systems I've built for clients
             </p>
           </div>
 
@@ -478,7 +414,7 @@ export default function Projects({
                 </h3>
                 <p className="text-gray-400 dark:text-gray-400 text-lg mb-8 max-w-md mx-auto">
                   Try adjusting your search or filter criteria to find the
-                  perfect AI automation solution
+                  project you're looking for
                 </p>
                 <Button
                   onClick={() => {

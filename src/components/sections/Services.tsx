@@ -30,125 +30,132 @@ import {
   Award,
   Calendar,
   ArrowRight,
+  Globe,
+  Smartphone,
 } from "lucide-react";
 
 export const Services = () => {
   const services = [
     {
-      icon: Target,
-      title: "Lead Generation & Qualification Automation",
+      icon: Globe,
+      title: "Custom Web & SaaS Development",
       description:
-        "Automates lead capture from ads, web forms, and scrapers, enriches data, scores with AI, and routes qualified leads to your CRM instantly.",
+        "Full-stack web applications and SaaS platforms built with Next.js, React, and modern tech stacks. Scalable, responsive, and production-ready.",
       features: [
-        "Auto-scrape leads from various sources",
-        "Connect lead forms (Facebook Ads, website, etc.) to CRMs like GoHighLevel or HubSpot",
-        "Auto-qualify leads using AI or scoring logic and notify sales teams instantly",
+        "Next.js / React full-stack applications",
+        "SaaS platforms with auth, billing, and dashboards",
+        "Responsive design with Tailwind CSS and modern UI",
       ],
       idealFor:
-        "Real Estate Agents, SaaS Sales Teams, Digital Agencies, Mortgage Brokers, Coaches",
+        "Startups, SaaS Founders, Agencies, Enterprise Teams",
       gradient: "bg-orange-500",
     },
     {
-      icon: Database,
-      title: "CRM & Pipeline Automation",
+      icon: Smartphone,
+      title: "Mobile App Development",
       description:
-        "Creates contacts, deals, and tasks automatically, triggers reminders and status updates, and keeps tools like Calendly, Zoom, email, and your CRM in sync.",
+        "Cross-platform mobile applications using React Native and modern frameworks. Native performance with shared codebase for iOS and Android.",
       features: [
-        "Auto-create contacts, deals, and tasks in CRMs",
-        "Trigger reminders, follow-ups, and status updates based on lead behavior or deal stage",
-        "Sync tools like Calendly, Zoom, email, and CRMs into one flow",
+        "React Native cross-platform apps",
+        "Push notifications, offline support, and deep linking",
+        "App Store and Google Play deployment",
       ],
       idealFor:
-        "Real Estate, Sales Teams, Insurance Agencies, Coaches, Franchise Operations",
+        "Startups, E-commerce, Healthcare, Service Businesses",
       gradient: "bg-orange-600",
     },
     {
-      icon: Users,
-      title: "Client Onboarding Workflows",
+      icon: Brain,
+      title: "AI Receptionists & Chatbots",
       description:
-        "Orchestrates client onboarding from intake to welcome emails, calendar setup, e‑signatures, and auto-creates tasks and records in tools like Airtable or ClickUp.",
+        "Intelligent AI-powered virtual receptionists and chatbots that handle customer inquiries, book appointments, and qualify leads 24/7.",
       features: [
-        "Automate onboarding from intake form to welcome email, calendar setup, and document signing",
-        "Automatically populate Airtable/ClickUp with client info and assign internal tasks",
+        "AI voice and chat receptionists for businesses",
+        "Natural language understanding with GPT/Claude integration",
+        "Appointment scheduling and CRM integration",
       ],
       idealFor:
-        "Agencies, Service Businesses, Real Estate Firms, E-commerce Brands",
+        "Medical Offices, Law Firms, Real Estate, Service Businesses",
       gradient: "bg-orange-700",
     },
     {
-      icon: FileText,
-      title: "Proposal, Quote, or Report Generation",
+      icon: Database,
+      title: "Healthcare EMR/EHR Systems",
       description:
-        "Generates tailored proposals, quotes, or reports from CRM/Airtable data using Documint or Google Docs and delivers PDFs automatically to clients.",
+        "Custom electronic medical/health record systems designed for clinics, practices, and healthcare organizations with compliance and security built in.",
       features: [
-        "Automatically generate customized proposals or reports using Documint or Google Docs from CRM/Airtable data",
-        "Trigger PDF generation and email/send to clients automatically",
+        "Patient management and clinical documentation",
+        "HIPAA-compliant architecture and data handling",
+        "Lab integration, e-prescribing, and billing modules",
       ],
       idealFor:
-        "Real Estate, Marketing Agencies, Mortgage Brokers, B2B Sales, SEO Agencies",
+        "Clinics, Private Practices, Hospitals, Telehealth Providers",
       gradient: "bg-blue-500",
     },
     {
-      icon: Share2,
-      title: "Content Repurposing & Social Posting Automation",
+      icon: Target,
+      title: "Lead Generation & CRM Automation",
       description:
-        "Transforms notes or long‑form content from forms, Notion, or Slack into polished social posts and schedules them across LinkedIn, Facebook, Instagram, and more.",
+        "Automated lead capture, enrichment, scoring, and CRM pipeline management that turns prospects into customers on autopilot.",
       features: [
-        "Pull content from forms, Notion, or Slack, and convert to formatted social posts",
-        "Auto-post or schedule to LinkedIn, Facebook, Instagram, etc.",
-        "Use AI to summarize, rewrite, or repurpose long-form content",
+        "Auto-capture leads from ads, forms, and scrapers",
+        "AI-powered lead scoring and qualification",
+        "CRM sync with HubSpot, GoHighLevel, Salesforce",
       ],
       idealFor:
-        "Social Media Agencies, Content Creators, Coaches, Real Estate Agents",
+        "Real Estate, SaaS Sales Teams, Digital Agencies, Coaches",
       gradient: "bg-purple-500",
     },
     {
-      icon: CheckSquare,
-      title: "Task & Team Workflow Automation",
+      icon: Workflow,
+      title: "Business Process Automation",
       description:
-        "Builds recurring workflows for task creation, project updates, reminders, and status checks, with Slack, email, or SMS notifications.",
+        "End-to-end workflow automation using Make, Zapier, and n8n. Connect your tools, eliminate manual tasks, and scale operations efficiently.",
       features: [
-        "Set up automated workflows for recurring task creation, project updates, reminders, and status checks",
-        "Integrate Slack, email, or text updates based on changes",
+        "Multi-platform automation (Make, Zapier, n8n)",
+        "Client onboarding and task workflow automation",
+        "Email sequences, reporting, and notification systems",
       ],
-      idealFor: "Agencies, Franchise Ops, Recruitment Teams, SEO Firms",
+      idealFor: "Agencies, Franchise Ops, E-commerce, Service Businesses",
       gradient: "bg-green-500",
     },
     {
-      icon: Mail,
-      title: "Email & Outreach Sequences",
+      icon: Bot,
+      title: "AI Integration & Custom AI Solutions",
       description:
-        "Enrolls contacts into personalized cold, nurture, or reactivation sequences with data‑driven targeting and AI‑assisted copywriting.",
+        "Integrate AI models into your existing systems. Custom AI agents, content generation, data analysis, and automated decision-making.",
       features: [
-        "Auto-enroll leads into tailored cold email, nurture, or reactivation sequences",
-        "Personalize outreach with data enrichment and AI-powered copywriting tools",
+        "OpenAI, Claude, and custom LLM integrations",
+        "AI-powered content generation and analysis",
+        "Autonomous AI agent workflows and pipelines",
       ],
-      idealFor: "B2B Sales Teams, Marketing Agencies, Coaches, Recruiters",
+      idealFor: "Tech Companies, Content Teams, Data-Driven Businesses",
       gradient: "bg-red-500",
     },
     {
-      icon: FormInput,
-      title: "Form-to-Workflow Automation",
+      icon: Share2,
+      title: "API Development & Integration",
       description:
-        "Turns any intake form into a complete backend process—saving data to Airtable/CRM, notifying the team, and triggering onboarding or scheduling.",
+        "Custom REST/GraphQL API development and third-party integrations. Connect any system with clean, well-documented APIs.",
       features: [
-        "Save to Airtable or CRM",
-        "Notify team on Slack/Email",
-        "Trigger onboarding, scheduling, or enrichment",
+        "Custom REST and GraphQL API development",
+        "Third-party API integration and middleware",
+        "Webhook systems and real-time data sync",
       ],
-      idealFor: "Real Estate, Coaches, Course Creators, Local Services",
+      idealFor: "SaaS Companies, Enterprise, Platform Builders",
       gradient: "bg-teal-500",
     },
     {
-      icon: Star,
-      title: "Review & Testimonial Automation",
+      icon: FileText,
+      title: "Technical Consulting & Architecture",
       description:
-        "Requests reviews automatically after milestones and routes positive feedback to marketing while escalating negative responses for follow‑up.",
+        "Strategic technology consulting for startups and businesses. System architecture design, tech stack selection, and development roadmaps.",
       features: [
-        "Automatically request Google/Facebook/Trustpilot reviews after project milestones",
-        "Route good feedback to marketing, and negative to support/escalation",
+        "System architecture and tech stack planning",
+        "Code review and performance optimization",
+        "Development team augmentation and mentoring",
       ],
-      idealFor: "Local Services, Real Estate, E-commerce, Coaches",
+      idealFor: "Startups, CTOs, Non-Technical Founders, Growing Teams",
       gradient: "bg-yellow-500",
     },
   ];
@@ -212,24 +219,23 @@ export const Services = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)] mb-6 mx-auto">
             <Sparkles size={16} className="text-honey-gold" />
-            <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">AI Automation Services</span>
+            <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Software & AI Services</span>
           </div>
           <h2
             className="text-4xl md:text-5xl font-extrabold mb-4 uppercase tracking-tight"
             style={{ color: "var(--text-primary)" }}
           >
-            Practical AI & Automation
+            Full-Stack Development &
             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">
-              for Everyday Business
+              AI-Powered Solutions
             </span>
           </h2>
           <p
             className="text-lg md:text-xl text-gray-300 dark:text-gray-300 max-w-4xl mx-auto font-light leading-relaxed border-t border-b border-honey-gold/20 py-4 mt-6"
             style={{ color: "var(--text-color)" }}
           >
-            I help businesses simplify their operations with automation and AI.
-            My focus is on creating reliable workflows that reduce manual work,
-            connect your tools, and make day-to-day tasks easier to manage.
+            Custom web apps, SaaS platforms, AI receptionists, mobile apps,
+            and business automation. From startups to enterprise.
           </p>
         </div>
 
@@ -281,16 +287,15 @@ export const Services = () => {
                   className="text-2xl font-bold text-white"
                   style={{ color: "var(--text-primary)" }}
                 >
-                  Ready to Transform Your Business?
+                  Ready to Build Your Next Project?
                 </h3>
               </div>
               <p
                 className="text-gray-400 mb-6 max-w-2xl mx-auto"
                 style={{ color: "var(--text-color)" }}
               >
-                Let's discuss how I can help you automate your processes,
-                integrate AI into your workflows, and create solutions that
-                drive real business value.
+                Let's discuss your web app, SaaS product, AI receptionist,
+                or automation project. I'll scope it out and get you a plan.
               </p>
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="flex items-center gap-2 text-honey-gold">
@@ -311,7 +316,7 @@ export const Services = () => {
               <div className="flex justify-center">
                 <button
                   onClick={() =>
-                    window.open("https://calendly.com/jeph", "_blank")
+                    window.open("https://calendar.app.google/6CJuytpfYx9vU49fA", "_blank")
                   }
                   className="group bg-primary hover:bg-primary-dark text-white border-0 px-8 py-4 text-lg font-semibold shadow-lg shadow-honey-gold/25 hover:shadow-honey-gold/40 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 rounded-xl"
                 >

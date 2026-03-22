@@ -27,11 +27,11 @@ export const Pricing = () => {
 
   const projectPackages = [
     {
-      name: "Starter Automation",
+      name: "Starter Package",
       price: "$1,500",
       period: "one-time",
       description:
-        "Perfect for small businesses getting started with AI automation",
+        "Perfect for small businesses getting started with custom software",
       features: [
         "Up to 3 automation workflows",
         "Make or Zapier platform setup",
@@ -53,10 +53,10 @@ export const Pricing = () => {
       icon: <Zap className="w-8 h-8" />,
     },
     {
-      name: "Professional Automation",
+      name: "Professional Package",
       price: "$3,500",
       period: "one-time",
-      description: "Comprehensive AI automation for growing businesses",
+      description: "Comprehensive software and AI solutions for growing businesses",
       features: [
         "Up to 10 automation workflows",
         "Make, Zapier, or n8n platform",
@@ -80,10 +80,10 @@ export const Pricing = () => {
       icon: <Brain className="w-8 h-8" />,
     },
     {
-      name: "Enterprise Automation",
+      name: "Enterprise Package",
       price: "$7,500",
       period: "one-time",
-      description: "Complete AI automation transformation for large operations",
+      description: "Full-scale software and AI solutions for large operations",
       features: [
         "Unlimited automation workflows",
         "All platforms (Make, Zapier, n8n)",
@@ -217,19 +217,19 @@ export const Pricing = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-medium mb-4">
             <Sparkles size={16} className="animate-neural-pulse" />
-            <span className="gradient-text-neon">AI Automation Pricing</span>
+            <span className="gradient-text-neon">Service Pricing</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Transparent Pricing for
-            <span className="gradient-text-ai"> AI Automation Excellence</span>
+            <span className="gradient-text-ai"> Software & AI Excellence</span>
           </h2>
           <p
             className="text-xl text-gray-300 max-w-3xl mx-auto"
             style={{ color: "var(--text-color)" }}
           >
-            Choose the perfect package for your AI automation needs. All
-            packages include Make, Zapier, n8n expertise and cutting-edge AI
-            model integration.
+            Choose the right package for your project. All packages
+            include full-stack development, AI integration, and
+            ongoing support.
           </p>
         </div>
 
@@ -479,12 +479,11 @@ export const Pricing = () => {
           <Card className="max-w-3xl mx-auto card-ai">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Ready to Transform Your Business?
+                Ready to Start Your Project?
               </h3>
               <p className="text-gray-300 mb-6">
-                Get started with AI automation today. Schedule a free
-                consultation to discuss your specific needs and find the perfect
-                package.
+                Schedule a free consultation to scope your web app, SaaS,
+                AI receptionist, or automation project.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -505,7 +504,7 @@ export const Pricing = () => {
                   variant="outline"
                   size="lg"
                   onClick={() =>
-                    window.open("https://calendly.com/jeph", "_blank")
+                    window.open("https://calendar.app.google/6CJuytpfYx9vU49fA", "_blank")
                   }
                 >
                   <Calendar className="mr-2 w-5 h-5" />
