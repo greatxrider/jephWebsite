@@ -5,6 +5,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   hover?: boolean;
   glow?: boolean;
+  variant?: "default" | "hex";
 }
 
 export const Card = ({
@@ -12,9 +13,10 @@ export const Card = ({
   className = "",
   hover = true,
   glow = false,
+  variant = "default",
   ...rest
 }: CardProps) => {
-  const baseClasses = "card";
+  const baseClasses = variant === "hex" ? "card-hex" : "card";
   const hoverClasses = hover ? "hover:transform hover:scale-105" : "";
   const glowClasses = glow ? "glow-border" : "";
 

@@ -18,44 +18,10 @@ import { Button } from "@/components/ui/Button";
 
 export default function LeadGenerationPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-      {/* AI Background Effects */}
+    <div className="min-h-screen bg-black relative overflow-hidden">
+      {/* Honeycomb Background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `
-              linear-gradient(rgba(255, 107, 53, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 107, 53, 0.1) 1px, transparent 1px)
-            `,
-              backgroundSize: "80px 80px",
-            }}
-          ></div>
-        </div>
-
-        {/* Floating AI Elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/10 to-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div
-          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/10 to-orange-500/10 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
-        ></div>
-        <div
-          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/10 to-orange-600/10 rounded-full blur-2xl animate-pulse"
-          style={{ animationDelay: "2s" }}
-        ></div>
-
-        {/* Glowing Orange Dots */}
-        <div className="absolute top-32 right-20 w-2 h-2 bg-orange-400 rounded-full animate-pulse"></div>
-        <div
-          className="absolute top-64 left-32 w-1 h-1 bg-orange-400 rounded-full animate-pulse"
-          style={{ animationDelay: "0.5s" }}
-        ></div>
-        <div
-          className="absolute bottom-32 left-20 w-1.5 h-1.5 bg-orange-400 rounded-full animate-pulse"
-          style={{ animationDelay: "1.5s" }}
-        ></div>
+        <div className="absolute inset-0 bg-honeycomb opacity-30"></div>
       </div>
 
       {/* Hero Section - Using padding instead of margin for navbar separation */}
@@ -63,12 +29,12 @@ export default function LeadGenerationPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-5xl text-left">
             {/* Service Category Tag */}
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-sm border border-orange-400/30 rounded-full text-white text-sm font-medium mb-20">
-              <Briefcase size={18} className="animate-pulse" />
-              <span>Lead Generation & Qualification Services</span>
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 backdrop-blur-sm border border-honey-gold/20 rounded-full text-white text-sm font-medium mb-20">
+              <Briefcase size={18} className="text-honey-gold" />
+              <span className="text-primary">Lead Generation & Qualification Services</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-bold text-orange-400 mb-12">
+            <h1 className="text-5xl md:text-6xl font-bold text-primary mb-12">
               Lead Generation & Qualification Automation
             </h1>
 
@@ -79,18 +45,17 @@ export default function LeadGenerationPage() {
             </h2>
 
             <p className="text-xl text-gray-300 mb-20 leading-relaxed max-w-3xl">
-              Transform your lead generation from manual chaos to automated
-              precision. Our AI-powered system captures, enriches, and qualifies
-              leads 24/7, delivering sales-ready prospects directly to your
-              team.
+              Stop doing lead gen manually. My system captures, enriches, and
+              qualifies leads 24/7, routing sales-ready prospects directly to
+              your CRM.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-start">
               <Button
                 onClick={() =>
-                  window.open("https://calendly.com/jeph", "_blank")
+                  window.open("https://calendar.app.google/6CJuytpfYx9vU49fA", "_blank")
                 }
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 text-lg font-semibold rounded-xl shadow-lg shadow-orange-500/25 transition-all duration-300 hover:scale-105 group"
+                className="bg-primary hover:bg-primary-dark text-white px-10 py-5 text-lg font-semibold rounded-xl shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 group"
               >
                 <Calendar className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
                 Book a Call
@@ -98,7 +63,7 @@ export default function LeadGenerationPage() {
 
               <Button
                 onClick={() => window.open("/#projects", "_blank")}
-                className="bg-white/5 backdrop-blur-sm border border-orange-400/30 hover:border-orange-400/50 text-white px-10 py-5 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 group"
+                className="bg-white/5 backdrop-blur-sm border border-honey-gold/20 hover:border-honey-gold/40 text-white px-10 py-5 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 group"
               >
                 <Eye className="w-6 h-6 mr-3 group-hover:scale-110 transition-transform duration-300" />
                 See Our Work
@@ -117,17 +82,17 @@ export default function LeadGenerationPage() {
                 How It Works
               </h3>
               <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
-                Our automated system handles the entire lead generation pipeline
+                My automated system handles the entire lead generation pipeline
                 from capture to qualification
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-honey-gold/30 transition-all duration-300 group hover:bg-white/10">
+                <div className="w-20 h-20 bg-primary clip-hex flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-honey-gold/25">
                   <Database className="w-10 h-10 text-white" />
                 </div>
-                <h4 className="text-xl font-semibold text-orange-400 mb-6">
+                <h4 className="text-xl font-semibold text-honey-gold mb-6">
                   Capture
                 </h4>
                 <p className="text-gray-300 leading-relaxed text-base">
@@ -136,11 +101,11 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-honey-gold/30 transition-all duration-300 group hover:bg-white/10">
+                <div className="w-20 h-20 bg-primary clip-hex flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-honey-gold/25">
                   <CheckCircle className="w-10 h-10 text-white" />
                 </div>
-                <h4 className="text-xl font-semibold text-orange-400 mb-6">
+                <h4 className="text-xl font-semibold text-honey-gold mb-6">
                   Enrich
                 </h4>
                 <p className="text-gray-300 leading-relaxed text-base">
@@ -149,11 +114,11 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-honey-gold/30 transition-all duration-300 group hover:bg-white/10">
+                <div className="w-20 h-20 bg-primary clip-hex flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-honey-gold/25">
                   <Brain className="w-10 h-10 text-white" />
                 </div>
-                <h4 className="text-xl font-semibold text-orange-400 mb-6">
+                <h4 className="text-xl font-semibold text-honey-gold mb-6">
                   Score
                 </h4>
                 <p className="text-gray-300 leading-relaxed text-base">
@@ -162,11 +127,11 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300 group hover:bg-white/10">
-                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-orange-500/25">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-honey-gold/30 transition-all duration-300 group hover:bg-white/10">
+                <div className="w-20 h-20 bg-primary clip-hex flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-honey-gold/25">
                   <Zap className="w-10 h-10 text-white" />
                 </div>
-                <h4 className="text-xl font-semibold text-orange-400 mb-6">
+                <h4 className="text-xl font-semibold text-honey-gold mb-6">
                   Route
                 </h4>
                 <p className="text-gray-300 leading-relaxed text-base">
@@ -185,21 +150,20 @@ export default function LeadGenerationPage() {
           <div className="max-w-6xl">
             <div className="text-left mb-24">
               <h3 className="text-4xl font-bold text-white mb-10">
-                Why Choose Our Automation?
+                Why Choose My Automation?
               </h3>
               <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
-                Experience the power of AI-driven lead generation that never
-                sleeps
+                AI-driven lead generation that runs while you sleep
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12">
-              <div className="p-12 bg-gradient-to-r from-orange-500/10 to-orange-400/10 backdrop-blur-sm rounded-xl border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
+              <div className="p-12 bg-primary/10 backdrop-blur-sm rounded-xl border border-honey-gold/20 hover:border-honey-gold/40 transition-all duration-300">
                 <div className="flex items-center gap-5 mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-400 rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/25">
+                  <div className="w-14 h-14 bg-primary clip-hex flex items-center justify-center shadow-lg shadow-honey-gold/25">
                     <TrendingUp className="w-7 h-7 text-white" />
                   </div>
-                  <h4 className="text-2xl font-semibold text-orange-400">
+                  <h4 className="text-2xl font-semibold text-honey-gold">
                     24/7 Operation
                   </h4>
                 </div>
@@ -210,12 +174,12 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="p-12 bg-gradient-to-r from-orange-500/10 to-orange-400/10 backdrop-blur-sm rounded-xl border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
+              <div className="p-12 bg-primary/10 backdrop-blur-sm rounded-xl border border-honey-gold/20 hover:border-honey-gold/40 transition-all duration-300">
                 <div className="flex items-center gap-5 mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-400 rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/25">
+                  <div className="w-14 h-14 bg-primary clip-hex flex items-center justify-center shadow-lg shadow-honey-gold/25">
                     <Target className="w-7 h-7 text-white" />
                   </div>
-                  <h4 className="text-2xl font-semibold text-orange-400">
+                  <h4 className="text-2xl font-semibold text-honey-gold">
                     AI-Powered Scoring
                   </h4>
                 </div>
@@ -226,28 +190,27 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="p-12 bg-gradient-to-r from-orange-500/10 to-orange-400/10 backdrop-blur-sm rounded-xl border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
+              <div className="p-12 bg-primary/10 backdrop-blur-sm rounded-xl border border-honey-gold/20 hover:border-honey-gold/40 transition-all duration-300">
                 <div className="flex items-center gap-5 mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-400 rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/25">
+                  <div className="w-14 h-14 bg-primary clip-hex flex items-center justify-center shadow-lg shadow-honey-gold/25">
                     <Users className="w-7 h-7 text-white" />
                   </div>
-                  <h4 className="text-2xl font-semibold text-orange-400">
+                  <h4 className="text-2xl font-semibold text-honey-gold">
                     Instant CRM Integration
                   </h4>
                 </div>
                 <p className="text-gray-300 leading-relaxed text-lg">
-                  Seamlessly integrates with your existing CRM systems,
-                  automatically syncing qualified leads with complete context
-                  and history.
+                  Plugs into your existing CRM, automatically syncing
+                  qualified leads with full context and history.
                 </p>
               </div>
 
-              <div className="p-12 bg-gradient-to-r from-orange-500/10 to-orange-400/10 backdrop-blur-sm rounded-xl border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
+              <div className="p-12 bg-primary/10 backdrop-blur-sm rounded-xl border border-honey-gold/20 hover:border-honey-gold/40 transition-all duration-300">
                 <div className="flex items-center gap-5 mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-400 rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/25">
+                  <div className="w-14 h-14 bg-primary clip-hex flex items-center justify-center shadow-lg shadow-honey-gold/25">
                     <Sparkles className="w-7 h-7 text-white" />
                   </div>
-                  <h4 className="text-2xl font-semibold text-orange-400">
+                  <h4 className="text-2xl font-semibold text-honey-gold">
                     Data Enrichment
                   </h4>
                 </div>
@@ -276,8 +239,8 @@ export default function LeadGenerationPage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-12">
-              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300">
-                <div className="text-6xl font-bold text-orange-400 mb-6">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-honey-gold/30 transition-all duration-300">
+                <div className="text-6xl font-bold text-honey-gold mb-6">
                   300%
                 </div>
                 <p className="text-xl text-white font-semibold mb-4">
@@ -288,8 +251,8 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300">
-                <div className="text-6xl font-bold text-orange-400 mb-6">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-honey-gold/30 transition-all duration-300">
+                <div className="text-6xl font-bold text-honey-gold mb-6">
                   85%
                 </div>
                 <p className="text-xl text-white font-semibold mb-4">
@@ -300,8 +263,8 @@ export default function LeadGenerationPage() {
                 </p>
               </div>
 
-              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-orange-500/30 transition-all duration-300">
-                <div className="text-6xl font-bold text-orange-400 mb-6">
+              <div className="text-left p-12 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:border-honey-gold/30 transition-all duration-300">
+                <div className="text-6xl font-bold text-honey-gold mb-6">
                   24/7
                 </div>
                 <p className="text-xl text-white font-semibold mb-4">
@@ -321,20 +284,19 @@ export default function LeadGenerationPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl">
             <div className="text-left">
-              <div className="p-20 bg-gradient-to-r from-orange-500/10 to-orange-400/10 backdrop-blur-sm rounded-2xl border border-orange-500/20">
+              <div className="p-20 bg-primary/10 backdrop-blur-sm rounded-2xl border border-honey-gold/20">
                 <h3 className="text-4xl font-bold text-white mb-10">
                   Ready to Automate Your Lead Generation?
                 </h3>
                 <p className="text-xl text-gray-300 mb-16 max-w-2xl leading-relaxed">
-                  Stop chasing leads manually. Let our AI-powered automation
-                  capture, enrich, and qualify prospects while you focus on
-                  closing deals.
+                  Let the automation handle capture, enrichment, and
+                  qualification while you focus on closing deals.
                 </p>
                 <Button
                   onClick={() =>
-                    window.open("https://calendly.com/jeph", "_blank")
+                    window.open("https://calendar.app.google/6CJuytpfYx9vU49fA", "_blank")
                   }
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-14 py-7 text-xl font-semibold rounded-xl shadow-lg shadow-orange-500/25 transition-all duration-300 hover:scale-105 group"
+                  className="bg-primary hover:bg-primary-dark text-white px-14 py-7 text-xl font-semibold rounded-xl shadow-lg shadow-primary/25 transition-all duration-300 hover:scale-105 group"
                 >
                   <Calendar className="w-7 h-7 mr-4 group-hover:scale-110 transition-transform duration-300" />
                   Book a Free Consultation

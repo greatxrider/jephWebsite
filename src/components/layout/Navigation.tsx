@@ -27,7 +27,7 @@ export const Navigation = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       console.log(`Found element:`, element);
-      const offset = 100; // Account for fixed navigation height
+      const offset = 80; // Account for fixed navigation height
       const elementPosition = element.offsetTop - offset;
 
       window.scrollTo({
@@ -75,7 +75,7 @@ export const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 navbar-height ${isScrolled
-          ? "bg-white/80 dark:bg-black/60 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 shadow-lg shadow-primary/20"
+          ? "bg-white/80 dark:bg-black/70 backdrop-blur-md border-b border-amber-200/30 dark:border-amber-900/30 shadow-lg shadow-honey-gold/10 bg-honeycomb"
           : "bg-transparent"
         }`}
     >
@@ -85,7 +85,7 @@ export const Navigation = () => {
           <div className="flex items-center">
             <button
               onClick={handleLogoClick}
-              className="transition-all duration-300 cursor-pointer hover:scale-105"
+              className="transition-all duration-300 cursor-pointer flex items-center pl-2 md:pl-4 group"
               aria-label="Go to homepage"
             >
               <Image
@@ -95,45 +95,48 @@ export const Navigation = () => {
                     : "/website-logo-dark.png"
                 }
                 alt="JEPH DALIGDIG Logo"
-                width={1100}
-                height={440}
-                className="h-14 w-auto sm:h-20 md:h-28 lg:h-36 xl:h-44 2xl:h-48"
+                width={400}
+                height={120}
+                className="h-16 md:h-24 w-auto scale-[1.3] md:scale-[1.8] origin-left group-hover:scale-[1.35] md:group-hover:scale-[1.85] transition-transform"
+                style={{ objectFit: 'contain' }}
+                priority
               />
             </button>
-            <div className="ml-2 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-500 rounded-full animate-pulse"></div>
+            <div className="ml-4 md:ml-12 w-1.5 h-1.5 bg-primary clip-hex animate-pulse"></div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href)}
-                className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 relative group cursor-pointer navbar-font"
+                className="text-gray-700 dark:text-gray-300 hover:text-honey-gold dark:hover:text-honey-gold transition-all duration-300 relative group cursor-pointer navbar-font uppercase tracking-wider font-bold text-xs"
+                style={{ fontFamily: 'var(--font-chakra-petch)' }}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-honey-gold transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
 
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-honey-gold/10"
               aria-label={`Switch to ${theme === "light" ? "dark" : "light"
                 } mode`}
             >
-              {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+              {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
             </button>
 
             <a
               href="https://github.com/greatxrider"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-1.5 rounded-full hover:bg-honey-gold/10"
               aria-label="GitHub"
             >
-              <Github size={20} />
+              <Github size={18} />
             </a>
             <Button
               variant="outline"
@@ -145,7 +148,7 @@ export const Navigation = () => {
                   window.location.href = "/#contact";
                 }
               }}
-              className="glow-border-ai hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 cursor-pointer"
+              className="glow-border-ai hover:shadow-lg hover:shadow-honey-gold/20 transition-all duration-300 cursor-pointer"
             >
               Let&apos;s Talk
             </Button>
@@ -156,7 +159,7 @@ export const Navigation = () => {
             {/* Theme Toggle for Mobile */}
             <button
               onClick={toggleTheme}
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-orange-500/10"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-honey-gold/10"
               aria-label={`Switch to ${theme === "light" ? "dark" : "light"
                 } mode`}
             >
@@ -174,23 +177,24 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white/90 dark:bg-black/80 backdrop-blur-md border-t border-gray-200 dark:border-gray-800 shadow-lg shadow-primary/10">
+          <div className="md:hidden bg-white/90 dark:bg-black/85 backdrop-blur-md border-t border-amber-200/30 dark:border-amber-900/30 shadow-lg shadow-honey-gold/10 bg-honeycomb">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => handleNavigation(item.href)}
-                  className="block w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 relative group cursor-pointer navbar-font"
+                  className="block w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-honey-gold dark:hover:text-honey-gold hover:bg-honey-gold/10 rounded-none transition-all duration-300 relative group cursor-pointer navbar-font uppercase tracking-widest font-bold text-xs"
+                  style={{ fontFamily: 'var(--font-chakra-petch)' }}
                 >
                   {item.label}
-                  <span className="absolute left-0 top-0 w-0 h-full bg-gradient-to-r from-primary to-secondary transition-all duration-300 group-hover:w-1 rounded-l-md"></span>
+                  <span className="absolute left-0 top-0 w-0 h-full bg-honey-gold transition-all duration-300 group-hover:w-1"></span>
                 </button>
               ))}
               <a
                 href="https://github.com/greatxrider"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 rounded-md transition-all duration-300 flex items-center gap-2"
+                className="w-full text-left px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-primary/10 rounded-md transition-all duration-300 flex items-center gap-2"
               >
                 <Github size={20} />
                 <span>GitHub</span>

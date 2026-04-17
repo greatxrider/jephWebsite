@@ -143,20 +143,21 @@ export const Blog = () => {
   }
 
   return (
-    <section id="blog" className="section-padding relative">
+    <section id="blog" className="section-padding relative bg-transparent dark:bg-black">
+      <div className="absolute inset-0 bg-honeycomb opacity-30 pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/10 border border-orange-500/20 rounded-full text-orange-500 text-sm font-medium mb-4">
-            <Sparkles size={16} />
-            AI Automation Insights
+          <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)] mb-6 mx-auto">
+            <Sparkles size={16} className="text-honey-gold" />
+            <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">AI Automation Insights</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
             Master AI Automation with
-            <span className="gradient-text"> Expert Insights</span>
+            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">Expert Insights</span>
           </h2>
           <p
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
+            className="text-lg md:text-xl text-gray-400 font-light max-w-3xl mx-auto border-t border-b border-honey-gold/20 py-4 mt-6"
             style={{ color: "var(--text-color)" }}
           >
             Learn from real-world experience with Make, Zapier, n8n, and modern
@@ -182,7 +183,7 @@ export const Blog = () => {
                       className="object-cover"
                     />
                     <div className="absolute top-4 left-4">
-                      <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-honey-gold text-white px-3 py-1 rounded-full text-sm font-medium">
                         Featured
                       </span>
                     </div>
@@ -215,7 +216,7 @@ export const Blog = () => {
                       {posts[0].tags.map((tag, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-gray-800 text-orange-500 rounded-full text-sm"
+                          className="px-3 py-1 bg-gray-800 text-honey-gold rounded-full text-sm"
                         >
                           #{tag}
                         </span>
@@ -266,7 +267,7 @@ export const Blog = () => {
                         </span>
                       </div>
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-3 hover:text-orange-500 transition-colors">
+                    <h3 className="text-lg font-bold text-white mb-3 hover:text-honey-gold transition-colors">
                       {post.title}
                     </h3>
                     <p
@@ -279,7 +280,7 @@ export const Blog = () => {
                       {post.tags.slice(0, 3).map((tag, index) => (
                         <span
                           key={index}
-                          className="px-2 py-1 bg-gray-800 text-orange-500 rounded text-xs"
+                          className="px-2 py-1 bg-gray-800 text-honey-gold rounded text-xs"
                         >
                           #{tag}
                         </span>
@@ -291,7 +292,7 @@ export const Blog = () => {
                       onClick={() =>
                         window.open(`/blog/${post.slug}`, "_blank")
                       }
-                      className="p-0 h-auto text-orange-500 hover:text-orange-400"
+                      className="p-0 h-auto text-honey-gold hover:text-honey-gold"
                     >
                       Read More
                       <ArrowRight className="ml-2 w-4 h-4" />

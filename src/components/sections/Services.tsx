@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/Card";
+import { HoneycombBackground } from "@/components/ui/HoneycombBackground";
 import Image from "next/image";
 import {
   Workflow,
@@ -30,331 +30,133 @@ import {
   Award,
   Calendar,
   ArrowRight,
+  Globe,
+  Smartphone,
 } from "lucide-react";
 
 export const Services = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const particlesRef = useRef<HTMLCanvasElement>(null);
-
-  // Enhanced AI Background Animation
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-
-    // Neural network nodes
-    const nodes: Array<{ x: number; y: number; connections: number[] }> = [];
-    const numNodes = 12;
-
-    // Initialize nodes
-    for (let i = 0; i < numNodes; i++) {
-      nodes.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        connections: [],
-      });
-    }
-
-    // Create connections
-    nodes.forEach((node, i) => {
-      for (let j = i + 1; j < nodes.length; j++) {
-        if (Math.random() > 0.7) {
-          node.connections.push(j);
-        }
-      }
-    });
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      const time = Date.now() * 0.001;
-
-      // Draw neural network connections
-      ctx.strokeStyle = "rgba(255, 107, 53, 0.1)";
-      ctx.lineWidth = 1;
-
-      nodes.forEach((node, i) => {
-        node.connections.forEach((connectionIndex) => {
-          const targetNode = nodes[connectionIndex];
-          const distance = Math.sqrt(
-            Math.pow(node.x - targetNode.x, 2) +
-              Math.pow(node.y - targetNode.y, 2)
-          );
-
-          if (distance < 200) {
-            const opacity = Math.max(0, 0.1 - distance / 2000);
-            ctx.strokeStyle = `rgba(255, 107, 53, ${opacity})`;
-
-            ctx.beginPath();
-            ctx.moveTo(node.x, node.y);
-            ctx.lineTo(targetNode.x, targetNode.y);
-            ctx.stroke();
-          }
-        });
-      });
-
-      // Draw nodes
-      nodes.forEach((node, i) => {
-        const pulse = Math.sin(time + i) * 0.3 + 0.7;
-        const size = 3 + pulse * 2;
-
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 107, 53, ${0.3 + pulse * 0.2})`;
-        ctx.fill();
-
-        // Add glow effect
-        ctx.beginPath();
-        ctx.arc(node.x, node.y, size + 5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 107, 53, ${0.1 + pulse * 0.1})`;
-        ctx.fill();
-      });
-
-      // Subtle grid pattern
-      const gridSize = 80;
-      ctx.strokeStyle = "rgba(255, 107, 53, 0.02)";
-      ctx.lineWidth = 1;
-
-      for (let x = 0; x < canvas.width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-        ctx.stroke();
-      }
-
-      for (let y = 0; y < canvas.height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
-      }
-
-      // Data flow particles
-      for (let i = 0; i < 8; i++) {
-        const x = (Math.sin(time * 0.5 + i) * 0.5 + 0.5) * canvas.width;
-        const y = (Math.cos(time * 0.3 + i) * 0.5 + 0.5) * canvas.height;
-        const size = Math.sin(time + i) * 0.5 + 0.5;
-
-        ctx.beginPath();
-        ctx.arc(x, y, size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 107, 53, ${0.3 + Math.sin(time + i) * 0.2})`;
-        ctx.fill();
-      }
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener("resize", resizeCanvas);
-    };
-  }, []);
-
-  // Particle system for additional AI effect
-  useEffect(() => {
-    const canvas = particlesRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-
-    const particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      life: number;
-    }> = [];
-
-    // Create particles
-    for (let i = 0; i < 20; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        life: Math.random(),
-      });
-    }
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((particle, i) => {
-        // Update particle
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-        particle.life += 0.01;
-
-        // Wrap around edges
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
-
-        // Reset particle when life reaches 1
-        if (particle.life >= 1) {
-          particle.x = Math.random() * canvas.width;
-          particle.y = Math.random() * canvas.height;
-          particle.life = 0;
-        }
-
-        // Draw particle
-        const opacity = Math.sin(particle.life * Math.PI) * 0.3;
-        const size = Math.sin(particle.life * Math.PI) * 2 + 1;
-
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 107, 53, ${opacity})`;
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener("resize", resizeCanvas);
-    };
-  }, []);
-
   const services = [
     {
-      icon: Target,
-      title: "Lead Generation & Qualification Automation",
+      icon: Globe,
+      title: "Custom Web & SaaS Development",
       description:
-        "Automates lead capture from ads, web forms, and scrapers, enriches data, scores with AI, and routes qualified leads to your CRM instantly.",
+        "Full-stack web applications and SaaS platforms built with Next.js, React, and modern tech stacks. Scalable, responsive, and production-ready.",
       features: [
-        "Auto-scrape leads from various sources",
-        "Connect lead forms (Facebook Ads, website, etc.) to CRMs like GoHighLevel or HubSpot",
-        "Auto-qualify leads using AI or scoring logic and notify sales teams instantly",
+        "Next.js / React full-stack applications",
+        "SaaS platforms with auth, billing, and dashboards",
+        "Responsive design with Tailwind CSS and modern UI",
       ],
       idealFor:
-        "Real Estate Agents, SaaS Sales Teams, Digital Agencies, Mortgage Brokers, Coaches",
-      gradient: "from-orange-500 to-orange-400",
+        "Startups, SaaS Founders, Agencies, Enterprise Teams",
+      gradient: "bg-orange-500",
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile App Development",
+      description:
+        "Cross-platform mobile applications using React Native and modern frameworks. Native performance with shared codebase for iOS and Android.",
+      features: [
+        "React Native cross-platform apps",
+        "Push notifications, offline support, and deep linking",
+        "App Store and Google Play deployment",
+      ],
+      idealFor:
+        "Startups, E-commerce, Healthcare, Service Businesses",
+      gradient: "bg-orange-600",
+    },
+    {
+      icon: Brain,
+      title: "AI Receptionists & Chatbots",
+      description:
+        "Intelligent AI-powered virtual receptionists and chatbots that handle customer inquiries, book appointments, and qualify leads 24/7.",
+      features: [
+        "AI voice and chat receptionists for businesses",
+        "Natural language understanding with GPT/Claude integration",
+        "Appointment scheduling and CRM integration",
+      ],
+      idealFor:
+        "Medical Offices, Law Firms, Real Estate, Service Businesses",
+      gradient: "bg-orange-700",
     },
     {
       icon: Database,
-      title: "CRM & Pipeline Automation",
+      title: "Healthcare EMR/EHR Systems",
       description:
-        "Creates contacts, deals, and tasks automatically, triggers reminders and status updates, and keeps tools like Calendly, Zoom, email, and your CRM in sync.",
+        "Custom electronic medical/health record systems designed for clinics, practices, and healthcare organizations with compliance and security built in.",
       features: [
-        "Auto-create contacts, deals, and tasks in CRMs",
-        "Trigger reminders, follow-ups, and status updates based on lead behavior or deal stage",
-        "Sync tools like Calendly, Zoom, email, and CRMs into one flow",
+        "Patient management and clinical documentation",
+        "HIPAA-compliant architecture and data handling",
+        "Lab integration, e-prescribing, and billing modules",
       ],
       idealFor:
-        "Real Estate, Sales Teams, Insurance Agencies, Coaches, Franchise Operations",
-      gradient: "from-orange-600 to-orange-500",
+        "Clinics, Private Practices, Hospitals, Telehealth Providers",
+      gradient: "bg-blue-500",
     },
     {
-      icon: Users,
-      title: "Client Onboarding Workflows",
+      icon: Target,
+      title: "Lead Generation & CRM Automation",
       description:
-        "Orchestrates client onboarding from intake to welcome emails, calendar setup, e‑signatures, and auto-creates tasks and records in tools like Airtable or ClickUp.",
+        "Automated lead capture, enrichment, scoring, and CRM pipeline management that turns prospects into customers on autopilot.",
       features: [
-        "Automate onboarding from intake form to welcome email, calendar setup, and document signing",
-        "Automatically populate Airtable/ClickUp with client info and assign internal tasks",
+        "Auto-capture leads from ads, forms, and scrapers",
+        "AI-powered lead scoring and qualification",
+        "CRM sync with HubSpot, GoHighLevel, Salesforce",
       ],
       idealFor:
-        "Agencies, Service Businesses, Real Estate Firms, E-commerce Brands",
-      gradient: "from-orange-700 to-orange-600",
+        "Real Estate, SaaS Sales Teams, Digital Agencies, Coaches",
+      gradient: "bg-purple-500",
     },
     {
-      icon: FileText,
-      title: "Proposal, Quote, or Report Generation",
+      icon: Workflow,
+      title: "Business Process Automation",
       description:
-        "Generates tailored proposals, quotes, or reports from CRM/Airtable data using Documint or Google Docs and delivers PDFs automatically to clients.",
+        "End-to-end workflow automation using Make, Zapier, and n8n. Connect your tools, eliminate manual tasks, and scale operations efficiently.",
       features: [
-        "Automatically generate customized proposals or reports using Documint or Google Docs from CRM/Airtable data",
-        "Trigger PDF generation and email/send to clients automatically",
+        "Multi-platform automation (Make, Zapier, n8n)",
+        "Client onboarding and task workflow automation",
+        "Email sequences, reporting, and notification systems",
       ],
-      idealFor:
-        "Real Estate, Marketing Agencies, Mortgage Brokers, B2B Sales, SEO Agencies",
-      gradient: "from-blue-500 to-blue-400",
+      idealFor: "Agencies, Franchise Ops, E-commerce, Service Businesses",
+      gradient: "bg-green-500",
+    },
+    {
+      icon: Bot,
+      title: "AI Integration & Custom AI Solutions",
+      description:
+        "Integrate AI models into your existing systems. Custom AI agents, content generation, data analysis, and automated decision-making.",
+      features: [
+        "OpenAI, Claude, and custom LLM integrations",
+        "AI-powered content generation and analysis",
+        "Autonomous AI agent workflows and pipelines",
+      ],
+      idealFor: "Tech Companies, Content Teams, Data-Driven Businesses",
+      gradient: "bg-red-500",
     },
     {
       icon: Share2,
-      title: "Content Repurposing & Social Posting Automation",
+      title: "API Development & Integration",
       description:
-        "Transforms notes or long‑form content from forms, Notion, or Slack into polished social posts and schedules them across LinkedIn, Facebook, Instagram, and more.",
+        "Custom REST/GraphQL API development and third-party integrations. Connect any system with clean, well-documented APIs.",
       features: [
-        "Pull content from forms, Notion, or Slack, and convert to formatted social posts",
-        "Auto-post or schedule to LinkedIn, Facebook, Instagram, etc.",
-        "Use AI to summarize, rewrite, or repurpose long-form content",
+        "Custom REST and GraphQL API development",
+        "Third-party API integration and middleware",
+        "Webhook systems and real-time data sync",
       ],
-      idealFor:
-        "Social Media Agencies, Content Creators, Coaches, Real Estate Agents",
-      gradient: "from-purple-500 to-purple-400",
+      idealFor: "SaaS Companies, Enterprise, Platform Builders",
+      gradient: "bg-teal-500",
     },
     {
-      icon: CheckSquare,
-      title: "Task & Team Workflow Automation",
+      icon: FileText,
+      title: "Technical Consulting & Architecture",
       description:
-        "Builds recurring workflows for task creation, project updates, reminders, and status checks, with Slack, email, or SMS notifications.",
+        "Strategic technology consulting for startups and businesses. System architecture design, tech stack selection, and development roadmaps.",
       features: [
-        "Set up automated workflows for recurring task creation, project updates, reminders, and status checks",
-        "Integrate Slack, email, or text updates based on changes",
+        "System architecture and tech stack planning",
+        "Code review and performance optimization",
+        "Development team augmentation and mentoring",
       ],
-      idealFor: "Agencies, Franchise Ops, Recruitment Teams, SEO Firms",
-      gradient: "from-green-500 to-green-400",
-    },
-    {
-      icon: Mail,
-      title: "Email & Outreach Sequences",
-      description:
-        "Enrolls contacts into personalized cold, nurture, or reactivation sequences with data‑driven targeting and AI‑assisted copywriting.",
-      features: [
-        "Auto-enroll leads into tailored cold email, nurture, or reactivation sequences",
-        "Personalize outreach with data enrichment and AI-powered copywriting tools",
-      ],
-      idealFor: "B2B Sales Teams, Marketing Agencies, Coaches, Recruiters",
-      gradient: "from-red-500 to-red-400",
-    },
-    {
-      icon: FormInput,
-      title: "Form-to-Workflow Automation",
-      description:
-        "Turns any intake form into a complete backend process—saving data to Airtable/CRM, notifying the team, and triggering onboarding or scheduling.",
-      features: [
-        "Save to Airtable or CRM",
-        "Notify team on Slack/Email",
-        "Trigger onboarding, scheduling, or enrichment",
-      ],
-      idealFor: "Real Estate, Coaches, Course Creators, Local Services",
-      gradient: "from-teal-500 to-teal-400",
-    },
-    {
-      icon: Star,
-      title: "Review & Testimonial Automation",
-      description:
-        "Requests reviews automatically after milestones and routes positive feedback to marketing while escalating negative responses for follow‑up.",
-      features: [
-        "Automatically request Google/Facebook/Trustpilot reviews after project milestones",
-        "Route good feedback to marketing, and negative to support/escalation",
-      ],
-      idealFor: "Local Services, Real Estate, E-commerce, Coaches",
-      gradient: "from-yellow-500 to-yellow-400",
+      idealFor: "Startups, CTOs, Non-Technical Founders, Growing Teams",
+      gradient: "bg-yellow-500",
     },
   ];
 
@@ -407,83 +209,50 @@ export const Services = () => {
   return (
     <section
       id="services"
-      className="section-padding relative mt-20 bg-gradient-to-br from-slate-900 via-slate-800 to-black dark:from-slate-900 dark:via-slate-800 dark:to-black light:from-gray-200 light:via-gray-100 light:to-gray-50 overflow-hidden py-20"
+      className="section-padding relative mt-20 bg-[#FFFEF7] dark:bg-black overflow-hidden py-20"
     >
-      {/* Enhanced AI Background Effects */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-55"
-      />
-      <canvas
-        ref={particlesRef}
-        className="absolute inset-0 w-full h-full opacity-45"
-      />
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-slate-800/35 to-black/60 dark:from-slate-900/50 dark:via-slate-800/35 dark:to-black/60 light:from-gray-200/60 light:via-gray-100/40 light:to-gray-50/70" />
-      <div
-        className="absolute inset-0"
-        style={{
-          pointerEvents: "none",
-          background:
-            "radial-gradient(1200px 600px at 20% 20%, rgba(255,107,53,0.08), transparent 60%), radial-gradient(1000px 500px at 80% 80%, rgba(255,147,30,0.06), transparent 60%)",
-        }}
-      />
-
-      {/* Floating AI Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div
-          className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-orange-600/20 to-orange-500/20 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
-        ></div>
-        <div
-          className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-orange-700/20 to-orange-600/20 rounded-full blur-2xl animate-pulse"
-          style={{ animationDelay: "2s" }}
-        ></div>
-      </div>
+      {/* Honeycomb Background */}
+      <HoneycombBackground variant="honeycomb" density="low" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 dark:bg-white/5 dark:border-white/10 light:bg-gray-100/50 light:border-gray-300/70 rounded-full text-orange-500 text-sm font-medium mb-6 mx-auto">
-            <Sparkles size={16} className="animate-pulse" />
-            <span>AI Automation Services</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/40 dark:bg-black/40 backdrop-blur-md border border-honey-gold/30 rounded-none clip-hex-pointy shadow-[0_0_15px_rgba(255,215,0,0.1)] mb-6 mx-auto">
+            <Sparkles size={16} className="text-honey-gold" />
+            <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase">Software & AI Services</span>
           </div>
           <h2
-            className="text-3xl md:text-4xl font-bold text-white dark:text-white mb-4"
+            className="text-4xl md:text-5xl font-extrabold mb-4 uppercase tracking-tight"
             style={{ color: "var(--text-primary)" }}
           >
-            Practical AI & Automation
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">
-              {" "}
-              for Everyday Business
+            Full-Stack Development &
+            <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary via-honey-gold to-orange-light">
+              AI-Powered Solutions
             </span>
           </h2>
           <p
-            className="text-xl text-gray-300 dark:text-gray-300 max-w-4xl mx-auto"
+            className="text-lg md:text-xl text-gray-300 dark:text-gray-300 max-w-4xl mx-auto font-light leading-relaxed border-t border-b border-honey-gold/20 py-4 mt-6"
             style={{ color: "var(--text-color)" }}
           >
-            I help businesses simplify their operations with automation and AI.
-            My focus is on creating reliable workflows that reduce manual work,
-            connect your tools, and make day-to-day tasks easier to manage.
+            Custom web apps, SaaS platforms, AI receptionists, mobile apps,
+            and business automation. From startups to enterprise.
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="w-full mb-16">
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-6 justify-items-center">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-6 justify-items-stretch">
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="group bg-white/5 dark:bg-slate-800/80 backdrop-blur-sm border border-white/10 light:bg-gray-100/50 light:border-gray-300/70 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10 flex flex-col hover:border-orange-500/30 w-full max-w-[498px]"
+                className="group card-hex backdrop-blur-sm overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl hover:shadow-honey-gold/10 flex flex-col w-full h-full"
               >
                 {/* Icon Section */}
 
                 {/* Content Section */}
                 <div className="px-5 pb-5 flex flex-col flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-400 rounded-xl flex items-center justify-center shadow-md shadow-orange-500/20">
+                    <div className="w-12 h-12 bg-primary clip-hex flex items-center justify-center shadow-md shadow-honey-gold/20">
                       <service.icon className="w-6 h-6 text-white" />
                     </div>
                     <h3
@@ -508,35 +277,36 @@ export const Services = () => {
 
         {/* Call to Action */}
         <div className="mt-12 text-center animate-on-scroll">
-          <Card className="card-ai bg-gradient-to-r from-orange-500/10 to-orange-600/10 border-orange-500/20">
+          <Card className="card-ai bg-primary/10 border-honey-gold/20">
             <CardContent className="p-8">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <Rocket className="w-8 h-8 text-orange-500" />
+                <div className="w-10 h-10 clip-hex bg-primary flex items-center justify-center">
+                  <Rocket className="w-5 h-5 text-white" />
+                </div>
                 <h3
                   className="text-2xl font-bold text-white"
                   style={{ color: "var(--text-primary)" }}
                 >
-                  Ready to Transform Your Business?
+                  Ready to Build Your Next Project?
                 </h3>
               </div>
               <p
                 className="text-gray-400 mb-6 max-w-2xl mx-auto"
                 style={{ color: "var(--text-color)" }}
               >
-                Let's discuss how I can help you automate your processes,
-                integrate AI into your workflows, and create solutions that
-                drive real business value.
+                Let's discuss your web app, SaaS product, AI receptionist,
+                or automation project. I'll scope it out and get you a plan.
               </p>
               <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="flex items-center gap-2 text-orange-500">
+                <div className="flex items-center gap-2 text-honey-gold">
                   <Award className="w-5 h-5" />
                   <span className="text-sm font-medium">Proven Results</span>
                 </div>
-                <div className="flex items-center gap-2 text-orange-500">
+                <div className="flex items-center gap-2 text-honey-gold">
                   <Clock className="w-5 h-5" />
                   <span className="text-sm font-medium">Fast Delivery</span>
                 </div>
-                <div className="flex items-center gap-2 text-orange-500">
+                <div className="flex items-center gap-2 text-honey-gold">
                   <MessageSquare className="w-5 h-5" />
                   <span className="text-sm font-medium">Ongoing Support</span>
                 </div>
@@ -546,9 +316,9 @@ export const Services = () => {
               <div className="flex justify-center">
                 <button
                   onClick={() =>
-                    window.open("https://calendly.com/jeph", "_blank")
+                    window.open("https://calendar.app.google/6CJuytpfYx9vU49fA", "_blank")
                   }
-                  className="group bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white border-0 px-8 py-4 text-lg font-semibold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 rounded-xl"
+                  className="group bg-primary hover:bg-primary-dark text-white border-0 px-8 py-4 text-lg font-semibold shadow-lg shadow-honey-gold/25 hover:shadow-honey-gold/40 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 rounded-xl"
                 >
                   <Calendar className="w-5 h-5 flex-shrink-0" />
                   <span>Book a Call</span>

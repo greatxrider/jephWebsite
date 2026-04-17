@@ -21,77 +21,76 @@ export const FAQ = () => {
 
   const faqs = [
     {
-      question: "What AI automation platforms do you specialize in?",
+      question: "What services do you offer?",
       answer:
-        "I specialize in the three leading no-code automation platforms: Make (formerly Integromat), Zapier, and n8n. For AI integration, I work with OpenAI (ChatGPT), Claude (Anthropic), Perplexity AI, and other cutting-edge AI models. I choose the right platform based on your specific needs, complexity requirements, and budget.",
-      category: "Platforms",
+        "I offer full-stack web and mobile development, AI-powered solutions (chatbots, AI receptionists), healthcare EMR/EHR systems, SaaS platform development, business process automation (Make, Zapier, n8n), API development, and technical consulting. Each solution is tailored to your specific business needs.",
+      category: "Services",
     },
     {
-      question: "How long does it take to build an AI automation workflow?",
+      question: "How long does it take to build a web application or SaaS product?",
       answer:
-        "Timeline depends on complexity: Simple workflows (3-5 steps) take 1-2 weeks. Complex multi-step automations with AI integration take 2-4 weeks. Enterprise-level solutions can take 4-8 weeks. I provide detailed timelines during our consultation and keep you updated throughout the process.",
+        "Timeline depends on complexity: A landing page or simple app takes 1-2 weeks. A full-featured SaaS platform takes 4-8 weeks. Complex healthcare or enterprise systems can take 8-16 weeks. I provide detailed timelines during our consultation and deliver in milestones.",
       category: "Timeline",
     },
     {
-      question: "Do you provide ongoing support after the automation is built?",
+      question: "Do you build AI receptionists and chatbots?",
       answer:
-        "Yes! All packages include support periods (1-3 months depending on package). I also offer monthly retainer options for ongoing maintenance, optimization, and new feature development. I'm committed to ensuring your automations continue working reliably.",
+        "Yes! I build AI-powered virtual receptionists that handle phone calls, chat messages, appointment booking, and customer inquiries 24/7. These integrate with your existing CRM, calendar, and communication tools using models like GPT-4 and Claude.",
+      category: "AI",
+    },
+    {
+      question: "Can you build a custom EMR/EHR system for my clinic?",
+      answer:
+        "Absolutely. I develop custom electronic medical/health record systems with patient management, clinical documentation, appointment scheduling, e-prescribing, lab integration, and billing. All systems are built with HIPAA compliance and security best practices.",
+      category: "Healthcare",
+    },
+    {
+      question: "What tech stack do you use?",
+      answer:
+        "My primary stack includes Next.js, React, TypeScript, Node.js, Python, PostgreSQL, and Supabase. For mobile, I use React Native. For AI, I integrate OpenAI, Claude, and custom models. For automation, I work with Make, Zapier, and n8n. I select the best tools for each project.",
+      category: "Tech",
+    },
+    {
+      question: "Do you provide ongoing support after delivery?",
+      answer:
+        "Yes! All packages include support periods (1-3 months depending on package). I also offer monthly retainer options for ongoing maintenance, feature development, and optimization. I'm committed to ensuring your solutions continue working reliably.",
       category: "Support",
     },
     {
-      question: "What if the automation breaks or stops working?",
+      question: "How much does a project cost?",
       answer:
-        "I build all automations with robust error handling and monitoring. If issues arise during your support period, I fix them at no charge. For retainer clients, I provide 24/7 monitoring and rapid response. I also provide documentation so you can troubleshoot basic issues yourself.",
-      category: "Reliability",
-    },
-    {
-      question: "Can you integrate with my existing tools and software?",
-      answer:
-        "Most likely! I've integrated with 200+ different APIs and platforms including CRMs (HubSpot, Salesforce), project management tools (Asana, Monday), marketing tools (Mailchimp, Buffer), and databases (PostgreSQL, MySQL). If your tool has an API, I can probably integrate it.",
-      category: "Integration",
-    },
-    {
-      question: "How much does AI automation cost?",
-      answer:
-        "Project packages start at $1,500 for basic automations and go up to $7,500 for enterprise solutions. Monthly retainers start at $500 for maintenance and support. Final pricing depends on complexity, number of workflows, and AI model requirements. I provide detailed quotes after our consultation.",
+        "Project costs vary by scope: Simple automation workflows start at $1,500. Web applications and SaaS platforms range from $3,500-$7,500+. Healthcare EMR systems and complex AI solutions are quoted individually. I provide detailed estimates after our consultation.",
       category: "Pricing",
     },
     {
-      question: "Do you work with small businesses or just enterprises?",
+      question: "Do you work with startups or just established businesses?",
       answer:
-        "I work with businesses of all sizes! My Starter package is perfect for small businesses, while my Enterprise package handles complex large-scale operations. I tailor solutions to fit your budget and needs, whether you're a solopreneur or a Fortune 500 company.",
+        "I work with everyone from solo founders and startups to enterprise teams. My Starter packages are perfect for early-stage businesses, while Enterprise packages handle complex large-scale operations. I tailor solutions to fit your stage and budget.",
       category: "Business Size",
     },
     {
-      question: "What's the difference between Make, Zapier, and n8n?",
+      question: "Can you integrate with my existing systems and tools?",
       answer:
-        "Make (Integromat) is best for complex logic and data transformation. Zapier is user-friendly with the most app integrations (5000+). n8n is open-source and highly customizable. I recommend the right platform based on your specific needs, technical requirements, and budget constraints.",
-      category: "Platforms",
+        "Most likely! I've integrated with 200+ APIs and platforms including CRMs (HubSpot, Salesforce), healthcare systems, payment processors (Stripe), project management tools, and databases. If your system has an API, I can integrate it.",
+      category: "Integration",
     },
     {
-      question: "Can AI automation really save me time and money?",
+      question: "How secure are your solutions?",
       answer:
-        "Absolutely! My clients typically see 60-80% reduction in manual work, with some saving 20+ hours per week. The ROI usually pays for itself within 2-3 months. I provide detailed ROI calculations and success metrics to track your automation's impact.",
-      category: "ROI",
-    },
-    {
-      question: "Do you provide training on how to use the automations?",
-      answer:
-        "Yes! All packages include comprehensive documentation and basic training. I also offer additional training sessions as add-ons ($300 for 2-hour sessions). I make sure you and your team are comfortable managing and understanding your automations.",
-      category: "Training",
-    },
-    {
-      question:
-        "What happens if I need changes after the automation is delivered?",
-      answer:
-        "Minor adjustments and bug fixes are included in your support period. Major changes or new features can be handled through additional project work or by upgrading to a retainer plan. I'm flexible and work with you to evolve your automations as your business grows.",
-      category: "Changes",
-    },
-    {
-      question: "How secure are AI automations? Will my data be safe?",
-      answer:
-        "Security is a top priority. I implement enterprise-grade security practices, use encrypted connections, and follow data protection best practices. For sensitive data, I can implement additional security measures. I also provide security documentation and compliance guidance.",
+        "Security is a top priority. I implement industry-standard security practices including encrypted connections, role-based access control, and secure data handling. For healthcare projects, I follow HIPAA compliance guidelines. I also provide security documentation.",
       category: "Security",
+    },
+    {
+      question: "Do you offer mobile app development?",
+      answer:
+        "Yes! I build cross-platform mobile applications using React Native, delivering native performance on both iOS and Android from a shared codebase. Apps include push notifications, offline support, and App Store/Google Play deployment.",
+      category: "Mobile",
+    },
+    {
+      question: "What automation platforms do you work with?",
+      answer:
+        "I specialize in Make (Integromat), Zapier, and n8n for business process automation. For AI integration, I work with OpenAI, Claude, and other models. I choose the right platform based on your specific needs and budget.",
+      category: "Automation",
     },
   ];
 
@@ -111,27 +110,27 @@ export const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="section-padding relative">
+    <section id="faq" className="section-padding relative bg-transparent dark:bg-black">
+      <div className="absolute inset-0 bg-honeycomb opacity-30 pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-bright/10 to-orange-gold/10 border border-orange-bright/30 rounded-full text-orange-bright text-sm font-medium mb-4 animate-neon-glow">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-orange-bright/30 rounded-full text-orange-bright text-sm font-medium mb-4 animate-neon-glow">
             <Sparkles size={16} className="animate-neural-pulse" />
-            <span className="gradient-text-neon">
+            <span className="text-primary">
               Frequently Asked Questions
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Common Questions About
-            <span className="gradient-text-ai"> AI Automation</span>
+            <span className="text-primary"> My Services</span>
           </h2>
           <p
             className="text-xl text-gray-300 max-w-3xl mx-auto"
             style={{ color: "var(--text-color)" }}
           >
-            Get answers to the most common questions about AI automation using
-            Make, Zapier, n8n, and cutting-edge AI models like Claude and
-            OpenAI.
+            Get answers to common questions about software development,
+            AI automation, SaaS, web dev, and AI receptionist services.
           </p>
         </div>
 
@@ -143,7 +142,7 @@ export const FAQ = () => {
               onClick={() => setSelectedCategory(category)}
               className={`faq-category-button px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 selectedCategory === category
-                  ? "bg-orange-500 text-white"
+                  ? "bg-honey-gold text-white"
                   : "bg-gray-800 text-gray-300 hover:bg-gray-700"
               }`}
             >
@@ -163,7 +162,7 @@ export const FAQ = () => {
                     className="faq-toggle-button w-full p-4 text-left flex items-center justify-between hover:bg-gray-800/50 transition-colors"
                   >
                     <div>
-                      <span className="inline-block px-2 py-1 bg-orange-500/20 text-orange-500 rounded text-xs font-medium mb-2">
+                      <span className="inline-block px-2 py-1 bg-honey-gold/20 text-honey-gold rounded text-xs font-medium mb-2">
                         {faq.category}
                       </span>
                       <h3 className="text-base font-semibold text-white pr-4">
@@ -172,7 +171,7 @@ export const FAQ = () => {
                     </div>
                     <div className="flex-shrink-0">
                       {openIndex === index ? (
-                        <ChevronUp className="w-4 h-4 text-orange-500" />
+                        <ChevronUp className="w-4 h-4 text-honey-gold" />
                       ) : (
                         <ChevronDown className="w-4 h-4 text-gray-400" />
                       )}
@@ -240,7 +239,7 @@ export const FAQ = () => {
           </Card>
           <Card className="card-ai text-center">
             <CardContent className="p-6">
-              <CheckCircle className="w-8 h-8 text-orange-500 mx-auto mb-4" />
+              <CheckCircle className="w-8 h-8 text-honey-gold mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-2">
                 99.9% Uptime
               </h3>
@@ -256,17 +255,17 @@ export const FAQ = () => {
           <Card className="max-w-3xl mx-auto card-ai">
             <CardContent className="p-8">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full flex items-center justify-center animate-neural-pulse">
+                <div className="w-12 h-12 bg-primary clip-hex flex items-center justify-center animate-neural-pulse">
                   <HelpCircle className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white gradient-text-ai">
+                <h3 className="text-2xl font-bold text-primary">
                   Still Have Questions?
                 </h3>
               </div>
               <p className="text-gray-300 mb-6">
                 Can't find the answer you're looking for? I'm here to help!
-                Schedule a free consultation to discuss your specific AI
-                automation needs.
+                Schedule a free consultation to discuss your specific project
+                needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -288,7 +287,7 @@ export const FAQ = () => {
                   variant="outline"
                   size="lg"
                   onClick={() =>
-                    window.open("https://calendly.com/jeph", "_blank")
+                    window.open("https://calendar.app.google/6CJuytpfYx9vU49fA", "_blank")
                   }
                 >
                   Schedule Free Consultation

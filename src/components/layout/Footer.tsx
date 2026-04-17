@@ -39,11 +39,11 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="relative w-full border-t border-orange-500/20 bg-gradient-to-b from-black via-[#0a0a0a] to-black">
-      {/* Decorative background */}
+    <footer className="relative w-full border-t border-honey-gold/20 bg-black">
+      {/* Decorative honeycomb background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(1200px_400px_at_50%_120%,rgba(255,107,53,0.08),transparent)]" />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23FF6B35%22%20fill-opacity%3D%220.03%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%221%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40" />
+        <div className="absolute inset-0 bg-honey-gold/[0.03]" />
+        <div className="absolute inset-0 bg-honeycomb opacity-60" />
       </div>
 
       <div className="relative">
@@ -76,7 +76,7 @@ export const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={link.label}
-                    className="group relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.03] text-white transition hover:border-orange-500/50 hover:bg-orange-500/10"
+                    className="group relative inline-flex h-10 w-10 items-center justify-center overflow-hidden clip-hex-pointy border border-honey-gold/20 bg-white/[0.03] text-white transition hover:border-honey-gold/50 hover:bg-honey-gold/10"
                   >
                     {link.icon}
                     <span className="sr-only">{link.label}</span>
@@ -93,9 +93,9 @@ export const Footer = () => {
                   <li key={item}>
                     <a
                       href={`#${item.toLowerCase().replace(" ", "-")}`}
-                      className="inline-flex items-center gap-2 rounded-md px-0.5 py-1 text-sm text-gray-300 transition hover:text-orange-400"
+                      className="inline-flex items-center gap-2 rounded-md px-0.5 py-1 text-sm text-gray-300 transition hover:text-honey-gold"
                     >
-                      <span className="h-1 w-1 rounded-full bg-orange-500/60" />
+                      <span className="h-1.5 w-1.5 clip-hex bg-honey-gold/60" />
                       {item}
                     </a>
                   </li>
@@ -110,7 +110,7 @@ export const Footer = () => {
                 {["Workflow Automation", "AI Assistants", "API Integrations", "CRM Pipelines", "Data Sync", "Email Automation"].map((chip) => (
                   <span
                     key={chip}
-                    className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-gray-300"
+                    className="rounded-full border border-honey-gold/15 bg-honey-gold/[0.03] px-3 py-1 text-xs text-gray-300 hover:border-honey-gold/30 transition-colors"
                   >
                     {chip}
                   </span>
@@ -129,10 +129,10 @@ export const Footer = () => {
                     inputMode="email"
                     placeholder="Your email address"
                     aria-label="Email address"
-                    className="w-full rounded-lg border border-white/10 bg-black/30 pl-10 pr-12 py-3 text-sm text-white placeholder-gray-400 outline-none transition focus:border-orange-500/60"
+                    className="w-full rounded-lg border border-honey-gold/15 bg-black/30 pl-10 pr-12 py-3 text-sm text-white placeholder-gray-400 outline-none transition focus:border-honey-gold/60"
                   />
                   <button
-                    className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center gap-1 rounded-md bg-gradient-to-r from-orange-500 to-orange-400 px-3 py-2 text-xs font-medium text-white transition hover:from-orange-400 hover:to-orange-500"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex items-center gap-1 rounded-md bg-primary px-3 py-2 text-xs font-medium text-white transition hover:bg-primary-dark"
                     aria-label="Subscribe to newsletter"
                     title="Subscribe to newsletter"
                   >
@@ -143,7 +143,7 @@ export const Footer = () => {
               </div>
               <div className="space-y-2 text-sm text-gray-300">
                 <p>Philippines</p>
-                <a href="mailto:jephdaligdig98@gmail.com" className="hover:text-orange-400">jephdaligdig98@gmail.com</a>
+                <a href="mailto:jephdaligdig98@gmail.com" className="hover:text-honey-gold">jephdaligdig98@gmail.com</a>
                 <p>+63 - 9759483289</p>
               </div>
             </div>
@@ -151,14 +151,14 @@ export const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 bg-black/30">
+        <div className="border-t border-honey-gold/10 bg-black/30">
           <div className="container mx-auto px-5 py-4">
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
               <p className="text-xs text-gray-400">© {currentYear} Jeph Daligdig. All rights reserved.</p>
               <div className="flex items-center gap-6 text-xs text-gray-400">
-                <a href="#" className="transition hover:text-orange-400">Privacy Policy</a>
-                <a href="#" className="transition hover:text-orange-400">Terms of Service</a>
-                <a href="#" className="transition hover:text-orange-400">Cookie Policy</a>
+                <a href="#" className="transition hover:text-honey-gold">Privacy Policy</a>
+                <a href="#" className="transition hover:text-honey-gold">Terms of Service</a>
+                <a href="#" className="transition hover:text-honey-gold">Cookie Policy</a>
               </div>
             </div>
           </div>
