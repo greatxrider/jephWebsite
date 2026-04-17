@@ -16,7 +16,6 @@ import {
   TrendingUp,
   Bot,
   Rocket,
-  Star,
   Award,
   Clock,
   GitBranch,
@@ -92,65 +91,148 @@ export const Experience = () => {
 
   const experienceTimeline = [
     {
-      year: "2024",
-      title: "AI Solutions Architect",
-      description:
-        "Building AI receptionists, healthcare EMR systems, and SaaS platforms",
+      year: "Nov 2025 - Present",
+      marker: "25",
+      title: "AI Software Engineer",
+      company: "The Human Company",
       icon: <Brain className="w-6 h-6" />,
       color: "bg-purple-500",
-      achievements: [
-        "Built AI receptionist systems for medical clinics",
-        "Developed custom EMR/EHR healthcare platforms",
-        "Launched SaaS products with AI-powered features",
-      ],
     },
     {
-      year: "2023",
-      title: "Senior Software Engineer",
-      description: "Full-stack development and enterprise AI integration",
-      icon: <Rocket className="w-6 h-6" />,
-      color: "bg-blue-500",
-      achievements: [
-        "Architected 50+ web applications and automation solutions",
-        "Implemented advanced API integrations and microservices",
-        "Built scalable SaaS platforms with multi-tenant architecture",
-      ],
-    },
-    {
-      year: "2022",
-      title: "Full-Stack Developer",
-      description: "Mastered React, Next.js, and cloud-native development",
-      icon: <Workflow className="w-6 h-6" />,
-      color: "bg-green-500",
-      achievements: [
-        "Completed 100+ software and automation projects",
-        "Specialized in React, Next.js, and Node.js",
-        "Built mobile apps with React Native",
-      ],
-    },
-    {
-      year: "2021",
-      title: "Backend & API Engineer",
-      description: "REST API development, database design, and system architecture",
-      icon: <Code className="w-6 h-6" />,
-      color: "bg-primary",
-      achievements: [
-        "Integrated 200+ APIs and third-party services",
-        "Designed scalable database architectures",
-        "Built custom backend systems and middleware",
-      ],
-    },
-    {
-      year: "2020",
-      title: "Software Developer",
-      description: "Started professional journey in software engineering",
+      year: "Nov 2025 - Present",
+      marker: "25",
+      title: "AI Software Engineer",
+      company: "SOLAR EXPRESS AI",
       icon: <Zap className="w-6 h-6" />,
       color: "bg-honey-gold",
-      achievements: [
-        "First production applications deployed",
-        "Learned full-stack development fundamentals",
-        "Delivered projects for first 10 clients",
-      ],
+    },
+    {
+      year: "Oct 2025 - Present",
+      marker: "25",
+      title: "AI Software Engineer",
+      company: "Guerilla 360 Integrated Solutions",
+      icon: <Rocket className="w-6 h-6" />,
+      color: "bg-blue-500",
+    },
+    {
+      year: "Oct 2025 - Present",
+      marker: "25",
+      title: "AI Software Engineer",
+      company: "Next Generation Medicine",
+      icon: <Brain className="w-6 h-6" />,
+      color: "bg-purple-500",
+    },
+    {
+      year: "Sep 2025 - Present",
+      marker: "25",
+      title: "Co-Founder & CTO",
+      company: "NomanuAI",
+      icon: <Sparkles className="w-6 h-6" />,
+      color: "bg-primary",
+    },
+    {
+      year: "Sep 2025 - Present",
+      marker: "25",
+      title: "Real Estate Sales Agent",
+      company: "FILIPINO HOMES",
+      icon: <Trophy className="w-6 h-6" />,
+      color: "bg-green-500",
+    },
+    {
+      year: "Jul 2025 - Feb 2026",
+      marker: "25",
+      title: "AI Automation Engineer",
+      company: "Funeral Futurist",
+      icon: <Bot className="w-6 h-6" />,
+      color: "bg-indigo-500",
+    },
+    {
+      year: "Jun 2025 - Nov 2025",
+      marker: "25",
+      title: "AI Automation Specialist",
+      company: "Positive Property - George Markoski",
+      icon: <Workflow className="w-6 h-6" />,
+      color: "bg-orange-500",
+    },
+    {
+      year: "Jun 2025 - Nov 2025",
+      marker: "25",
+      title: "Automation, Integration & AI Specialist",
+      company: "Bold Business",
+      icon: <GitBranch className="w-6 h-6" />,
+      color: "bg-blue-500",
+    },
+    {
+      year: "Jun 2025 - Nov 2025",
+      marker: "25",
+      title: "AI Automation Engineer",
+      company: "Merkeley Ventures",
+      icon: <Bot className="w-6 h-6" />,
+      color: "bg-purple-500",
+    },
+    {
+      year: "Apr 2025 - Sep 2025",
+      marker: "25",
+      title: "AI Automation Specialist",
+      company: "Haivyne",
+      icon: <Brain className="w-6 h-6" />,
+      color: "bg-pink-500",
+    },
+    {
+      year: "Feb 2025 - Present",
+      marker: "25",
+      title: "Senior Automation Engineer / Partner",
+      company: "Metawatt",
+      icon: <Rocket className="w-6 h-6" />,
+      color: "bg-honey-gold",
+    },
+    {
+      year: "Jan 2025 - Nov 2025",
+      marker: "25",
+      title: "AI Automation Specialist",
+      company: "Easy Outsource",
+      icon: <Workflow className="w-6 h-6" />,
+      color: "bg-green-500",
+    },
+    {
+      year: "Dec 2024 - May 2025",
+      marker: "24",
+      title: "AI Automation Specialist",
+      company: "Bamboo Works",
+      icon: <Bot className="w-6 h-6" />,
+      color: "bg-blue-500",
+    },
+    {
+      year: "Dec 2024 - Feb 2025",
+      marker: "24",
+      title: "Project Manager",
+      company: "Native Teams",
+      icon: <Users className="w-6 h-6" />,
+      color: "bg-orange-500",
+    },
+    {
+      year: "Jun 2024 - Dec 2024",
+      marker: "24",
+      title: "AI Automation Specialist",
+      company: "RevWised",
+      icon: <Workflow className="w-6 h-6" />,
+      color: "bg-indigo-500",
+    },
+    {
+      year: "Mar 2023 - Sep 2023",
+      marker: "23",
+      title: "Test Development Engineer",
+      company: "Ionics-EMS Inc.",
+      icon: <Code className="w-6 h-6" />,
+      color: "bg-primary",
+    },
+    {
+      year: "Nov 2021 - Oct 2025",
+      marker: "21",
+      title: "Co-Founder & CTO",
+      company: "Nyxpro",
+      icon: <Sparkles className="w-6 h-6" />,
+      color: "bg-purple-500",
     },
   ];
 
@@ -275,7 +357,7 @@ export const Experience = () => {
                       <CardContent className="p-6">
                         <div className="flex items-center gap-3 mb-3">
                           <div
-                            className={`w-12 h-12 ${item.color} clip-hex flex items-center justify-center text-white`}
+                            className={`w-12 h-12 ${item.color} clip-hex flex items-center justify-center text-white flex-shrink-0`}
                           >
                             {item.icon}
                           </div>
@@ -284,35 +366,22 @@ export const Experience = () => {
                               {item.title}
                             </h4>
                             <p className="text-honey-gold font-medium">
-                              {item.year}
+                              {item.company}
                             </p>
                           </div>
                         </div>
                         <p
-                          className="text-gray-300 mb-4"
+                          className="text-gray-300 text-sm"
                           style={{ color: "var(--text-color)" }}
                         >
-                          {item.description}
+                          {item.year}
                         </p>
-                        <ul className="space-y-2">
-                          {item.achievements.map((achievement, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                              <Star className="w-4 h-4 text-honey-gold mt-1 flex-shrink-0" />
-                              <span
-                                className="text-gray-300 text-sm"
-                                style={{ color: "var(--text-color)" }}
-                              >
-                                {achievement}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
                       </CardContent>
                     </Card>
                   </div>
                   <div className="w-2/12 flex justify-center">
                     <div className="w-8 h-8 bg-primary clip-hex flex items-center justify-center text-white font-bold text-sm">
-                      {item.year.slice(-2)}
+                      {item.marker}
                     </div>
                   </div>
                   <div className="w-5/12"></div>

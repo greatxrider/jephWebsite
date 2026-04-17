@@ -249,69 +249,127 @@ export const About = () => {
     },
   ];
 
-  const workExperience = [
+  const workExperience: {
+    company: string;
+    position: string;
+    period: string;
+    description?: string;
+    logo?: string;
+    color: string;
+  }[] = [
     {
-      company: "Easy Outsource",
-      position: "AI Automation Specialist",
-      period: "Jun 2025 - July 2025",
-      description:
-        "Streamlined outsourcing processes through intelligent automation",
-      logo: "/companyLogos/easyoutsource-logo.png",
+      company: "The Human Company",
+      position: "AI Software Engineer",
+      period: "Nov 2025 - Present",
+      color: "bg-purple-500",
+    },
+    {
+      company: "SOLAR EXPRESS AI",
+      position: "AI Software Engineer",
+      period: "Nov 2025 - Present",
+      color: "bg-yellow-500",
+    },
+    {
+      company: "Guerilla 360 Integrated Solutions",
+      position: "AI Software Engineer",
+      period: "Oct 2025 - Present",
+      color: "bg-blue-500",
+    },
+    {
+      company: "Next Generation Medicine",
+      position: "AI Software Engineer",
+      period: "Oct 2025 - Present",
       color: "bg-indigo-500",
     },
     {
-      company: "MetaWatt",
-      position: "AI Automation Specialist",
+      company: "NomanuAI",
+      position: "Senior AI Software Engineer",
+      period: "Sep 2025 - Present",
+      color: "bg-primary",
+    },
+    {
+      company: "FILIPINO HOMES",
+      position: "Real Estate Sales Agent",
+      period: "Sep 2025 - Present",
+      color: "bg-green-500",
+    },
+    {
+      company: "Metawatt",
+      position: "Senior Automation Engineer / Partner",
       period: "Feb 2025 - Present",
-      description:
-        "Specialized in energy sector automation and AI-powered optimization",
       logo: "/companyLogos/metawatt-logo.png",
       color: "bg-yellow-500",
     },
     {
+      company: "Funeral Futurist",
+      position: "AI Automation Engineer",
+      period: "Jul 2025 - Feb 2026",
+      color: "bg-indigo-500",
+    },
+    {
+      company: "Positive Property - George Markoski",
+      position: "AI Automation Specialist",
+      period: "Jun 2025 - Nov 2025",
+      color: "bg-orange-500",
+    },
+    {
+      company: "Bold Business",
+      position: "Automation, Integration & AI Specialist",
+      period: "Jun 2025 - Nov 2025",
+      color: "bg-blue-500",
+    },
+    {
+      company: "Merkeley Ventures",
+      position: "AI Automation Engineer",
+      period: "Jun 2025 - Nov 2025",
+      color: "bg-purple-500",
+    },
+    {
       company: "Haivyne",
       position: "AI Automation Specialist",
-      period: "Apr 2025 - Present",
-      description:
-        "Creating intelligent automation workflows and AI integration solutions",
+      period: "Apr 2025 - Sep 2025",
       logo: "/companyLogos/haivyne-logo.png",
       color: "bg-pink-500",
+    },
+    {
+      company: "Easy Outsource",
+      position: "AI Automation Specialist",
+      period: "Jan 2025 - Nov 2025",
+      logo: "/companyLogos/easyoutsource-logo.png",
+      color: "bg-indigo-500",
     },
     {
       company: "Bamboo Works",
       position: "AI Automation Specialist",
       period: "Dec 2024 - May 2025",
-      description:
-        "Developed and implemented AI automation solutions for business processes",
       logo: "/companyLogos/bambooworks-logo.png",
       color: "bg-orange-500",
     },
     {
+      company: "Native Teams",
+      position: "Project Manager",
+      period: "Dec 2024 - Feb 2025",
+      color: "bg-red-500",
+    },
+    {
       company: "RevWised",
       position: "AI Automation Specialist",
-      period: "Jun 2024 - Sep 2024",
-      description:
-        "Specialized in AI-powered workflow automation and process optimization",
+      period: "Jun 2024 - Dec 2024",
       logo: "/companyLogos/revwise-logo.png",
       color: "bg-purple-500",
     },
     {
-      company: "Nyxpro",
-      position: "CTO",
-      period: "Oct 2023 - Present",
-      description:
-        "Chief Technology Officer overseeing technical strategy and development",
-      logo: "/companyLogos/nyxpro-logo.jpg",
-      color: "bg-green-500",
+      company: "Ionics-EMS Inc.",
+      position: "Test Development Engineer",
+      period: "Mar 2023 - Sep 2023",
+      color: "bg-cyan-500",
     },
     {
       company: "Nyxpro",
-      position: "CoFounder",
-      period: "Nov 2021 - Present",
-      description:
-        "Co-founded and led strategic initiatives for technology innovation",
+      position: "Co-Founder & CTO",
+      period: "Nov 2021 - Oct 2025",
       logo: "/companyLogos/nyxpro-logo.jpg",
-      color: "bg-blue-500",
+      color: "bg-green-500",
     },
   ];
 
@@ -411,24 +469,28 @@ export const About = () => {
                   <Card key={index} className="card-ai p-4">
                     <CardContent>
                       <div className="flex items-start gap-3">
-                        <div className="w-12 h-12 relative flex-shrink-0">
-                          <Image src={job.logo} alt={job.company} width={48} height={48} className="object-contain w-full h-full rounded-lg" />
-                        </div>
+                        {job.logo && (
+                          <div className="w-12 h-12 relative flex-shrink-0">
+                            <Image src={job.logo} alt={job.company} width={48} height={48} className="object-contain w-full h-full rounded-lg" />
+                          </div>
+                        )}
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between">
-                            <div>
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="min-w-0">
                               <h4 className="text-white font-bold text-base">{job.position}</h4>
-                              <div className="flex items-center gap-2 text-sm">
+                              <div className="flex items-center gap-2 text-sm flex-wrap">
                                 <span className="text-honey-gold font-semibold">{job.company}</span>
                                 <div className="w-1 h-1 bg-honey-gold clip-hex"></div>
                                 <span className="text-gray-400">{job.period}</span>
                               </div>
                             </div>
-                            <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${job.period.includes("Present") ? "bg-green-500/20 text-green-400 border border-green-500/30" : "bg-gray-500/20 text-gray-400 border border-gray-500/30"}`}>
+                            <span className={`px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0 ${job.period.includes("Present") ? "bg-green-500/20 text-green-400 border border-green-500/30" : "bg-gray-500/20 text-gray-400 border border-gray-500/30"}`}>
                               {job.period.includes("Present") ? "Current" : "Previous"}
                             </span>
                           </div>
-                          <p className="text-gray-300 text-sm mt-2">{job.description}</p>
+                          {job.description && (
+                            <p className="text-gray-300 text-sm mt-2">{job.description}</p>
+                          )}
                         </div>
                       </div>
                     </CardContent>
