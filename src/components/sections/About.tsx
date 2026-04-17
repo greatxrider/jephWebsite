@@ -366,7 +366,7 @@ export const About = () => {
     },
     {
       company: "Nyxpro",
-      position: "Co-Founder & CTO",
+      position: "Senior AI Software Engineer",
       period: "Nov 2021 - Oct 2025",
       logo: "/companyLogos/nyxpro-logo.jpg",
       color: "bg-green-500",
